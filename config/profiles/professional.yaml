@@ -1,0 +1,10 @@
+name: Professional athlete (price-insensitive, prescribed targets)
+sex: male
+age: 26
+mass_kg: 82
+height_cm: 185
+body_fat_pct: 9
+training: {modality: hybrid, hours_per_week: 20}
+goal: professional
+overrides: {energy_kcal: 4200, protein_g: 170}
+priorities: {cost: 0.0}

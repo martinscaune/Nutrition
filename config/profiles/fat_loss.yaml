@@ -1,0 +1,10 @@
+name: Fat loss, recreational lifter
+sex: female
+age: 30
+mass_kg: 72
+height_cm: 170
+body_fat_pct: 30
+training: {modality: strength, hours_per_week: 4}
+goal: fat_loss
+overrides: {}
+priorities: {cost: 1.0}

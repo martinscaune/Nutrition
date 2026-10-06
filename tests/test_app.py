@@ -27,3 +27,9 @@ def test_app_switching_settings(app):
     assert not app.exception, app.exception
     app.sidebar.selectbox[2].set_value("Protein on a budget").run()
     assert not app.exception, app.exception
+
+
+def test_targets_tab_and_export(app):
+    assert any("Daily targets" in m.value for m in app.markdown), "targets table not rendered"
+    labels = [b.label for b in app.get("download_button")]
+    assert {"foods_ranked.csv", "brief.md", "Both (ZIP)"} <= set(labels), labels

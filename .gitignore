@@ -26,3 +26,6 @@ data/raw/cenudepo/*/html/
 
 # local scratch (helper scripts visible to host python)
 .work/
+
+# generated exports (re-creatable)
+exports/

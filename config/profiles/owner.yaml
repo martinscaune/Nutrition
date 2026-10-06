@@ -1,0 +1,13 @@
+name: "Owner (test profile 1)"
+sex: male
+age: 22
+mass_kg: 76
+height_cm: 186
+body_fat_pct: null
+target_mass_kg: 85
+training: {modality: hybrid, hours_per_week: 7.5}   # 6–9 h/week triathlon + strength
+goal: hybrid_gain
+experience: novice_intermediate
+tdee_kcal: 3000          # self-reported; REVIEW §3 suggests it may be low (estimate ≈ 3470–4060)
+overrides: {}
+priorities: {cost: 1.0}

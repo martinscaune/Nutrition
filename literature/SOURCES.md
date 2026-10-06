@@ -77,6 +77,9 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | pinckaers2021 | Pinckaers PJM et al. (2021). The anabolic response to plant-based protein ingestion. *Sports Med* 51(S1):59–74 | 10.1007/s40279-021-01540-8 | PMC8566416 |
 | pinckaers2024pea | Pinckaers PJM et al. (2024). MPS following pea-derived protein does not differ from milk protein in healthy young males. *Eur J Nutr* 63:893–904 | 10.1007/s00394-023-03295-6 | PMC10948472 |
 | pinckaers2024corn | Pinckaers PJM et al. (2024). MPS following corn protein does not differ from milk protein in healthy young adults. *Amino Acids* 56:8 | 10.1007/s00726-023-03377-z | PMC10844360 |
+| hevia2021 | Hevia-Larraín V et al. (2021). High-protein plant-based diet versus a protein-matched omnivorous diet to support resistance training adaptations: a comparison between habitual vegans and omnivores. *Sports Med* 51:1317–1330 | 10.1007/s40279-021-01434-9 | check |
+| monteyne2023 | Monteyne AJ et al. (2023). Vegan and omnivorous high protein diets support comparable daily myofibrillar protein synthesis rates and skeletal muscle hypertrophy in young adults. *J Nutr* 153:1680–1695 | 10.1016/j.tjnut.2023.02.023 | PMC10308267 |
+| pinckaers2023blend | Pinckaers PJM et al. (2022). The muscle protein synthetic response to the ingestion of a plant-derived protein blend does not differ from an equivalent amount of milk protein in healthy young males. *J Nutr* 152:2734–2743 | 10.1093/jn/nxac222 | PMC9839989 |
 | burd2019 | Burd NA et al. (2019). Food-first approach to enhance the regulation of post-exercise skeletal muscle protein synthesis and remodeling. *Sports Med* 49:59–68 | 10.1007/s40279-018-1009-y | PMC6445816 |
 
 ## Diet optimization and food cost vs nutritional value

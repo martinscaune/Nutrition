@@ -323,6 +323,10 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-06 | No reuse of price-comparison-site data (Cenu Depo, Lēta Pārtika) without written permission | Their terms neither grant reuse nor exclude user-submitted prices |
 | 2026-10-06 | **Superseded for the personal-use phase:** Cenu Depo per-shop prices ARE used for the 35 non-CSP foods (polite collection, raw pages archived). Before any publication: replace with licensed data (CSP retailer data / written permission) | Owner: personal use now, real databases when a paper is due |
 | 2026-10-06 | Composition: **Frida 5.5 primary** (Nordic, analytical, full AA, available carbs, free sugars), USDA SR Legacy fallback; eaten state via USDA raw↔cooked protein-ratio yields; edible portions from USDA SR28 refuse | Closer to Baltic foods than USDA; protein conserved in cooking |
+| 2026-10-07 | Charts: scientific style (white background, full black frame, inward ticks on all sides, grid on both axes, framed legend); app light theme | Owner: dark theme made charts unreadable |
+| 2026-10-07 | Energy expenditure (when not given) = REE × 1.5 + (MET − 1) × kg × h/day, MET 5 / 8 / 7 for strength / endurance / hybrid | D5 mapping; MET values are an assumption [U], to verify (Compendium of Physical Activities) |
+| 2026-10-07 | Macro split: protein default → fat at the middle of its % range → carbohydrate = rest, then fitted to the training band (endurance/hybrid: thomas2016 bands; strength gaining: ≥ 3 g/kg; strength cutting / no training: rest) | Avoids applying endurance carb bands to lifters; conflicts reported, not hidden |
+| 2026-10-07 | AI export ranks core foods only; ingredients included unranked for cooking | Owner request: CSV + brief for an LLM recipe planner |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).

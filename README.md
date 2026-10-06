@@ -25,6 +25,9 @@ Opens http://localhost:8501 (local only; see `.streamlit/config.toml`).
 .venv/bin/python src/analysis/figures.py      # → figures/v0.1/*.png
 .venv/bin/python -m pytest -q                 # tests
 ```
+Export a person-specific ranking + AI brief (also in the app, tab "My targets & AI export"):
+`.venv/bin/python -m src.export --profile config/profiles/owner.yaml --preset "Bulking: balanced"` → `exports/…/`
+
 Refresh prices from Cenu Depo (polite, ≥ 3 s between requests): `python3 -m src.prices.cenudepo`.
 
 ## Data licences

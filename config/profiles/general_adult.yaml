@@ -1,0 +1,9 @@
+name: General adult
+sex: female
+age: 40
+mass_kg: 65
+height_cm: 168
+training: {modality: none, hours_per_week: 0}
+goal: general_adult
+overrides: {}
+priorities: {cost: 1.0}

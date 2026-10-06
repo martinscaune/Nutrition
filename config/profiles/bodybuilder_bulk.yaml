@@ -1,0 +1,11 @@
+name: Bodybuilder, off-season bulk
+sex: male
+age: 28
+mass_kg: 90
+height_cm: 182
+body_fat_pct: 14
+training: {modality: strength, hours_per_week: 7}
+goal: muscle_gain
+experience: advanced
+overrides: {}
+priorities: {cost: 1.0}

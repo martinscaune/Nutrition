@@ -77,14 +77,15 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] **GATE v0.1:** the owner finds the explorer useful and understands the trade-offs it shows (owner to try `app/app.py` and comment on graphs)
 
 ## v0.2: Target calculator (profile → targets)
-- [ ] B.1 Profile schema (body, training, energy goal, priorities, overrides) as YAML; validation
-- [ ] B.2 `config/target_rules.yaml`: goal presets and rules from Phase 1, each with its literature source
-- [ ] B.3 `src/targets.py`: derive kcal, protein, carbohydrate and fat ranges plus safeguards; every target records where it came from (rule or override)
-- [ ] B.4 Energy expenditure: use the user's value if given, otherwise estimate it (BMR × PAL + training)
-- [ ] B.5 Feasibility check: detect conflicting targets and explain them (e.g. a high carbohydrate band with a low kcal target)
-- [ ] B.6 Archetype profiles in `config/profiles/`: owner, general adult, bodybuilder bulk, fat loss, Ironman athlete, price-insensitive pro
-- [ ] B.7 Unit tests: each archetype gives the expected targets
-- [ ] B.8 App: profile panel + preset selector + override fields; the food explorer uses the derived targets
+- [x] B.1 Profile schema (body, training, energy goal, priorities, overrides) as YAML; validation
+- [x] B.2 `config/target_rules.yaml`: goal presets and rules from Phase 1, each with its literature source
+- [x] B.3 `src/targets.py`: derive kcal, protein, carbohydrate and fat ranges plus safeguards; every target records where it came from (rule or override)
+- [x] B.4 Energy expenditure: use the user's value if given, otherwise estimate it (BMR × PAL + training)
+- [x] B.5 Feasibility check: detect conflicting targets and explain them (e.g. a high carbohydrate band with a low kcal target)
+- [x] B.6 Archetype profiles in `config/profiles/`: owner, general adult, bodybuilder bulk, fat loss, Ironman athlete, price-insensitive pro
+- [x] B.7 Unit tests: each archetype gives the expected targets
+- [x] B.8 App: profile panel + preset selector + override fields; the food explorer uses the derived targets
+- [x] B.9 AI export (owner request): `src/export.py` + app tab → `foods_ranked.csv` + `brief.md` (+ ZIP) for an LLM meal planner
 - [ ] **GATE v0.2:** targets for all archetypes look sensible to the owner (and later to an expert)
 
 ## v1.0: Diet optimizer (food combinations)
@@ -154,3 +155,5 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 2.4–2.9 (2.13 running) | Owner: Cenu Depo OK for personal use → polite collector `src/prices/cenudepo.py`; Frida 5.5 + SR28 downloaded; composition, yields, edible portions, digestibility maps for all 106 foods; unit conversions; price summary script |
 | 2026-10-06 | 2.13–2.17 | Prices for 99/106 foods (CSP + Cenu Depo); parser handles single-shop pages, sold-by-weight items, loyalty rows; AA overrides for turkey, split peas, canned peas, smoked sausage; `src/build_master.py` → `foods_master.csv`; 14 tests pass. Finding: split peas ≈ €0.94/kg |
 | 2026-10-07 | A.1–A.10 (v0.1) | `src/metrics.py` (quality definitions, price scenarios, Pareto masks/ranks, composite index, rank comparison), `src/analysis/explore.py` → `reports/v0.1_exploration.md`, 7 figures in `figures/v0.1/`, Streamlit app `app/app.py` (rankings, explorer, one-food day, food details, CSV/JSON export); 26 tests pass |
+| 2026-10-07 | chart style | Owner feedback: graphs unreadable in dark theme → scientific style (white, full frame, inward ticks, grids both axes, framed legend), light app theme |
+| 2026-10-07 | B.1–B.9 (v0.2) | `config/target_rules.yaml` (sourced), 6 archetype profiles, `src/targets.py` (REE → TDEE, surplus/deficit, protein, carb bands, fat, free sugars, conflicts, energy availability), app tab with profile form, AI export (CSV + brief + ZIP, also CLI); 39 tests pass |
