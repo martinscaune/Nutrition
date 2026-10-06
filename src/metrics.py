@@ -41,6 +41,8 @@ METRICS = {
     "carb_per_eur": ("Carbohydrate per euro", "g/€", True),
     "useful_protein_per_1000kcal": ("Useful protein per 1000 kcal", "g/1000 kcal", True),
     "g_eaten_per_1000kcal": ("Food mass for 1000 kcal (eaten)", "g", False),
+    # same quantity, opposite direction: for cutting, more food per kcal = more filling (satiety proxy, v2.0 refines)
+    "fullness_g_per_1000kcal": ("Fullness: food mass per 1000 kcal (eaten)", "g", True),
     "eur_per_1000kcal": ("Cost of 1000 kcal", "€", False),
     "eur_per_kg_edible": ("Price", "€/kg edible", False),
     "fat_energy_pct": ("Energy from fat", "% kcal", None),
@@ -52,6 +54,7 @@ def load(path=MASTER):
     df = pd.read_csv(path)
     df["group"] = [("Supplements" if r == "supplement" else "Ingredients & snacks" if r in ("ingredient", "snack")
                     else GROUP_OF.get(c, "Ingredients & snacks")) for c, r in zip(df.category, df.role)]
+    df["fullness_g_per_1000kcal"] = df.g_eaten_per_1000kcal
     return with_quality(df, "diaas")
 
 
@@ -130,9 +133,23 @@ def front(df, cols, maximize=None):
 
 
 # ---------------------------------------------------------------- composite indices (PLAN A.4; hypotheses!)
+NORMALIZATIONS = {
+    "log": "Log-ratio: min-max on log scale. Twice as good counts the same anywhere on the scale (ratio metrics)",
+    "percentile": "Percentile rank: robust to outliers, but discards how big differences are",
+    "minmax": "Linear min-max: proportional, but one extreme food (e.g. split peas) squeezes everyone else",
+}
+
+
 def normalize(s, higher_is_better=True, method="percentile"):
-    """Map a metric to (0, 1], 1 = best. 'percentile' (rank-based, robust to outliers) or 'minmax'."""
+    """Map a metric to (0.01, 1], 1 = best, using one of NORMALIZATIONS."""
     x = s.astype(float)
+    if method == "log":
+        v = np.log(x.where(x > 0))           # zero/negative values (e.g. no protein) → worst
+        if not higher_is_better:
+            v = -v
+        lo, hi = v.min(), v.max()
+        out = ((v - lo) / (hi - lo) if hi > lo else v * 0 + 1).fillna(0)
+        return out.clip(lower=0.01)
     if not higher_is_better:
         x = -x
     if method == "percentile":
@@ -165,14 +182,21 @@ def composite(df, weights, method="percentile"):
     return np.exp(log_sum)
 
 
+# Rule for presets: never weight two metrics that measure the same thing. kcal_100g_eaten and g_eaten_per_1000kcal
+# are exact reciprocals (weighting both counts compactness twice); carb_100g_eaten mostly measures dryness.
 PRESETS = {
-    "Bulking: balanced": {"kcal_per_eur": 1, "useful_protein_per_eur": 1, "kcal_100g_eaten": 1,
-                          "useful_protein_100g_eaten": 1, "g_eaten_per_1000kcal": 1},
+    "Bulking: balanced": {"kcal_per_eur": 1, "useful_protein_per_eur": 1, "useful_protein_100g_eaten": 1,
+                          "g_eaten_per_1000kcal": 1},
     "Bulking: cheapest calories": {"kcal_per_eur": 3, "useful_protein_per_eur": 1, "g_eaten_per_1000kcal": 1},
     "Bulking: compact food": {"g_eaten_per_1000kcal": 3, "kcal_per_eur": 1, "useful_protein_100g_eaten": 1},
     "Protein on a budget": {"useful_protein_per_eur": 3, "useful_protein_per_1000kcal": 1},
-    "Price doesn't matter": {"useful_protein_100g_eaten": 1, "kcal_100g_eaten": 1, "g_eaten_per_1000kcal": 1},
-    "Endurance carbs on a budget": {"carb_per_eur": 3, "carb_100g_eaten": 1, "g_eaten_per_1000kcal": 1},
+    "Price doesn't matter": {"useful_protein_100g_eaten": 1, "g_eaten_per_1000kcal": 1},
+    "Endurance carbs on a budget": {"carb_per_eur": 3, "useful_protein_per_eur": 1, "g_eaten_per_1000kcal": 1},
+    "Hybrid: bulk + endurance fuel": {"kcal_per_eur": 1, "useful_protein_per_eur": 1, "carb_per_eur": 1,
+                                      "useful_protein_100g_eaten": 1, "g_eaten_per_1000kcal": 1},
+    "Cutting: filling protein on a budget": {"useful_protein_per_1000kcal": 3, "useful_protein_per_eur": 1,
+                                             "fullness_g_per_1000kcal": 1},
+    "Everyday budget": {"kcal_per_eur": 1, "useful_protein_per_eur": 1},
 }
 
 

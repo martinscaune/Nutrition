@@ -57,8 +57,8 @@ with st.sidebar:
         for m in WEIGHTABLE:
             weights[m] = st.slider(f"{M.METRICS[m][0]} ({'↑' if M.METRICS[m][2] else '↓'} better)", 0.0, 5.0,
                                    float(defaults.get(m, 0)), 0.5, key=f"w_{m}_{preset}")
-    norm = st.radio("Normalization", ["percentile", "minmax"], horizontal=True,
-                    help="Percentile = rank-based, robust to outliers (e.g. split peas). Min-max = proportional.")
+    norm = st.radio("Normalization", list(M.NORMALIZATIONS), index=1, horizontal=True,
+                    help=" · ".join(f"{k}: {v}" for k, v in M.NORMALIZATIONS.items()))
 
 # ---------------------------------------------------------------- data under current settings
 df = M.with_price(M.with_quality(base_data(), quality), price_scn)

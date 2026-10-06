@@ -327,6 +327,9 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-07 | Energy expenditure (when not given) = REE × 1.5 + (MET − 1) × kg × h/day, MET 5 / 8 / 7 for strength / endurance / hybrid | D5 mapping; MET values are an assumption [U], to verify (Compendium of Physical Activities) |
 | 2026-10-07 | Macro split: protein default → fat at the middle of its % range → carbohydrate = rest, then fitted to the training band (endurance/hybrid: thomas2016 bands; strength gaining: ≥ 3 g/kg; strength cutting / no training: rest) | Avoids applying endurance carb bands to lifters; conflicts reported, not hidden |
 | 2026-10-07 | AI export ranks core foods only; ingredients included unranked for cooking | Owner request: CSV + brief for an LLM recipe planner |
+| 2026-10-07 | Scenario check (reports/scenarios_v0.2.md): food-level rankings do not depend on the person's targets, only on preset/quality/price/cost-priority. Each goal now has a default `ranking_preset`; person-specific choice is the optimizer's job (v1.0) | Owner asked to compare profiles |
+| 2026-10-07 | Preset rule: never weight two metrics that measure the same thing (energy density and g/1000 kcal are reciprocals; carb density ≈ dryness). Fixed 'Bulking: balanced', 'Price doesn't matter', 'Endurance carbs' | Double-counting put crispbread/cornflakes on top for endurance |
+| 2026-10-07 | Normalization: percentile stays default; log-ratio and min-max selectable; sensitivity reported (top-10 overlap 0.4–1.0 between methods) → composite scores are a convenience view, not a primary result | Scenario D |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).

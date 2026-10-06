@@ -62,11 +62,12 @@ COLUMNS = {  # output column: (source column or None, description for the AI)
 }
 
 
-def build(profile_path, preset="Bulking: balanced", roles=("core", "ingredient"), quality="diaas",
+def build(profile_path, preset=None, roles=("core", "ingredient"), quality="diaas",
           price_scenario="central", weights=None, groups=None):
     """Return (foods_ranked DataFrame, brief markdown, targets Result)."""
     prof = load_profile(profile_path) if isinstance(profile_path, (str, Path)) else profile_path
     res = compute(prof)
+    preset = preset or RULES["presets"][prof.goal].get("ranking_preset", "Bulking: balanced")
     df = M.with_price(M.with_quality(M.load(), quality), price_scenario)
     foods = pd.read_csv(ROOT / "data/foods/foods.csv")[["food_id", "purchase_state", "eaten_state"]]
     df = df.merge(foods, on="food_id", how="left")
@@ -152,7 +153,7 @@ def zip_bytes(csv_text, brief_text):
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--profile", default=str(ROOT / "config/profiles/owner.yaml"))
-    ap.add_argument("--preset", default="Bulking: balanced", choices=list(M.PRESETS))
+    ap.add_argument("--preset", default=None, choices=list(M.PRESETS), help="default: the goal's ranking preset")
     ap.add_argument("--quality", default="diaas", choices=list(M.QUALITY))
     ap.add_argument("--include", default="core,ingredient", help="roles to include, comma-separated")
     args = ap.parse_args()
