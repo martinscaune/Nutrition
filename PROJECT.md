@@ -2,13 +2,15 @@
 
 > Single source of truth for scope, definitions, methods and decisions.
 > Replaces the original handoff `food_value_training_research_handoff.docx` (all content carried over below; §1–§16 of that document map to the sections marked *[H]*).
-> Working task list: [PLAN.md](PLAN.md). Change this file when a decision is made, and log it in §12.
+> Working task list: [PLAN.md](PLAN.md). Change this file when a decision is made, and log it in §17.
 
 ---
 
 ## 1. Goal
 
-Build a **reproducible computational-nutrition framework** that evaluates whole foods and food *combinations* for athletes. The primary focus is **bulking (energy surplus) for an endurance/triathlon athlete** (reference athlete in §7); **cutting** comes later. It uses protein quantity and quality, **carbohydrate**, fat, energy density, food mass, retail price (Latvia), and nutrient constraints.
+Build a **reproducible computational-nutrition framework and general calculator** that evaluates whole foods and food *combinations* for **any user profile**: a person living a normal life, a bodybuilder, someone losing fat, an Ironman athlete, a professional athlete. Every person-specific value (body, training, goal, priorities such as how much price matters) is a parameter (§7). The tool **starts simple and gets smarter in versions** (§2.1). It uses protein quantity and quality, carbohydrate, fat, energy density, food mass, retail price (Latvia), and nutrient constraints.
+
+**First development and test case:** the project owner, who wants muscle gain while training for triathlon (§7.3). Other archetype profiles are used for testing and as case studies.
 
 End products, in order:
 1. A curated, versioned **food dataset** (composition + protein quality + Latvian prices + uncertainty).
@@ -19,7 +21,7 @@ End products, in order:
 6. If the results are strong: **expert review** by a nutrition scientist, then a technical report or publication.
 
 **Research question [H §1]:** Given nutritional composition, protein quality, physical food mass/volume and price, how efficiently does a food satisfy a specified training objective?
-**Applied question:** Which combination of foods minimizes cost and/or food volume while it satisfies energy, protein, macro- and micronutrient constraints for bulking (and cutting)?
+**Applied question:** For a given profile and goal, which combination of foods minimizes cost and/or food mass (or another chosen objective) while it satisfies the energy, protein (amino-acid), carbohydrate and fat targets?
 **Positioning:** computational nutrition / quantitative diet optimization, **not** new exercise physiology.
 
 ## 2. Guiding principles [H §16, §14]
@@ -31,11 +33,20 @@ End products, in order:
 - Biological assumptions must be checked by sports-nutrition experts. The modeling can be done independently.
 - A strong paper needs transparent methods, data provenance, stated assumptions, uncertainty and sensitivity analysis, and reproducible code.
 
-## 2.1 Version scope (v1.0 vs v2.0)
+## 2.1 Roadmap: from a simple tool to a smart one
 
-**v1.0 (now):** energy, protein (incl. amino-acid profile and quality), **carbohydrate**, fat, price, and food mass as consumed (g/1000 kcal as a simple metric), plus the **safeguards** in §9.1 that stop absurd results (pure oil, pure sugar).
+Each version is **usable on its own**. A later version adds a layer on top of the same pipeline (profile → targets → metrics/optimizer → app) without rewriting earlier ones.
 
-**v2.0 (with a nutrition-science collaborator):** fibre (both a minimum and, for bulking, a maximum), sodium, micronutrient minimums and upper limits, taste and acceptability, true volume and satiety, glycemic index and carbohydrate timing, meal structure and per-meal leucine, saturated fat, and contaminants (Hg in fish, As in rice).
+| Version | Name | What it does | User provides |
+|---|---|---|---|
+| **v0.1** | Food explorer | Food table, metrics, graphs, Pareto fronts, rankings with adjustable weights | weights; targets typed in by hand |
+| **v0.2** | Target calculator | Profile + goal preset → kcal, protein, carbohydrate and fat targets, each with its source; every target can be overridden | body, training, goal |
+| **v1.0** | Diet optimizer | LP/MILP food combinations under the targets and safeguards (§9.1); selectable objective (cost, mass, or a mix; a cost weight of 0 is allowed); infeasibility diagnostics | + priorities |
+| **v1.x** | Analysis & paper | Robustness, archetype comparisons, simple baselines, report/publication | |
+| **v2.0** | Nutrition-complete (with a nutrition-science collaborator) | Fibre (minimum, and a maximum for bulking), sodium, saturated fat, micronutrient minimums and upper limits (sex/age DRVs), taste and acceptability, true volume and satiety, glycemic index, contaminants (Hg in fish, As in rice) | sex, age, preferences |
+| **v3.0** | Smart | Periodization: training-day vs rest-day targets and week-to-week load variation (e.g. 6 h vs 9 h weeks); adaptive energy-expenditure estimate from body-weight tracking; recovery and nutrient timing; meal plans with per-meal protein/leucine; exclusions (vegetarian, lactose, allergies); shopping lists with pack sizes; recipes | logs, preferences |
+
+**v1.0 nutrient scope:** energy, protein (incl. amino-acid profile and quality), carbohydrate, fat, price, food mass as consumed (g/1000 kcal), plus the safeguards against absurd results (pure oil, pure sugar).
 
 **Data policy:** if a v2.0 field comes free with the same database download (fibre, sodium, micronutrients), collect it in v1.0 anyway so nothing has to be collected twice. It is stored and shown, but not used as a constraint.
 
@@ -82,38 +93,65 @@ End products, in order:
 - Link the states with **yield factors** (e.g. dry rice → cooked mass) and record their source.
 - "Volume" is first approximated by **mass as consumed** (g/1000 kcal). True volume (ml) needs bulk-density data, which is rarely available, so treat it as an optional refinement.
 
-## 7. Reference athlete, macronutrient framework, bulking vs cutting [H §7]
+## 7. User profiles, goals and target derivation [H §7, generalized]
 
-### 7.1 Reference athlete (default profile; every value is a parameter in the program)
-| Parameter | Value | Note |
+### 7.1 Design: a general calculator, not a one-person tool
+Every person-specific value is an input. The input has five layers:
+1. **Body:** mass, height, optional target mass; sex and age (needed only to *estimate* energy expenditure; in v2.0 also for micronutrient DRVs).
+2. **Activity/training:** modality {none, strength, endurance, hybrid} plus hours/week, **or** a measured/known energy expenditure entered directly.
+3. **Energy goal:** {deficit, maintain, surplus} plus a rate (% body mass/week or kcal/day).
+4. **Priorities:** weights on cost, food mass, protein quality, … A **cost weight of 0** is allowed (e.g. a professional athlete who doesn't care about price).
+5. **Manual overrides:** any derived target can be overwritten (e.g. a professional athlete whose dietitian prescribes the numbers).
+
+**Pipeline:** profile → **target rules** → targets (kcal; protein, carbohydrate and fat ranges; safeguards) → food ranking and diet optimizer → results.
+- Target rules live in **config (`config/target_rules.yaml`), not in code**. Each rule carries its literature source, so a nutrition scientist can review it without reading Python.
+- Each output target shows **where it came from** (rule + source, or "user override").
+- Protein and carbohydrate per kg use **current** body mass by default; target mass is an option.
+
+### 7.2 Goal presets (named combinations of the layers, not separate code paths). PROVISIONAL; verify in Phase 1
+| Preset | Training | Energy | Protein g/kg | Carbohydrate | Fat | Cost weight |
+|---|---|---|---|---|---|---|
+| General adult ("normal life") | none/light | maintain | 0.83 (EFSA PRI) – 1.2 | 45–60 % E (EFSA) | 20–35 % E | default |
+| Muscle gain / bodybuilding off-season | strength | surplus, ~0.25–0.5 % BM/week (Iraki 2019) | 1.6–2.2 (Morton 2018) | by training band | 20–35 % E | default |
+| Fat loss (cut) | any | deficit, ~0.5–1 % BM/week | 1.6–2.4, higher in a deficit (Helms 2014) | by training band | ≥ 20 % E | default |
+| Endurance (triathlon, Ironman) | endurance | maintain | 1.2–2.0 (ACSM 2016) | by training band | 20–35 % E | default |
+| Hybrid: muscle gain + endurance | hybrid | surplus | 1.6–2.2 | by training band | 20–35 % E | default |
+| Professional athlete | any | prescribed | prescribed | prescribed | prescribed | 0 |
+
+**Carbohydrate bands by training load** (Thomas, Erdman & Burke 2016, ACSM/AND/DC; Burke et al. 2011):
+
+| Training load | g/kg/day |
+|---|---|
+| light / skill-based | 3–5 |
+| moderate (~1 h/day) | 5–7 |
+| endurance, 1–3 h/day moderate–high intensity | 6–10 |
+| extreme, > 4–5 h/day (e.g. Ironman build) | 8–12 |
+
+**The constraints can conflict.** Example: at 3400 kcal, protein at 1.6 g/kg (76 kg) plus fat at 20 % E leaves at most about 558 g of carbohydrate (≈ 7.3 g/kg). The program must **detect infeasible combinations and report which constraint conflicts**; it must not fail silently.
+
+### 7.3 Test profiles
+**Profile #1, the project owner (first development case):**
+| Parameter | Value | Derived (provisional) |
 |---|---|---|
-| Body mass | 76 kg | |
-| Height | 186 cm | BMI ≈ 22.0 |
-| Energy expenditure (maintenance) | ≈ 3000 kcal/day | self-reported average, including training |
-| Sport | Triathlon (endurance) | so carbohydrate is a first-class requirement |
-| Training load | **TBD** (hours/week) | sets the carbohydrate band (task 0.7) |
-| Goal | **TBD**: off-season mass gain vs fueling high load | changes the surplus size (task 0.7) |
+| Body mass → target | 76 kg → **85 kg** | |
+| Height | 186 cm | BMI ≈ 22.0 → 24.6 at 85 kg |
+| Energy expenditure | ≈ 3000 kcal/day (self-reported) | may be an underestimate; v3.0 adaptive estimate from weight tracking |
+| Training | triathlon, **6–9 h/week** (≈ 0.9–1.3 h/day) + strength | carbohydrate band "moderate", 5–7 g/kg ≈ 380–530 g/day |
+| Goal | hybrid: muscle gain while preparing for triathlon; appearance comes before race performance | surplus ≈ +300–500 kcal → ≈ 3300–3500 kcal/day |
+| Protein | 1.6–2.2 g/kg | ≈ 122–167 g/day |
+| Priorities | cost matters | cost weight > 0 |
+- Rate check (verify in task 1.3): 0.25–0.5 % BM/week ≈ 0.2–0.4 kg/week, so +9 kg takes roughly **6–11 months** at the recommended rates, and part of the gain will be fat.
 
-### 7.2 Macronutrient bands (PROVISIONAL; verify in Phase 1)
-- **Energy target** = maintenance + surplus. Provisional surplus is +10–20 %, about 3300–3600 kcal/day (task 1.3).
-- **Protein:** 1.6–2.2 g/kg/day for gaining mass, i.e. 122–167 g/day (Morton 2018). ACSM gives 1.2–2.0 g/kg for endurance athletes.
-- **Carbohydrate,** scaled to training load (Thomas, Erdman & Burke 2016, ACSM/AND/DC; Burke et al. 2011):
+**Archetype profiles** (for testing, and as case studies in the paper): general adult, bodybuilder bulk, fat loss, Ironman athlete, price-insensitive professional, plus the owner. They are stored as `config/profiles/*.yaml`.
 
-  | Training load | g/kg/day | for 76 kg |
-  |---|---|---|
-  | light / skill-based | 3–5 | 228–380 g |
-  | moderate (~1 h/day) | 5–7 | 380–532 g |
-  | endurance, 1–3 h/day moderate–high intensity | 6–10 | 456–760 g |
-  | extreme, >4–5 h/day | 8–12 | 608–912 g |
-- **Fat:** 20–35 % of energy (EFSA reference intake; ACSM advises not going below 20 %).
-- **The constraints can conflict.** At 3400 kcal, protein at 1.6 g/kg plus fat at 20 % leaves at most about 558 g of carbohydrate (≈ 7.3 g/kg). A high carbohydrate band therefore needs a higher energy target. The program must **detect infeasible combinations and report which constraint conflicts**; it must not fail silently.
-
-### 7.3 Goals
-**BULKING (primary scope):** meet the energy target with a surplus, protein at or above target (amino-acid complete), carbohydrate in the training-load band and fat in its band, while minimizing cost and food mass. Ranking signals: high kcal/€, protein/€ and CHO/€; high effective protein; low g/1000 kcal.
-- For the endurance athlete, **carbohydrate is a requirement, not a filler**. It restores glycogen and supports training quality. The cheapest kcal are only useful if they come with the right macronutrient mix.
+### 7.4 Goal-specific notes
+**Muscle gain (bulking):** meet the energy target with a surplus, protein at or above target (amino-acid complete), carbohydrate in the training-load band and fat in its band, while minimizing cost and food mass. Ranking signals: high kcal/€, protein/€ and CHO/€; high effective protein; low g/1000 kcal.
+- For endurance and hybrid athletes, **carbohydrate is a requirement, not a filler**. It restores glycogen and supports training quality.
 - Note for v2.0: high fibre and low energy density limit how much a person can eat, which works against bulking.
 
-**CUTTING (later phase):** favor high effective protein per kcal, high protein quality, low energy density, adequate fibre and micronutrients, and possibly cost efficiency. Cheap calories are not inherently desirable during a deficit. Protein/kcal should probably dominate, with energy density and volume as practical constraints (satiety proxies, e.g. the Holt 1995 satiety index).
+**Fat loss (cutting):** favor high effective protein per kcal, high protein quality, low energy density, adequate fibre and micronutrients, and possibly cost efficiency. Cheap calories are not inherently desirable during a deficit. Protein/kcal should probably dominate, with energy density and volume as practical constraints (satiety proxies, e.g. the Holt 1995 satiety index).
+
+**Price-insensitive users:** with the cost weight at 0, the objective becomes food mass, protein quality or closeness to the targets, under the same constraints.
 
 ## 8. Proposed graphs [H §5]
 
@@ -158,7 +196,7 @@ Report which safeguards are **binding** in each optimum (H11). This shows how mu
 
 - H1: Quality-adjusted protein changes rankings materially compared with raw protein grams.
 - H2: Retail price materially changes food-efficiency rankings.
-- H3: Bulking and cutting have different Pareto frontiers.
+- H3: Different goals (general adult, muscle gain, fat loss, endurance) have different Pareto frontiers and different optimal food sets.
 - H4: Legumes and staples dominate simple cost metrics, while high-quality animal and dairy proteins occupy a different region after quality adjustment.
 - H5: Food volume is an important independent constraint for realistic energy targets.
 - H6: Multi-objective optimization is more informative than a single ratio.
@@ -167,6 +205,7 @@ Report which safeguards are **binding** in each optimum (H11). This shows how mu
 - H9 (added): Diet-level amino-acid constraints give different optimal diets than food-level P × DIAAS scoring (complementarity effect).
 - H10 (added): Once fat and sugar are capped, starchy staples (oats, rice, pasta, potatoes, bread, flour) dominate cost-optimal energy supply for an endurance athlete.
 - H11 (added): Without the fat and sugar safeguards, cost-optimal diets degenerate (oil and sugar dominate); with them, the safeguards are binding and their shadow prices measure their cost.
+- H12 (added): For the same targets, price-sensitive and price-insensitive objectives select materially different foods.
 
 ## 12. Dataset design [H §12]
 
@@ -214,6 +253,10 @@ Added leads (**citations to verify and obtain during task 1.1**):
 - Mountjoy et al. (2018). IOC consensus statement on Relative Energy Deficiency in Sport (RED-S). *Br J Sports Med* 52:687–697 (energy availability in endurance athletes).
 - EFSA (2010). Scientific opinions on DRVs for carbohydrates and dietary fibre, and for fats. *EFSA Journal* 8(3):1462 and 1461 (fat 20–35 % E).
 - WHO (2015). *Guideline: Sugars intake for adults and children* (free sugars < 10 % E).
+- EFSA (2012). Scientific opinion on DRVs for protein. *EFSA Journal* 10(2):2557 (adult PRI 0.83 g/kg; general-adult preset).
+- Mifflin et al. (1990). A new predictive equation for resting energy expenditure in healthy individuals. *Am J Clin Nutr* 51:241–247 (v0.2 energy estimate).
+- FAO/WHO/UNU (2004). *Human energy requirements* (physical activity level factors).
+- Hall et al. (2011). Quantification of the effect of energy imbalance on bodyweight. *Lancet* 378:826–837 (v3.0 adaptive model).
 
 Papers that cannot be accessed openly: the user can try to get them through university access. PDFs go in `literature/`.
 
@@ -247,7 +290,7 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 
 ## 16. Background and context
 
-- The project owner is the reference athlete (§7.1): a triathlete with a telecommunications/engineering background, based in Latvia. Domain knowledge is the main gap, so expert review is planned.
+- The project owner is test profile #1 (§7.3): a triathlete with a telecommunications/engineering background, based in Latvia. Domain knowledge is the main gap, so expert review is planned.
 - The owner has university access to paywalled papers.
 - Even if it is never published, the project can become a rigorous technical report or public analysis.
 
@@ -257,21 +300,24 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 
 | Date | Decision | Rationale |
 |---|---|---|
-| 2026-10-06 | Primary scope = **bulking**; cutting is a later extension | Owner's stated priority |
+| 2026-10-06 | ~~Primary scope = bulking; cutting is a later extension~~ (superseded: general calculator, see below) | Owner's stated priority |
 | 2026-10-06 | Handoff docx converted into this file and deleted | Single source of truth |
 | 2026-10-06 | Diet-level protein quality is modeled through summed digestible IAA, not Σ(P×Q) | Complementarity makes P×Q non-additive |
 | 2026-10-06 | Python; Streamlit for the interactive program; git for version control | Owner's preference |
-| 2026-10-06 | Reference athlete = the owner: 76 kg, 186 cm, ≈3000 kcal/day, triathlete | Owner's input |
+| 2026-10-06 | Reference athlete = the owner: 76 kg, 186 cm, ≈3000 kcal/day, triathlete (now test profile #1) | Owner's input |
 | 2026-10-06 | Carbohydrate becomes a first-class requirement (g/kg band by training load) | Endurance athlete; glycogen restoration |
 | 2026-10-06 | Oil/sugar handled by safeguards (§9.1), mainly macronutrient bands | Avoid degenerate optima |
 | 2026-10-06 | Prices: as many retailers as feasible; central price = median of regular prices, IQR as uncertainty | Owner: "not the cheapest, not the most expensive" |
 | 2026-10-06 | Fibre, sodium, taste, true volume, micronutrient constraints deferred to v2.0 (§2.1) | Need a nutrition-science collaborator |
+| 2026-10-06 | **General calculator:** all person-specific values are parameters; goal presets plus overrides; the owner is test profile #1 | Must serve bodybuilders, fat loss, Ironman, general adults, price-insensitive pros |
+| 2026-10-06 | Roadmap v0.1 → v0.2 → v1.0 → v2.0 → v3.0 (§2.1) | Start simple, add intelligence gradually |
+| 2026-10-06 | Target rules in config with sources, not hard-coded | Reviewable by a nutrition scientist |
+| 2026-10-06 | Owner: 6–9 h/week triathlon, goal 76 → 85 kg muscle gain, appearance before performance | Owner's input |
 
 ## 18. Open questions
-
-- **Training load** (typical hours/week of swim/bike/run), which sets the carbohydrate band (task 0.7).
-- **Goal type:** off-season mass gain, or fueling a high training load while slowly gaining? This sets the surplus size (task 0.7).
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).
 - Which DIAAS reference pattern to use (older child/adolescent/adult) and how to handle foods without measured DIAAS?
 - Default per-food caps and the maximum energy share for one food (§9.1): which values, and how to justify them.
-- Sex and age are not needed for v1.0 (the energy target is given directly), but they will be for v2.0 micronutrient DRVs.
+- Final values of the goal presets (§7.2): verify in Phase 1.
+- How to map "hours/week + modality" onto the carbohydrate bands, which are defined in h/day and intensity.
+- Owner's sex and age (optional): needed only if v0.2 is to *estimate* energy expenditure rather than use the self-reported 3000 kcal, and for the v2.0 DRVs.

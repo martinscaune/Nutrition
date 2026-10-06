@@ -1,8 +1,10 @@
 # Working Plan: Quantitative Food Value for Training
 
 Legend: `- [ ]` open · `- [x]` done · `- [~]` in progress · `- [-]` dropped (give a reason)
-Each phase ends with a **gate**: a checkpoint where we review results before moving on.
-Context, definitions and decisions: [PROJECT.md](PROJECT.md). Scope: **v1.0**. Deferred items are in the v2.0 backlog at the bottom.
+Each stage ends with a **gate**: a checkpoint where we review results before moving on.
+Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: PROJECT.md §2.1.
+
+**Structure:** Phases 0–2 build the foundation (setup, literature, data). After that the work is organized by **tool version**, from simple to smart: v0.1 → v0.2 → v1.0 → v1.x → v2.0 → v3.0.
 
 ---
 
@@ -12,24 +14,26 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Scope: **v1.0**. D
 - [x] 0.3 Tech stack = Python + Streamlit; host-Python venv `.venv/` with pinned requirements
 - [x] 0.4 Create the folder structure: `data/raw`, `data/processed`, `literature/`, `src/`, `notebooks/`, `figures/`, `tests/`, `app/`, `config/`
 - [x] 0.5 `git init` + `.gitignore`; first commit
-- [x] 0.6 Open questions answered: reference athlete (76 kg, 186 cm, ≈3000 kcal, triathlete); prices from as many retailers as feasible, normalized to a median
-- [ ] 0.7 Owner to specify: typical training hours/week, and goal type (off-season mass gain vs fueling high load)
-- [ ] **GATE 0:** environment works, structure agreed
+- [x] 0.6 Open questions answered: owner profile (76 kg, 186 cm, ≈3000 kcal, triathlete); prices from as many retailers as feasible, normalized to a median
+- [x] 0.7 Owner's training load (6–9 h/week) and goal (76 → 85 kg muscle gain while training for triathlon) recorded
+- [x] 0.8 Generalized to a **calculator for any profile** (goal presets + overrides) with a staged roadmap
+- [ ] **GATE 0:** owner reviews PROJECT.md §2.1 (roadmap) and §7 (profiles and presets)
 
 ## Phase 1: Literature review and accepted measures
 - [ ] 1.1 Verify and collect all papers in PROJECT.md §13; mark the ones that need university access
-- [ ] 1.2 Protein for concurrent endurance + strength training: daily g/kg range, per-meal dose, leucine threshold
-- [ ] 1.3 Energy surplus for gaining mass: recommended size and rate of gain; caveats for endurance athletes (power-to-weight, RED-S)
-- [ ] 1.4 **Carbohydrate requirements** by training load (g/kg bands), glycogen restoration; confirm the provisional bands in PROJECT.md §7.2
-- [ ] 1.5 **Fat range** (% E minimum and maximum) and **free-sugar cap**: the evidence behind safeguards 1–2 (§9.1)
-- [ ] 1.6 Protein quality: DIAAS vs PDCAAS, reference patterns, truncation rules, processing effects
-- [ ] 1.7 Find sources of measured DIAAS / ileal digestibility per food; list coverage gaps
-- [ ] 1.8 Choose an IAA requirement pattern for diet-level amino-acid constraints (WHO/FAO/UNU 2007 or FAO 2013)
-- [ ] 1.9 Diet-optimization literature: LP/MILP formulations, realism constraints, per-food caps, known pitfalls
-- [ ] 1.10 Earlier work on food cost vs nutrient value (Drewnowski, the 2025 protein cost study, the pulse study)
-- [ ] 1.11 Write `literature/REVIEW.md`: one summary per source with the numbers we will use and their uncertainty
-- [ ] 1.12 Freeze the **accepted measures and constraint bands** (Q, P_eff, macro bands, caps, mass proxy) in PROJECT.md
-- [ ] **GATE 1:** measures fixed before any scoring is done
+- [ ] 1.2 Protein by goal: general adults, strength/hypertrophy, endurance, concurrent (hybrid) training, energy deficit; per-meal dose and leucine
+- [ ] 1.3 Energy targets by goal: surplus size and rate of gain, deficit size and rate of loss; caveats for endurance athletes (RED-S)
+- [ ] 1.4 Energy-expenditure estimation (Mifflin-St Jeor, PAL factors, training add-on), for users who don't know their expenditure
+- [ ] 1.5 **Carbohydrate requirements** by training load (g/kg bands), glycogen restoration; mapping from hours/week + modality to the bands
+- [ ] 1.6 **Fat range** (% E minimum and maximum) and **free-sugar cap**: the evidence behind the safeguards (§9.1)
+- [ ] 1.7 Protein quality: DIAAS vs PDCAAS, reference patterns, truncation rules, processing effects
+- [ ] 1.8 Find sources of measured DIAAS / ileal digestibility per food; list coverage gaps
+- [ ] 1.9 Choose an IAA requirement pattern for diet-level amino-acid constraints (WHO/FAO/UNU 2007 or FAO 2013)
+- [ ] 1.10 Diet-optimization literature: LP/MILP formulations, realism constraints, per-food caps, known pitfalls
+- [ ] 1.11 Earlier work on food cost vs nutrient value (Drewnowski, the 2025 protein cost study, the pulse study)
+- [ ] 1.12 Write `literature/REVIEW.md`: one summary per source with the numbers we will use and their uncertainty
+- [ ] 1.13 Freeze the **goal presets, target rules and accepted measures** (Q, P_eff, bands, caps) in PROJECT.md §7.2
+- [ ] **GATE 1:** measures and presets fixed before any scoring is done
 
 ## Phase 2: Dataset
 ### 2a. Schema and food list
@@ -40,11 +44,11 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Scope: **v1.0**. D
 - [ ] 2.4 Download USDA FDC (Foundation + SR Legacy) into `data/raw/` unmodified, with the download date recorded
 - [ ] 2.5 Map each food to its database entry (FDC id); record both raw and cooked entries where available
 - [ ] 2.6 Cross-check against Fineli/Frida for Nordic/Baltic-specific foods (kefir, biezpiens/quark, rye bread, …)
-- [ ] 2.7 Extract energy, protein, **available carbohydrate, sugars (incl. added/free where available)**, fat and the full IAA profile (incl. leucine); also store the free v2.0 fields (fibre, sodium, micronutrients)
+- [ ] 2.7 Extract energy, protein, available carbohydrate, sugars (incl. added/free where available), fat and the full IAA profile (incl. leucine); also store the free v2.0 fields (fibre, sodium, micronutrients)
 - [ ] 2.8 Yield factors for as-purchased → as-consumed (with source)
 - [ ] 2.9 Assign protein-quality values (DIAAS etc.) per food, with source and uncertainty
 ### 2c. Prices (Latvia)
-- [ ] 2.10 List all reachable retailers (Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi, …); choose the collection method per retailer (online shop, flyers, in-store, receipts); check the terms of use
+- [ ] 2.10 List all reachable retailers (Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi, …); choose the collection method per retailer; check the terms of use
 - [ ] 2.11 Fix the price normalization method (PROJECT.md §12.1): aggregation order, product spec and tier rules
 - [ ] 2.12 Build the price-collection template/tool (product spec, brand, pack size, price, €/kg, retailer, date, regular or discount)
 - [ ] 2.13 Collect the first price snapshot across as many retailers as feasible
@@ -55,86 +59,83 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Scope: **v1.0**. D
 - [ ] 2.17 Assign an uncertainty grade (A/B/C) to every value
 - [ ] **GATE 2:** dataset v1.0 frozen and tagged in git
 
-## Phase 3: Food-level metrics
-- [ ] 3.1 Load the reference-athlete profile from config (body mass, kcal, training load, bands), not hard-coded
-- [ ] 3.2 Implement the core metrics (E, P, CHO, C, E€, P€, CHO€, P/E, F%E, M1000) in `src/metrics.py`, with unit tests
-- [ ] 3.3 Implement the protein-quality adjustment (P_eff), allowing several Q definitions side by side
-- [ ] 3.4 Implement Pareto-front computation (2D and n-D, with dominance ranks)
-- [ ] 3.5 Implement candidate composite indices (S_bulk etc.) as **hypotheses**, with configurable weights
-- [ ] 3.6 Rank foods under each metric; compare rankings (Spearman, top-k overlap)
-- [ ] **GATE 3:** metrics reviewed; check H1, H2 and H4
-
-## Phase 4: Graphs and exploratory statistics
-- [ ] 4.1 Nutrition-density plot with Pareto front
-- [ ] 4.2 Economic-value plot (protein/€ vs kcal/€) with Pareto front
-- [ ] 4.3 **Carbohydrate economics plot** (CHO/€ vs protein/€)
-- [ ] 4.4 Training-efficiency plot
-- [ ] 4.5 Mass plot (g/1000 kcal vs effective protein)
-- [ ] 4.6 Macronutrient-composition view (each food's position in protein/carbohydrate/fat energy shares, ternary plot)
-- [ ] 4.7 3D exploratory plot (interactive)
-- [ ] 4.8 Descriptive statistics by category; correlation matrix
-- [ ] 4.9 PCA and clustering, with interpretation
-- [ ] 4.10 Publication-style figure styling (readable labels, colorblind-safe palette)
-- [ ] **GATE 4:** graphs answer the questions; check H5
-
-## Phase 5: Interactive program
-- [ ] 5.1 Streamlit app: load the dataset, filter by category, price scenario (median / budget P25 / premium P75)
-- [ ] 5.2 Athlete profile panel: body mass, kcal, surplus, training-load selector (sets the CHO band), protein g/kg
-- [ ] 5.3 Sliders for weights (w1…w4) and Q definition
-- [ ] 5.4 Live ranking table + interactive graphs + Pareto highlighting
-- [ ] 5.5 Toggle between as-purchased and as-consumed views
-- [ ] 5.6 Export the current configuration and results (CSV/JSON) for reproducibility
-- [ ] **GATE 5:** the owner is happy with how results respond to the parameters
-
-## Phase 6: Diet-combination optimization
-- [ ] 6.1 Formulate the bulking LP: minimize cost subject to kcal, protein + per-IAA, **carbohydrate band**, **fat band** and maximum mass
-- [ ] 6.2 Run the LP **without** safeguards first to record the degenerate optimum (the expected oil/sugar diet), the baseline for H11
-- [ ] 6.3 Add the safeguards (§9.1): sugar cap, per-food maximum, maximum energy share per food, minimum number of distinct foods
-- [ ] 6.4 Infeasibility diagnostics: when constraints conflict, report which ones (e.g. a high CHO band with a low kcal target)
-- [ ] 6.5 Shadow prices and reduced costs: which constraints drive the cost, and how far each food is from entering the diet
-- [ ] 6.6 MILP variant with discrete portions/packages
-- [ ] 6.7 Multi-objective variant (cost vs mass vs protein quality), giving a Pareto set of diets via ε-constraint and/or NSGA-II
-- [ ] 6.8 Compare amino-acid-constrained diets with Σ(P×Q)-constrained diets (H9)
-- [ ] 6.9 Generate top-N diverse near-optimal combinations, not only the single optimum
-- [ ] 6.10 Integrate the optimizer into the interactive app
-- [ ] **GATE 6:** optimized diets are plausible and explainable; check H6, H10 and H11
-
-## Phase 7: Robustness and sensitivity
-- [ ] 7.1 Price sensitivity (median vs P25/P75 scenarios, discount prices, per-retailer prices)
-- [ ] 7.2 Protein-quality uncertainty (alternative DIAAS values / Q definitions)
-- [ ] 7.3 Weight sensitivity for the composite indices (tornado plots, rank stability)
-- [ ] 7.4 **Safeguard sensitivity:** how optimal diets change with the fat band, sugar cap, per-food caps and training-load band
-- [ ] 7.5 Monte Carlo perturbation of composition and prices: how stable are the rankings and optimal diets?
-- [ ] 7.6 Composition-database comparison (USDA vs Nordic) and Latvian vs generic prices (H7)
-- [ ] **GATE 7:** state which conclusions are robust and which are fragile
-
-## Phase 8: Comparison with real foods and diets
-- [ ] 8.1 Simple baselines: diets built greedily from protein/€, kcal/€ and protein/kcal rankings (H8)
-- [ ] 8.2 Typical endurance-athlete and bulking diets (literature, common templates): cost, mass, macronutrient fit
-- [ ] 8.3 Typical Latvian / European diet as a reference point
-- [ ] 8.4 Test the optimizer's best diet against a real shopping basket (actual prices, practicality), with the owner as the test subject
-- [ ] 8.5 Cutting extension: rerun the pipeline with cutting objectives (H3)
-- [ ] **GATE 8:** decide whether the results justify contacting an expert
-
-## Phase 9: Expert review and publication
-- [ ] 9.1 Write a technical report (methods, data provenance, assumptions, limitations)
-- [ ] 9.2 Clean the reproducible repository (README, how to rerun everything, environment)
-- [ ] 9.3 Contact a nutrition scientist; send the report and incorporate the feedback
-- [ ] 9.4 Choose a venue (e.g. Nutrients, Frontiers in Nutrition, Public Health Nutrition, JISSN, PLOS ONE) or a preprint
-- [ ] 9.5 Optional: publish the data and code openly (Zenodo/OSF DOI)
-- [ ] 9.6 Write and submit the manuscript
-
 ---
 
-## v2.0 backlog (with a nutrition-science collaborator; see PROJECT.md §2.1)
-- [ ] Fibre: minimum and, for bulking, maximum constraints
-- [ ] Sodium and other limits (saturated fat)
-- [ ] Micronutrient minimums and upper limits (EFSA DRVs; needs sex and age)
-- [ ] Taste and acceptability (penalty for deviating from typical diets, or preference ratings)
-- [ ] True food volume (ml, bulk density) and satiety (Holt satiety index)
-- [ ] Glycemic index, carbohydrate timing, in-session sports-carbohydrate allowance
-- [ ] Meal structure: per-meal protein/leucine distribution
-- [ ] Contaminants (mercury in fish, arsenic in rice)
+## v0.1: Food explorer (simple tool: foods, metrics, graphs)
+- [ ] A.1 Implement the core metrics (E, P, CHO, C, E€, P€, CHO€, P/E, F%E, M1000) in `src/metrics.py`, with unit tests
+- [ ] A.2 Implement the protein-quality adjustment (P_eff), allowing several Q definitions side by side
+- [ ] A.3 Implement Pareto-front computation (2D and n-D, with dominance ranks)
+- [ ] A.4 Implement candidate composite indices (S_bulk etc.) as **hypotheses**, with configurable weights
+- [ ] A.5 Graphs: nutrition density, economic value (protein/€ vs kcal/€), carbohydrate economics (CHO/€ vs protein/€), training efficiency, mass (g/1000 kcal), macronutrient ternary plot, 3D exploratory
+- [ ] A.6 Descriptive statistics by category, correlation matrix, PCA and clustering
+- [ ] A.7 Rank foods under each metric; compare rankings (Spearman, top-k overlap) to check H1, H2, H4 and H5
+- [ ] A.8 Streamlit app: dataset table, category filters, price scenario (median / P25 / P75), weight sliders, live rankings + graphs + Pareto highlighting, as-purchased vs as-consumed toggle
+- [ ] A.9 Export the configuration and results (CSV/JSON)
+- [ ] A.10 Publication-style figure styling (readable labels, colorblind-safe palette)
+- [ ] **GATE v0.1:** the owner finds the explorer useful and understands the trade-offs it shows
+
+## v0.2: Target calculator (profile → targets)
+- [ ] B.1 Profile schema (body, training, energy goal, priorities, overrides) as YAML; validation
+- [ ] B.2 `config/target_rules.yaml`: goal presets and rules from Phase 1, each with its literature source
+- [ ] B.3 `src/targets.py`: derive kcal, protein, carbohydrate and fat ranges plus safeguards; every target records where it came from (rule or override)
+- [ ] B.4 Energy expenditure: use the user's value if given, otherwise estimate it (BMR × PAL + training)
+- [ ] B.5 Feasibility check: detect conflicting targets and explain them (e.g. a high carbohydrate band with a low kcal target)
+- [ ] B.6 Archetype profiles in `config/profiles/`: owner, general adult, bodybuilder bulk, fat loss, Ironman athlete, price-insensitive pro
+- [ ] B.7 Unit tests: each archetype gives the expected targets
+- [ ] B.8 App: profile panel + preset selector + override fields; the food explorer uses the derived targets
+- [ ] **GATE v0.2:** targets for all archetypes look sensible to the owner (and later to an expert)
+
+## v1.0: Diet optimizer (food combinations)
+- [ ] C.1 LP: chosen objective (cost, mass, or a weighted mix; a cost weight of 0 is allowed) subject to kcal, protein + per-IAA, carbohydrate band, fat band and maximum mass
+- [ ] C.2 Run **without** safeguards first and record the degenerate optimum (the expected oil/sugar diet), the baseline for H11
+- [ ] C.3 Add the safeguards (§9.1): sugar cap, per-food maximum, maximum energy share per food, minimum number of distinct foods
+- [ ] C.4 Infeasibility diagnostics: when no diet satisfies everything, say which constraints conflict
+- [ ] C.5 Shadow prices and reduced costs: which constraints drive the objective, and how far each food is from entering the diet
+- [ ] C.6 MILP variant with discrete portions/packages
+- [ ] C.7 Multi-objective variant (cost vs mass vs protein quality), giving a Pareto set of diets via ε-constraint and/or NSGA-II
+- [ ] C.8 Compare amino-acid-constrained diets with Σ(P×Q)-constrained diets (H9)
+- [ ] C.9 Generate top-N diverse near-optimal combinations, not only the single optimum
+- [ ] C.10 Integrate into the app: profile → targets → optimal diet(s) with explanations
+- [ ] **GATE v1.0:** optimized diets are plausible and explainable for every archetype; check H6, H10, H11 and H12
+
+## v1.x: Analysis, comparison and publication
+### Robustness
+- [ ] D.1 Price sensitivity (median vs P25/P75 scenarios, discount prices, per-retailer prices)
+- [ ] D.2 Protein-quality uncertainty (alternative DIAAS values / Q definitions)
+- [ ] D.3 Weight sensitivity for the composite indices (tornado plots, rank stability)
+- [ ] D.4 Safeguard and preset sensitivity: how optimal diets change with the fat band, sugar cap, per-food caps, protein and carbohydrate bands
+- [ ] D.5 Monte Carlo perturbation of composition and prices: how stable are the rankings and optimal diets?
+- [ ] D.6 Composition-database comparison (USDA vs Nordic) and Latvian vs generic prices (H7)
+### Comparison
+- [ ] D.7 Simple baselines: diets built greedily from protein/€, kcal/€ and protein/kcal rankings (H8)
+- [ ] D.8 Cross-archetype comparison: how optimal food sets differ by goal (H3)
+- [ ] D.9 Typical real diets (bodybuilding templates, endurance-athlete diets, typical Latvian/European diet): cost, mass, macronutrient fit
+- [ ] D.10 Real-life test: the owner's optimized diet as an actual shopping basket (prices, practicality)
+### Publication
+- [ ] D.11 Technical report (methods, data provenance, assumptions, limitations)
+- [ ] D.12 Clean reproducible repository (README, how to rerun everything, environment)
+- [ ] D.13 Contact a nutrition scientist; send the report and incorporate the feedback
+- [ ] D.14 Choose a venue (e.g. Nutrients, Frontiers in Nutrition, Public Health Nutrition, JISSN, PLOS ONE) or a preprint; optionally publish data and code with a DOI (Zenodo/OSF)
+- [ ] D.15 Write and submit the manuscript
+- [ ] **GATE v1.x:** decide on publication
+
+## v2.0: Nutrition-complete (with a nutrition-science collaborator)
+- [ ] E.1 Fibre: minimum and, for bulking, maximum constraints
+- [ ] E.2 Sodium and saturated-fat limits
+- [ ] E.3 Micronutrient minimums and upper limits (EFSA DRVs by sex and age)
+- [ ] E.4 Taste and acceptability (penalty for deviating from typical diets, or preference ratings)
+- [ ] E.5 True food volume (ml, bulk density) and satiety (Holt satiety index)
+- [ ] E.6 Glycemic index; in-session sports-carbohydrate allowance
+- [ ] E.7 Contaminants (mercury in fish, arsenic in rice)
+- [ ] E.8 Expert review of all target rules and presets
+
+## v3.0: Smart
+- [ ] F.1 Periodization: training-day vs rest-day targets; week-to-week load (e.g. 6 h vs 9 h weeks)
+- [ ] F.2 Adaptive energy expenditure: update the estimate from body-weight and intake tracking (e.g. Hall 2011 model)
+- [ ] F.3 Recovery and nutrient timing (pre/during/post training)
+- [ ] F.4 Meal plans: per-meal protein/leucine distribution, meal count
+- [ ] F.5 Exclusions and preferences (vegetarian, vegan, lactose-free, allergies, disliked foods)
+- [ ] F.6 Shopping list with real pack sizes and a weekly budget; recipes
 
 ---
 
@@ -142,4 +143,5 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Scope: **v1.0**. D
 | Date | Task(s) | Notes |
 |---|---|---|
 | 2026-10-06 | 0.1, 0.2 | Handoff converted; plan written |
-| 2026-10-06 | 0.3–0.6 | Python/Streamlit, venv on host Python 3.14, folders, git; reference athlete and price policy recorded; carbohydrates, safeguards and v2.0 scope added |
+| 2026-10-06 | 0.3–0.6 | Python/Streamlit, venv on host Python 3.14, folders, git; owner profile and price policy recorded; carbohydrates, safeguards and v2.0 scope added |
+| 2026-10-06 | 0.7, 0.8 | Generalized to a calculator for any profile (presets + overrides); plan reorganized around the roadmap v0.1 → v3.0 |
