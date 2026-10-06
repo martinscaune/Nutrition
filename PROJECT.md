@@ -108,12 +108,12 @@ Every person-specific value is an input. The input has five layers:
 - Each output target shows **where it came from** (rule + source, or "user override").
 - Protein and carbohydrate per kg use **current** body mass by default; target mass is an option.
 
-### 7.2 Goal presets (named combinations of the layers, not separate code paths). PROVISIONAL; verify in Phase 1
+### 7.2 Goal presets (named combinations of the layers, not separate code paths). PROVISIONAL; values to be frozen at GATE 1 from [literature/REVIEW.md](literature/REVIEW.md) §10
 | Preset | Training | Energy | Protein g/kg | Carbohydrate | Fat | Cost weight |
 |---|---|---|---|---|---|---|
-| General adult ("normal life") | none/light | maintain | 0.83 (EFSA PRI) – 1.2 | 45–60 % E (EFSA) | 20–35 % E | default |
+| General adult ("normal life") | none/light | maintain | ≥ 0.83 (EFSA PRI) | 45–60 % E (EFSA) | 20–35 % E | default |
 | Muscle gain / bodybuilding off-season | strength | surplus, ~0.25–0.5 % BM/week (Iraki 2019) | 1.6–2.2 (Morton 2018) | by training band | 20–35 % E | default |
-| Fat loss (cut) | any | deficit, ~0.5–1 % BM/week | 1.6–2.4, higher in a deficit (Helms 2014) | by training band | ≥ 20 % E | default |
+| Fat loss (cut) | any | deficit, ~0.5–1 % BM/week (default 0.7 %, Garthe 2011) | 2.3–3.1 g/kg **lean** mass (Helms 2014) / 2.3–3.1 g/kg body mass (Jäger 2017); see REVIEW D3 | by training band | ≥ 15–20 % E | default |
 | Endurance (triathlon, Ironman) | endurance | maintain | 1.2–2.0 (ACSM 2016) | by training band | 20–35 % E | default |
 | Hybrid: muscle gain + endurance | hybrid | surplus | 1.6–2.2 | by training band | 20–35 % E | default |
 | Professional athlete | any | prescribed | prescribed | prescribed | prescribed | 0 |
