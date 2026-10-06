@@ -147,4 +147,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 0.1, 0.2 | Handoff converted; plan written |
 | 2026-10-06 | 0.3–0.6 | Python/Streamlit, venv on host Python 3.14, folders, git; owner profile and price policy recorded; carbohydrates, safeguards and v2.0 scope added |
 | 2026-10-06 | 0.7, 0.8 | Generalized to a calculator for any profile (presets + overrides); plan reorganized around the roadmap v0.1 → v3.0 |
-| 2026-10-06 | 1.1–1.12 (first pass) | 47 sources verified (PubMed/Crossref/agency PDFs); REVIEW.md with numbers, evidence tags and decisions D1–D12; 2 handoff errors corrected; university list: thomas2016 (high), chungchunlam2020, burke2011 (manual download), garthe2011, mifflin1990, stigler1945 |
+| 2026-10-06 | 1.1–1.12 (first pass) | 63 sources verified (PubMed/Crossref/agency PDFs); REVIEW.md with numbers, evidence tags and decisions D1–D12; 2 handoff errors corrected; university list: thomas2016 (high), chungchunlam2020, burke2011 (manual download), garthe2011, mifflin1990, stigler1945 |
