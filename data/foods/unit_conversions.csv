@@ -1,0 +1,18 @@
+food_id,unit,grams_per_unit,basis,source,grade
+eggs,10 pcs,580,gross (with shell),"EU size M = 53–63 g (Reg. (EC) 589/2008); midpoint 58 g × 10; shell removed via edible_portion",B
+milk,1 l,1030,net,density of milk ≈ 1.03 g/ml,A
+soy_drink,1 l,1030,net,density ≈ 1.03 g/ml (assumed as milk),B
+sunflower_oil,1 l,920,net,density of vegetable oil ≈ 0.92 g/ml,A
+rapeseed_oil,1 l,915,net,density ≈ 0.915 g/ml,A
+olive_oil,1 l,915,net,density ≈ 0.915 g/ml,A
+pasta_wheat,500 g pack,500,net,CSP unit,A
+cornflakes,250 g pack,250,net,CSP unit,A
+peas_canned,500 g pack,300,drained (estimate),"CSP unit 500 g net; drained ≈ 60 % (typical label ratio, estimate)",C
+canned_stewed_meat,250 g pack,250,net (all eaten),CSP unit,B
+sprats_in_oil,240 g pack,170,drained fish (estimate),"CSP 240 g gross incl. oil; fish ≈ 70 % (estimate); oil not counted",C
+cheese_processed,200 g pack,200,net,CSP unit,A
+cheese_cream,200 g pack,200,net,CSP unit,A
+curd_snack,50 g pack,50,net,CSP unit,A
+chocolate_bar,60 g pack,60,net,CSP unit,A
+crisps,75 g pack,75,net,CSP unit,A
+ice_cream,1000 ml pack,550,net,"density ≈ 0.55 g/ml (≈ 100 % overrun, estimate)",C

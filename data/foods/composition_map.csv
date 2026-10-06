@@ -1,0 +1,107 @@
+food_id,comp_db,comp_id,yield_usda_raw,yield_usda_cooked,aa_override_db,aa_override_id,grade,notes
+rice_white,frida,1252,168877,169757,,,A,
+rice_brown,frida,156,169703,169704,,,A,
+oats_flaked,frida,480,173904,173905,,,A,porridge with water: yield depends on recipe (USDA pair ≈ 5×)
+buckwheat,frida,1240,170685,170686,,,A,
+barley_groats,frida,176,170284,170285,,,A,
+semolina,frida,1311,173916,173917,,,A,yield pair = farina dry → cooked with water
+millet,usda_sr,169702,169702,168871,,,A,Frida millet lacks 2 AA
+bulgur,frida,283,170688,170287,,,A,
+couscous,usda_sr,169699,169699,169700,,,A,not in Frida
+pasta_wheat,frida,305,169736,169737,,,A,
+cornflakes,usda_sr,174648,,,,,B,US brand (Ralston)
+muesli,frida,461,,,,,A,no added sugar
+bread_rye,frida,379,,,,,A,dark wholemeal rye ≈ rupjmaize
+bread_rye_fine,frida,413,,,,,B,light rye as proxy for saldskābmaize (which has added sugar)
+bread_rye_wheat,frida,413,,,,,B,light rye as proxy for rye-wheat bread
+bread_wheat,frida,1521,,,,,A,
+bread_grain,frida,672,,,,,B,wholemeal bread as proxy for grain bread
+bread_toast,frida,701,,,,,A,
+crispbread,frida,375,,,,,A,
+potatoes,frida,938,170028,170440,,,A,
+sweet_potato,frida,714,168482,168483,,,A,
+fries_frozen,frida,1847,170523,170118,,,A,
+beans_dried,frida,1801,175202,175203,,,A,white beans
+lentils_red,frida,1799,172420,172421,,,A,
+lentils_green,frida,1800,172420,172421,,,A,
+peas_split,frida,592,172428,172429,,,A,
+peas_grey,frida,1861,172428,172429,,,B,Danish beige-brown 'Lolland' peas as proxy for Latvian grey peas
+chickpeas_dried,frida,1803,173756,173757,,,A,
+beans_canned,frida,1810,,,,,A,drained
+chickpeas_canned,frida,1812,,,,,A,drained
+peas_canned,frida,1314,,,,,A,
+tofu,frida,272,,,,,A,
+soy_chunks,usda_sr,174275,,,,,B,defatted soy flour as proxy for textured soy protein; rehydration yield set in yields.csv
+soy_drink,frida,1178,,,,,A,
+chicken_fillet,usda_sr,171077,171077,171477,,,A,Frida has no skinless breast
+chicken_legs,frida,882,172378,173617,,,A,
+chicken_whole,frida,959,171447,171450,,,A,
+chicken_thigh_fillet,usda_sr,173627,173627,172388,,,A,
+turkey_fillet,usda_sr,171098,171098,171496,,,A,
+chicken_liver,frida,712,171060,171061,,,A,
+pork_boneless,frida,988,168255,168257,,,B,generic pork ~10 % fat
+pork_bone,frida,985,167843,167844,,,A,
+pork_minced,frida,1076,167902,167903,,,A,15–20 % fat
+meat_minced_mixed,frida,1076,167902,167903,,,B,pork mince as proxy for mixed mince
+beef_minced,frida,942,171796,174034,,,A,10–15 % fat; yield pair 85/15
+beef_bone,frida,1019,169491,168667,,,A,
+beef_steak,frida,805,171757,169471,,,A,
+sausage_boiled,frida,1128,,,,,B,saveloy as proxy for doktordesa
+sausages_small,frida,1143,,,,,A,
+sausage_smoked,usda_sr,174584,,,,,B,
+canned_stewed_meat,frida,666,,,,,C,canned ham as proxy; Latvian sautēta gaļa is fattier → replace with label values
+smoked_chicken,frida,1091,,,,,B,grilled chicken as proxy
+pelmeni,frida,1406,,,frida,1076,C,no AA for dumplings; AA profile borrowed from pork mince
+salmon_fillet,usda_sr,175167,175167,175168,,,A,farmed
+whitefish_fillet_frozen,frida,72,171955,171956,,,A,cod
+fish_fillet_frozen,frida,72,171955,171956,,,B,cod as proxy for generic fillet
+mackerel_smoked,frida,1220,,,,,A,
+herring_rolls,frida,47,,,,,A,
+sprats_in_oil,frida,1120,,,,,A,check whether values are drained
+tuna_canned,frida,825,,,,,A,
+carp,usda_sr,171952,171952,174185,,,A,
+eggs,usda_sr,171287,171287,173424,,,A,
+milk,usda_sr,171267,,,,,A,2 % fat
+kefir,frida,1153,,,,,B,1.5 % fat (LV typical 2–2.5 %)
+curd,frida,307,,,,,B,quark 5 % fidm; LV biezpiens fat varies (0.5–9 %)
+cheese_hard,frida,161,,,,,B,Havarti 45 % fidm as proxy for Holandes-type
+yogurt_plain,frida,12,,,,,A,
+sour_cream,usda_sr,171257,,,,,B,
+cream_35,frida,1174,,,,,A,38 %
+cheese_processed,frida,98,,,,,A,
+cheese_cream,frida,1773,,,,,A,
+skyr,frida,1693,,,,,A,
+cottage_cheese,frida,517,,,,,A,
+curd_snack,frida,520,,,,,C,quark with fruit as proxy; glazed sieriņš is much fattier → replace with label values
+peanuts,frida,864,,,,,A,oil-roasted salted
+peanut_butter,frida,1162,,,,,A,
+sunflower_seeds,frida,438,,,,,A,
+pumpkin_seeds,usda_sr,170556,,,,,A,
+walnuts,frida,647,,,,,A,
+almonds,frida,35,,,,,A,
+hazelnuts,frida,302,,,,,A,
+flaxseed,frida,149,,,,,A,
+bananas,frida,3,,,,,A,
+apples,frida,2,,,,,A,
+raisins,frida,880,,,,,A,
+cabbage,frida,26,,,,,A,
+carrots,frida,24,,,,,A,
+veg_frozen,usda_sr,170471,170471,170472,,,A,
+sunflower_oil,frida,1382,,,,,A,
+rapeseed_oil,frida,1483,,,,,A,
+olive_oil,frida,1467,,,,,A,
+butter,frida,1052,,,,,A,
+margarine,frida,1020,,,,,A,
+wheat_flour,frida,1301,,,,,A,
+sugar,frida,77,,,,,A,
+honey,frida,1176,,,,,A,
+jam,frida,718,,,,,A,strawberry
+mayonnaise,frida,1147,,,,,A,
+chocolate_bar,frida,675,,,,,A,
+crisps,frida,839,,,,,A,
+ice_cream,usda_sr,167575,,,,,A,vanilla
+cake,frida,281,,,,,B,plain cake average
+whey_protein,label,,,,muleya2021,226,C,PENDING label values; AA from muleya2021 WPC composition
+pea_protein,label,,,,muleya2021,229,C,PENDING label values; AA from muleya2021 pea protein concentrate
+mass_gainer,label,,,,,,C,PENDING label values
+maltodextrin,label,,,,,,C,PENDING label values (no protein)

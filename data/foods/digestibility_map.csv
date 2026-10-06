@@ -1,0 +1,107 @@
+food_id,source,source_row,source_food_name,model,is_proxy,grade,notes
+rice_white,muleya2021,26,"Rice, white, polished (9,0% protein)",Pig,0,A,
+rice_brown,muleya2021,23,"Rice, brown (Oryza sativa L.)/unpolished rice without the hulls but with the outer grain layers",Pig,0,A,
+oats_flaked,muleya2021,259,Quick Oats,Pig,0,A,
+buckwheat,muleya2021,259,Quick Oats,Pig,1,C,no buckwheat data; oats
+barley_groats,muleya2021,2,"Barley, dehulled (11,8% protein)",Pig,0,A,
+semolina,muleya2021,37,"Wheat flour (fibre < 3,5%)",Human(Predicted),1,B,wheat flour
+millet,muleya2021,16,"Millet, proso (Panicum miliaceum L.)/common millet/broomtail millet/hog millet/white millet/broomcorn millet",Pig,0,A,proso millet
+bulgur,muleya2021,35,"Wheat, durum",Pig,1,B,durum wheat
+couscous,muleya2021,35,"Wheat, durum",Pig,1,B,durum wheat
+pasta_wheat,muleya2021,35,"Wheat, durum",Pig,1,B,durum wheat grain
+cornflakes,muleya2021,258,Cornflakes (Kelloggs company),Pig,0,A,
+muesli,muleya2021,259,Quick Oats,Pig,1,C,oats
+bread_rye,muleya2021,28,Rye (Secale cereale L.),Pig,1,B,rye grain
+bread_rye_fine,muleya2021,28,Rye (Secale cereale L.),Pig,1,B,rye grain
+bread_rye_wheat,muleya2021,28,Rye (Secale cereale L.),Pig,1,B,rye grain
+bread_wheat,muleya2021,4,Bread,Human(Predicted),0,B,
+bread_grain,muleya2021,4,Bread,Human(Predicted),0,B,
+bread_toast,muleya2021,4,Bread,Human(Predicted),0,B,
+crispbread,muleya2021,28,Rye (Secale cereale L.),Pig,1,B,rye grain
+potatoes,muleya2021,49,"Potato tuber, dried",Pig,0,A,dried tuber
+sweet_potato,muleya2021,60,"Sweet potato, dried",Pig,0,A,dried
+fries_frozen,muleya2021,51,Potato fries (fat 4-12%),Human(Predicted),0,B,
+beans_dried,muleya2021,71,Common bean (Phaseolus vulgaris L.),Pig,0,A,
+lentils_red,muleya2021,81,Lentils (Lens esculenta Moench),Pig,0,A,
+lentils_green,muleya2021,81,Lentils (Lens esculenta Moench),Pig,0,A,
+peas_split,muleya2021,99,"Pea, yellow, pressure cooked (Pisum sativum; var. Salamanca) (24,4 g/100 g protein)",Human,0,A,
+peas_grey,muleya2021,99,"Pea, yellow, pressure cooked (Pisum sativum; var. Salamanca) (24,4 g/100 g protein)",Human,1,B,yellow pea
+chickpeas_dried,muleya2021,68,"Chickpea, pressure cooked (Kabuli), (Cicer arietinum) garbanzo bean, var KAK-2, India (22,9 g/100 g protein)",Human,0,A,
+beans_canned,muleya2021,80,"Kidney bean, cooked (Ziyun No.2, Chinese variety), 26,2% protein",Pig,1,B,kidney bean cooked
+chickpeas_canned,muleya2021,68,"Chickpea, pressure cooked (Kabuli), (Cicer arietinum) garbanzo bean, var KAK-2, India (22,9 g/100 g protein)",Human,0,A,
+peas_canned,muleya2021,98,"Peas, cooked (Dingwan No.4, Chinese variety), 24,3% protein",Pig,0,A,cooked peas
+tofu,muleya2021,114,"Tofu (soya based protein), 23.7 g/100 g protein)",Pig,0,A,
+soy_chunks,muleya2021,231,soya flour,Pig,1,C,soya flour
+soy_drink,muleya2021,111,"Soya milk (21,83 g/100 g protein)",Pig,0,A,
+chicken_fillet,muleya2021,171,"Chicken, cooked",Human,0,A,
+chicken_legs,muleya2021,171,"Chicken, cooked",Human,0,A,
+chicken_whole,muleya2021,171,"Chicken, cooked",Human,0,A,
+chicken_thigh_fillet,muleya2021,171,"Chicken, cooked",Human,0,A,
+turkey_fillet,muleya2021,171,"Chicken, cooked",Human,1,B,chicken
+chicken_liver,muleya2021,171,"Chicken, cooked",Human,1,C,chicken meat
+pork_boneless,muleya2021,279,"pork loin, medium-well (cooked to 68oC)",Pig,0,A,
+pork_bone,muleya2021,279,"pork loin, medium-well (cooked to 68oC)",Pig,0,A,
+pork_minced,muleya2021,247,Pork,Pig,0,A,
+meat_minced_mixed,muleya2021,247,Pork,Pig,0,A,
+beef_minced,muleya2021,268,"Beef, ground, cooked",Pig,0,A,
+beef_bone,muleya2021,164,"Beef, pan fried (83,8 g/100 g dm protein), topside steak",Pig,0,A,
+beef_steak,muleya2021,164,"Beef, pan fried (83,8 g/100 g dm protein), topside steak",Pig,0,A,
+sausage_boiled,muleya2021,265,"Bologna (fully cooked and cured), includes pork and beef",Pig,0,A,bologna
+sausages_small,muleya2021,265,"Bologna (fully cooked and cured), includes pork and beef",Pig,1,B,bologna
+sausage_smoked,muleya2021,264,"Salami (fully coked, cured and fermented), includes pok and pork hearts",Pig,1,B,salami
+canned_stewed_meat,muleya2021,268,"Beef, ground, cooked",Pig,1,C,cooked ground beef
+smoked_chicken,muleya2021,171,"Chicken, cooked",Human,0,A,
+pelmeni,muleya2021,252,Pork + burger bun,Pig,1,C,pork + burger bun mix
+salmon_fillet,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+whitefish_fillet_frozen,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+fish_fillet_frozen,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+mackerel_smoked,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+herring_rolls,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+sprats_in_oil,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+tuna_canned,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+carp,muleya2021,157,Fish (Chinese),Human(Predicted),1,C,generic fish
+eggs,muleya2021,172,"Egg, whole, boiled",Human,0,A,
+milk,muleya2021,193,Skim milk powder,Human(Predicted),1,B,skim milk powder
+kefir,muleya2021,193,Skim milk powder,Human(Predicted),1,B,skim milk powder
+curd,muleya2021,244,Casein,Human,1,B,casein
+cheese_hard,muleya2021,244,Casein,Human,1,B,casein
+yogurt_plain,muleya2021,193,Skim milk powder,Human(Predicted),1,B,skim milk powder
+sour_cream,muleya2021,193,Skim milk powder,Human(Predicted),1,B,skim milk powder
+cream_35,muleya2021,193,Skim milk powder,Human(Predicted),1,B,skim milk powder
+cheese_processed,muleya2021,244,Casein,Human,1,B,casein
+cheese_cream,muleya2021,244,Casein,Human,1,B,casein
+skyr,muleya2021,244,Casein,Human,1,B,casein
+cottage_cheese,muleya2021,244,Casein,Human,1,B,casein
+curd_snack,muleya2021,244,Casein,Human,1,B,casein
+peanuts,muleya2021,79,"Groundnut flour/peanut flour, dehulled (46,6 g/00 g protein)",Pig,1,C,peanut flour
+peanut_butter,muleya2021,79,"Groundnut flour/peanut flour, dehulled (46,6 g/00 g protein)",Pig,1,C,peanut flour
+sunflower_seeds,muleya2021,113,"Sunflower seeds, whole",Pig,0,A,
+pumpkin_seeds,muleya2021,113,"Sunflower seeds, whole",Pig,1,C,sunflower seeds
+walnuts,muleya2021,101,"Pistachio nuts, roasted (Pistacia vera L.), 25,1 g/100 g protein",Pig,1,C,pistachio
+almonds,muleya2021,101,"Pistachio nuts, roasted (Pistacia vera L.), 25,1 g/100 g protein",Pig,1,C,pistachio
+hazelnuts,muleya2021,101,"Pistachio nuts, roasted (Pistacia vera L.), 25,1 g/100 g protein",Pig,1,C,pistachio
+flaxseed,muleya2021,85,"Linseed, whole (Linum usitatissimum)/full-fat linseed/full fat flaxseed",Pig,0,A,
+bananas,muleya2021,204,"Bananas, immature, dried",Pig,1,C,dried immature banana (low-protein food)
+apples,muleya2021,203,"Apple pomace, dried",Pig,1,C,apple pomace (low-protein food)
+raisins,muleya2021,208,"Grape pulp, dried",Pig,1,C,grape pulp (low-protein food)
+cabbage,muleya2021,210,"Tomato pulp, dehydrated",Pig,1,C,tomato pulp (low-protein food)
+carrots,muleya2021,210,"Tomato pulp, dehydrated",Pig,1,C,tomato pulp (low-protein food)
+veg_frozen,muleya2021,98,"Peas, cooked (Dingwan No.4, Chinese variety), 24,3% protein",Pig,1,C,cooked peas
+sunflower_oil,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+rapeseed_oil,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+olive_oil,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+butter,muleya2021,193,Skim milk powder,Human(Predicted),1,B,milk
+margarine,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+wheat_flour,muleya2021,37,"Wheat flour (fibre < 3,5%)",Human(Predicted),0,B,
+sugar,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+honey,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+jam,,,,,,,no protein (≈0 g/100 g): digestibility not applicable
+mayonnaise,muleya2021,172,"Egg, whole, boiled",Human,1,C,egg
+chocolate_bar,muleya2021,193,Skim milk powder,Human(Predicted),1,B,milk
+crisps,muleya2021,50,Potato crisps,Human(Predicted),0,B,
+ice_cream,muleya2021,193,Skim milk powder,Human(Predicted),1,B,milk
+cake,muleya2021,4,Bread,Human(Predicted),1,C,bread
+whey_protein,muleya2021,226,whey protein concentrate (WPC),Pig,0,A,
+pea_protein,muleya2021,229,pea protein concentrate (PPC),Pig,0,A,
+mass_gainer,muleya2021,226,whey protein concentrate (WPC),Pig,1,C,WPC
+maltodextrin,,,,,,,no protein (≈0 g/100 g): digestibility not applicable

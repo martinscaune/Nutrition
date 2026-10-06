@@ -29,15 +29,19 @@
 | `csp_item` | str | exact CSP item name (codes were renumbered in Feb 2026, so names are the key) |
 | `notes` | str | free text |
 
-### `foods/composition_map.csv`: which database entry describes each food
-`food_id, state {purchased, eaten}, db {usda_sr, usda_foundation, frida, fineli, label}, db_id, db_description, aa_profile_db_id, aa_profile_note, grade, notes`
-- `aa_profile_db_id`: set only when the entry's own amino acids are missing or implausible (task 2.16); the profile in mg AA per g protein is then borrowed from this entry.
+### `foods/composition_map.csv`: which database entry describes each food (one row per food)
+`food_id, comp_db {frida, usda_sr, label}, comp_id, yield_usda_raw, yield_usda_cooked, aa_override_db, aa_override_id, grade, notes`
+- **Purchased-state composition** comes from `comp_db/comp_id`. Priority: **Frida 5.5** (Danish, analytical, Nordic foods, full amino acids, *available* carbohydrate and *free sugars*) > USDA SR Legacy > product label.
+- **Eaten state** = purchased composition ÷ cooking yield. The yield is `protein_raw / protein_cooked` of the USDA raw↔cooked pair (`yield_usda_raw`, `yield_usda_cooked`), since protein is conserved; it can be overridden in `yields.csv`. Known limitation: fat dripping from meat is ignored, which slightly overestimates kcal of eaten fatty meat.
+- `aa_override_*`: amino-acid profile (mg per g protein) borrowed from another entry when the own profile is missing or implausible (task 2.16).
+- Resolved and checked by `src/data/resolve.py` → `data/processed/composition_resolved.csv` (descriptions, yields, Atwater check, flags).
 
 ### `foods/digestibility_map.csv`: per-amino-acid true ileal digestibility (D11)
 `food_id, source {muleya2021}, source_row, source_food_name, model {human, pig, human_predicted}, is_proxy, grade, notes`
 
-### `foods/yields.csv`: purchased → eaten, and edible portion
-`food_id, edible_portion, yield_eaten_per_purchased, method, source, grade`
+### `foods/yields.csv`: edible portion and yield overrides (only foods that need them)
+`food_id, edible_portion, edible_source, yield_override, yield_note`
+- Edible portions come from **USDA SR28 refuse %** (`data/raw/usda/sr28`) where available, otherwise marked ESTIMATE (grade C).
 - `edible_portion` = 1 − refuse (bone, shell, peel), as a fraction of the purchased mass.
 - `yield_eaten_per_purchased` = eaten mass / purchased edible mass (e.g. dry rice → boiled ≈ 2.5–3; raw meat → roasted ≈ 0.7). It is derived from the matching USDA raw/cooked pair or the USDA Table of Cooking Yields (2012).
 

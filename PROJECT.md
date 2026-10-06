@@ -321,6 +321,8 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-06 | Novelty claim limited to the *combination* (sourced presets + diet-level digestible IAA + mass + local prices + robustness); prior athlete LP work must be cited | Originality search (REVIEW §7) |
 | 2026-10-06 | **Prices: CSP PCC010m official averages are primary** (12-month mean, min–max band); own observations (median of retailer medians, P25–P75) only for the 35 foods CSP lacks; 5–10 CSP foods cross-checked | Official, citable, already normalized across ~2,000 outlets; my placeholder guesses were 20–50 % too low for staples |
 | 2026-10-06 | No reuse of price-comparison-site data (Cenu Depo, Lēta Pārtika) without written permission | Their terms neither grant reuse nor exclude user-submitted prices |
+| 2026-10-06 | **Superseded for the personal-use phase:** Cenu Depo per-shop prices ARE used for the 35 non-CSP foods (polite collection, raw pages archived). Before any publication: replace with licensed data (CSP retailer data / written permission) | Owner: personal use now, real databases when a paper is due |
+| 2026-10-06 | Composition: **Frida 5.5 primary** (Nordic, analytical, full AA, available carbs, free sugars), USDA SR Legacy fallback; eaten state via USDA raw↔cooked protein-ratio yields; edible portions from USDA SR28 refuse | Closer to Baltic foods than USDA; protein conserved in cooking |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).

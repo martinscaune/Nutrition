@@ -1,0 +1,54 @@
+food_id,purpose,date_collected,shop,price_date,product_name,brand,tier,pack_size,pack_unit,pack_count,price_eur,old_price_eur,price_type,url
+millet,own,2026-10-06,Rimi,,PROSA ZELTA SAULE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,2.29,discount_all,https://cenudepo.lv/product/prosa-zelta-saule-1kg
+millet,own,2026-10-06,Citro,06.10.2026,PROSA ZELTA SAULE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,,regular,https://cenudepo.lv/product/prosa-zelta-saule-1kg
+millet,own,2026-10-06,Velto,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.12,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
+millet,own,2026-10-06,Promo,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
+millet,own,2026-10-06,Maxima,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
+millet,own,2026-10-06,Maxima,06.10.2026,"PROSAS PUTRAIMI VALDO, 1KG",VALDO,standard,1000.0,g,,2.49,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-1kg
+millet,own,2026-10-06,Promo,06.10.2026,"PROSAS PUTRAIMI VALDO, 1KG",VALDO,standard,1000.0,g,,3.39,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-1kg
+rice_brown,own,2026-10-06,Velto,06.10.2026,RISI VALDO PARBOILED FASĒTI 1KG,VALDO,standard,1000.0,g,,1.95,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-faseti-1kg
+rice_brown,own,2026-10-06,Top!,08.09.2026,RISI VALDO PARBOILED FASĒTI 1KG,VALDO,standard,1000.0,g,,1.99,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-faseti-1kg
+rice_brown,own,2026-10-06,Rimi,06.10.2026,RISI VALDO PARBOILED FASĒTI 1KG,VALDO,standard,1000.0,g,,2.85,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-faseti-1kg
+rice_brown,own,2026-10-06,Top!,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
+rice_brown,own,2026-10-06,Maxima,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.59,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
+rice_brown,own,2026-10-06,Promo,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.65,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
+rice_brown,own,2026-10-06,Rimi,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.65,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
+rice_brown,own,2026-10-06,Citro,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.65,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
+rice_brown,own,2026-10-06,Top!,06.10.2026,RĪSI BOSTO BRŪNIE 4X125G,BOSTO,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/risi-bosto-brunie-4x125g
+rice_brown,own,2026-10-06,Maxima,28.09.2026,RĪSI BOSTO BRŪNIE 4X125G,BOSTO,standard,500.0,g,,1.79,,regular,https://cenudepo.lv/product/risi-bosto-brunie-4x125g
+rice_brown,own,2026-10-06,Top!,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
+rice_brown,own,2026-10-06,Maxima,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.59,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
+rice_brown,own,2026-10-06,Citro,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
+rice_brown,own,2026-10-06,Rimi,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.85,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
+rice_brown,own,2026-10-06,Elvi,01.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.99,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
+bulgur,own,2026-10-06,Gemoss,06.10.2026,BULGURS JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.27,,regular,https://cenudepo.lv/product/bulgurs-just-nature-500g
+bulgur,own,2026-10-06,Maxima,06.10.2026,BULGURS JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.79,,regular,https://cenudepo.lv/product/bulgurs-just-nature-500g
+bulgur,own,2026-10-06,Velto,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,1.61,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
+bulgur,own,2026-10-06,Rimi,,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,2.39,3.19,discount_all,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
+bulgur,own,2026-10-06,Maxima,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,2.39,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
+bulgur,own,2026-10-06,Citro,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,2.45,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
+bulgur,own,2026-10-06,Promo,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,3.19,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
+bulgur,own,2026-10-06,Maxima,06.10.2026,BULGURS VALDO VIDĒJA MALUMA 500G,Valdo,standard,500.0,g,,1.79,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g
+bulgur,own,2026-10-06,Promo,06.10.2026,BULGURS VALDO VIDĒJA MALUMA 500G,Valdo,standard,500.0,g,,2.35,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g
+couscous,own,2026-10-06,Gemoss,06.10.2026,KUSKUSS JUST NATURE 400G,JUST NATURE,standard,400.0,g,,1.39,,regular,https://cenudepo.lv/product/kuskuss-just-nature-400g
+couscous,own,2026-10-06,Maxima,06.10.2026,KUSKUSS JUST NATURE 400G,JUST NATURE,standard,400.0,g,,1.99,,regular,https://cenudepo.lv/product/kuskuss-just-nature-400g
+couscous,own,2026-10-06,Velto,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,1.75,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
+couscous,own,2026-10-06,Citro,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,2.29,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
+couscous,own,2026-10-06,Maxima,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,2.29,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
+couscous,own,2026-10-06,Promo,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,2.29,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
+muesli,own,2026-10-06,Citro,06.10.2026,MUSLIS HERKULESS ACTIVE&FIT KRAUKŠĶ.AR ZEMENĒM MANDELĒM 350G,HERKULESS,standard,350.0,g,,1.79,2.49,discount_all,https://cenudepo.lv/product/muslis-herkuless-active-fit-krauksk-ar-zemenem-mandelem-350g
+muesli,own,2026-10-06,Maxima,06.10.2026,MUSLIS HERKULESS ACTIVE&FIT KRAUKŠĶ.AR ZEMENĒM MANDELĒM 350G,HERKULESS,standard,350.0,g,,2.19,,regular,https://cenudepo.lv/product/muslis-herkuless-active-fit-krauksk-ar-zemenem-mandelem-350g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLIS HERKULESS ACTIVE&FIT KRAUKŠĶ.AR ZEMENĒM MANDELĒM 350G,HERKULESS,standard,350.0,g,,2.55,,regular,https://cenudepo.lv/product/muslis-herkuless-active-fit-krauksk-ar-zemenem-mandelem-350g
+muesli,own,2026-10-06,Citro,06.10.2026,"MUSLI HERKULESS ACTIVE&FIT CRUNCHY CHOCO NUTS, 350G",HERKULESS,standard,350.0,g,,1.79,2.49,discount_all,https://cenudepo.lv/product/musli-herkuless-active-fit-crunchy-choco-nuts-350g
+muesli,own,2026-10-06,Promo,06.10.2026,"MUSLI HERKULESS ACTIVE&FIT CRUNCHY CHOCO NUTS, 350G",HERKULESS,standard,350.0,g,,2.83,,regular,https://cenudepo.lv/product/musli-herkuless-active-fit-crunchy-choco-nuts-350g
+muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS ENERĢISKAIS 400G,GRACI,standard,400.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-energiskais-400g
+muesli,own,2026-10-06,Maxima,06.10.2026,MUSLI GRACI FUNKCIONĀLAIS ENERĢISKAIS 400G,GRACI,standard,400.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-energiskais-400g
+muesli,own,2026-10-06,Top!,,MUSLI GRACI FUNKCIONĀLAIS ENERĢISKAIS 400G,GRACI,standard,400.0,g,,3.79,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-energiskais-400g
+muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS TIEVAIS 400G,GRACI,standard,400.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-tievais-400g
+muesli,own,2026-10-06,Promo,06.10.2026,MUSLI GRACI FUNKCIONĀLAIS TIEVAIS 400G,GRACI,standard,400.0,g,,3.89,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-tievais-400g
+muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS VIEGLAIS 300G,GRACI,standard,300.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-vieglais-300g
+muesli,own,2026-10-06,Maxima,01.10.2026,MUSLI GRACI FUNKCIONĀLAIS VIEGLAIS 300G,GRACI,standard,300.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-vieglais-300g
+muesli,own,2026-10-06,Top!,,MUSLI GRACI FUNKCIONĀLAIS VIEGLAIS 300G,GRACI,standard,300.0,g,,3.79,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-vieglais-300g
+muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS SKAISTUMAM 300G,GRACI,standard,300.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-skaistumam-300g
+muesli,own,2026-10-06,Maxima,06.10.2026,MUSLI GRACI FUNKCIONĀLAIS SKAISTUMAM 300G,GRACI,standard,300.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-skaistumam-300g
+muesli,own,2026-10-06,Top!,,MUSLI GRACI FUNKCIONĀLAIS SKAISTUMAM 300G,GRACI,standard,300.0,g,,3.79,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-skaistumam-300g

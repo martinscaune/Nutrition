@@ -43,12 +43,12 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [~] 2.2 Draft the food list (100–200 items) by category, with emphasis on foods actually sold in Latvia; include an "ingredients" category (oils, sugar, butter) → `data/foods/foods.csv` (106 foods), awaiting owner review
 - [x] 2.3 Decide the protein-powder and sports-carbohydrate side analysis (kept separate from whole foods): 4 items with `role = supplement` (whey, pea protein, gainer, maltodextrin)
 ### 2b. Composition
-- [~] 2.4 Download USDA FDC (Foundation + SR Legacy) into `data/raw/` unmodified, with the download date recorded (SR Legacy + muleya2021 done 2026-10-06, see `data/raw/MANIFEST.md`; Foundation pending)
-- [ ] 2.5 Map each food to its database entry (FDC id); record both raw and cooked entries where available
-- [ ] 2.6 Cross-check against Fineli/Frida for Nordic/Baltic-specific foods (kefir, biezpiens/quark, rye bread, …)
-- [ ] 2.7 Extract energy, protein, available carbohydrate, sugars (incl. added/free where available), fat and the full IAA profile (incl. leucine); also store the free v2.0 fields (fibre, sodium, micronutrients)
-- [ ] 2.8 Yield factors for as-purchased → as-consumed (with source)
-- [ ] 2.9 Assign protein-quality values (DIAAS etc.) per food, with source and uncertainty
+- [x] 2.4 Download USDA FDC (Foundation + SR Legacy) into `data/raw/` unmodified, with the download date recorded (SR Legacy + muleya2021 done 2026-10-06, see `data/raw/MANIFEST.md`; Foundation pending)
+- [x] 2.5 Map each food to its database entry: `data/foods/composition_map.csv` (Frida 5.5 primary, USDA fallback), resolved by `src/data/resolve.py`; 0 ID errors, all Atwater checks within 12 %
+- [x] 2.6 Nordic/Baltic foods: Frida 5.5 downloaded (CC BY 4.0) and used as primary; Fineli blocks automated download (not needed now)
+- [x] 2.7 Extract energy, protein, available carbohydrate, sugars (incl. added/free where available), fat and the full IAA profile (incl. leucine); also store the free v2.0 fields (fibre, sodium, micronutrients)
+- [x] 2.8 Yield factors for as-purchased → as-consumed: USDA raw↔cooked protein ratio; edible portions from USDA SR28 refuse (`yields.csv`)
+- [x] 2.9 Assign protein-quality values: `data/foods/digestibility_map.csv` (muleya2021 rows; 35 A / 34 B / 29 C; 8 foods without protein)
 ### 2c. Prices (Latvia)
 - [x] 2.10 List all reachable retailers (Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi, …); choose the collection method per retailer; check the terms of use → CSP PCC010m official averages found (71 foods); comparison sites not reusable without permission; own collection for 35 foods
 - [x] 2.11 Fix the price normalization method (PROJECT.md §12.1): aggregation order, product spec and tier rules
@@ -151,3 +151,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | side exploration | Preview graphs (`notebooks/preview_graphs.py` → `figures/preview/`): 40 foods, prototype pipeline USDA × muleya2021 → DIAAS → useful protein; placeholder prices; found USDA amino-acid errors (→ task 2.16). Owner profile: male, 22 y |
 | 2026-10-06 | 1.3, 1.5, 1.8, 1.13–1.15, GATE 1 | University PDFs read (Thomas 2016 confirms all CHO bands, fat 20–35 %, EA 45/30); OpenAlex originality search found prior athlete LP work → novelty narrowed to the combination; D1–D12 approved, presets frozen |
 | 2026-10-06 | 2.1, 2.3, 2.10–2.12 (2.2 draft) | SCHEMA.md; 106-food list (71 CSP-priced, 35 own); CSP PCC010m 24 months downloaded; price normalization fixed; collection template + guide |
+| 2026-10-06 | 2.4–2.9 (2.13 running) | Owner: Cenu Depo OK for personal use → polite collector `src/prices/cenudepo.py`; Frida 5.5 + SR28 downloaded; composition, yields, edible portions, digestibility maps for all 106 foods; unit conversions; price summary script |

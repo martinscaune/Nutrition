@@ -1,0 +1,16 @@
+food_id,edible_portion,edible_source,yield_override,yield_note
+chicken_legs,0.73,USDA SR28 refuse 27 % (bone),,
+chicken_whole,0.68,USDA SR28 refuse 32 % (bone),,
+smoked_chicken,0.68,USDA SR28 refuse 32 % (bone) of raw whole chicken,,
+pork_bone,0.75,USDA SR28 refuse 25 % (bone and skin),,
+beef_bone,0.79,USDA SR28 refuse 21 % (bone and connective tissue),,
+eggs,0.88,USDA SR28 refuse 12 % (shell),,
+bananas,0.64,USDA SR28 refuse 36 % (skin),,
+apples,0.90,USDA SR28 refuse 10 % (core and stem),,
+carrots,0.89,USDA SR28 refuse 11 % (crown/tops/scrapings),,
+cabbage,0.80,USDA SR28 refuse 20 % (outer leaves and core),,
+potatoes,0.75,USDA SR28 refuse 25 % (parings and trimmings),,
+sweet_potato,0.72,USDA SR28 refuse 28 % (parings and trimmings),,
+carp,0.45,ESTIMATE whole fish → edible fillet (head/bones/skin/viscera); grade C,,
+mackerel_smoked,0.65,ESTIMATE whole hot-smoked mackerel (head/bones/skin); grade C,,
+soy_chunks,1.0,,3.0,ESTIMATE rehydration ~1:2 dry:water → 3× mass; grade C
