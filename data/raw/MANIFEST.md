@@ -10,3 +10,10 @@ Raw files are stored **unmodified**. Large files are git-ignored (see `.gitignor
 ## Known issues found so far
 - **SR Legacy amino-acid profiles:** some are implausible (ground beef 80/20 and plain whole-milk yogurt Trp ≈ 5 mg/g protein; firm tofu Cys 3.3 mg/g), and some entries have none (pollock, kefir, white bread). See PLAN task 2.16.
 - **muleya2021:** 290 rows, most of them animal-feed ingredients; per-AA digestibility comes from pig, human or human-predicted models (column "Model"); some DIAAS are blank where data were incomplete. There are no whole-fish food entries (only fish meal), and chicken and egg have digestibility values but no DIAAS.
+
+## Added 2026-10-06
+| Dataset | Local path | Source URL | Downloaded | SHA-256 | License | In git? |
+|---|---|---|---|---|---|---|
+| CSP (Central Statistical Bureau of Latvia) table PCC010m, average retail prices of selected commodities, all food items (codes 01.*), 2024M09–2026M08 | `data/raw/csp/PCC010m_food_last24m.csv` | PxWeb API https://data.stat.gov.lv/api/v1/en/OSP_PUB/START/VEK/PC/PCC/PCC010m (table last updated 2026-09-08 13:00) | 2026-10-06 | `eb10d4166d622b579884bf7d6646e29e53ca21867db6eef7369c5645ce878e16` | CSP open data (cite "Central Statistical Bureau of Latvia") | yes (small) |
+
+CSP notes: prices are collected in about 2,000 outlets in Riga and 9 other towns and weighted by population. Each item's average is the arithmetic mean of collected prices. Sale prices offered to all consumers are included (CSP CPI metadata, stat.gov.lv/en/metadata/2421). Product codes were renumbered in February 2026, so match items **by name**.

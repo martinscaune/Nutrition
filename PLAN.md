@@ -39,9 +39,9 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 
 ## Phase 2: Dataset
 ### 2a. Schema and food list
-- [ ] 2.1 Write the data schema (`data/SCHEMA.md`): fields, units, allowed values, uncertainty grades
-- [ ] 2.2 Draft the food list (100–200 items) by category, with emphasis on foods actually sold in Latvia; include an "ingredients" category (oils, sugar, butter)
-- [ ] 2.3 Decide the protein-powder and sports-carbohydrate side analysis (kept separate from whole foods)
+- [x] 2.1 Write the data schema (`data/SCHEMA.md`): fields, units, allowed values, uncertainty grades
+- [~] 2.2 Draft the food list (100–200 items) by category, with emphasis on foods actually sold in Latvia; include an "ingredients" category (oils, sugar, butter) → `data/foods/foods.csv` (106 foods), awaiting owner review
+- [x] 2.3 Decide the protein-powder and sports-carbohydrate side analysis (kept separate from whole foods): 4 items with `role = supplement` (whey, pea protein, gainer, maltodextrin)
 ### 2b. Composition
 - [~] 2.4 Download USDA FDC (Foundation + SR Legacy) into `data/raw/` unmodified, with the download date recorded (SR Legacy + muleya2021 done 2026-10-06, see `data/raw/MANIFEST.md`; Foundation pending)
 - [ ] 2.5 Map each food to its database entry (FDC id); record both raw and cooked entries where available
@@ -50,10 +50,10 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] 2.8 Yield factors for as-purchased → as-consumed (with source)
 - [ ] 2.9 Assign protein-quality values (DIAAS etc.) per food, with source and uncertainty
 ### 2c. Prices (Latvia)
-- [ ] 2.10 List all reachable retailers (Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi, …); choose the collection method per retailer; check the terms of use
-- [ ] 2.11 Fix the price normalization method (PROJECT.md §12.1): aggregation order, product spec and tier rules
-- [ ] 2.12 Build the price-collection template/tool (product spec, brand, pack size, price, €/kg, retailer, date, regular or discount)
-- [ ] 2.13 Collect the first price snapshot across as many retailers as feasible
+- [x] 2.10 List all reachable retailers (Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi, …); choose the collection method per retailer; check the terms of use → CSP PCC010m official averages found (71 foods); comparison sites not reusable without permission; own collection for 35 foods
+- [x] 2.11 Fix the price normalization method (PROJECT.md §12.1): aggregation order, product spec and tier rules
+- [x] 2.12 Build the price-collection template/tool (product spec, brand, pack size, price, €/kg, retailer, date, regular or discount)
+- [ ] 2.13 Collect the first price snapshot (guide: `data/prices/COLLECTION_GUIDE.md`; collection method to be chosen by owner) across as many retailers as feasible
 - [ ] 2.14 Compute the central price (median) and IQR per food
 - [ ] 2.15 Optional: repeat collection over several weeks to measure price variability
 ### 2d. Quality control
@@ -150,3 +150,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 1.1–1.12 (first pass) | 63 sources verified (PubMed/Crossref/agency PDFs); REVIEW.md with numbers, evidence tags and decisions D1–D12; 2 handoff errors corrected; university list: thomas2016 (high), chungchunlam2020, burke2011 (manual download), garthe2011, mifflin1990, stigler1945 |
 | 2026-10-06 | side exploration | Preview graphs (`notebooks/preview_graphs.py` → `figures/preview/`): 40 foods, prototype pipeline USDA × muleya2021 → DIAAS → useful protein; placeholder prices; found USDA amino-acid errors (→ task 2.16). Owner profile: male, 22 y |
 | 2026-10-06 | 1.3, 1.5, 1.8, 1.13–1.15, GATE 1 | University PDFs read (Thomas 2016 confirms all CHO bands, fat 20–35 %, EA 45/30); OpenAlex originality search found prior athlete LP work → novelty narrowed to the combination; D1–D12 approved, presets frozen |
+| 2026-10-06 | 2.1, 2.3, 2.10–2.12 (2.2 draft) | SCHEMA.md; 106-food list (71 CSP-priced, 35 own); CSP PCC010m 24 months downloaded; price normalization fixed; collection template + guide |

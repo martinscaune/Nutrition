@@ -1,0 +1,107 @@
+food_id,name_en,name_lv,category,role,product_spec,purchase_state,eaten_state,price_source,csp_item,notes
+rice_white,White rice,Baltie rīsi,cereals,core,"white rice, long grain, plain",dry,boiled,csp,"Rice, 1 kg",
+rice_brown,Brown rice,Brūnie rīsi,cereals,core,"brown rice, plain",dry,boiled,own,,
+oats_flaked,Rolled oats,Auzu pārslas,cereals,core,"rolled oats, plain, non-organic",dry,porridge with water,csp,"Flaked oats, 1 kg",
+buckwheat,Buckwheat groats,Griķi,cereals,core,"buckwheat groats, roasted",dry,boiled,csp,"Buckwheat, 1 kg",
+barley_groats,Barley groats / pearl barley,Grūbas / miežu putraimi,cereals,core,"pearl barley or barley groats",dry,boiled,csp,"Barley groats, 1 kg","CSP item may mix grūbas and putraimi; check spec"
+semolina,Semolina,Mannā putraimi,cereals,core,"wheat semolina",dry,porridge with water,csp,"Semolina, 1 kg",
+millet,Millet,Prosa,cereals,core,"hulled millet",dry,boiled,own,,
+bulgur,Bulgur,Bulgurs,cereals,core,"bulgur wheat",dry,boiled,own,,
+couscous,Couscous,Kuskuss,cereals,core,"plain couscous",dry,prepared,own,,
+pasta_wheat,Pasta,Makaroni,cereals,core,"durum wheat pasta, plain",dry,boiled,csp,"Pasta, 500 g",CSP unit 500 g
+cornflakes,Cornflakes,Kukurūzas pārslas,cereals,core,"plain cornflakes",ready,as is,csp,"Cornflakes, 250 g",CSP unit 250 g
+muesli,Muesli,Musli,cereals,core,"muesli, no added sugar",ready,as is,own,,
+bread_rye,Rye bread (rupjmaize),Rupjmaize,bread,core,"dark rye bread",ready,as is,csp,"Rye bread, 1 kg",
+bread_rye_fine,Fine rye bread (saldskābmaize),Saldskābmaize,bread,core,"fine rye sweet-sour bread",ready,as is,csp,"Fine rye bread, 1 kg",
+bread_rye_wheat,Rye-wheat bread,Rudzu-kviešu maize,bread,core,"rye-wheat bread",ready,as is,csp,"Rye-wheat bread, 1kg",
+bread_wheat,White wheat bread,Baltmaize,bread,core,"white wheat bread",ready,as is,csp,"Wheat bread, 1 kg",
+bread_grain,Wholegrain bread,Graudu maize,bread,core,"grain bread",ready,as is,csp,"Grain bread, 1 kg",
+bread_toast,Toast bread,Tostermaize,bread,core,"white toast bread",ready,as is,csp,"Toaster bread, 1 kg",
+crispbread,Crispbread,Galetes / sausmaizītes,bread,core,"rye crispbread",ready,as is,own,,
+potatoes,Potatoes,Kartupeļi,potatoes,core,"potatoes, loose",raw,boiled peeled,csp,"Potatoes, 1 kg","edible portion after peeling"
+sweet_potato,Sweet potato,Batātes,potatoes,core,"sweet potato",raw,baked,own,,
+fries_frozen,Frozen fries,Saldēti frī kartupeļi,potatoes,snack,"frozen french fries",frozen,oven-baked,csp,"Frozen fries, 1 kg",
+beans_dried,Dried beans,Sausās pupiņas,legumes,core,"dried beans (kidney/white)",dry,boiled,csp,"Dried beans, 1 kg",
+lentils_red,Red lentils,Sarkanās lēcas,legumes,core,"red split lentils",dry,boiled,own,,
+lentils_green,Green/brown lentils,Zaļās lēcas,legumes,core,"green or brown lentils",dry,boiled,own,,
+peas_split,Split peas,Šķeltie zirņi,legumes,core,"yellow or green split peas",dry,boiled,own,,
+peas_grey,Grey peas,Pelēkie zirņi,legumes,core,"Latvian grey peas, dry",dry,boiled,own,"Latvian staple; composition may need Fineli/label"
+chickpeas_dried,Chickpeas (dry),Aunazirņi,legumes,core,"dried chickpeas",dry,boiled,own,,
+beans_canned,Canned beans,Konservētas pupiņas,legumes,core,"canned beans, drained",canned,as is,own,,
+chickpeas_canned,Canned chickpeas,Konservēti aunazirņi,legumes,core,"canned chickpeas, drained",canned,as is,own,,
+peas_canned,Canned green peas,Konservēti zaļie zirnīši,legumes,core,"canned green peas, drained",canned,as is,csp,"Canned green peas, 500 g",CSP unit 500 g gross
+tofu,Tofu (firm),Tofu,soy,core,"firm tofu, plain",ready,as is,own,,
+soy_chunks,Textured soy protein,Sojas gaļa (granulas),soy,core,"dry textured soy protein",dry,rehydrated,own,,
+soy_drink,Soy drink,Sojas dzēriens,soy,core,"soy drink, unsweetened",ready,as is,own,,
+chicken_fillet,Chicken breast fillet,Vistas fileja,meat,core,"chicken breast fillet, skinless",raw,roasted,csp,"Chicken fillet, 1 kg",
+chicken_legs,Chicken legs (bone-in),Vistas stilbiņi/kājas,meat,core,"chicken legs, bone-in, with skin",raw,roasted,csp,"Chicken legs, 1 kg",edible portion needed
+chicken_whole,Whole chicken,Vesela vista,meat,core,"whole broiler chicken",raw,roasted,csp,"Chicken, 1 kg",edible portion needed
+chicken_thigh_fillet,Chicken thigh fillet,Vistas šķiņķa fileja,meat,core,"boneless chicken thigh",raw,roasted,own,,
+turkey_fillet,Turkey breast fillet,Tītara fileja,meat,core,"turkey breast fillet",raw,roasted,own,,
+chicken_liver,Chicken liver,Vistas aknas,meat,core,"chicken liver",raw,fried/simmered,own,"vitamin A upper limit relevant in v2.0"
+pork_boneless,Pork (boneless),Cūkgaļa bez kauliem,meat,core,"pork, boneless (shoulder/neck)",raw,roasted,csp,"Pork without bone, 1 kg",
+pork_bone,Pork (bone-in),Cūkgaļa ar kauliem,meat,core,"pork with bone",raw,roasted,csp,"Pork with bone, 1 kg",edible portion needed
+pork_minced,Minced pork,Cūkgaļas malta gaļa,meat,core,"minced pork",raw,pan-fried,csp,"Minced pork, 1 kg",
+meat_minced_mixed,Minced mixed meat,Jaukta maltā gaļa,meat,core,"minced pork-beef mix",raw,pan-fried,csp,"Minced meat, 1 kg",
+beef_minced,Ground beef,Liellopa maltā gaļa,meat,core,"ground beef",raw,pan-fried,csp,"Ground beef, 1 kg",
+beef_bone,Beef (bone-in),Liellopu gaļa ar kauliem,meat,core,"beef with bone",raw,stewed,csp,"Beef with bone, 1 kg",edible portion needed
+beef_steak,Beef steak (lean),Liellopa steiks,meat,core,"lean beef steak (round/sirloin)",raw,pan-fried,own,,
+sausage_boiled,Boiled sausage,Vārītā desa,processed_meat,core,"boiled sausage (doktordesa type)",ready,as is,csp,"Sausage boiled, 1 kg",
+sausages_small,Frankfurters,Cīsiņi,processed_meat,core,"frankfurters/wieners",ready,heated,csp,"Sausages, small, 1 kg",
+sausage_smoked,Smoked sausage,Kūpināta desa,processed_meat,core,"hot-smoked sausage",ready,as is,csp,"Sausage, smoked, 1 kg",
+canned_stewed_meat,Canned stewed meat,Sautēta gaļa (konservi),processed_meat,core,"canned stewed pork/beef",canned,as is,csp,"Canned stewed meat, 250 g",CSP unit 250 g
+smoked_chicken,Smoked chicken,Kūpināta vista,processed_meat,core,"smoked chicken (bone-in)",ready,as is,csp,"Smoked chicken, 1 kg",edible portion needed
+pelmeni,Meat dumplings (pelmeņi),Pelmeņi,processed_meat,snack,"frozen meat dumplings",frozen,boiled,csp,"Meat dumplings, 1 kg",
+salmon_fillet,Salmon fillet,Laša fileja,fish,core,"salmon fillet, skin-on",raw,baked,csp,"Salmon fillet, 1 kg",
+whitefish_fillet_frozen,Frozen cod/pollock fillet,Saldēta mencu/pollaka fileja,fish,core,"frozen gadiform fillet",frozen,baked,csp,"Gadiformes fillet, frozen, kg ",
+fish_fillet_frozen,Frozen fish fillet,Saldēta zivju fileja,fish,core,"frozen fish fillet (any)",frozen,baked,csp,"Frozen fish fillet, 1 kg",
+mackerel_smoked,Smoked mackerel,Kūpināta skumbrija,fish,core,"hot-smoked mackerel",ready,as is,csp,"Mackerel, smoked, 1 kg",edible portion (bones/skin)
+herring_rolls,Marinated herring rolls,Siļķu ruļļi,fish,core,"marinated herring rolls",ready,as is,csp,"Herring rolls, 1 kg",
+sprats_in_oil,Sprats in oil (šprotes),Šprotes eļļā,fish,core,"Riga sprats in oil",canned,as is,csp,"Sprats in oil, 240 g","CSP unit 240 g gross incl. oil"
+tuna_canned,Canned tuna in water,Tunzivs savā sulā,fish,core,"tuna in water/brine, drained",canned,as is,own,,
+carp,Carp,Karpa,fish,core,"fresh carp, whole",raw,baked,csp,"Carp, fresh or chilled, 1 kg",edible portion needed
+eggs,Eggs,Olas,eggs,core,"hen eggs, size M, caged/barn",raw,boiled,csp,"Eggs, 10 pcs",unit 10 pcs → edible g
+milk,Milk,Piens,dairy,core,"milk 2–2.5 % fat",ready,as is,csp,"Milk, 1 l",unit 1 l
+kefir,Kefir,Kefīrs,dairy,core,"kefir 2–2.5 %",ready,as is,csp,"Kefir, 1 kg",
+curd,Curd (biezpiens),Biezpiens,dairy,core,"curd/quark (fat % to check)",ready,as is,csp,"Curd, 1 kg",
+cheese_hard,Hard cheese,Siers,dairy,core,"semi-hard cheese (Holandes/Gouda type)",ready,as is,csp,"Cheese, 1 kg",
+yogurt_plain,Plain yogurt,Dabīgais jogurts,dairy,core,"plain yogurt, unsweetened",ready,as is,csp,"Plain yoghurt, 1 kg",
+sour_cream,Sour cream,Skābais krējums,dairy,ingredient,"sour cream 20–25 %",ready,as is,csp,"Sour cream, 1 kg",
+cream_35,Cream 35 %,Saldais krējums 35 %,dairy,ingredient,"whipping cream 35 %",ready,as is,csp,"Cream 35%, 1 kg",
+cheese_processed,Processed cheese,Kausētais siers,dairy,core,"processed cheese",ready,as is,csp,"Processed cheese, 200 g",CSP unit 200 g
+cheese_cream,Cream cheese,Krēmsiers,dairy,core,"cream cheese",ready,as is,csp,"Cream cheese, 200 g",CSP unit 200 g
+skyr,Skyr / high-protein yogurt,Skyr / proteīna jogurts,dairy,core,"skyr or high-protein plain yogurt",ready,as is,own,,
+cottage_cheese,Cottage cheese (granular),Graudainais biezpiens,dairy,core,"granular cottage cheese",ready,as is,own,,
+curd_snack,Sweet curd snack (sieriņš),Biezpiena sieriņš,dairy,snack,"glazed curd snack",ready,as is,csp,"Sweet curd snack, 50 g",CSP unit 50 g
+peanuts,Peanuts,Zemesrieksti,nuts_seeds,core,"roasted peanuts",ready,as is,csp,"Peanuts, 1 kg",
+peanut_butter,Peanut butter,Zemesriekstu sviests,nuts_seeds,core,"peanut butter, 100 % peanuts",ready,as is,own,,
+sunflower_seeds,Sunflower seeds,Saulespuķu sēklas,nuts_seeds,core,"hulled sunflower seeds",ready,as is,own,,
+pumpkin_seeds,Pumpkin seeds,Ķirbju sēklas,nuts_seeds,core,"hulled pumpkin seeds",ready,as is,own,,
+walnuts,Walnuts,Valrieksti,nuts_seeds,core,"walnut kernels",ready,as is,own,,
+almonds,Almonds,Mandeles,nuts_seeds,core,"almonds",ready,as is,own,,
+hazelnuts,Hazelnuts,Lazdu rieksti,nuts_seeds,core,"hazelnut kernels",ready,as is,own,,
+flaxseed,Flaxseed,Linsēklas,nuts_seeds,core,"whole flaxseed",ready,as is,own,,
+bananas,Bananas,Banāni,fruit,core,"bananas",raw,peeled,csp,"Bananas, 1 kg",edible portion (peel)
+apples,Apples,Āboli,fruit,core,"apples",raw,as is,csp,"Apples, 1 kg",edible portion (core)
+raisins,Raisins,Rozīnes,fruit,core,"raisins",ready,as is,csp,"Raisins, 1 kg",
+cabbage,Cabbage,Kāposti,vegetables,core,"white cabbage",raw,raw/boiled,csp,"Cabbage, 1 kg",
+carrots,Carrots,Burkāni,vegetables,core,"carrots",raw,raw,csp,"Carrots, 1 kg",
+veg_frozen,Frozen vegetables,Saldēti dārzeņi,vegetables,core,"frozen mixed vegetables",frozen,boiled,csp,"Frozen vegetables , 1 kg",
+sunflower_oil,Sunflower oil,Saulespuķu eļļa,ingredients,ingredient,"refined sunflower oil",ready,as is,csp,"Sunflower oil, 1 l",unit 1 l
+rapeseed_oil,Rapeseed oil,Rapšu eļļa,ingredients,ingredient,"rapeseed oil",ready,as is,csp,"Rapeseed oil, 1 l",unit 1 l
+olive_oil,Olive oil,Olīveļļa,ingredients,ingredient,"olive oil",ready,as is,csp,"Olive oil, 1 l",unit 1 l
+butter,Butter,Sviests,ingredients,ingredient,"butter 82 %",ready,as is,csp,"Butter, 1 kg",
+margarine,Margarine,Margarīns,ingredients,ingredient,"margarine",ready,as is,csp,"Margarine, 1 kg",
+wheat_flour,Wheat flour,Kviešu milti,ingredients,ingredient,"wheat flour, white",dry,as ingredient,csp,"Wheat flour, 1 kg",
+sugar,Sugar,Cukurs,ingredients,ingredient,"white sugar",ready,as is,csp,"Sugar, 1 kg",
+honey,Honey,Medus,ingredients,ingredient,"honey",ready,as is,csp,"Honey, 1 kg",
+jam,Jam,Ievārījums,ingredients,ingredient,"jam",ready,as is,csp,"Jam, 1 kg",
+mayonnaise,Mayonnaise,Majonēze,ingredients,ingredient,"mayonnaise",ready,as is,csp,"Mayonnaise, 1 kg",
+chocolate_bar,Chocolate bar,Šokolāde,sweets_snacks,snack,"milk chocolate bar",ready,as is,csp,"Chocolate bar, 60 g",CSP unit 60 g
+crisps,Crisps,Čipsi,sweets_snacks,snack,"potato crisps",ready,as is,csp,"Crisps, 75 g",CSP unit 75 g
+ice_cream,Ice cream,Saldējums,sweets_snacks,snack,"ice cream, large pack",frozen,as is,csp,"Ice cream, large package, 1000 ml",unit 1000 ml → g (density)
+cake,Cake,Kūka,sweets_snacks,snack,"cake",ready,as is,csp,"Cake, 1 kg",
+whey_protein,Whey protein concentrate,Sūkalu proteīns,supplements,supplement,"whey protein concentrate ~80 %, unflavoured or flavoured",ready,shake with water,own,,side analysis only
+pea_protein,Pea protein isolate,Zirņu proteīns,supplements,supplement,"pea protein isolate",ready,shake with water,own,,side analysis only
+mass_gainer,Mass gainer,Masas uzņēmējs (gainers),supplements,supplement,"carbohydrate-protein gainer powder",ready,shake with water,own,,side analysis only
+maltodextrin,Maltodextrin / carb powder,Maltodekstrīns,supplements,supplement,"maltodextrin powder",ready,drink,own,,side analysis only (endurance fuel)

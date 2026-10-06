@@ -217,6 +217,8 @@ Report which safeguards are **binding** in each optimum (H11). This shows how mu
 - **Sources:** authoritative composition databases (USDA FDC; regional databases such as Fineli (FI) and Frida (DK) to check against Nordic/Baltic foods), product labels for branded items, and **time-stamped Latvian retail prices from as many retailers as feasible** (e.g. Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi). Check each retailer's terms before any automated price collection.
 
 ### 12.1 Price normalization (decided 2026-10-06: "a typical price, neither the cheapest nor the most expensive")
+
+> **Updated 2026-10-06 (Phase 2):** the primary source is now the **official CSP average retail prices** (table PCC010m; about 2,000 outlets, population-weighted, sales for all shoppers included), covering 71 of 106 foods. Own observations cover the rest. The binding method is in [data/SCHEMA.md](data/SCHEMA.md) ("Price normalization"). The text below is the original draft, kept for reference.
 - One **observation** = food × product/brand × pack size × retailer × date × {regular, discount}.
 - Each food is defined by a **comparable product spec** (e.g. "rolled oats, plain, non-organic"), with a tier flag (standard / store-brand / premium / organic).
 - **Central price = median €/kg of regular-price observations.** The aggregation order is still open (task 2.11): (a) median over all observations, or (b) median per retailer, then the median of the retailer medians, so a retailer with many brands does not dominate. Option (b) is preferred.
@@ -317,6 +319,8 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-06 | **GATE 1 passed:** decisions D1–D12 approved; presets in §7.2 frozen | REVIEW.md §10 |
 | 2026-10-06 | Protein-quality constraint = per-IAA digestible supply ≥ FAO 2013 adult pattern × protein target (D9); DIAAS from USDA AA × muleya2021 digestibility (D11) | Complementarity, FAO/Moughan guidance |
 | 2026-10-06 | Novelty claim limited to the *combination* (sourced presets + diet-level digestible IAA + mass + local prices + robustness); prior athlete LP work must be cited | Originality search (REVIEW §7) |
+| 2026-10-06 | **Prices: CSP PCC010m official averages are primary** (12-month mean, min–max band); own observations (median of retailer medians, P25–P75) only for the 35 foods CSP lacks; 5–10 CSP foods cross-checked | Official, citable, already normalized across ~2,000 outlets; my placeholder guesses were 20–50 % too low for staples |
+| 2026-10-06 | No reuse of price-comparison-site data (Cenu Depo, Lēta Pārtika) without written permission | Their terms neither grant reuse nor exclude user-submitted prices |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).
