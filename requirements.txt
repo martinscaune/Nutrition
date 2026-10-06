@@ -1,0 +1,11 @@
+# Top-level dependencies (exact versions pinned in requirements-lock.txt)
+numpy
+pandas
+scipy            # linprog/milp via HiGHS (LP, MILP, shadow prices)
+scikit-learn     # PCA, clustering
+matplotlib       # publication figures
+plotly           # interactive graphs
+streamlit        # interactive program
+pyyaml           # athlete profile / config files
+pytest           # formula and unit tests
+ipykernel        # notebooks

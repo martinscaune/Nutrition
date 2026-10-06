@@ -1,0 +1,22 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Large raw downloads (e.g. USDA FDC zips) are not versioned;
+# record their URL, download date and checksum in data/raw/MANIFEST.md instead
+data/raw/**/*.zip
+data/raw/usda/
+
+# Literature PDFs may be copyrighted; keep them local only
+literature/*.pdf
+
+# Editor / OS
+.vscode/
+*.swp
+.DS_Store
+
+# Streamlit secrets
+.streamlit/secrets.toml
