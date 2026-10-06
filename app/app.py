@@ -16,6 +16,7 @@ from src import metrics as M  # noqa: E402
 from src import plots as P  # noqa: E402
 from src import export as X  # noqa: E402
 from src import targets as TG  # noqa: E402
+from src import optimizer as O  # noqa: E402
 from dataclasses import replace  # noqa: E402
 
 st.set_page_config(page_title="Food Value Explorer", page_icon="🥣", layout="wide")
@@ -76,8 +77,8 @@ st.caption(f"{len(view)} foods shown · quality: {quality} · prices: {price_scn
            "prices dated 2026-10-06 (personal-use phase; Cenu Depo data is not for publication). "
            "**Scores are hypotheses under your weights, not recommendations.**")
 
-tab_me, tab_rank, tab_scatter, tab_day, tab_food = st.tabs(
-    ["My targets & AI export", "Rankings", "Explorer", "One-food day", "Food details"])
+tab_me, tab_opt, tab_rank, tab_scatter, tab_day, tab_food = st.tabs(
+    ["My targets & AI export", "Diet optimizer", "Rankings", "Explorer", "One-food day", "Food details"])
 
 
 # ---------------------------------------------------------------- tab 0: profile → targets → AI export (v0.2)
@@ -141,6 +142,74 @@ with tab_me:
     e3.download_button("Both (ZIP)", X.zip_bytes(csv_text, brief), f"{stem}_ai_export.zip", "application/zip")
     with st.expander("Preview brief.md"):
         st.markdown(brief)
+
+
+# ---------------------------------------------------------------- tab: diet optimizer (v1.0)
+with tab_opt:
+    st.markdown(f"Cheapest (or lightest) combination of foods that meets **{prof.name}**'s targets from the first "
+                "tab, every essential amino acid (diet level) and the safeguards. Uses the sidebar's protein-quality "
+                "definition and price scenario. **A minimum-cost baseline, not a meal plan**: taste, fibre and "
+                "micronutrients are not optimized yet (v2.0).")
+    c1, c2, c3, c4 = st.columns(4)
+    objective = c1.selectbox("Optimize for", ["cost", "mass", "mix"],
+                             index=1 if (prof.priorities or {}).get("cost", 1) == 0 else 0,
+                             format_func={"cost": "lowest cost", "mass": "least food mass", "mix": "balance both"}.get)
+    mixw = c1.slider("Weight on cost (mix)", 0.0, 1.0, 0.5, 0.05) if objective == "mix" else 0.5
+    sg = c2.selectbox("Safeguards", ["full", "macros", "none"],
+                      format_func={"full": "full (recommended)", "macros": "macro bands only", "none": "none (shows why they exist)"}.get)
+    pmode = c3.selectbox("Protein quality constraint", ["aa", "pq", "crude"],
+                         format_func={"aa": "per amino acid (diet level)", "pq": "Σ protein × DIAAS (food level)",
+                                      "crude": "crude protein only"}.get)
+    use_milp = c4.checkbox("Require variety (MILP)", value=False)
+    nmin = c4.number_input("Minimum number of foods", 3, 20, 8, disabled=not use_milp)
+    c1, c2, c3 = st.columns([2, 1, 1])
+    tbl_all = O.food_table(quality, price_scn)
+    excl = c1.multiselect("Foods I don't eat", sorted(tbl_all.index), format_func=lambda f: tbl_all.name[f])
+    maxmass = c2.number_input("Max food mass (g/day, 0 = none)", 0, 6000, 0, 100)
+    with_snacks = c3.checkbox("Allow snacks", value=False)
+    t_opt = O.food_table(quality, price_scn, roles=["core", "ingredient"] + (["snack"] if with_snacks else []), exclude=excl)
+    spec, _ = O.spec_from_profile(prof, protein_mode=pmode, safeguards=sg, milp=use_milp, min_foods=int(nmin),
+                                  max_mass=maxmass or None)
+    spec.objective = objective
+    spec.mix_weight_cost = mixw
+    if objective == "mix":
+        from dataclasses import replace as _r
+        spec.fixed_cost_norm = max(O.solve(t_opt, _r(spec, objective="cost", milp=False)).cost_eur, 1e-6)
+        spec.fixed_mass_norm = max(O.solve(t_opt, _r(spec, objective="mass", milp=False)).mass_g, 1e-6)
+    sol = O.solve(t_opt, spec)
+    if sol.status != "optimal":
+        st.error("No diet can meet all targets with these settings. Smallest changes that would make it possible:")
+        st.dataframe(sol.conflicts.round(2))
+    else:
+        a, b, c, d = st.columns(4)
+        a.metric("Cost per day", f"€{sol.cost_eur:.2f}")
+        b.metric("Food eaten per day", f"{sol.mass_g:,.0f} g")
+        c.metric("Different foods", len(sol.foods))
+        aa = O.aa_adequacy(t_opt, sol.foods, spec.protein)
+        d.metric("Lowest amino-acid adequacy", f"{aa.min():.2f} ({aa.idxmin()})")
+        show = sol.foods.rename(columns={"name": "food", "g_eaten": "g eaten", "g_bought": "g bought (gross)",
+                                         "cost_eur": "€", "kcal_total": "kcal", "protein_total": "protein g",
+                                         "carb_total": "carb g", "fat_total": "fat g",
+                                         "free_sugars_total": "free sugars g", "fibre_total": "fibre g",
+                                         "energy_share": "energy share"})
+        st.dataframe(show.reset_index(drop=True), width="stretch")
+        tot = sol.totals.copy()
+        tot["target"] = tot.target.astype(str)
+        st.dataframe(tot.round(1), hide_index=True)
+        if len(sol.binding):
+            st.markdown("**What drives the cost** (binding constraints; objective change per unit tighter):")
+            st.dataframe(sol.binding[~sol.binding.constraint.str.startswith("energy share")].round(4), hide_index=True)
+        if len(sol.reduced_costs):
+            near = sol.reduced_costs[~sol.reduced_costs.used].head(8)
+            st.markdown("**Foods that almost made it**: how much cheaper per kg eaten they would need to be to enter:")
+            st.dataframe(near.assign(eur_per_kg_cheaper=near.reduced_cost_per_g * 1000)[["name", "eur_per_kg_cheaper"]].round(2),
+                         hide_index=True)
+        st.download_button("Download this diet (CSV)", sol.foods.to_csv(), "optimal_diet.csv", "text/csv")
+        if st.checkbox("Show cost vs food-mass trade-off (takes a few seconds)"):
+            from dataclasses import replace as _r
+            fr = O.cost_mass_front(t_opt, _r(spec, milp=False), 8)
+            if len(fr):
+                st.plotly_chart(P.front_fig(fr), width="stretch")
 
 # ---------------------------------------------------------------- tab 1: rankings
 with tab_rank:

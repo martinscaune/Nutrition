@@ -330,6 +330,8 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-07 | Scenario check (reports/scenarios_v0.2.md): food-level rankings do not depend on the person's targets, only on preset/quality/price/cost-priority. Each goal now has a default `ranking_preset`; person-specific choice is the optimizer's job (v1.0) | Owner asked to compare profiles |
 | 2026-10-07 | Preset rule: never weight two metrics that measure the same thing (energy density and g/1000 kcal are reciprocals; carb density ≈ dryness). Fixed 'Bulking: balanced', 'Price doesn't matter', 'Endurance carbs' | Double-counting put crispbread/cornflakes on top for endurance |
 | 2026-10-07 | Normalization: percentile stays default; log-ratio and min-max selectable; sensitivity reported (top-10 overlap 0.4–1.0 between methods) → composite scores are a convenience view, not a primary result | Scenario D |
+| 2026-10-07 | Optimizer: x = g eaten/day; minimize cost, mass or normalized mix; energy ±2 %; protein ≥ target; per-IAA digestible supply ≥ FAO adult pattern × protein target (D9); carb band, fat band, free-sugar cap; per-food caps and ≤ 30 % energy per food (judgment calls in `config/optimizer.yaml`); infeasible → goal-programming slacks report the conflicting targets | PROJECT §9, §9.1; moreno2026 idea for infeasibility |
+| 2026-10-07 | First v1.0 results: minimum-cost diets €0.77–2.31/day, ≥ 88 % plant energy, amino acids (SAA, LYS) are the binding constraints; food-level Σ P×DIAAS costs +31 % vs diet-level AA (H9); cost vs mass: 2.47 kg @ €1.85 ↔ 0.82 kg @ €7.50 (H5) | `reports/v1.0_optimizer.md` |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).

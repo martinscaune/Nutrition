@@ -89,16 +89,16 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] **GATE v0.2:** targets for all archetypes look sensible to the owner (and later to an expert)
 
 ## v1.0: Diet optimizer (food combinations)
-- [ ] C.1 LP: chosen objective (cost, mass, or a weighted mix; a cost weight of 0 is allowed) subject to kcal, protein + per-IAA, carbohydrate band, fat band and maximum mass
-- [ ] C.2 Run **without** safeguards first and record the degenerate optimum (the expected oil/sugar diet), the baseline for H11
-- [ ] C.3 Add the safeguards (§9.1): sugar cap, per-food maximum, maximum energy share per food, minimum number of distinct foods
-- [ ] C.4 Infeasibility diagnostics: when no diet satisfies everything, say which constraints conflict
-- [ ] C.5 Shadow prices and reduced costs: which constraints drive the objective, and how far each food is from entering the diet
-- [ ] C.6 MILP variant with discrete portions/packages
-- [ ] C.7 Multi-objective variant (cost vs mass vs protein quality), giving a Pareto set of diets via ε-constraint and/or NSGA-II
-- [ ] C.8 Compare amino-acid-constrained diets with Σ(P×Q)-constrained diets (H9)
-- [ ] C.9 Generate top-N diverse near-optimal combinations, not only the single optimum
-- [ ] C.10 Integrate into the app: profile → targets → optimal diet(s) with explanations
+- [x] C.1 LP: chosen objective (cost, mass, or a weighted mix; a cost weight of 0 is allowed) subject to kcal, protein + per-IAA, carbohydrate band, fat band and maximum mass
+- [x] C.2 Run **without** safeguards first and record the degenerate optimum (the expected oil/sugar diet), the baseline for H11
+- [x] C.3 Add the safeguards (§9.1): sugar cap, per-food maximum, maximum energy share per food, minimum number of distinct foods
+- [x] C.4 Infeasibility diagnostics: when no diet satisfies everything, say which constraints conflict
+- [x] C.5 Shadow prices and reduced costs: which constraints drive the objective, and how far each food is from entering the diet
+- [x] C.6 MILP variant with discrete portions/packages
+- [x] C.7 Multi-objective variant (cost vs mass vs protein quality), giving a Pareto set of diets via ε-constraint and/or NSGA-II
+- [x] C.8 Compare amino-acid-constrained diets with Σ(P×Q)-constrained diets (H9)
+- [x] C.9 Generate top-N diverse near-optimal combinations, not only the single optimum
+- [x] C.10 Integrate into the app: profile → targets → optimal diet(s) with explanations
 - [ ] **GATE v1.0:** optimized diets are plausible and explainable for every archetype; check H6, H10, H11 and H12
 
 ## v1.x: Analysis, comparison and publication
@@ -158,3 +158,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-07 | chart style | Owner feedback: graphs unreadable in dark theme → scientific style (white, full frame, inward ticks, grids both axes, framed legend), light app theme |
 | 2026-10-07 | B.1–B.9 (v0.2) | `config/target_rules.yaml` (sourced), 6 archetype profiles, `src/targets.py` (REE → TDEE, surplus/deficit, protein, carb bands, fat, free sugars, conflicts, energy availability), app tab with profile form, AI export (CSV + brief + ZIP, also CLI); 39 tests pass |
 | 2026-10-07 | v0.2 scenarios | 6 profiles × presets, robustness (quality × price) and normalization sensitivity → `reports/scenarios_v0.2.md`; found and fixed double-counting in 3 presets; goal-default ranking presets |
+| 2026-10-07 | C.1–C.10 (v1.0) | `src/optimizer.py` (LP/MILP via HiGHS, per-AA digestible constraints, safeguards from `config/optimizer.yaml`, shadow prices, reduced costs, elastic conflict report, alternatives, cost–mass ε-front); `reports/v1.0_optimizer.md` for 6 profiles (H5, H9, H10, H11); app tab 'Diet optimizer'; 45 tests pass |

@@ -33,3 +33,7 @@ def test_targets_tab_and_export(app):
     assert any("Daily targets" in m.value for m in app.markdown), "targets table not rendered"
     labels = [b.label for b in app.get("download_button")]
     assert {"foods_ranked.csv", "brief.md", "Both (ZIP)"} <= set(labels), labels
+
+
+def test_optimizer_tab(app):
+    assert any("Cost per day" in m.label for m in app.metric), [m.label for m in app.metric]

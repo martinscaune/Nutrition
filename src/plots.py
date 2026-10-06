@@ -233,3 +233,16 @@ def ranking_bar_fig(df, score_col, n=25, dark=False):
     fig.update_xaxes(range=[0, 1.02])
     fig.update_yaxes(showgrid=False, minor=dict(ticks=""))
     return fig
+
+
+def front_fig(fr):
+    """Cost vs food-mass Pareto front of optimal diets (v1.0)."""
+    fig = go.Figure(go.Scatter(x=fr.mass_g, y=fr.cost_eur, mode="lines+markers",
+                               marker=dict(size=9, color="#2a78d6", line=dict(color="black", width=1)),
+                               line=dict(color="#2a78d6", width=2), customdata=fr[["n_foods", "main_foods"]].values,
+                               hovertemplate="%{x:,.0f} g/day · €%{y:.2f}/day<br>%{customdata[0]} foods: "
+                                             "%{customdata[1]}<extra></extra>", showlegend=False))
+    _scientific(fig, 420)
+    fig.update_layout(xaxis_title="Food eaten per day (g)", yaxis_title="Cost per day (€)")
+    fig.update_yaxes(rangemode="tozero")
+    return fig

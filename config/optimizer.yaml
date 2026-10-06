@@ -1,0 +1,47 @@
+# Diet optimizer settings (v1.0). Safeguards from PROJECT.md §9.1.
+# Evidence-based safeguards (macronutrient bands, free-sugar cap) come from config/target_rules.yaml via src/targets.py.
+# Everything below is a JUDGMENT CALL (realistic portions / variety); each is covered by sensitivity analysis (PLAN D.4).
+
+energy_tolerance_pct: 2          # daily energy must land within ±2 % of the target
+max_energy_share_per_food: 0.30  # no single food above 30 % of daily energy (safeguard 4)
+min_distinct_foods: 8            # MILP variant only (safeguard 4)
+min_portion_g_eaten: 30          # MILP variant: a chosen food is eaten in at least this amount
+max_total_mass_g_eaten: null     # optional cap on total food mass eaten per day (null = no cap)
+
+include_roles: [core, ingredient]   # snacks and supplements are excluded by default
+
+# Maximum amount per day, grams AS EATEN (safeguard 3). Rules are matched in order: food_id first, then category.
+max_g_eaten:
+  food:
+    sunflower_oil: 40
+    rapeseed_oil: 40
+    olive_oil: 40
+    butter: 40
+    margarine: 40
+    mayonnaise: 30
+    sugar: 50
+    honey: 50
+    jam: 50
+    wheat_flour: 150
+    cream_35: 100
+    sour_cream: 150
+    chicken_liver: 100        # vitamin A upper limit (EFSA UL 3000 µg RAE/day; liver ≈ 3300 µg/100 g); v2.0 replaces with a micronutrient UL
+    cheese_hard: 150
+    cheese_processed: 150
+    cheese_cream: 100
+  category:
+    nuts_seeds: 150
+    dairy: 1000
+    eggs: 300                 # ≈ 5–6 eggs
+    meat: 500
+    processed_meat: 200       # processed meat: keep moderate (WHO/IARC classification; v2.0 refines)
+    fish: 500
+    legumes: 600
+    soy: 500
+    cereals: 800
+    bread: 500
+    potatoes: 1000
+    fruit: 600
+    vegetables: 800
+    ingredients: 100
+  default: 500

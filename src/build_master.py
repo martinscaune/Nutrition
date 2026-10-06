@@ -94,6 +94,8 @@ def main():
             drow = dig.loc[int(dmap.loc[f.food_id, "source_row"])]
             score, lim = diaas(mg, drow)
             r["diaas_child"] = diaas(mg, drow, PATTERN_CHILD)[0]
+            for a_ in C.AA:  # per-AA true ileal digestibility, needed by the diet optimizer (decision D9)
+                r[f"dig_{a_}"] = drow[a_]
             # digestible leucine (mg per g protein): relevant to muscle protein synthesis
             r["digestible_leu_mg_per_g"] = mg.LEU * drow.LEU if pd.notna(mg.LEU) else np.nan
             r["digest_grade"] = dmap.loc[f.food_id, "grade"]
