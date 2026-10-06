@@ -21,3 +21,9 @@ Raw files are stored **unmodified**. Large files are git-ignored (see `.gitignor
 | Cenu Depo per-shop prices (personal-use phase only; not for publication without permission) | `data/raw/cenudepo/<date>/observations_raw.csv` (+ gzipped HTML cache, git-ignored) | https://cenudepo.lv (category + product pages, ≥ 3 s between requests) | 2026-10-06 | n/a (snapshot) | © Cenu Depo, all rights reserved; terms do not address reuse | CSV yes |
 
 CSP notes: prices are collected in about 2,000 outlets in Riga and 9 other towns and weighted by population. Each item's average is the arithmetic mean of collected prices. Sale prices offered to all consumers are included (CSP CPI metadata, stat.gov.lv/en/metadata/2421). Product codes were renumbered in February 2026, so match items **by name**.
+
+## Known issues (Cenu Depo snapshot 2026-10-06)
+- Each product page lists per-shop prices; single-shop products show only a "hero price" block (parsed since v2 of the parser). "ar karti" rows are card-only prices (`price_type = loyalty`) and are excluded from central prices.
+- Cross-check against CSP 12-month means: Cenu Depo median is about 10 % lower (it includes discount and wholesale-type shops such as Promo, Gemoss, Velto). Kept as is; to be used as a scenario in sensitivity analysis (PLAN D.1).
+- Not found on Cenu Depo: soy drink, chicken liver, sunflower/pumpkin/flax seeds, mass gainer, maltodextrin.
+

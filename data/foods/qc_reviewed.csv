@@ -1,0 +1,9 @@
+food_id,flag_contains,decision,reason
+cornflakes,AA implausible: LEU,genuine,"Corn protein (zein) is very high in leucine and very low in lysine; processing lowers lysine further. Consistent with measured DIAAS for cornflakes (muleya2021 row 258: 19)."
+curd,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).
+cheese_hard,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).
+cheese_processed,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).
+cheese_cream,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).
+skyr,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).
+cottage_cheese,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).
+curd_snack,AA implausible: CYS,genuine,Casein-dominant dairy protein is naturally low in cysteine (~3–4 mg/g).

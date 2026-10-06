@@ -92,8 +92,20 @@ def product_offers(href):
         date = re.search(r'<span class="smeta">([0-9.]+)', row)
         prices = [float(p.replace(",", ".")) for p in re.findall(r"([0-9]+[.,][0-9]{2})\s*&euro;", row)]
         if shop and prices:
-            offers.append({"shop": shop.group(1).strip(), "date": date.group(1) if date else "",
-                           "price": min(prices), "old_price": max(prices) if len(prices) > 1 else None})
+            nm = shop.group(1).strip()
+            offers.append({"shop": nm, "date": date.group(1) if date else "",
+                           "price": min(prices), "old_price": max(prices) if len(prices) > 1 else None,
+                           "loyalty": nm.lower() == "ar karti"})  # "ar karti" = card-only price row
+    if not offers:  # product sold in a single shop: the page shows only a "hero price" block
+        hero = re.search(r'<div class="hero-price">(.*?)</div>\s*<a class="open-app"', h, re.S)
+        if hero:
+            b = hero.group(1)
+            shop = re.search(r'class="hp-lbl">[^<]*&middot;\s*([^<]+)<', b)
+            prices = [float(x) for x in re.findall(r"([0-9]+\.[0-9]{2})\s*&euro;", b)]
+            date = re.search(r"Atjaunināts ([0-9.]+)", b)
+            if shop and prices:
+                offers.append({"shop": shop.group(1).strip(), "date": date.group(1) if date else "",
+                               "price": min(prices), "old_price": max(prices) if len(prices) > 1 else None})
     return brand, offers
 
 
@@ -106,6 +118,9 @@ def pack_size(name):
     for m in PACK.finditer(name.upper()):
         pass  # take the last size in the name (often the net mass)
     if not m:
+        # sold by weight ("... KG", "... SVER."): the shown price is per kg
+        if re.search(r"(\bKG\b|\bSVER)", name.upper()):
+            return 1000.0, "g", None
         return None, "", None
     n = int(m.group(1)) if m.group(1) else 1
     v = float(m.group(2).replace(",", "."))
@@ -168,7 +183,8 @@ def main(only=()):
                             "price_date": o["date"], "product_name": name, "brand": brand, "tier": tier(name, brand),
                             "pack_size": size or "", "pack_unit": unit, "pack_count": count or "",
                             "price_eur": o["price"], "old_price_eur": o["old_price"] or "",
-                            "price_type": "discount_all" if o["old_price"] else "regular", "url": BASE + href})
+                            "price_type": "loyalty" if o.get("loyalty") else ("discount_all" if o["old_price"] else "regular"),
+                            "url": BASE + href})
         sys.stdout.flush()
     print("done →", out_f)
 

@@ -1,14 +1,10 @@
 food_id,purpose,date_collected,shop,price_date,product_name,brand,tier,pack_size,pack_unit,pack_count,price_eur,old_price_eur,price_type,url
-millet,own,2026-10-06,Rimi,,PROSA ZELTA SAULE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,2.29,discount_all,https://cenudepo.lv/product/prosa-zelta-saule-1kg
-millet,own,2026-10-06,Citro,06.10.2026,PROSA ZELTA SAULE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,,regular,https://cenudepo.lv/product/prosa-zelta-saule-1kg
-millet,own,2026-10-06,Velto,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.12,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
-millet,own,2026-10-06,Promo,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
-millet,own,2026-10-06,Maxima,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
-millet,own,2026-10-06,Maxima,06.10.2026,"PROSAS PUTRAIMI VALDO, 1KG",VALDO,standard,1000.0,g,,2.49,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-1kg
-millet,own,2026-10-06,Promo,06.10.2026,"PROSAS PUTRAIMI VALDO, 1KG",VALDO,standard,1000.0,g,,3.39,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-1kg
 rice_brown,own,2026-10-06,Velto,06.10.2026,RISI VALDO PARBOILED FASĒTI 1KG,VALDO,standard,1000.0,g,,1.95,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-faseti-1kg
 rice_brown,own,2026-10-06,Top!,08.09.2026,RISI VALDO PARBOILED FASĒTI 1KG,VALDO,standard,1000.0,g,,1.99,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-faseti-1kg
 rice_brown,own,2026-10-06,Rimi,06.10.2026,RISI VALDO PARBOILED FASĒTI 1KG,VALDO,standard,1000.0,g,,2.85,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-faseti-1kg
+rice_brown,own,2026-10-06,Maxima,06.10.2026,BRŪNIE RĪSI WELL DONE 500G,WELL DONE,standard,500.0,g,,1.19,,regular,https://cenudepo.lv/product/brunie-risi-well-done-500g
+rice_brown,own,2026-10-06,Maxima,06.10.2026,BRŪNIE RĪSI WELL DONE 4X100G,WELL DONE,standard,400.0,g,,1.09,,regular,https://cenudepo.lv/product/brunie-risi-well-done-4x100g
+rice_brown,own,2026-10-06,Citro,06.10.2026,RĪSI VALDO PARBOILED 500G,VALDO,standard,500.0,g,,1.45,,regular,https://cenudepo.lv/product/risi-valdo-parboiled-500g
 rice_brown,own,2026-10-06,Top!,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
 rice_brown,own,2026-10-06,Maxima,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.59,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
 rice_brown,own,2026-10-06,Promo,06.10.2026,RĪSI VALDO BRŪNIE 4X125G,VALDO,standard,500.0,g,,1.65,,regular,https://cenudepo.lv/product/risi-valdo-brunie-4x125g
@@ -21,6 +17,26 @@ rice_brown,own,2026-10-06,Maxima,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G)
 rice_brown,own,2026-10-06,Citro,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
 rice_brown,own,2026-10-06,Rimi,06.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.85,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
 rice_brown,own,2026-10-06,Elvi,01.10.2026,RĪSI VALDO PARBOILES 0.5KG (4X125G),VALDO,standard,500.0,g,,1.99,,regular,https://cenudepo.lv/product/risi-valdo-parboiles-0-5kg-4x125g
+rice_brown,own,2026-10-06,Promo,06.10.2026,HERKULESS GOURMET BRŪNIE PILNGRAUDU RĪSI 0.5KG,Herkuless,standard,500.0,g,,1.85,,regular,https://cenudepo.lv/product/herkuless-gourmet-brunie-pilngraudu-risi-0-5kg
+rice_brown,own,2026-10-06,Rimi,06.10.2026,BRŪNIE RĪSI RIMI GREATLIFE 4X100G,RIMI GREATLIFE,standard,400.0,g,,1.49,,regular,https://cenudepo.lv/product/brunie-risi-rimi-greatlife-4x100g
+rice_brown,own,2026-10-06,Gemoss,06.10.2026,RĪSI MELNIE PILNGRAUDU 2KG,FASĒTIE,standard,2000.0,g,,7.93,,regular,https://cenudepo.lv/product/risi-melnie-pilngraudu-2kg
+rice_brown,own,2026-10-06,Gemoss,06.10.2026,RĪSI SARKANIE PILNGRAUDU 500G JUST NATURE,JUST NATURE,standard,500.0,g,,3.19,,regular,https://cenudepo.lv/product/risi-sarkanie-pilngraudu-500g-just-nature
+rice_brown,own,2026-10-06,Gemoss,06.10.2026,RĪSI MELNIE PILNGRAUDU 500G JUST NATURE,JUST NATURE,standard,500.0,g,,3.19,,regular,https://cenudepo.lv/product/risi-melnie-pilngraudu-500g-just-nature
+rice_brown,own,2026-10-06,Maxima,06.10.2026,PILNGRAUDU BRŪNIE RĪSI TILDA 500G,TILDA,standard,500.0,g,,3.29,,regular,https://cenudepo.lv/product/pilngraudu-brunie-risi-tilda-500g
+rice_brown,own,2026-10-06,Rimi,06.10.2026,RĪSI TILDA PILNGRAUDU BRŪNIE 500G,TILDA,standard,500.0,g,,3.59,,regular,https://cenudepo.lv/product/risi-tilda-pilngraudu-brunie-500g
+millet,own,2026-10-06,Rimi,,PROSA ZELTA SAULE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,2.29,discount_all,https://cenudepo.lv/product/prosa-zelta-saule-1kg
+millet,own,2026-10-06,Citro,06.10.2026,PROSA ZELTA SAULE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,,regular,https://cenudepo.lv/product/prosa-zelta-saule-1kg
+millet,own,2026-10-06,Promo,06.10.2026,"PROSA LIMOR, 800G",Limor,standard,800.0,g,,1.76,,regular,https://cenudepo.lv/product/prosa-limor-800g
+millet,own,2026-10-06,Maxima,06.10.2026,PROSA NAŠA KAŠA 900G,NAŠA KAŠA,standard,900.0,g,,1.99,,regular,https://cenudepo.lv/product/prosa-nasa-kasa-900g
+millet,own,2026-10-06,Velto,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.12,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
+millet,own,2026-10-06,Promo,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
+millet,own,2026-10-06,Maxima,06.10.2026,PROSA VALDO 4X125G,VALDO,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/prosa-valdo-4x125g
+millet,own,2026-10-06,Maxima,06.10.2026,"PROSAS PUTRAIMI VALDO, 1KG",VALDO,standard,1000.0,g,,2.49,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-1kg
+millet,own,2026-10-06,Promo,06.10.2026,"PROSAS PUTRAIMI VALDO, 1KG",VALDO,standard,1000.0,g,,3.39,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-1kg
+millet,own,2026-10-06,Rimi,06.10.2026,PROSAS PUTRAIMI VALDO 500G,VALDO,standard,500.0,g,,1.39,,regular,https://cenudepo.lv/product/prosas-putraimi-valdo-500g
+millet,own,2026-10-06,Rimi,,PROSAS PUTRAIMI RIMI FREE FROM 375G,RIMI FREE FROM,standard,375.0,g,,1.39,1.69,discount_all,https://cenudepo.lv/product/prosas-putraimi-rimi-free-from-375g
+millet,own,2026-10-06,Maxima,06.10.2026,PROSA ZELTA SAULE 100GX4,ZELTA SAULE,standard,,,,1.49,,regular,https://cenudepo.lv/product/prosa-zelta-saule-100gx4
+millet,own,2026-10-06,Maxima,06.10.2026,BIO PROSA SUPER GARDEN 500G,SUPER GARDEN,organic,500.0,g,,2.59,,regular,https://cenudepo.lv/product/bio-prosa-super-garden-500g
 bulgur,own,2026-10-06,Gemoss,06.10.2026,BULGURS JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.27,,regular,https://cenudepo.lv/product/bulgurs-just-nature-500g
 bulgur,own,2026-10-06,Maxima,06.10.2026,BULGURS JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.79,,regular,https://cenudepo.lv/product/bulgurs-just-nature-500g
 bulgur,own,2026-10-06,Velto,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,1.61,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
@@ -30,25 +46,533 @@ bulgur,own,2026-10-06,Citro,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×1
 bulgur,own,2026-10-06,Promo,06.10.2026,"BULGURS VALDO VIDĒJA MALUMA, 500G (4×125G)",VALDO,standard,500.0,g,,3.19,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g-4-125g
 bulgur,own,2026-10-06,Maxima,06.10.2026,BULGURS VALDO VIDĒJA MALUMA 500G,Valdo,standard,500.0,g,,1.79,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g
 bulgur,own,2026-10-06,Promo,06.10.2026,BULGURS VALDO VIDĒJA MALUMA 500G,Valdo,standard,500.0,g,,2.35,,regular,https://cenudepo.lv/product/bulgurs-valdo-videja-maluma-500g
+bulgur,own,2026-10-06,Promo,06.10.2026,"BULGURS BUON GUSTO, 350G",,standard,350.0,g,,1.34,,regular,https://cenudepo.lv/product/bulgurs-buon-gusto-350g
+bulgur,own,2026-10-06,Maxima,06.10.2026,BULGURS WELL DONE 4X100G,WELL DONE,standard,400.0,g,,1.59,,regular,https://cenudepo.lv/product/bulgurs-well-done-4x100g
+bulgur,own,2026-10-06,Rimi,06.10.2026,BULGURS RIMI 400G,RIMI,store_brand,400.0,g,,1.59,,regular,https://cenudepo.lv/product/bulgurs-rimi-400g
+bulgur,own,2026-10-06,Rimi,06.10.2026,BRŪNAIS PILNGRAUDU BULGURS RIMI 400G,RIMI,store_brand,400.0,g,,1.59,,regular,https://cenudepo.lv/product/brunais-pilngraudu-bulgurs-rimi-400g
+bulgur,own,2026-10-06,Maxima,06.10.2026,RUPJAIS BULGURS VALDO 4X125G,VALDO,standard,500.0,g,,2.39,,regular,https://cenudepo.lv/product/rupjais-bulgurs-valdo-4x125g
+couscous,own,2026-10-06,Gemoss,06.10.2026,KUSKUSS 1KG,BIA,standard,1000.0,g,,2.46,,regular,https://cenudepo.lv/product/kuskuss-1kg-123434
+couscous,own,2026-10-06,Promo,06.10.2026,"PĒRĻU KUSKUSS, 1KG",,standard,1000.0,g,,2.99,,regular,https://cenudepo.lv/product/perlu-kuskuss-1kg
+couscous,own,2026-10-06,Promo,06.10.2026,"KUSKUSS, 1KG",BIA,standard,1000.0,g,,3.29,,regular,https://cenudepo.lv/product/kuskuss-1kg
+couscous,own,2026-10-06,Rimi,06.10.2026,KUSKUSS RIMI SMART MOYEN 300G,RIMI SMART,store_brand,300.0,g,,0.99,,regular,https://cenudepo.lv/product/kuskuss-rimi-smart-moyen-300g
 couscous,own,2026-10-06,Gemoss,06.10.2026,KUSKUSS JUST NATURE 400G,JUST NATURE,standard,400.0,g,,1.39,,regular,https://cenudepo.lv/product/kuskuss-just-nature-400g
 couscous,own,2026-10-06,Maxima,06.10.2026,KUSKUSS JUST NATURE 400G,JUST NATURE,standard,400.0,g,,1.99,,regular,https://cenudepo.lv/product/kuskuss-just-nature-400g
 couscous,own,2026-10-06,Velto,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,1.75,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
 couscous,own,2026-10-06,Citro,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,2.29,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
 couscous,own,2026-10-06,Maxima,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,2.29,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
 couscous,own,2026-10-06,Promo,06.10.2026,KUSKUSS VALDO 4X125G,Valdo,standard,500.0,g,,2.29,,regular,https://cenudepo.lv/product/kuskuss-valdo-4x125g
+couscous,own,2026-10-06,unknown (card price),,KUSKUSS RIMI PLANET 500G,RIMI PLANET,standard,500.0,g,,1.99,2.65,loyalty,https://cenudepo.lv/product/kuskuss-rimi-planet-500g
+couscous,own,2026-10-06,Gemoss,06.10.2026,KUSKUSS PĒRĻU 400G JUST NATURE,JUST NATURE,standard,400.0,g,,1.74,,regular,https://cenudepo.lv/product/kuskuss-perlu-400g-just-nature
+couscous,own,2026-10-06,Maxima,15.09.2026,KUSKUSS WELL DONE 400G,WELL DONE,standard,400.0,g,,1.79,,regular,https://cenudepo.lv/product/kuskuss-well-done-400g
+couscous,own,2026-10-06,Gemoss,06.10.2026,KUSKUSS BIO 400G JUST NATURE,JUST NATURE,organic,400.0,g,,2.24,,regular,https://cenudepo.lv/product/kuskuss-bio-400g-just-nature
+couscous,own,2026-10-06,Promo,06.10.2026,"KUSKUSS PASTA ZARA, 500G",PASTA ZARA,standard,500.0,g,,3.39,,regular,https://cenudepo.lv/product/kuskuss-pasta-zara-500g
+couscous,own,2026-10-06,Promo,06.10.2026,"KUSKUSS PĒRĻLU TRĪSKRĀSU YAMNA,900G",,standard,900.0,g,,6.78,,regular,https://cenudepo.lv/product/kuskuss-perllu-triskrasu-yamna-900g
+couscous,own,2026-10-06,Maxima,06.10.2026,PĒRĻU KUSKUSS MELVIT TRENDY LUNCH 4X100G,,standard,400.0,g,,3.79,,regular,https://cenudepo.lv/product/perlu-kuskuss-melvit-trendy-lunch-4x100g
+muesli,own,2026-10-06,Rimi,06.10.2026,MUSLI RIMI SMART AR ŽĀVĒTIEM AUGĻIEM 1KG,RIMI SMART,store_brand,1000.0,g,,3.69,,regular,https://cenudepo.lv/product/musli-rimi-smart-ar-zavetiem-augliem-1kg
 muesli,own,2026-10-06,Citro,06.10.2026,MUSLIS HERKULESS ACTIVE&FIT KRAUKŠĶ.AR ZEMENĒM MANDELĒM 350G,HERKULESS,standard,350.0,g,,1.79,2.49,discount_all,https://cenudepo.lv/product/muslis-herkuless-active-fit-krauksk-ar-zemenem-mandelem-350g
 muesli,own,2026-10-06,Maxima,06.10.2026,MUSLIS HERKULESS ACTIVE&FIT KRAUKŠĶ.AR ZEMENĒM MANDELĒM 350G,HERKULESS,standard,350.0,g,,2.19,,regular,https://cenudepo.lv/product/muslis-herkuless-active-fit-krauksk-ar-zemenem-mandelem-350g
 muesli,own,2026-10-06,Rimi,14.09.2026,MUSLIS HERKULESS ACTIVE&FIT KRAUKŠĶ.AR ZEMENĒM MANDELĒM 350G,HERKULESS,standard,350.0,g,,2.55,,regular,https://cenudepo.lv/product/muslis-herkuless-active-fit-krauksk-ar-zemenem-mandelem-350g
 muesli,own,2026-10-06,Citro,06.10.2026,"MUSLI HERKULESS ACTIVE&FIT CRUNCHY CHOCO NUTS, 350G",HERKULESS,standard,350.0,g,,1.79,2.49,discount_all,https://cenudepo.lv/product/musli-herkuless-active-fit-crunchy-choco-nuts-350g
 muesli,own,2026-10-06,Promo,06.10.2026,"MUSLI HERKULESS ACTIVE&FIT CRUNCHY CHOCO NUTS, 350G",HERKULESS,standard,350.0,g,,2.83,,regular,https://cenudepo.lv/product/musli-herkuless-active-fit-crunchy-choco-nuts-350g
+muesli,own,2026-10-06,Maxima,06.10.2026,GRANOLA HERKULESS AR ZEMENĒM 350G,HERKULESS,standard,350.0,g,,1.89,,regular,https://cenudepo.lv/product/granola-herkuless-ar-zemenem-350g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLI RIMI AR RIEKSTIEM UN AUGĻIEM 350G,RIMI,store_brand,350.0,g,,2.09,,regular,https://cenudepo.lv/product/musli-rimi-ar-riekstiem-un-augliem-350g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLI RIMI GRAUZDĒTS AR RIEKSTIEM 375G,RIMI,store_brand,375.0,g,,2.25,,regular,https://cenudepo.lv/product/musli-rimi-grauzdets-ar-riekstiem-375g
+muesli,own,2026-10-06,Rimi,06.10.2026,GRAUZDĒTS MUSLIS RIMI AR KVINOJU UN AVENĒM 350G,RIMI,store_brand,350.0,g,,2.25,,regular,https://cenudepo.lv/product/grauzdets-muslis-rimi-ar-kvinoju-un-avenem-350g
 muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS ENERĢISKAIS 400G,GRACI,standard,400.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-energiskais-400g
 muesli,own,2026-10-06,Maxima,06.10.2026,MUSLI GRACI FUNKCIONĀLAIS ENERĢISKAIS 400G,GRACI,standard,400.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-energiskais-400g
 muesli,own,2026-10-06,Top!,,MUSLI GRACI FUNKCIONĀLAIS ENERĢISKAIS 400G,GRACI,standard,400.0,g,,3.79,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-energiskais-400g
 muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS TIEVAIS 400G,GRACI,standard,400.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-tievais-400g
 muesli,own,2026-10-06,Promo,06.10.2026,MUSLI GRACI FUNKCIONĀLAIS TIEVAIS 400G,GRACI,standard,400.0,g,,3.89,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-tievais-400g
+muesli,own,2026-10-06,Rimi,06.10.2026,MUSLI RIMI EXTRA TRIPLE CHOCO 375G,RIMI,store_brand,375.0,g,,2.69,,regular,https://cenudepo.lv/product/musli-rimi-extra-triple-choco-375g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLI RIMI EXTRA AR AUGĻIEM UN OGĀM 375G,RIMI,store_brand,375.0,g,,2.69,,regular,https://cenudepo.lv/product/musli-rimi-extra-ar-augliem-un-ogam-375g
+muesli,own,2026-10-06,Maxima,06.10.2026,MUSLI GRACI AR RIEKSTIEM CILINDRĀ 500G,,standard,500.0,g,,3.99,,regular,https://cenudepo.lv/product/musli-graci-ar-riekstiem-cilindra-500g
+muesli,own,2026-10-06,Maxima,05.10.2026,MUSLI AMAZING AR SĒKLĀM GRACI 400G,GRACI,standard,400.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-amazing-ar-seklam-graci-400g
 muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS VIEGLAIS 300G,GRACI,standard,300.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-vieglais-300g
 muesli,own,2026-10-06,Maxima,01.10.2026,MUSLI GRACI FUNKCIONĀLAIS VIEGLAIS 300G,GRACI,standard,300.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-vieglais-300g
 muesli,own,2026-10-06,Top!,,MUSLI GRACI FUNKCIONĀLAIS VIEGLAIS 300G,GRACI,standard,300.0,g,,3.79,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-vieglais-300g
 muesli,own,2026-10-06,Rimi,,MUSLI GRACI FUNKCIONĀLAIS SKAISTUMAM 300G,GRACI,standard,300.0,g,,2.79,3.79,discount_all,https://cenudepo.lv/product/musli-graci-funkcionalais-skaistumam-300g
 muesli,own,2026-10-06,Maxima,06.10.2026,MUSLI GRACI FUNKCIONĀLAIS SKAISTUMAM 300G,GRACI,standard,300.0,g,,3.49,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-skaistumam-300g
 muesli,own,2026-10-06,Top!,,MUSLI GRACI FUNKCIONĀLAIS SKAISTUMAM 300G,GRACI,standard,300.0,g,,3.79,,regular,https://cenudepo.lv/product/musli-graci-funkcionalais-skaistumam-300g
+muesli,own,2026-10-06,Maxima,01.10.2026,MUSLIS GRACI AR RUPJMAIZES KĀRTOJUMA GARŠU 350G,GRACI,standard,350.0,g,,3.49,,regular,https://cenudepo.lv/product/muslis-graci-ar-rupjmaizes-kartojuma-garsu-350g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLIS GRACI AR RUPJMAIZES KĀRTOJUMA GARŠU 350G,GRACI,standard,350.0,g,,3.79,,regular,https://cenudepo.lv/product/muslis-graci-ar-rupjmaizes-kartojuma-garsu-350g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLI SMALKAIS MUSLIS PRIEKA MAISĪJUMS 500G,SMALKAIS MUSLIS,standard,500.0,g,,4.99,,regular,https://cenudepo.lv/product/musli-smalkais-muslis-prieka-maisijums-500g
+muesli,own,2026-10-06,Rimi,14.09.2026,MUSLI SMALKAIS MUSLIS HARMONIJAS MAISĪJUMS 500G,SMALKAIS MUSLIS,standard,500.0,g,,5.49,,regular,https://cenudepo.lv/product/musli-smalkais-muslis-harmonijas-maisijums-500g
+muesli,own,2026-10-06,Maxima,05.10.2026,FUNKCIONĀLAIS MUSLI THIN GRACI 300G,GRACI,standard,300.0,g,,3.49,,regular,https://cenudepo.lv/product/funkcionalais-musli-thin-graci-300g
+muesli,own,2026-10-06,Gemoss,06.10.2026,DIEDZĒTU GRIĶU MUSLIS AR KOKOSRIEKSTIEM BIO 200G GRIKSI,GRIKSI,organic,200.0,g,,4.03,,regular,https://cenudepo.lv/product/diedzetu-griku-muslis-ar-kokosriekstiem-bio-200g-griksi
+sweet_potato,own,2026-10-06,Maxima,06.10.2026,SALDIE KARTUPEĻI - BATĀTES KG,BEZ ZĪMOLA,standard,1000.0,g,,2.39,,regular,https://cenudepo.lv/product/saldie-kartupeli-batates-kg
+sweet_potato,own,2026-10-06,Rimi,06.10.2026,SALDIE KARTUPEĻI - BATĀTES KG,BEZ ZĪMOLA,standard,1000.0,g,,2.39,,regular,https://cenudepo.lv/product/saldie-kartupeli-batates-kg
+lentils_red,own,2026-10-06,Gemoss,06.10.2026,LĒCAS SARKANĀS ŠĶELTAS 3KG,FASĒTIE,standard,3000.0,g,,5.11,,regular,https://cenudepo.lv/product/lecas-sarkanas-skeltas-3kg
+lentils_red,own,2026-10-06,Gemoss,06.10.2026,LĒCAS SARKANĀS NELOBĪTAS 1KG JUST NATURE,JUST NATURE,standard,1000.0,g,,2.26,,regular,https://cenudepo.lv/product/lecas-sarkanas-nelobitas-1kg-just-nature
+lentils_red,own,2026-10-06,Promo,11.09.2026,"LĒCAS SARKANĀS SEZER, 900G",Sezer,standard,900.0,g,,2.99,,regular,https://cenudepo.lv/product/lecas-sarkanas-sezer-900g
+lentils_red,own,2026-10-06,Maxima,23.09.2026,SARKANĀS LĒCAS WELL DONE 400G,WELL DONE,standard,400.0,g,,1.39,,regular,https://cenudepo.lv/product/sarkanas-lecas-well-done-400g
+lentils_red,own,2026-10-06,Maxima,06.10.2026,LĒCAS JUST NATURE SARKANĀS ŠĶELTĀS 500G,JUST NATURE,standard,500.0,g,,1.89,,regular,https://cenudepo.lv/product/lecas-just-nature-sarkanas-skeltas-500g
+lentils_red,own,2026-10-06,Citro,06.10.2026,LĒCAS JUST NATURE SARKANĀS ŠĶELTĀS 500G,JUST NATURE,standard,500.0,g,,2.19,,regular,https://cenudepo.lv/product/lecas-just-nature-sarkanas-skeltas-500g
+lentils_red,own,2026-10-06,Maxima,06.10.2026,LĒCAS JUST NATURE SARKANĀS NELOBĪTAS 500G,JUST NATURE,standard,500.0,g,,1.89,,regular,https://cenudepo.lv/product/lecas-just-nature-sarkanas-nelobitas-500g
+lentils_red,own,2026-10-06,Citro,06.10.2026,LĒCAS JUST NATURE SARKANĀS NELOBĪTAS 500G,JUST NATURE,standard,500.0,g,,1.89,,regular,https://cenudepo.lv/product/lecas-just-nature-sarkanas-nelobitas-500g
+lentils_red,own,2026-10-06,Rimi,06.10.2026,"SARKANĀS LĒCAS, ŠĶELTĀS RIMI 400G",RIMI,store_brand,400.0,g,,2.05,,regular,https://cenudepo.lv/product/sarkanas-lecas-skeltas-rimi-400g
+lentils_red,own,2026-10-06,Rimi,06.10.2026,EKOLOĢISKAS ŠĶELTAS SARKANĀS LĒCAS SALLING EKO 400G,SALLING EKO,organic,400.0,g,,2.29,,regular,https://cenudepo.lv/product/ekologiskas-skeltas-sarkanas-lecas-salling-eko-400g
+lentils_red,own,2026-10-06,Maxima,06.10.2026,BIO SARKANĀS LĒCAS SUPER GARDEN 500G,SUPER GARDEN,organic,500.0,g,,3.89,,regular,https://cenudepo.lv/product/bio-sarkanas-lecas-super-garden-500g
+lentils_green,own,2026-10-06,Promo,06.10.2026,"LĒCAS ZAĻĀS SKANEJA, 500G",,standard,500.0,g,,1.52,,regular,https://cenudepo.lv/product/lecas-zalas-skaneja-500g
+lentils_green,own,2026-10-06,Maxima,06.10.2026,ZAĻĀS LĒCAS WELL DONE 400G,WELL DONE,standard,400.0,g,,1.29,,regular,https://cenudepo.lv/product/zalas-lecas-well-done-400g
+lentils_green,own,2026-10-06,Maxima,06.10.2026,LĒCAS VALDO DZELTENĀS ŠĶELTĀS 500G,VALDO,standard,500.0,g,,2.49,,regular,https://cenudepo.lv/product/lecas-valdo-dzeltenas-skeltas-500g
+lentils_green,own,2026-10-06,Promo,06.10.2026,LĒCAS VALDO DZELTENĀS ŠĶELTĀS 500G,VALDO,standard,500.0,g,,2.49,,regular,https://cenudepo.lv/product/lecas-valdo-dzeltenas-skeltas-500g
+lentils_green,own,2026-10-06,Promo,06.10.2026,"LĒCAS MELNĀS BUON GUSTO,350G",,standard,350.0,g,,2.05,,regular,https://cenudepo.lv/product/lecas-melnas-buon-gusto-350g
+lentils_green,own,2026-10-06,Promo,06.10.2026,LĒCAS DZELTENĀS BUON GUSTO350G,BOUN GUSTO,standard,350.0,g,,2.05,,regular,https://cenudepo.lv/product/lecas-dzeltenas-buon-gusto350g
+lentils_green,own,2026-10-06,Rimi,06.10.2026,EKOLOĢISKAS ZAĻĀS LĒCAS SALLING EKO 400G,SALLING EKO,organic,400.0,g,,2.69,,regular,https://cenudepo.lv/product/ekologiskas-zalas-lecas-salling-eko-400g
+lentils_green,own,2026-10-06,Rimi,06.10.2026,LĒCAS BONDUELLE VAPEUR 310G/265G,BONDUELLE,standard,265.0,g,,2.15,,regular,https://cenudepo.lv/product/lecas-bonduelle-vapeur-310g-265g
+lentils_green,own,2026-10-06,Promo,06.10.2026,LĒCAS BONDUELLE VAPEUR 310G/265G,BONDUELLE,standard,265.0,g,,2.29,,regular,https://cenudepo.lv/product/lecas-bonduelle-vapeur-310g-265g
+lentils_green,own,2026-10-06,Rimi,06.10.2026,BRŪNĀS LĒCAS ACTIVUS BIO 150G,ACTIVUS,organic,150.0,g,,1.99,,regular,https://cenudepo.lv/product/brunas-lecas-activus-bio-150g
+peas_split,own,2026-10-06,Citro,06.10.2026,ZIRŅI FASMA ŠĶELTIE 800G,GALINTA,standard,800.0,g,,0.75,,regular,https://cenudepo.lv/product/zirni-fasma-skeltie-800g
+peas_split,own,2026-10-06,Maxima,06.10.2026,ŠĶELTIE ZIRŅI EXTRA LINE 800G,,standard,800.0,g,,0.75,,regular,https://cenudepo.lv/product/skeltie-zirni-extra-line-800g
+peas_split,own,2026-10-06,Rimi,06.10.2026,ŠĶELTIE ZIRŅI RIMI SMART 800G,RIMI SMART,store_brand,800.0,g,,0.75,,regular,https://cenudepo.lv/product/skeltie-zirni-rimi-smart-800g
+peas_split,own,2026-10-06,Promo,06.10.2026,"ZIRNI ŠĶELTIE LIMOR, 800G",LIMOR,standard,800.0,g,,1.05,,regular,https://cenudepo.lv/product/zirnn-skeltie-limor-800g
+peas_split,own,2026-10-06,Promo,06.10.2026,"ZIRŅI ARIADNA, SLĪPĒTIE, ŠĶELTIE,800G",Ariadna,standard,800.0,g,,1.09,,regular,https://cenudepo.lv/product/zirni-ariadna-slipetie-skeltie-800g
+peas_split,own,2026-10-06,Maxima,06.10.2026,ZIRŅI DZELTENIE NAŠA KAŠA ŠĶELTI 900G,NAŠA KAŠA,standard,900.0,g,,1.49,,regular,https://cenudepo.lv/product/zirni-dzeltenie-nasa-kasa-skelti-900g
+peas_split,own,2026-10-06,unknown (card price),,DZELTENIE ZIRŅI ZELTA SAULE ŠĶELTIE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,2.19,loyalty,https://cenudepo.lv/product/dzeltenie-zirni-zelta-saule-skeltie-1kg
+peas_split,own,2026-10-06,Promo,06.10.2026,"ZAĻIE ŠĶELTIE ZIRŅI BUON GUSTO,350G",,standard,350.0,g,,1.25,,regular,https://cenudepo.lv/product/zalie-skeltie-zirni-buon-gusto-350g
+peas_split,own,2026-10-06,Maxima,05.10.2026,ZIRŅI EXTRA LINE 800G,EXTRA LINE,standard,800.0,g,,0.75,,regular,https://cenudepo.lv/product/zirni-extra-line-800g
+peas_grey,own,2026-10-06,Maxima,06.10.2026,ZIRŅI ZELTA SAULE PELĒKIE 1KG,ZELTA SAULE,standard,1000.0,g,,1.79,,regular,https://cenudepo.lv/product/zirni-zelta-saule-pelekie-1kg
+peas_grey,own,2026-10-06,Citro,06.10.2026,ZIRŅI ZELTA SAULE PELĒKIE 1KG,ZELTA SAULE,standard,1000.0,g,,1.99,,regular,https://cenudepo.lv/product/zirni-zelta-saule-pelekie-1kg
+peas_grey,own,2026-10-06,Promo,06.10.2026,"ZIRŅI PELĒKIE VALDO, 1KG",VALDO,standard,1000.0,g,,2.99,,regular,https://cenudepo.lv/product/zirni-pelekie-valdo-1kg
+peas_grey,own,2026-10-06,Rimi,06.10.2026,"ZIRŅI PELĒKIE VALDO, 1KG",VALDO,standard,1000.0,g,,3.09,,regular,https://cenudepo.lv/product/zirni-pelekie-valdo-1kg
+chickpeas_dried,own,2026-10-06,Gemoss,06.10.2026,TURKU ZIRŅI JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.14,,regular,https://cenudepo.lv/product/turku-zirni-just-nature-500g
+chickpeas_dried,own,2026-10-06,Maxima,06.10.2026,TURKU ZIRŅI JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.89,,regular,https://cenudepo.lv/product/turku-zirni-just-nature-500g
+chickpeas_dried,own,2026-10-06,Citro,06.10.2026,TURKU ZIRŅI JUST NATURE 500G,JUST NATURE,standard,500.0,g,,1.95,,regular,https://cenudepo.lv/product/turku-zirni-just-nature-500g
+chickpeas_dried,own,2026-10-06,Maxima,06.10.2026,AUNAZIRŅI WELL DONE 500G,WELL DONE,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/aunazirni-well-done-500g
+chickpeas_dried,own,2026-10-06,Promo,06.10.2026,"TURKU ZIRŅI SEZERO, 900G",SEZERO,standard,900.0,g,,2.99,,regular,https://cenudepo.lv/product/turku-zirni-sezero-900g
+chickpeas_dried,own,2026-10-06,Rimi,06.10.2026,TURKU ZIRŅI RIMI PLANET 400G,RIMI PLANET,standard,400.0,g,,1.49,,regular,https://cenudepo.lv/product/turku-zirni-rimi-planet-400g
+chickpeas_dried,own,2026-10-06,Rimi,06.10.2026,AUNAZIRŅI RIMI VĀRĪTI 250G,RIMI,store_brand,250.0,g,,1.19,,regular,https://cenudepo.lv/product/aunazirni-rimi-variti-250g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,KONSERVĒTAS BALTĀS PUPIŅAS EXTRA LINE 400G,EXTRA LINE,standard,400.0,g,,0.59,,regular,https://cenudepo.lv/product/konservetas-baltas-pupinas-extra-line-400g
+beans_canned,own,2026-10-06,Top!,22.09.2026,PUPIŅAS FIORINO SVIESTA 400G,FIORINO,standard,400.0,g,,0.69,,regular,https://cenudepo.lv/product/pupinas-fiorino-sviesta-400g
+beans_canned,own,2026-10-06,Promo,06.10.2026,"PUPIŅAS BALTĀS TASTE LAND, 400G/240 G",Taste Land,standard,240.0,g,,0.89,,regular,https://cenudepo.lv/product/pupinas-baltas-taste-land-400g-240-g
+beans_canned,own,2026-10-06,Rimi,06.10.2026,KONSERVĒTAS BALTĀS PUPIŅAS RIMI SMART 400/240G,RIMI SMART,store_brand,240.0,g,,0.59,,regular,https://cenudepo.lv/product/konservetas-baltas-pupinas-rimi-smart-400-240g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,KONSERVĒTAS PUPIŅAS BORLOTTI WELL DONE 400G,WELL DONE,standard,400.0,g,,0.99,,regular,https://cenudepo.lv/product/konservetas-pupinas-borlotti-well-done-400g
+beans_canned,own,2026-10-06,Citro,06.10.2026,KONSERV. PUPIŅAS VALDO SVIESTA 400G,VALDO,standard,400.0,g,,1.05,1.29,discount_all,https://cenudepo.lv/product/konserv-pupinas-valdo-sviesta-400g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,EKOLOĢISKAS CANNELLINI PUPIŅAS WELL DONE 420G,WELL DONE,standard,420.0,g,,1.19,,regular,https://cenudepo.lv/product/ekologiskas-cannellini-pupinas-well-done-420g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,BALTĀS PUPIŅAS CIDACOS 570G,CIDACOS,standard,570.0,g,,1.99,,regular,https://cenudepo.lv/product/baltas-pupinas-cidacos-570g
+beans_canned,own,2026-10-06,Rimi,06.10.2026,SVIESTA PUPIŅAS RIMI 400G/240G,RIMI,store_brand,240.0,g,,0.89,,regular,https://cenudepo.lv/product/sviesta-pupinas-rimi-400g-240g
+beans_canned,own,2026-10-06,unknown (card price),,EKOLOĢISKAS KONSERVĒTAS MELNĀS PUPIŅAS SALLING EKO 420G/252G,SALLING EKO,organic,252.0,g,,0.99,1.19,loyalty,https://cenudepo.lv/product/ekologiskas-konservetas-melnas-pupinas-salling-eko-420g-252g
+beans_canned,own,2026-10-06,Rimi,06.10.2026,LĒCAS RIMI 400G/240G,RIMI,store_brand,240.0,g,,0.99,,regular,https://cenudepo.lv/product/lecas-rimi-400g-240g
+beans_canned,own,2026-10-06,Rimi,06.10.2026,PUPIŅU MAISĪJUMS RIMI ČETRI VEIDI 400G/240G,,standard,240.0,g,,0.99,,regular,https://cenudepo.lv/product/pupinu-maisijums-rimi-cetri-veidi-400g-240g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,TVAICĒT.PUPIŅAS CANELLINI WELL DONE 150G,WELL DONE,standard,150.0,g,,0.69,,regular,https://cenudepo.lv/product/tvaicet-pupinas-canellini-well-done-150g
+beans_canned,own,2026-10-06,Citro,06.10.2026,SARKANĀS PUPIŅAS GLOBUS VAKUUMA 326G,GLOBUS,standard,326.0,g,,1.59,1.95,discount_all,https://cenudepo.lv/product/sarkanas-pupinas-globus-vakuuma-326g
+beans_canned,own,2026-10-06,Rimi,06.10.2026,SVIESTA PUPIŅAS BLIK 400G/240G,BLIK,standard,240.0,g,,1.29,,regular,https://cenudepo.lv/product/sviesta-pupinas-blik-400g-240g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,SVIESTA PUPIŅAS GLOBUS TVAICĒTAS 326G,GLOBUS,standard,326.0,g,,1.89,,regular,https://cenudepo.lv/product/sviesta-pupinas-globus-tvaicetas-326g
+beans_canned,own,2026-10-06,Citro,06.10.2026,BALTĀS SVIESTA PUPIŅAS GLOBUS 326G/285G,GLOBUS,standard,285.0,g,,1.79,,regular,https://cenudepo.lv/product/baltas-sviesta-pupinas-globus-326g-285g
+beans_canned,own,2026-10-06,Rimi,06.10.2026,BALTĀS SVIESTA PUPIŅAS GLOBUS 326G/285G,GLOBUS,standard,285.0,g,,1.89,,regular,https://cenudepo.lv/product/baltas-sviesta-pupinas-globus-326g-285g
+beans_canned,own,2026-10-06,Maxima,06.10.2026,TVAICĒTAS SARKANĀS PUPIŅAS BONDUELLE VAPEUR 310G,BONDUELLE,standard,310.0,g,,2.45,,regular,https://cenudepo.lv/product/tvaicetas-sarkanas-pupinas-bonduelle-vapeur-310g
+beans_canned,own,2026-10-06,Gemoss,06.10.2026,MUNG PUPIŅU DĪGSTI ŪDENĪ 370ML/180G MIKADO,MIKADO,standard,180.0,g,,1.67,,regular,https://cenudepo.lv/product/mung-pupinu-digsti-udeni-370ml-180g-mikado
+beans_canned,own,2026-10-06,Promo,06.10.2026,"SOJAS PUPIŅAS EDAMAME RISTORIS BIO, 200G/130G",RISRTORIS,organic,130.0,g,,2.34,,regular,https://cenudepo.lv/product/sojas-pupinas-edamame-ristoris-bio-200g-130g
+chickpeas_canned,own,2026-10-06,Top!,22.09.2026,TURKU ZIRŅI FIORINO 400G,FIORINO,standard,400.0,g,,0.65,,regular,https://cenudepo.lv/product/turku-zirni-fiorino-400g
+chickpeas_canned,own,2026-10-06,Citro,06.10.2026,KONSERVĒTI TURKU ZIRŅI KOK 400G,,standard,400.0,g,,0.85,1.05,discount_all,https://cenudepo.lv/product/konserveti-turku-zirni-kok-400g
+chickpeas_canned,own,2026-10-06,Maxima,06.10.2026,KONSERVĒTI AUNAZIRŅI EXTRA LINE 330 G,EXTRA LINE,standard,330.0,g,,0.75,,regular,https://cenudepo.lv/product/konserveti-aunazirni-extra-line-330-g
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,"TURKU ZIRŅI KONSERVĒTI TASTE LAND,400G/240G",Taste Land,standard,240.0,g,,0.99,,regular,https://cenudepo.lv/product/turku-zirni-konserveti-taste-land-400g-240g
+chickpeas_canned,own,2026-10-06,unknown (card price),,TURKU ZIRŅI RIMI 400G/240G,RIMI,store_brand,240.0,g,,0.8,0.99,loyalty,https://cenudepo.lv/product/turku-zirni-rimi-400g-240g
+chickpeas_canned,own,2026-10-06,Maxima,06.10.2026,"EKOLOĢISKIE AUNAZIRŅI WELL DONE, 425G",WELL DONE,standard,425.0,g,,1.39,,regular,https://cenudepo.lv/product/ekologiskie-aunazirni-well-done-425g
+chickpeas_canned,own,2026-10-06,Maxima,06.10.2026,KONSERVĒTI TURKU ZIRŅI WELL DONE 330G,,standard,330.0,g,,1.29,,regular,https://cenudepo.lv/product/konserveti-turku-zirni-well-done-330g
+chickpeas_canned,own,2026-10-06,unknown (card price),,EKOLOĢISKI KONSERVĒTI AUNAZIRŅI SALLING EKO 400G/240G,SALLING EKO,organic,240.0,g,,0.99,1.25,loyalty,https://cenudepo.lv/product/ekologiski-konserveti-aunazirni-salling-eko-400g-240g
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,ZIRŅI DIMDIŅI TURKU VĀRĪTI 250G,Dimdiņi,standard,250.0,g,,1.19,,regular,https://cenudepo.lv/product/zirni-dimdini-turku-variti-250g
+chickpeas_canned,own,2026-10-06,Citro,06.10.2026,ZIRŅI DIMDIŅI TURKU VĀRĪTI 250G,Dimdiņi,standard,250.0,g,,1.49,,regular,https://cenudepo.lv/product/zirni-dimdini-turku-variti-250g
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,"TURKU ZIRŅI RISTORIS, 800G/ 480G",RISTORIS,standard,480.0,g,,2.39,,regular,https://cenudepo.lv/product/turku-zirni-ristoris-800g-480g
+chickpeas_canned,own,2026-10-06,Maxima,06.10.2026,TVAICĒTI AUNAZIRŅI WELL DONE 150G,WELL DONE,standard,150.0,g,,0.79,,regular,https://cenudepo.lv/product/tvaiceti-aunazirni-well-done-150g
+chickpeas_canned,own,2026-10-06,Maxima,06.10.2026,TURKU ZIRNĪŠI CIDACOS 570G/400G,CIDACOS,standard,400.0,g,,2.29,,regular,https://cenudepo.lv/product/turku-zirnisi-cidacos-570g-400g
+chickpeas_canned,own,2026-10-06,Rimi,06.10.2026,TURKU ZIRNĪŠI CIDACOS 570G/400G,CIDACOS,standard,400.0,g,,2.89,,regular,https://cenudepo.lv/product/turku-zirnisi-cidacos-570g-400g
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,"TURKU ZIRŅI RISTORIS, 2.5KG/1.5KG",RISRTORIS,standard,1500.0,g,,8.99,,regular,https://cenudepo.lv/product/turku-zirni-ristoris-2-5kg-1-5kg
+chickpeas_canned,own,2026-10-06,Rimi,06.10.2026,TURKU ZIRNI TVAICĒTI “VAPEUR” BONDUELLE310G/265G,BONDUELLE,standard,265.0,g,,1.95,,regular,https://cenudepo.lv/product/turku-zirni-tvaiceti-vapeur-bonduelle310g-265g
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,TURKU ZIRNI TVAICĒTI “VAPEUR” BONDUELLE310G/265G,BONDUELLE,standard,265.0,g,,1.99,,regular,https://cenudepo.lv/product/turku-zirni-tvaiceti-vapeur-bonduelle310g-265g
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,"TURKU ZIRŅI BONDUELLE,2.55/2.1 KG",,standard,2100.0,g,,17.79,,regular,https://cenudepo.lv/product/turku-zirni-bonduelle-2-55-2-1-kg
+chickpeas_canned,own,2026-10-06,Promo,06.10.2026,"TURKU ZIRŅI «SOUS VIDE» BONDUELLE,620/530G",,standard,530.0,g,,4.99,,regular,https://cenudepo.lv/product/turku-zirni-sous-vide-bonduelle-620-530g
+chickpeas_canned,own,2026-10-06,Maxima,06.10.2026,AUNAZIRŅI GLOBUS VAKUUMA IEPAKOJUMĀ 140G,GLOBUS,standard,140.0,g,,1.39,,regular,https://cenudepo.lv/product/aunazirni-globus-vakuuma-iepakojuma-140g
+chickpeas_canned,own,2026-10-06,Gemoss,06.10.2026,"ZIRNĪŠI TURKU, 240G (425ML)",GEMOSS COLLECTION,standard,425.0,ml,,0.69,,regular,https://cenudepo.lv/product/zirnisi-turku-240g-425ml
+tofu,own,2026-10-06,Rimi,,DABĪGAIS TOFU LUNTER 180G,LUNTER,standard,180.0,g,,0.99,1.25,discount_all,https://cenudepo.lv/product/dabigais-tofu-lunter-180g
+tofu,own,2026-10-06,Maxima,06.10.2026,DABĪGAIS TOFU LUNTER 180G,LUNTER,standard,180.0,g,,1.19,,regular,https://cenudepo.lv/product/dabigais-tofu-lunter-180g
+tofu,own,2026-10-06,Maxima,06.10.2026,KŪPINĀTS TOFU LUNTER 180G,LUNTER,standard,180.0,g,,1.19,,regular,https://cenudepo.lv/product/kupinats-tofu-lunter-180g
+tofu,own,2026-10-06,Maxima,06.10.2026,MARINĒTS TOFU LUNTER 180G,LUNTER,standard,180.0,g,,1.19,,regular,https://cenudepo.lv/product/marinets-tofu-lunter-180g
+tofu,own,2026-10-06,Rimi,06.10.2026,MARINĒTS TOFU LUNTER 180G,LUNTER,standard,180.0,g,,1.39,,regular,https://cenudepo.lv/product/marinets-tofu-lunter-180g
+tofu,own,2026-10-06,Maxima,06.10.2026,BIO TOFU DABĪGAIS BERIEF 2X200G,BERIEF,organic,400.0,g,,3.49,,regular,https://cenudepo.lv/product/bio-tofu-dabigais-berief-2x200g
+tofu,own,2026-10-06,Rimi,06.10.2026,SOJAS TOFU BERIEF DABĪGAIS BIO 400G,BERIEF,organic,400.0,g,,3.79,,regular,https://cenudepo.lv/product/sojas-tofu-berief-dabigais-bio-400g
+tofu,own,2026-10-06,Maxima,05.10.2026,TOFU BERIEF SOJAS KŪPINĀTS 350G,BERIEF,standard,350.0,g,,3.69,,regular,https://cenudepo.lv/product/tofu-berief-sojas-kupinats-350g
+tofu,own,2026-10-06,Gemoss,06.10.2026,ZĪDAINS TOFU MORINAGA 307G,MORINAGA,standard,307.0,g,,3.9,,regular,https://cenudepo.lv/product/zidains-tofu-morinaga-307g
+tofu,own,2026-10-06,Maxima,01.10.2026,ZĪDAINS TOFU MORINAGA 307G,MORINAGA,standard,307.0,g,,3.99,,regular,https://cenudepo.lv/product/zidains-tofu-morinaga-307g
+tofu,own,2026-10-06,Rimi,06.10.2026,ZĪDAINS TOFU MORINAGA 307G,MORINAGA,standard,307.0,g,,4.69,,regular,https://cenudepo.lv/product/zidains-tofu-morinaga-307g
+tofu,own,2026-10-06,Maxima,06.10.2026,TOFU SMĒRIŅŠ AR MAURLOKIEM LUNTER 140G,LUNTER,standard,140.0,g,,1.99,,regular,https://cenudepo.lv/product/tofu-smerins-ar-maurlokiem-lunter-140g
+soy_chunks,own,2026-10-06,Gemoss,06.10.2026,SOJAS GABALIŅI JUST NATURE 300G,JUST NATURE,standard,300.0,g,,2.16,,regular,https://cenudepo.lv/product/sojas-gabalini-just-nature-300g
+soy_chunks,own,2026-10-06,Rimi,,VISTAS FILEJAS TIPA SOJAS STEIKI LIKE MEAT 180G,LIKE MEAT,standard,180.0,g,,3.49,3.99,discount_all,https://cenudepo.lv/product/vistas-filejas-tipa-sojas-steiki-like-meat-180g
+soy_chunks,own,2026-10-06,Maxima,06.10.2026,VISTAS FILEJAS TIPA SOJAS STEIKI LIKE MEAT 180G,LIKE MEAT,standard,180.0,g,,3.49,,regular,https://cenudepo.lv/product/vistas-filejas-tipa-sojas-steiki-like-meat-180g
+soy_chunks,own,2026-10-06,Maxima,06.10.2026,VEGĀNISKIE SOJAS UN KVIEŠU OLBALTUMVIELU PLĀCENĪŠI GARDEN GOURMET 150G,GARDEN GOURMET,standard,150.0,g,,3.49,,regular,https://cenudepo.lv/product/veganiskie-sojas-un-kviesu-olbaltumvielu-placenisi-garden-gourmet-150g
+soy_chunks,own,2026-10-06,Promo,06.10.2026,"SALDĒTAS VEGĀNISKĀS DESIŅAS UZ SOJAS BĀZES PLNT, AR LIELLOPA GAĻAS GARŠU, 4X40G, 160G",,standard,160.0,g,,4.49,,regular,https://cenudepo.lv/product/saldetas-veganiskas-desinas-uz-sojas-bazes-plnt-ar-liellopa-galas-garsu-4x40g-160g
+chicken_thigh_fillet,own,2026-10-06,Maxima,06.10.2026,CĀĻA ŠĶIŅĶI ATKAULOTI BEZ ĀDAS WD 500 G,,standard,500.0,g,,2.95,,regular,https://cenudepo.lv/product/cala-skinki-atkauloti-bez-adas-wd-500-g-27444
+chicken_thigh_fillet,own,2026-10-06,Maxima,06.10.2026,CĀĻA ŠĶIŅĶI ATKAULOTI BEZ ĀDAS BEZ ANTIBIOTIKĀM KG,,standard,1000.0,g,,6.47,,regular,https://cenudepo.lv/product/cala-skinki-atkauloti-bez-adas-bez-antibiotikam-kg
+chicken_thigh_fillet,own,2026-10-06,Rimi,06.10.2026,CĀĻU ŠĶIŅĶI ATKAULOTI BEZ ĀDAS FAS. 500G ĶEKAVA,ĶEKAVA,standard,500.0,g,,4.99,,regular,https://cenudepo.lv/product/calu-skinki-atkauloti-bez-adas-fas-500g-kekava
+turkey_fillet,own,2026-10-06,Rimi,,TĪTARA FILEJA RIMI SVAIGA A ŠĶIRA FAS.,RIMI,store_brand,,,,9.99,11.09,discount_all,https://cenudepo.lv/product/titara-fileja-rimi-svaiga-a-skira-fas
+turkey_fillet,own,2026-10-06,Rimi,06.10.2026,TĪTARA KRŪTIŅAS FILEJA RIMI ŠĶĒLĒS 360G,RIMI,store_brand,360.0,g,,4.29,,regular,https://cenudepo.lv/product/titara-krutinas-fileja-rimi-skeles-360g
+turkey_fillet,own,2026-10-06,Velto,06.10.2026,"TĪTARA FILEJAS ESKALOPS, ATDZ., VAK., ~1.2KG, FRANCIJA",POULE TOQUE,standard,1200.0,g,,15.52,,regular,https://cenudepo.lv/product/titara-filejas-eskalops-atdz-vak-1-2kg-francija
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPA STEIKS FEEL THE BEEF DRY AGED CHUCK-EYE 400G,FEEL THE BEEF,standard,400.0,g,,9.49,,regular,https://cenudepo.lv/product/liellopa-steiks-feel-the-beef-dry-aged-chuck-eye-400g
+beef_steak,own,2026-10-06,Velto,06.10.2026,"LIELLOPA SĀNU STEIKS (FLANK STEAK), ATDZ., VAK., ~0,5 KG, NAMĪBIJA",VELTO,standard,500.0,g,,14.05,,regular,https://cenudepo.lv/product/liellopa-sanu-steiks-flank-steak-atdz-vak-0-5-kg-namibija
+beef_steak,own,2026-10-06,Maxima,06.10.2026,BRIEDINĀTS LIELLOPA RUMP STEIKS WELL DONE  220G,WELL DONE,standard,220.0,g,,6.99,,regular,https://cenudepo.lv/product/briedinats-liellopa-rump-steiks-well-done-220g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,BRIEDINĀTS LIELLOPA PLECU GAĻAS STEIKS WELL DONE 220G,WELL DONE,standard,220.0,g,,6.99,,regular,https://cenudepo.lv/product/briedinats-liellopa-plecu-galas-steiks-well-done-220g
+beef_steak,own,2026-10-06,Rimi,,LIELLOPA ANTREKOTA STEIKS RIMI 200G,RIMI,store_brand,200.0,g,,6.69,8.39,discount_all,https://cenudepo.lv/product/liellopa-antrekota-steiks-rimi-200g
+beef_steak,own,2026-10-06,Rimi,06.10.2026,LIELLOPA RUMPSTEIKS RIMI 200G,RIMI,store_brand,200.0,g,,6.69,,regular,https://cenudepo.lv/product/liellopa-rumpsteiks-rimi-200g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,BRIEDINĀTS FILEJAS STEIKS WELL DONE 240G,WELL DONE,standard,240.0,g,,8.99,,regular,https://cenudepo.lv/product/briedinats-filejas-steiks-well-done-240g
+beef_steak,own,2026-10-06,Promo,06.10.2026,"RIB STEIKS AR KAULU (NOGATAVINĀTS) ~ 400G, SALDĒTS",,standard,400.0,g,,39.99,,regular,https://cenudepo.lv/product/rib-steiks-ar-kaulu-nogatavinats-400g-saldets
+beef_steak,own,2026-10-06,Maxima,06.10.2026,BRIEDIN. ANTREKOTA STEIKS WELL DONE 240G,WELL DONE,standard,240.0,g,,9.79,,regular,https://cenudepo.lv/product/briedin-antrekota-steiks-well-done-240g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,"LIELLOPA STEIKS DRY AGED ENTRECOTE 
+ BIOVELA 220G",BIOVELA,standard,220.0,g,,8.99,,regular,https://cenudepo.lv/product/liellopa-steiks-dry-aged-entrecote-biovela-220g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPA STEIKS FEEL THE BEEF DRY AGED STRIP 220G,FEEL THE BEEF,standard,220.0,g,,8.99,,regular,https://cenudepo.lv/product/liellopa-steiks-feel-the-beef-dry-aged-strip-220g
+beef_steak,own,2026-10-06,Maxima,23.09.2026,LIELLOPA FILEJAS STEIKS WELL DONE PREMIUM BEZ KAULA 220G,WELL DONE PREMIUM,standard,220.0,g,,8.99,,regular,https://cenudepo.lv/product/liellopa-filejas-steiks-well-done-premium-bez-kaula-220g
+beef_steak,own,2026-10-06,Maxima,23.09.2026,LIELLOPA GAĻAS ANTREKOTA STEIKS WELL DONE PREMIUM BEZ KAULA 220G,WELL DONE PREMIUM,standard,220.0,g,,8.99,,regular,https://cenudepo.lv/product/liellopa-galas-antrekota-steiks-well-done-premium-bez-kaula-220g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPA GAĻAS STEIKS NEW YORK BV 240G,BIOVELA,standard,240.0,g,,9.99,,regular,https://cenudepo.lv/product/liellopa-galas-steiks-new-york-bv-240g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPA GAĻAS STEIKS RIB EYE BV 240 G,BIOVELA,standard,240.0,g,,9.99,,regular,https://cenudepo.lv/product/liellopa-galas-steiks-rib-eye-bv-240-g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPU GAĻAS STEIKS BLACK ANGUS 220G,KITCHEN ME,standard,220.0,g,,10.99,,regular,https://cenudepo.lv/product/liellopu-galas-steiks-black-angus-220g
+beef_steak,own,2026-10-06,unknown (card price),06.10.2026,LIELLOPA STEIKS NOGATAVINĀTS 60D. STRIP 220G,AGARAS,standard,220.0,g,,10.99,14.99,loyalty,https://cenudepo.lv/product/liellopa-steiks-nogatavinats-60d-strip-220g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPA STEIKS FEEL THE BEEF DRY AGED RIB-EYE 260G,FEEL THE BEEF,standard,260.0,g,,12.99,,regular,https://cenudepo.lv/product/liellopa-steiks-feel-the-beef-dry-aged-rib-eye-260g
+beef_steak,own,2026-10-06,unknown (card price),06.10.2026,LIELLOPA STEIKS NOGATAVINĀTS 60D. TENDERLOIN 200G,FEEL THE BEEF,standard,200.0,g,,11.99,15.99,loyalty,https://cenudepo.lv/product/liellopa-steiks-nogatavinats-60d-tenderloin-200g
+beef_steak,own,2026-10-06,Maxima,06.10.2026,LIELLOPA STEIKS FEEL THE BEEF STRIP MARBLE 220G,FEEL THE BEEF,standard,220.0,g,,18.99,,regular,https://cenudepo.lv/product/liellopa-steiks-feel-the-beef-strip-marble-220g
+tuna_canned,own,2026-10-06,Rimi,06.10.2026,SASMALCINĀTA TUNZIVS SĀLĪJUMĀ RIMI SMART 185G/130G,RIMI SMART,store_brand,130.0,g,,0.87,,regular,https://cenudepo.lv/product/sasmalcinata-tunzivs-salijuma-rimi-smart-185g-130g
+tuna_canned,own,2026-10-06,Citro,06.10.2026,SENDVIČA TUNCIS SAVĀ SULĀ BLIK 185G,BLIK,standard,185.0,g,,1.29,1.56,discount_all,https://cenudepo.lv/product/sendvica-tuncis-sava-sula-blik-185g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,SENDVIČA TUNCIS SAVĀ SULĀ BLIK 185G,BLIK,standard,185.0,g,,1.39,,regular,https://cenudepo.lv/product/sendvica-tuncis-sava-sula-blik-185g
+tuna_canned,own,2026-10-06,Promo,06.10.2026,SENDVIČA TUNCIS SAVĀ SULĀ BLIK 185G,BLIK,standard,185.0,g,,1.56,,regular,https://cenudepo.lv/product/sendvica-tuncis-sava-sula-blik-185g
+tuna_canned,own,2026-10-06,Rimi,06.10.2026,TUNZIVS RIMI SMART SASMALCINĀTA SAVĀ SULĀ 425G/298G,RIMI SMART,store_brand,298.0,g,,2.79,,regular,https://cenudepo.lv/product/tunzivs-rimi-smart-sasmalcinata-sava-sula-425g-298g
+tuna_canned,own,2026-10-06,Gemoss,06.10.2026,TUNČA GABALIŅI SAVĀ SULĀ 1705G/1260G GEMOSS COLLECTION,GEMOSS COLLECTION,standard,1260.0,g,,12.5,,regular,https://cenudepo.lv/product/tunca-gabalini-sava-sula-1705g-1260g-gemoss-collection
+tuna_canned,own,2026-10-06,Promo,06.10.2026,"TUNCIS SAVĀ SULĀ MIKADO (GABALIŅI), 185 G",MIKADO,standard,185.0,g,,1.87,,regular,https://cenudepo.lv/product/tuncis-sava-sula-mikado-gabalini-185-g
+tuna_canned,own,2026-10-06,Citro,06.10.2026,TUNČA GABALIŅI SAVĀ SULĀ 185G,,standard,185.0,g,,2.15,,regular,https://cenudepo.lv/product/tunca-gabalini-sava-sula-185g
+tuna_canned,own,2026-10-06,Gemoss,06.10.2026,TUNČA GABALIŅI SAVĀ SULĀ 185G/130G GEMOSS COLLECTION,GEMOSS COLLECTION,standard,130.0,g,,1.56,,regular,https://cenudepo.lv/product/tunca-gabalini-sava-sula-185g-130g-gemoss-collection
+tuna_canned,own,2026-10-06,Citro,06.10.2026,TUNCIS JOHN WEST GABALIŅOS SAVĀ SULĀ 145G,John West,standard,145.0,g,,1.89,,regular,https://cenudepo.lv/product/tuncis-john-west-gabalinos-sava-sula-145g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,TUNCIS JOHN WEST GABALIŅOS SAVĀ SULĀ 145G,John West,standard,145.0,g,,2.99,,regular,https://cenudepo.lv/product/tuncis-john-west-gabalinos-sava-sula-145g
+tuna_canned,own,2026-10-06,Promo,06.10.2026,TUNCIS JOHN WEST GABALIŅOS SAVĀ SULĀ 145G,John West,standard,145.0,g,,3.49,,regular,https://cenudepo.lv/product/tuncis-john-west-gabalinos-sava-sula-145g
+tuna_canned,own,2026-10-06,Rimi,06.10.2026,TUNZIVS STEIKS MAMOS KONSERVAI SAVĀ SULĀ 185G,MAMOS KONSERVAI,standard,185.0,g,,2.49,,regular,https://cenudepo.lv/product/tunzivs-steiks-mamos-konservai-sava-sula-185g
+tuna_canned,own,2026-10-06,Velto,06.10.2026,"TUNZIVS DZELTENSPURU, GABALIŅI (CHUNKS), SAVĀ SULĀ, 160G (S.S. 112G), ROSA DEI VENTI",ROSA DEI VENTI,standard,112.0,g,,2.22,,regular,https://cenudepo.lv/product/tunzivs-dzeltenspuru-gabalini-chunks-sava-sula-160g-s-s-112g-rosa-dei-venti
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,DZELTENSPURU TUNZIVS GABALIŅI SAVĀ SULĀ WELL DONE 2X120G,WELL DONE,standard,240.0,g,,3.69,,regular,https://cenudepo.lv/product/dzeltenspuru-tunzivs-gabalini-sava-sula-well-done-2x120g
+tuna_canned,own,2026-10-06,Top!,06.10.2026,TUNČA STEIKS SAVĀ SULĀ CALVO 160G,Calvo,standard,160.0,g,,2.79,,regular,https://cenudepo.lv/product/tunca-steiks-sava-sula-calvo-160g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,TUNČA STEIKS SAVĀ SULĀ CALVO 160G,Calvo,standard,160.0,g,,2.99,,regular,https://cenudepo.lv/product/tunca-steiks-sava-sula-calvo-160g
+tuna_canned,own,2026-10-06,Citro,06.10.2026,TUNCIS SAVĀ SULĀ CALVO 3X80G,CALVO,standard,240.0,g,,4.19,,regular,https://cenudepo.lv/product/tuncis-sava-sula-calvo-3x80g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,TUNCIS SAVĀ SULĀ CALVO 3X80G,CALVO,standard,240.0,g,,4.29,,regular,https://cenudepo.lv/product/tuncis-sava-sula-calvo-3x80g
+tuna_canned,own,2026-10-06,Abrands,28.09.2026,TUNCIS RIO MARE SAVĀ SULĀ 2X160G/108G,RIO MARE,standard,108.0,g,,4.99,,regular,https://cenudepo.lv/product/tuncis-rio-mare-sava-sula-2x160g-108g
+tuna_canned,own,2026-10-06,Rimi,,TUNCIS RIO MARE SAVĀ SULĀ 2X160G/108G,RIO MARE,standard,108.0,g,,6.99,9.89,discount_all,https://cenudepo.lv/product/tuncis-rio-mare-sava-sula-2x160g-108g
+tuna_canned,own,2026-10-06,Rimi,15.09.2026,TUNZIVS FILEJA RIMI SAVĀ SULĀ3X80G/3X56G,RIMI,store_brand,168.0,g,,4.19,,regular,https://cenudepo.lv/product/tunzivs-fileja-rimi-sava-sula3x80g-3x56g
+tuna_canned,own,2026-10-06,Rimi,,TUNČA STEIKS JW SAVĀ SULĀ 160G/112G,JOHN WEST,standard,112.0,g,,2.85,3.39,discount_all,https://cenudepo.lv/product/tunca-steiks-jw-sava-sula-160g-112g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,TUNČA STEIKS JW SAVĀ SULĀ 160G/112G,JOHN WEST,standard,112.0,g,,3.39,,regular,https://cenudepo.lv/product/tunca-steiks-jw-sava-sula-160g-112g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,TUNCIS RIO MARE SAVĀ SULĀ 3X80G,,standard,240.0,g,,6.99,,regular,https://cenudepo.lv/product/tuncis-rio-mare-sava-sula-3x80g
+tuna_canned,own,2026-10-06,unknown (card price),05.10.2026,TUNCIS VIGILANTE SAVĀ SULĀ 3X80G/3X52G,VIGILANTE,standard,156.0,g,,4.99,,loyalty,https://cenudepo.lv/product/tuncis-vigilante-sava-sula-3x80g-3x52g
+tuna_canned,own,2026-10-06,Maxima,06.10.2026,TUNCIS RIO MARE SAVĀ SULĀ 3+1 320G/224G,RIO MARE,standard,224.0,g,,8.69,,regular,https://cenudepo.lv/product/tuncis-rio-mare-sava-sula-3-1-320g-224g
+tuna_canned,own,2026-10-06,Rimi,06.10.2026,TUNCIS RIO MARE SAVĀ SULĀ 3+1 320G/224G,RIO MARE,standard,224.0,g,,9.09,,regular,https://cenudepo.lv/product/tuncis-rio-mare-sava-sula-3-1-320g-224g
+tuna_canned,own,2026-10-06,Promo,06.10.2026,TUNCIS RIO MARE SAVĀ SULĀ 3+1 320G/224G,RIO MARE,standard,224.0,g,,9.09,,regular,https://cenudepo.lv/product/tuncis-rio-mare-sava-sula-3-1-320g-224g
+tuna_canned,own,2026-10-06,Rimi,06.10.2026,TUNZIVS SELECTION SAVĀ SULĀ MSC 200G/140G,SELECTION BY RIMI,standard,140.0,g,,5.99,,regular,https://cenudepo.lv/product/tunzivs-selection-sava-sula-msc-200g-140g
+skyr,own,2026-10-06,Top!,06.10.2026,JOGURTS GRIEĶU ALMA PROTEĪNA 370G,ALMA,standard,370.0,g,,0.99,,regular,https://cenudepo.lv/product/jogurts-grieku-alma-proteina-370g
+skyr,own,2026-10-06,Rimi,06.10.2026,JOGURTS SKYR BALTAIS BEZ PIEDEVĀM 400G,BALTAIS,standard,400.0,g,,1.85,,regular,https://cenudepo.lv/product/jogurts-skyr-baltais-bez-piedevam-400g
+skyr,own,2026-10-06,Promo,06.10.2026,JOGURTS SKYR BALTAIS BEZ PIEDEVĀM 400G,BALTAIS,standard,400.0,g,,1.85,,regular,https://cenudepo.lv/product/jogurts-skyr-baltais-bez-piedevam-400g
+skyr,own,2026-10-06,unknown (card price),06.10.2026,JOGURTS BALTAIS SKYR ISLANDES BEZ PIEDEVĀM 400G,BALTAIS,standard,400.0,g,,1.49,1.85,loyalty,https://cenudepo.lv/product/jogurts-baltais-skyr-islandes-bez-piedevam-400g
+skyr,own,2026-10-06,Velto,06.10.2026,JOGURTS BALTAIS SKYR ZEMEŅU 300G,BALTAIS,standard,300.0,g,,1.22,,regular,https://cenudepo.lv/product/jogurts-baltais-skyr-zemenu-300g
+skyr,own,2026-10-06,Maxima,06.10.2026,JOGURTS BALTAIS SKYR ZEMEŅU 300G,BALTAIS,standard,300.0,g,,1.39,,regular,https://cenudepo.lv/product/jogurts-baltais-skyr-zemenu-300g
+skyr,own,2026-10-06,Citro,06.10.2026,JOGURTS BALTAIS SKYR ZEMEŅU 300G,BALTAIS,standard,300.0,g,,1.49,,regular,https://cenudepo.lv/product/jogurts-baltais-skyr-zemenu-300g
+skyr,own,2026-10-06,Rimi,06.10.2026,JOGURTS BALTAIS SKYR ZEMEŅU 300G,BALTAIS,standard,300.0,g,,1.69,,regular,https://cenudepo.lv/product/jogurts-baltais-skyr-zemenu-300g
+skyr,own,2026-10-06,Rimi,21.09.2026,"JOGURTS SALLING SKYR BEZPIEDEVU 0,2% 1KG",SALLING,standard,1000.0,g,,4.99,,regular,https://cenudepo.lv/product/jogurts-salling-skyr-bezpiedevu-0-2-1kg
+skyr,own,2026-10-06,Rimi,,JOGURTS FARMI SKYR MEŽA ZEMEŅU 150G,FARMI,standard,150.0,g,,0.75,0.89,discount_all,https://cenudepo.lv/product/jogurts-farmi-skyr-meza-zemenu-150g
+skyr,own,2026-10-06,Maxima,06.10.2026,JOGURTS FARMI SKYR MEŽA ZEMEŅU 150G,FARMI,standard,150.0,g,,0.89,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-meza-zemenu-150g
+skyr,own,2026-10-06,Rimi,,JOGURTS FARMI SKYR APELSĪNU STRACIATELLA 150G,FARMI,standard,150.0,g,,0.75,0.89,discount_all,https://cenudepo.lv/product/jogurts-farmi-skyr-apelsinu-straciatella-150g
+skyr,own,2026-10-06,Maxima,06.10.2026,JOGURTS FARMI SKYR APELSĪNU STRACIATELLA 150G,FARMI,standard,150.0,g,,0.89,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-apelsinu-straciatella-150g
+skyr,own,2026-10-06,Citro,06.10.2026,JOGURTS FARMI SKYR APELSĪNU STRACIATELLA 150G,FARMI,standard,150.0,g,,0.99,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-apelsinu-straciatella-150g
+skyr,own,2026-10-06,Promo,06.10.2026,JOGURTS FARMI SKYR APELSĪNU STRACIATELLA 150G,FARMI,standard,150.0,g,,1.19,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-apelsinu-straciatella-150g
+skyr,own,2026-10-06,Rimi,,JOGURTS FARMI SKYR MELLEŅU 150G,NO_TRANSLATION_FOUND_CD98659E-C77B-4C6F-B0CC-D6C024787B53,standard,150.0,g,,0.79,0.99,discount_all,https://cenudepo.lv/product/jogurts-farmi-skyr-mellenu-150g
+skyr,own,2026-10-06,Maxima,06.10.2026,JOGURTS FARMI SKYR MELLEŅU 150G,NO_TRANSLATION_FOUND_CD98659E-C77B-4C6F-B0CC-D6C024787B53,standard,150.0,g,,0.89,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-mellenu-150g
+skyr,own,2026-10-06,Promo,06.10.2026,JOGURTS FARMI SKYR MELLEŅU 150G,NO_TRANSLATION_FOUND_CD98659E-C77B-4C6F-B0CC-D6C024787B53,standard,150.0,g,,1.19,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-mellenu-150g
+skyr,own,2026-10-06,Citro,06.10.2026,JOGURTS FARMI SKYR MEŽA ZEMEŅU 150G,FARMI,standard,150.0,g,,0.99,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-meza-zemenu-150g-87105
+skyr,own,2026-10-06,Promo,05.10.2026,JOGURTS FARMI SKYR MEŽA ZEMEŅU 150G,FARMI,standard,150.0,g,,1.19,,regular,https://cenudepo.lv/product/jogurts-farmi-skyr-meza-zemenu-150g-87105
+skyr,own,2026-10-06,Rimi,06.10.2026,JOGURTS VALIO PROFEEL PROTEĪNA UPEŅU 200G,PRO FEEL,standard,200.0,g,,1.35,,regular,https://cenudepo.lv/product/jogurts-valio-profeel-proteina-upenu-200g
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,GRAUDAINAIS BIEZPIENS FARM MILK 5% 500G,,standard,500.0,g,,1.36,,regular,https://cenudepo.lv/product/graudainais-biezpiens-farm-milk-5-500g
+cottage_cheese,own,2026-10-06,Rimi,06.10.2026,GRAUDAINAIS BIEZPIENS RIMI SMART 5% 200G,RIMI SMART,store_brand,200.0,g,,0.75,,regular,https://cenudepo.lv/product/graudainais-biezpiens-rimi-smart-5-200g
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,BIEZPIENS WELL DONE 9% KG,,standard,1000.0,g,,4.49,,regular,https://cenudepo.lv/product/biezpiens-well-done-9-kg
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,"BIEZPIENS FARM MILK 0,2% 250G",FARM MILK,standard,250.0,g,,1.19,,regular,https://cenudepo.lv/product/biezpiens-farm-milk-0-2-250g
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,"BIEZPIENS WELL DONE 0,5% 500G",WELL DONE,standard,500.0,g,,2.49,,regular,https://cenudepo.lv/product/biezpiens-well-done-0-5-500g
+cottage_cheese,own,2026-10-06,Maxima,,GRAUD.BIEZPIENS SMILTENE 9% 800 G,,standard,800.0,g,,3.99,6.19,discount_all,https://cenudepo.lv/product/graud-biezpiens-smiltene-9-800-g
+cottage_cheese,own,2026-10-06,Rimi,,GRAUD.BIEZPIENS SMILTENE 9% 800 G,,standard,800.0,g,,6.19,,regular,https://cenudepo.lv/product/graud-biezpiens-smiltene-9-800-g
+cottage_cheese,own,2026-10-06,Velto,06.10.2026,BIEZPIENS 5% JAUNPILS 275G,Jaunpils,standard,275.0,g,,1.39,,regular,https://cenudepo.lv/product/biezpiens-5-jaunpils-275g
+cottage_cheese,own,2026-10-06,Maxima,,BIEZPIENS 5% JAUNPILS 275G,Jaunpils,standard,275.0,g,,1.69,2.09,discount_all,https://cenudepo.lv/product/biezpiens-5-jaunpils-275g
+cottage_cheese,own,2026-10-06,Promo,06.10.2026,BIEZPIENS 5% JAUNPILS 275G,Jaunpils,standard,275.0,g,,2.09,,regular,https://cenudepo.lv/product/biezpiens-5-jaunpils-275g
+cottage_cheese,own,2026-10-06,Citro,06.10.2026,BIEZPIENS 5% JAUNPILS 275G,Jaunpils,standard,275.0,g,,2.09,,regular,https://cenudepo.lv/product/biezpiens-5-jaunpils-275g
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,BIEZPIENS FARM MILK 8% 250G,FARM MILK,standard,250.0,g,,1.29,,regular,https://cenudepo.lv/product/biezpiens-farm-milk-8-250g
+cottage_cheese,own,2026-10-06,Velto,06.10.2026,BIEZPIENS JAUNPILS PILNPIENA 9% 275G,Jaunpils,standard,275.0,g,,1.48,,regular,https://cenudepo.lv/product/biezpiens-jaunpils-pilnpiena-9-275g
+cottage_cheese,own,2026-10-06,Citro,06.10.2026,BIEZPIENS JAUNPILS PILNPIENA 9% 275G,Jaunpils,standard,275.0,g,,1.49,2.15,discount_all,https://cenudepo.lv/product/biezpiens-jaunpils-pilnpiena-9-275g
+cottage_cheese,own,2026-10-06,Maxima,,BIEZPIENS JAUNPILS PILNPIENA 9% 275G,Jaunpils,standard,275.0,g,,1.79,2.19,discount_all,https://cenudepo.lv/product/biezpiens-jaunpils-pilnpiena-9-275g
+cottage_cheese,own,2026-10-06,Promo,06.10.2026,BIEZPIENS JAUNPILS PILNPIENA 9% 275G,Jaunpils,standard,275.0,g,,2.19,,regular,https://cenudepo.lv/product/biezpiens-jaunpils-pilnpiena-9-275g
+cottage_cheese,own,2026-10-06,Rimi,06.10.2026,BIEZPIENS JAUNPILS PILNPIENA 9% 275G,Jaunpils,standard,275.0,g,,2.25,,regular,https://cenudepo.lv/product/biezpiens-jaunpils-pilnpiena-9-275g
+cottage_cheese,own,2026-10-06,Rimi,,"PILNPIENA BIEZPIENS STRAUPE, 9%, 1KG",Straupe,standard,1000.0,g,,5.49,6.99,discount_all,https://cenudepo.lv/product/pilnpiena-biezpiens-straupe-9-1kg
+cottage_cheese,own,2026-10-06,Promo,06.10.2026,"PILNPIENA BIEZPIENS STRAUPE, 9%, 1KG",Straupe,standard,1000.0,g,,6.99,,regular,https://cenudepo.lv/product/pilnpiena-biezpiens-straupe-9-1kg
+cottage_cheese,own,2026-10-06,Top!,06.10.2026,BIEZPIENS BALTAIS EXPORTA 9% PILNPIENA 250G,EXPORTA,standard,250.0,g,,1.49,,regular,https://cenudepo.lv/product/biezpiens-baltais-exporta-9-pilnpiena-250g
+cottage_cheese,own,2026-10-06,Maxima,,BIEZPIENS BALTAIS EXPORTA 9% PILNPIENA 250G,EXPORTA,standard,250.0,g,,1.59,1.99,discount_all,https://cenudepo.lv/product/biezpiens-baltais-exporta-9-pilnpiena-250g
+cottage_cheese,own,2026-10-06,Top!,,"GRAUDAINAIS BIEZPIENS 0,5% SMILTENE 400G",SMILTENES PIENS,standard,400.0,g,,2.39,2.49,discount_all,https://cenudepo.lv/product/graudainais-biezpiens-0-5-smiltene-400g
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,"GRAUDAINAIS BIEZPIENS 0,5% SMILTENE 400G",SMILTENES PIENS,standard,400.0,g,,2.49,,regular,https://cenudepo.lv/product/graudainais-biezpiens-0-5-smiltene-400g
+cottage_cheese,own,2026-10-06,Promo,05.10.2026,"GRAUDAINAIS BIEZPIENS 0,5% SMILTENE 400G",SMILTENES PIENS,standard,400.0,g,,3.09,,regular,https://cenudepo.lv/product/graudainais-biezpiens-0-5-smiltene-400g
+cottage_cheese,own,2026-10-06,unknown (card price),06.10.2026,BIEZPIENS TIP TOP 9% 400G,TIP TOP,standard,400.0,g,,2.49,,loyalty,https://cenudepo.lv/product/biezpiens-tip-top-9-400g
+cottage_cheese,own,2026-10-06,Rimi,,BIEZPIENS SMILTENE GRAUDAINAIS 9% 400G,SMILTENE,standard,400.0,g,,2.59,2.89,discount_all,https://cenudepo.lv/product/biezpiens-smiltene-graudainais-9-400g
+cottage_cheese,own,2026-10-06,unknown (card price),06.10.2026,BIEZPIENS TIP TOP GRAUDAINAIS 9% 185G,TIP TOP,standard,185.0,g,,1.25,,loyalty,https://cenudepo.lv/product/biezpiens-tip-top-graudainais-9-185g
+cottage_cheese,own,2026-10-06,Rimi,05.10.2026,BIEZPIENS ŽEMAITIJOS  9% 1KG,ŽEMAITIJOS,standard,1000.0,g,,6.89,,regular,https://cenudepo.lv/product/biezpiens-zemaitijos-9-1kg
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,"BIEZPIENS GRAUDAINAIS, 7%, ANNELE, 350G",Annele,standard,350.0,g,,2.59,,regular,https://cenudepo.lv/product/biezpiens-graudainais-7-annele-350g
+cottage_cheese,own,2026-10-06,Rimi,06.10.2026,"BIEZPIENS GRAUDAINAIS, 7%, ANNELE, 350G",Annele,standard,350.0,g,,2.59,,regular,https://cenudepo.lv/product/biezpiens-graudainais-7-annele-350g
+cottage_cheese,own,2026-10-06,Promo,06.10.2026,"BIEZPIENS GRAUDAINAIS, 7%, ANNELE, 350G",Annele,standard,350.0,g,,2.59,,regular,https://cenudepo.lv/product/biezpiens-graudainais-7-annele-350g
+cottage_cheese,own,2026-10-06,Promo,02.10.2026,"GRAUDAINAIS BIEZPIENS SMILTENE, 0.5%, 200G",SMILTENES PIENS,standard,200.0,g,,1.59,,regular,https://cenudepo.lv/product/graudainais-biezpiens-smiltene-0-5-200g
+cottage_cheese,own,2026-10-06,Top!,,"GRAUDAINAIS BIEZPIENS SMILTENE, 0.5%, 200G",SMILTENES PIENS,standard,200.0,g,,1.59,,regular,https://cenudepo.lv/product/graudainais-biezpiens-smiltene-0-5-200g
+cottage_cheese,own,2026-10-06,Rimi,06.10.2026,"GRAUDAINAIS BIEZPIENS SMILTENE, 0.5%, 200G",SMILTENES PIENS,standard,200.0,g,,1.59,,regular,https://cenudepo.lv/product/graudainais-biezpiens-smiltene-0-5-200g
+cottage_cheese,own,2026-10-06,Maxima,06.10.2026,"GRAUDAINAIS BIEZPIENS SMILTENE, 0.5%, 200G",SMILTENES PIENS,standard,200.0,g,,1.59,,regular,https://cenudepo.lv/product/graudainais-biezpiens-smiltene-0-5-200g
+cottage_cheese,own,2026-10-06,Citro,06.10.2026,"GRAUDAINAIS BIEZPIENS SMILTENE, 0.5%, 200G",SMILTENES PIENS,standard,200.0,g,,1.65,,regular,https://cenudepo.lv/product/graudainais-biezpiens-smiltene-0-5-200g
+cottage_cheese,own,2026-10-06,Promo,06.10.2026,"VĀJPIENA BIEZPIENS STRAUPE 0,5% 400G",STRAUPE,standard,400.0,g,,3.45,,regular,https://cenudepo.lv/product/vajpiena-biezpiens-straupe-0-5-400g
+cottage_cheese,own,2026-10-06,Rimi,06.10.2026,"VĀJPIENA BIEZPIENS STRAUPE 0,5% 400G",STRAUPE,standard,400.0,g,,3.45,,regular,https://cenudepo.lv/product/vajpiena-biezpiens-straupe-0-5-400g
+cottage_cheese,own,2026-10-06,Rimi,06.10.2026,BIEZPIENS VALMIERA LIELGRAUDU 5% 185G,VALMIERA,standard,185.0,g,,1.79,,regular,https://cenudepo.lv/product/biezpiens-valmiera-lielgraudu-5-185g
+peanut_butter,own,2026-10-06,Abrands,28.09.2026,ZEMESRIEKSTU KREMS PAUZE CREAMY 340G,,standard,340.0,g,,1.79,,regular,https://cenudepo.lv/product/zemesriekstu-krems-pauze-creamy-340g
+peanut_butter,own,2026-10-06,Citro,06.10.2026,ZEMESRIEKSTU KREMS PAUZE CREAMY 340G,,standard,340.0,g,,2.29,,regular,https://cenudepo.lv/product/zemesriekstu-krems-pauze-creamy-340g
+peanut_butter,own,2026-10-06,Rimi,06.10.2026,ZEMESRIEKSTU KRĒMS RIMI SMART KRĒMĪGAIS 350G,RIMI SMART,store_brand,350.0,g,,2.29,,regular,https://cenudepo.lv/product/zemesriekstu-krems-rimi-smart-kremigais-350g
+peanut_butter,own,2026-10-06,Rimi,06.10.2026,ZEMESRIEKSTU KRĒMS RIMI SMART CRUNCHY 350G,RIMI SMART,store_brand,350.0,g,,2.29,,regular,https://cenudepo.lv/product/zemesriekstu-krems-rimi-smart-crunchy-350g
+peanut_butter,own,2026-10-06,Maxima,06.10.2026,ZEMESRIEKSTU KRĒMS WELL DONE CREAMY 300G,WELL DONE,standard,300.0,g,,1.99,,regular,https://cenudepo.lv/product/zemesriekstu-krems-well-done-creamy-300g
+peanut_butter,own,2026-10-06,Citro,06.10.2026,ZEMESRIEKSTU KREMS PAUZE CRUNCHY 340G,,standard,340.0,g,,2.29,,regular,https://cenudepo.lv/product/zemesriekstu-krems-pauze-crunchy-340g
+peanut_butter,own,2026-10-06,unknown (card price),,KRAUKŠĶĪGS ZEMESRIEKSTU KRĒMS RIMI 1KG,RIMI,store_brand,1000.0,g,,6.99,9.19,loyalty,https://cenudepo.lv/product/kraukskigs-zemesriekstu-krems-rimi-1kg
+peanut_butter,own,2026-10-06,Maxima,06.10.2026,ZEMESRIEKSTU SVIESTS NUTEGO KRĒMĪGAIS 250G,NUTEGO,standard,250.0,g,,2.49,,regular,https://cenudepo.lv/product/zemesriekstu-sviests-nutego-kremigais-250g
+peanut_butter,own,2026-10-06,Gemoss,06.10.2026,ZEMESRIEKSTU SVIESTS NUTEGO KRĒMĪGAIS 250G,NUTEGO,standard,250.0,g,,3.09,,regular,https://cenudepo.lv/product/zemesriekstu-sviests-nutego-kremigais-250g
+peanut_butter,own,2026-10-06,Promo,06.10.2026,ZEMESRIEKSTU SVIESTS NUTEGO KRĒMĪGAIS 250G,NUTEGO,standard,250.0,g,,3.32,,regular,https://cenudepo.lv/product/zemesriekstu-sviests-nutego-kremigais-250g
+peanut_butter,own,2026-10-06,Rimi,06.10.2026,ZEMESRIEKSTU SVIESTS NUTEGO KLASISKAIS 250G,NUTEGO,standard,250.0,g,,3.19,,regular,https://cenudepo.lv/product/zemesriekstu-sviests-nutego-klasiskais-250g
+peanut_butter,own,2026-10-06,Maxima,03.10.2026,PROTEĪNA GRAUZDĒTU ZEMESRIEKSTU KRĒMS GO ON 180G,GO ON,standard,180.0,g,,3.79,,regular,https://cenudepo.lv/product/proteina-grauzdetu-zemesriekstu-krems-go-on-180g
+peanut_butter,own,2026-10-06,Promo,06.10.2026,"ZEMESRIEKSTU SVIESTS  NUTEGO CLASSIC, KRĒMĪGAIS, 30G",Nutego,standard,30.0,g,,1.08,,regular,https://cenudepo.lv/product/zemesriekstu-sviests-nutego-classic-kremigais-30g
+walnuts,own,2026-10-06,Top!,22.09.2026,VALRIEKSTI ALIS CO ČAUMALĀ 300G,ALIS CO,standard,300.0,g,,2.05,,regular,https://cenudepo.lv/product/valrieksti-alis-co-caumala-300g
+walnuts,own,2026-10-06,Labais,06.10.2026,VALRIEKSTI ALIS CO LOBĪTI 500G,ALIS CO,standard,500.0,g,,4.39,,regular,https://cenudepo.lv/product/valrieksti-alis-co-lobiti-500g
+walnuts,own,2026-10-06,Maxima,06.10.2026,VALRIEKSTI ALIS CO LOBĪTI 500G,ALIS CO,standard,500.0,g,,5.29,,regular,https://cenudepo.lv/product/valrieksti-alis-co-lobiti-500g
+walnuts,own,2026-10-06,Top!,22.09.2026,VALRIEKSTI ALIS CO LOBĪTI 500G,ALIS CO,standard,500.0,g,,5.29,,regular,https://cenudepo.lv/product/valrieksti-alis-co-lobiti-500g
+walnuts,own,2026-10-06,Rimi,06.10.2026,VALRIEKSTI ALIS CO LOBĪTI 500G,ALIS CO,standard,500.0,g,,8.99,,regular,https://cenudepo.lv/product/valrieksti-alis-co-lobiti-500g
+walnuts,own,2026-10-06,Maxima,06.10.2026,VALRIEKSTI WELL DONE LOBĪTI 500G,WELL DONE,standard,500.0,g,,4.99,,regular,https://cenudepo.lv/product/valrieksti-well-done-lobiti-500g
+walnuts,own,2026-10-06,Maxima,06.10.2026,VALRIEKSTI LOBITI EXTRA LINE 150G,,standard,150.0,g,,1.69,,regular,https://cenudepo.lv/product/valrieksti-lobiti-extra-line-150g
+walnuts,own,2026-10-06,Citro,06.10.2026,VALRIEKSTI ARIMEX TĪRĪTI 300G,ARIMEX,standard,300.0,g,,3.49,4.99,discount_all,https://cenudepo.lv/product/valrieksti-arimex-tiriti-300g
+walnuts,own,2026-10-06,Maxima,05.10.2026,VALRIEKSTI ARIMEX TĪRĪTI 300G,ARIMEX,standard,300.0,g,,3.99,,regular,https://cenudepo.lv/product/valrieksti-arimex-tiriti-300g
+walnuts,own,2026-10-06,Maxima,06.10.2026,VALRIEKSTI ARIMEX 500G,ARIMEX,standard,500.0,g,,5.99,,regular,https://cenudepo.lv/product/valrieksti-arimex-500g
+walnuts,own,2026-10-06,Promo,06.10.2026,VALRIEKSTI ARIMEX 500G,ARIMEX,standard,500.0,g,,7.79,,regular,https://cenudepo.lv/product/valrieksti-arimex-500g
+walnuts,own,2026-10-06,Top!,22.09.2026,VALRIEKSTI LOBĪTI ALIS CO 200G,ALIS CO,standard,200.0,g,,2.43,,regular,https://cenudepo.lv/product/valrieksti-lobiti-alis-co-200g
+walnuts,own,2026-10-06,Labais,22.09.2026,VALRIEKSTI LOBĪTI ALIS CO 200G,ALIS CO,standard,200.0,g,,2.99,,regular,https://cenudepo.lv/product/valrieksti-lobiti-alis-co-200g
+walnuts,own,2026-10-06,Promo,06.10.2026,"VALRIEKSTU PUSĪTES 40%, 1KG",,standard,1000.0,g,,12.29,,regular,https://cenudepo.lv/product/valriekstu-pusites-40-1kg
+walnuts,own,2026-10-06,Maxima,06.10.2026,VALRIEKSTI WELL DONE LOBĪTI 200G,WELL DONE,standard,200.0,g,,2.49,,regular,https://cenudepo.lv/product/valrieksti-well-done-lobiti-200g
+walnuts,own,2026-10-06,Rimi,06.10.2026,VALRIEKSTI RIMI 700G,RIMI,store_brand,700.0,g,,8.79,,regular,https://cenudepo.lv/product/valrieksti-rimi-700g
+walnuts,own,2026-10-06,Promo,06.10.2026,"VALRIEKSTU PUSĪTES 80%, 1KG",,standard,1000.0,g,,12.99,,regular,https://cenudepo.lv/product/valriekstu-pusites-80-1kg
+walnuts,own,2026-10-06,Rimi,06.10.2026,VALRIEKSTI RIMI LOBĪTI KG,RIMI,store_brand,1000.0,g,,13.19,,regular,https://cenudepo.lv/product/valrieksti-rimi-lobiti-kg
+walnuts,own,2026-10-06,Top!,22.09.2026,VALRIEKSTI ALIS 100G,ALIS CO,standard,100.0,g,,1.39,,regular,https://cenudepo.lv/product/valrieksti-alis-100g
+walnuts,own,2026-10-06,Citro,06.10.2026,VALRIEKSTI ALIS 100G,ALIS CO,standard,100.0,g,,1.79,,regular,https://cenudepo.lv/product/valrieksti-alis-100g
+walnuts,own,2026-10-06,Promo,06.10.2026,"VALRIEKSTI, PUSĪTES 30%, SMALCINĀTI 70%, 1KG",,standard,1000.0,g,,15.79,,regular,https://cenudepo.lv/product/valrieksti-pusites-30-smalcinati-70-1kg
+walnuts,own,2026-10-06,Gemoss,06.10.2026,VALRIEKSTI ZELTA RIEKSTS PUSĪTES 100G,,standard,100.0,g,,1.69,,regular,https://cenudepo.lv/product/valrieksti-zelta-rieksts-pusites-100g
+walnuts,own,2026-10-06,Citro,06.10.2026,VALRIEKSTI ZELTA RIEKSTS PUSĪTES 100G,,standard,100.0,g,,2.59,,regular,https://cenudepo.lv/product/valrieksti-zelta-rieksts-pusites-100g
+walnuts,own,2026-10-06,Promo,06.10.2026,"VALRIEKSTI ARIMEX, 100G",Arimex,standard,100.0,g,,1.75,,regular,https://cenudepo.lv/product/valrieksti-arimex-100g
+walnuts,own,2026-10-06,Promo,06.10.2026,"VALRIEKSTI O!NUTS, 150G",O!Nuts,standard,150.0,g,,2.63,,regular,https://cenudepo.lv/product/valrieksti-o-nuts-150g
+walnuts,own,2026-10-06,Promo,06.10.2026,"VALRIEKSTI ARIMEX ORGANIC, 150G",,organic,150.0,g,,3.13,,regular,https://cenudepo.lv/product/valrieksti-arimex-organic-150g
+walnuts,own,2026-10-06,Rimi,06.10.2026,LOBĪTI VALRIEKSTI RIMI 150G,,standard,150.0,g,,4.19,,regular,https://cenudepo.lv/product/lobiti-valrieksti-rimi-150g
+walnuts,own,2026-10-06,Maxima,06.10.2026,LOBĪTI VALRIEKSTI 150G,SEEBERGER,standard,150.0,g,,8.09,,regular,https://cenudepo.lv/product/lobiti-valrieksti-150g
+walnuts,own,2026-10-06,Rimi,06.10.2026,LOBĪTI VALRIEKSTI 150G,SEEBERGER,standard,150.0,g,,8.09,,regular,https://cenudepo.lv/product/lobiti-valrieksti-150g
+almonds,own,2026-10-06,Rimi,06.10.2026,MANDELES AWAKE ATTĪRIĪTAS 400G,AWAKE,standard,400.0,g,,3.9,,regular,https://cenudepo.lv/product/mandeles-awake-attiriitas-400g
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES EXTRA LINE 500G,,standard,500.0,g,,4.89,,regular,https://cenudepo.lv/product/mandeles-extra-line-500g
+almonds,own,2026-10-06,unknown (card price),28.09.2026,MANDELES ARIMEX 800G,ARIMEX,standard,800.0,g,,9.49,12.99,loyalty,https://cenudepo.lv/product/mandeles-arimex-800g
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES EXTRA LINE 150G,EXTRA LINE,standard,150.0,g,,1.89,,regular,https://cenudepo.lv/product/mandeles-extra-line-150g
+almonds,own,2026-10-06,Citro,06.10.2026,"MANDELES ARIMEX, 100G",,standard,100.0,g,,1.29,1.59,discount_all,https://cenudepo.lv/product/mandeles-arimex-100g
+almonds,own,2026-10-06,Promo,06.10.2026,"MANDELES ARIMEX, 100G",,standard,100.0,g,,1.85,,regular,https://cenudepo.lv/product/mandeles-arimex-100g
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES WELL DONE 500G,WELL DONE,standard,500.0,g,,6.49,,regular,https://cenudepo.lv/product/mandeles-well-done-500g
+almonds,own,2026-10-06,Promo,06.10.2026,"MANDELES, 1KG",,standard,1000.0,g,,12.99,,regular,https://cenudepo.lv/product/mandeles-1kg
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES ARIMEX 500G,ARIMEX,standard,500.0,g,,6.99,,regular,https://cenudepo.lv/product/mandeles-arimex-500g
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES WELL DONE 200G,WELL DONE,standard,200.0,g,,2.89,,regular,https://cenudepo.lv/product/mandeles-well-done-200g
+almonds,own,2026-10-06,Rimi,06.10.2026,MANDELES AWAKE 150G,AWAKE,standard,150.0,g,,2.19,,regular,https://cenudepo.lv/product/mandeles-awake-150g
+almonds,own,2026-10-06,Top!,22.09.2026,MANDELES ALIS CO 120G,ALIS CO,standard,120.0,g,,1.79,,regular,https://cenudepo.lv/product/mandeles-alis-co-120g
+almonds,own,2026-10-06,Top!,22.09.2026,MANDELES ALIS CO 200G,ALIS CO,standard,200.0,g,,2.99,,regular,https://cenudepo.lv/product/mandeles-alis-co-200g
+almonds,own,2026-10-06,Promo,06.10.2026,MANDELES 500G,ARIMEX,standard,500.0,g,,8.99,,regular,https://cenudepo.lv/product/mandeles-500g
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES THE BEST OF ARIMEX 250G,ARIMEX,standard,250.0,g,,4.99,,regular,https://cenudepo.lv/product/mandeles-the-best-of-arimex-250g
+almonds,own,2026-10-06,Citro,06.10.2026,MANDELES ARIMEX 300G,ARIMEX,standard,300.0,g,,5.99,,regular,https://cenudepo.lv/product/mandeles-arimex-300g
+almonds,own,2026-10-06,Rimi,06.10.2026,MANDELES ARIMEX 300G,ARIMEX,standard,300.0,g,,7.39,,regular,https://cenudepo.lv/product/mandeles-arimex-300g
+almonds,own,2026-10-06,Rimi,06.10.2026,MANDELES RIMI 700G,RIMI,store_brand,700.0,g,,14.09,,regular,https://cenudepo.lv/product/mandeles-rimi-700g
+almonds,own,2026-10-06,Gemoss,06.10.2026,MANDELES BIO 80G,ZELTA RIEKSTS,organic,80.0,g,,1.8,,regular,https://cenudepo.lv/product/mandeles-bio-80g
+almonds,own,2026-10-06,Rimi,06.10.2026,MANDELES RIMI ATTĪRĪTAS 150G,RIMI,store_brand,150.0,g,,4.29,,regular,https://cenudepo.lv/product/mandeles-rimi-attiritas-150g
+almonds,own,2026-10-06,Rimi,06.10.2026,MANDEĻU SKAIDIŅAS RIMI 100G,RIMI,store_brand,100.0,g,,3.29,,regular,https://cenudepo.lv/product/mandelu-skaidinas-rimi-100g
+almonds,own,2026-10-06,Maxima,06.10.2026,MANDELES SEEBERGER 200G,SEEBERGER,standard,200.0,g,,6.99,,regular,https://cenudepo.lv/product/mandeles-seeberger-200g
+hazelnuts,own,2026-10-06,Gemoss,06.10.2026,LAZDU RIEKSTI NELOBĪTI 300G,ZELTA RIEKSTS,standard,300.0,g,,2.61,,regular,https://cenudepo.lv/product/lazdu-rieksti-nelobiti-300g
+hazelnuts,own,2026-10-06,Gemoss,06.10.2026,LAZDU RIEKSTI EXTRA 500G,ZELTA RIEKSTS,standard,500.0,g,,7.73,,regular,https://cenudepo.lv/product/lazdu-rieksti-extra-500g
+hazelnuts,own,2026-10-06,Promo,06.10.2026,"LAZDU RIEKSTI O!NUTS, 150G",O!Nuts,standard,150.0,g,,2.38,,regular,https://cenudepo.lv/product/lazdu-rieksti-o-nuts-150g
+hazelnuts,own,2026-10-06,Maxima,,LAZDU RIEKSTI ARIMEX 500G,ARIMEX,standard,500.0,g,,8.99,13.99,discount_all,https://cenudepo.lv/product/lazdu-rieksti-arimex-500g
+hazelnuts,own,2026-10-06,Promo,06.10.2026,LAZDU RIEKSTI ARIMEX 500G,ARIMEX,standard,500.0,g,,14.89,,regular,https://cenudepo.lv/product/lazdu-rieksti-arimex-500g
+hazelnuts,own,2026-10-06,Gemoss,,LAZDU RIEKSTI GRAUZDĒTI SMALCINĀTI 2-4MM 500G,ZELTA RIEKSTS,standard,500.0,g,,9.75,10.01,discount_all,https://cenudepo.lv/product/lazdu-rieksti-grauzdeti-smalcinati-2-4mm-500g
+hazelnuts,own,2026-10-06,Maxima,06.10.2026,LAZDU RIEKSTI EXTRA LINE 150G,,standard,150.0,g,,2.95,,regular,https://cenudepo.lv/product/lazdu-rieksti-extra-line-150g
+hazelnuts,own,2026-10-06,Maxima,06.10.2026,LAZDU RIEKSTI ARIMEX 300G,ARIMEX,standard,300.0,g,,6.99,,regular,https://cenudepo.lv/product/lazdu-rieksti-arimex-300g
+hazelnuts,own,2026-10-06,Rimi,06.10.2026,LAZDU RIEKSTI ARIMEX 300G,ARIMEX,standard,300.0,g,,8.99,,regular,https://cenudepo.lv/product/lazdu-rieksti-arimex-300g
+hazelnuts,own,2026-10-06,Citro,06.10.2026,RIEKSTI LAZDU LOBĪTI ALIS CO 120G,ALIS CO,standard,120.0,g,,2.99,3.59,discount_all,https://cenudepo.lv/product/rieksti-lazdu-lobiti-alis-co-120g
+hazelnuts,own,2026-10-06,Top!,14.09.2026,RIEKSTI LAZDU LOBĪTI ALIS CO 120G,ALIS CO,standard,120.0,g,,2.99,,regular,https://cenudepo.lv/product/rieksti-lazdu-lobiti-alis-co-120g
+hazelnuts,own,2026-10-06,Promo,06.10.2026,"LAZDU RIEKSTI 13/15, 1KG",,standard,1000.0,g,,25.79,,regular,https://cenudepo.lv/product/lazdu-rieksti-13-15-1kg
+hazelnuts,own,2026-10-06,Rimi,06.10.2026,LAZDU RIEKSTI RIMI LOBĪTI KG,RIMI,store_brand,1000.0,g,,25.99,,regular,https://cenudepo.lv/product/lazdu-rieksti-rimi-lobiti-kg
+hazelnuts,own,2026-10-06,Gemoss,06.10.2026,LAZDU RIEKSTI 80G,ZELTA RIEKSTS,standard,80.0,g,,2.11,,regular,https://cenudepo.lv/product/lazdu-rieksti-80g
+hazelnuts,own,2026-10-06,Promo,06.10.2026,"LAZDU RIEKSTI ARIMEX, 100G",Arimex,standard,100.0,g,,2.64,,regular,https://cenudepo.lv/product/lazdu-rieksti-arimex-100g
+hazelnuts,own,2026-10-06,Maxima,06.10.2026,LAZDU RIEKSTI WELL DONE 200G,WELL DONE,standard,200.0,g,,5.49,,regular,https://cenudepo.lv/product/lazdu-rieksti-well-done-200g
+hazelnuts,own,2026-10-06,Gemoss,06.10.2026,LAZDU RIEKSTI BIO 1KG,ZELTA RIEKSTS,organic,1000.0,g,,27.48,,regular,https://cenudepo.lv/product/lazdu-rieksti-bio-1kg
+hazelnuts,own,2026-10-06,unknown (card price),05.10.2026,LAZDU RIEKSTI ALIS CO LOBĪTI 300G,ALIS CO,standard,300.0,g,,8.99,,loyalty,https://cenudepo.lv/product/lazdu-rieksti-alis-co-lobiti-300g
+hazelnuts,own,2026-10-06,Gemoss,06.10.2026,LAZDU RIEKSTI BIO 300G,ZELTA RIEKSTS,organic,300.0,g,,9.01,,regular,https://cenudepo.lv/product/lazdu-rieksti-bio-300g
+hazelnuts,own,2026-10-06,Gemoss,06.10.2026,LAZDU RIEKSTI BLANŠĒTI GRAUZDĒTI 80G,ZELTA RIEKSTS,standard,80.0,g,,2.57,,regular,https://cenudepo.lv/product/lazdu-rieksti-blanseti-grauzdeti-80g
+hazelnuts,own,2026-10-06,Promo,06.10.2026,"LAZDU RIEKSTI BLANŠĒTI 13/15, 1KG",,standard,1000.0,g,,32.89,,regular,https://cenudepo.lv/product/lazdu-rieksti-blanseti-13-15-1kg
+hazelnuts,own,2026-10-06,Rimi,06.10.2026,LAZDU RIEKSTI AWAKE 150G,AWAKE,standard,150.0,g,,5.19,,regular,https://cenudepo.lv/product/lazdu-rieksti-awake-150g
+whey_protein,own,2026-10-06,Citro,23.09.2026,TĪRS SŪKALU PROTEĪNS AR VANIĻAS GARŠU ICONFIT 1000G,ICONFIT,standard,1000.0,g,,27.99,30.99,discount_all,https://cenudepo.lv/product/tirs-sukalu-proteins-ar-vanilas-garsu-iconfit-1000g
+whey_protein,own,2026-10-06,Drogas,,TĪRS SŪKALU PROTEĪNS AR VANIĻAS GARŠU ICONFIT 1000G,ICONFIT,standard,1000.0,g,,31.45,36.99,discount_all,https://cenudepo.lv/product/tirs-sukalu-proteins-ar-vanilas-garsu-iconfit-1000g
+whey_protein,own,2026-10-06,Rimi,06.10.2026,TĪRS SŪKALU PROTEĪNS AR VANIĻAS GARŠU ICONFIT 1000G,ICONFIT,standard,1000.0,g,,32.99,,regular,https://cenudepo.lv/product/tirs-sukalu-proteins-ar-vanilas-garsu-iconfit-1000g
+whey_protein,own,2026-10-06,Citro,06.10.2026,SŪKALU PROTEĪNS ICONFIT ŠOKOLĀDES 1KG,ICONFIT,standard,1000.0,g,,27.99,30.99,discount_all,https://cenudepo.lv/product/sukalu-proteins-iconfit-sokolades-1kg
+whey_protein,own,2026-10-06,Maxima,01.10.2026,SŪKALU PROTEĪNS ICONFIT ŠOKOLĀDES 1KG,ICONFIT,standard,1000.0,g,,29.39,,regular,https://cenudepo.lv/product/sukalu-proteins-iconfit-sokolades-1kg
+whey_protein,own,2026-10-06,Drogas,,SŪKALU PROTEĪNS ICONFIT ŠOKOLĀDES 1KG,ICONFIT,standard,1000.0,g,,31.45,36.99,discount_all,https://cenudepo.lv/product/sukalu-proteins-iconfit-sokolades-1kg
+whey_protein,own,2026-10-06,Rimi,06.10.2026,SŪKALU PROTEĪNS ICONFIT ŠOKOLĀDES 1KG,ICONFIT,standard,1000.0,g,,32.99,,regular,https://cenudepo.lv/product/sukalu-proteins-iconfit-sokolades-1kg
+whey_protein,own,2026-10-06,Citro,06.10.2026,PROTEĪNS SŪKALU  80 ZEMEŅU ICONFIT 1KG,,standard,1000.0,g,,27.99,30.99,discount_all,https://cenudepo.lv/product/proteins-sukalu-80-zemenu-iconfit-1kg
+whey_protein,own,2026-10-06,Maxima,06.10.2026,SŪKALU PROTEĪNS AR MEŽA ZEMEŅU GARŠU UN SALDINĀTĀJIEM ICONFIT 1KG,ICONFIT,standard,1000.0,g,,29.99,,regular,https://cenudepo.lv/product/sukalu-proteins-ar-meza-zemenu-garsu-un-saldinatajiem-iconfit-1kg
+whey_protein,own,2026-10-06,Maxima,06.10.2026,SŪKALU PROTEĪNS ZEMESRIEKSTI ICONFIT 1KG,ICONFIT,standard,1000.0,g,,29.99,,regular,https://cenudepo.lv/product/sukalu-proteins-zemesrieksti-iconfit-1kg
+whey_protein,own,2026-10-06,Drogas,,"ICONFIT DIĒTISKAIS SŪKALU PROTEĪNS – ZEMEŅU, 1KG",ICONFIT,standard,1000.0,g,,33.15,38.99,discount_all,https://cenudepo.lv/product/iconfit-dietiskais-sukalu-proteins-zemenu-1kg
+whey_protein,own,2026-10-06,Drogas,,"ICONFIT DIĒTISKAIS SŪKALU PROTEĪNS – VANIĻAS, 1KG",ICONFIT,standard,1000.0,g,,33.15,38.99,discount_all,https://cenudepo.lv/product/iconfit-dietiskais-sukalu-proteins-vanilas-1kg
+whey_protein,own,2026-10-06,Drogas,,"ICONFIT DIĒTISKAIS SŪKALU PROTEĪNS – ŠOKOLĀDES, 1KG",ICONFIT,standard,1000.0,g,,33.15,38.99,discount_all,https://cenudepo.lv/product/iconfit-dietiskais-sukalu-proteins-sokolades-1kg
+whey_protein,own,2026-10-06,Maxima,06.10.2026,GOLD SŪKALU PROTEĪNS VANIĻAS VPLAB 500G,VPLAB,standard,500.0,g,,18.99,,regular,https://cenudepo.lv/product/gold-sukalu-proteins-vanilas-vplab-500g
+whey_protein,own,2026-10-06,Promo,06.10.2026,"SŪKALU PROTEĪNA PULVERIS SCITEC, ZEMEŅU GARŠA, 920G",,standard,920.0,g,,36.99,,regular,https://cenudepo.lv/product/sukalu-proteina-pulveris-scitec-zemenu-garsa-920g
+whey_protein,own,2026-10-06,Promo,06.10.2026,"SŪKALU PROTEĪNA PULVERIS SCITEC, VANIĻAS UN OGU GARŠA, 920G",,standard,920.0,g,,36.99,,regular,https://cenudepo.lv/product/sukalu-proteina-pulveris-scitec-vanilas-un-ogu-garsa-920g
+whey_protein,own,2026-10-06,Promo,06.10.2026,"SŪKALU PROTEĪNS BIOTECHUSA, ZEMEŅU GARŠA, 28G",,standard,28.0,g,,1.99,,regular,https://cenudepo.lv/product/sukalu-proteins-biotechusa-zemenu-garsa-28g
+pea_protein,own,2026-10-06,Maxima,,"VPLAB VEGAN PROTEIN, ŠOKOLĀDES GARŠA, 500G",VPLAB,standard,500.0,g,,9.49,11.99,discount_all,https://cenudepo.lv/product/vplab-vegan-protein-sokolades-garsa-500g
+pea_protein,own,2026-10-06,Drogas,,"VPLAB VEGAN PROTEIN, ŠOKOLĀDES GARŠA, 500G",VPLAB,standard,500.0,g,,16.49,21.99,discount_all,https://cenudepo.lv/product/vplab-vegan-protein-sokolades-garsa-500g
+pea_protein,own,2026-10-06,Maxima,,"VPLAB VEGAN PROTEIN, VANIĻAS GARŠA, 500G",VPLAB,standard,500.0,g,,9.49,11.99,discount_all,https://cenudepo.lv/product/vplab-vegan-protein-vanilas-garsa-500g
+pea_protein,own,2026-10-06,Drogas,,"VPLAB VEGAN PROTEIN, VANIĻAS GARŠA, 500G",VPLAB,standard,500.0,g,,16.49,21.99,discount_all,https://cenudepo.lv/product/vplab-vegan-protein-vanilas-garsa-500g
+oats_flaked,crosscheck_csp,2026-10-06,Citro,06.10.2026,AUZU PĀRSLAS DOBELE PILNGRAUDU 1KG,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,1.29,2.09,discount_all,https://cenudepo.lv/product/auzu-parslas-dobele-pilngraudu-1kg
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,AUZU PĀRSLAS DOBELE PILNGRAUDU 1KG,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,2.09,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-pilngraudu-1kg
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,AUZU PĀRSLAS DOBELE PILNGRAUDU 1KG,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,2.09,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-pilngraudu-1kg
+oats_flaked,crosscheck_csp,2026-10-06,Abrands,28.09.2026,PĀRSLAS AUZU SLĀTAVA 2.5KG,,standard,2500.0,g,,3.39,,regular,https://cenudepo.lv/product/parslas-auzu-slatava-2-5kg
+oats_flaked,crosscheck_csp,2026-10-06,Citro,06.10.2026,PĀRSLAS AUZU SLĀTAVA 2.5KG,,standard,2500.0,g,,3.99,,regular,https://cenudepo.lv/product/parslas-auzu-slatava-2-5kg
+oats_flaked,crosscheck_csp,2026-10-06,Mego,,AUZU PĀRSLAS LIMOR 400G,,standard,400.0,g,,0.59,1.05,discount_all,https://cenudepo.lv/product/auzu-parslas-limor-400g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,,AUZU PĀRSLAS HERKULESS PILNGRAUDU 1.5KG,HERKULESS,standard,1500.0,g,,2.39,3.49,discount_all,https://cenudepo.lv/product/auzu-parslas-herkuless-pilngraudu-1-5kg
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,AUZU PĀRSLAS HERKULESS PILNGRAUDU 1.5KG,HERKULESS,standard,1500.0,g,,3.39,,regular,https://cenudepo.lv/product/auzu-parslas-herkuless-pilngraudu-1-5kg
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,AUZU PĀRSLAS EXTRA LINE 400G,,standard,400.0,g,,0.69,,regular,https://cenudepo.lv/product/auzu-parslas-extra-line-400g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,AUZU PĀRSLAS RIMI SMART PILNGRAUDU 400G,RIMI SMART,store_brand,400.0,g,,0.69,,regular,https://cenudepo.lv/product/auzu-parslas-rimi-smart-pilngraudu-400g
+oats_flaked,crosscheck_csp,2026-10-06,unknown (card price),06.10.2026,AUZU PĀRSLAS TIP TOP 400G,TIP TOP,standard,400.0,g,,0.69,,loyalty,https://cenudepo.lv/product/auzu-parslas-tip-top-400g
+oats_flaked,crosscheck_csp,2026-10-06,Top!,06.10.2026,AUZU PĀRSLAS DOBELE PILNGRAUDU KART. 500G,Dobeles Dzirnavnieks,standard,500.0,g,,0.89,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-pilngraudu-kart-500g
+oats_flaked,crosscheck_csp,2026-10-06,Citro,06.10.2026,AUZU PĀRSLAS DOBELE PILNGRAUDU KART. 500G,Dobeles Dzirnavnieks,standard,500.0,g,,1.29,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-pilngraudu-kart-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PĀRSLAS RIMI 4 GRAUDU 500G,RIMI,store_brand,500.0,g,,0.99,,regular,https://cenudepo.lv/product/parslas-rimi-4-graudu-500g
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,PILNGRAUDU AUZU PĀRSLAS WELL DONE 500G,WELL DONE,standard,500.0,g,,0.99,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-well-done-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PILNGRAUDU AUZU PĀRSLAS RIMI 1KG,RIMI,store_brand,1000.0,g,,1.99,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-rimi-1kg
+oats_flaked,crosscheck_csp,2026-10-06,Citro,06.10.2026,"AUZU PĀRSLAS DOBELE, 500G",Dobeles Dzirnavnieks,standard,500.0,g,,1.05,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-500g
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,"AUZU PĀRSLAS DOBELE, 500G",Dobeles Dzirnavnieks,standard,500.0,g,,1.19,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,"AUZU PĀRSLAS DOBELE, 500G",Dobeles Dzirnavnieks,standard,500.0,g,,1.25,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-500g
+oats_flaked,crosscheck_csp,2026-10-06,Promo,06.10.2026,"AUZU PĀRSLAS DOBELE, 500G",Dobeles Dzirnavnieks,standard,500.0,g,,1.25,,regular,https://cenudepo.lv/product/auzu-parslas-dobele-500g
+oats_flaked,crosscheck_csp,2026-10-06,Promo,06.10.2026,"MIEŽU PĀRSLAS DOBELE, 500G",DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.19,,regular,https://cenudepo.lv/product/miezu-parslas-dobele-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,,PILNGRAUDU AUZU PĀRSLAS DOBELE EKO 500G,DOBELES DZIRNAVNIEKS,organic,500.0,g,,1.19,2.15,discount_all,https://cenudepo.lv/product/pilngraudu-auzu-parslas-dobele-eko-500g
+oats_flaked,crosscheck_csp,2026-10-06,Depo,,PILNGRAUDU AUZU PĀRSLAS DOBELE EKO 500G,DOBELES DZIRNAVNIEKS,organic,500.0,g,,1.46,1.61,discount_all,https://cenudepo.lv/product/pilngraudu-auzu-parslas-dobele-eko-500g
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,PILNGRAUDU AUZU PĀRSLAS DOBELE EKO 500G,DOBELES DZIRNAVNIEKS,organic,500.0,g,,2.1,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-dobele-eko-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PILNGRAUDU AUZU PĀRSLAS DOBELE KARTONA KASTĪTĒ 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.25,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-dobele-kartona-kastite-500g
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,PILNGRAUDU AUZU PĀRSLAS DOBELE KARTONA KASTĪTĒ 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.35,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-dobele-kartona-kastite-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PILNGRAUDU AUZU PĀRSLAS RIMI 500G,RIMI,store_brand,500.0,g,,1.25,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-rimi-500g
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PĀRSLAS HERKULESS 4 GRAUDU 500G,HERKULESS,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/parslas-herkuless-4-graudu-500g
+oats_flaked,crosscheck_csp,2026-10-06,Promo,06.10.2026,4 GRAUDU PĀRSLAS HERKULESS 500G,HERKULESS,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/4-graudu-parslas-herkuless-500g-94599
+oats_flaked,crosscheck_csp,2026-10-06,Maxima,06.10.2026,4 GRAUDU PĀRSLAS HERKULESS 500G,HERKULESS,standard,500.0,g,,1.69,,regular,https://cenudepo.lv/product/4-graudu-parslas-herkuless-500g-94599
+oats_flaked,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PILNGRAUDU AUZU PĀRSLAS RIMI BEZ GLUTĒNA 500G,RIMI,store_brand,500.0,g,,2.69,,regular,https://cenudepo.lv/product/pilngraudu-auzu-parslas-rimi-bez-glutena-500g
+oats_flaked,crosscheck_csp,2026-10-06,Promo,22.09.2026,"PILGRAUDU AUZU PĀRSLAS NORDIC ELOVENAJUMBO, BEZ GLUTĒNA, 500G",Citi,standard,500.0,g,,3.35,,regular,https://cenudepo.lv/product/pilgraudu-auzu-parslas-nordic-elovenajumbo-bez-glutena-500g
+chicken_fillet,crosscheck_csp,2026-10-06,Velto,06.10.2026,CĀĻA FILEJA RIGAS MIESNIEKS FAS.,RĪGAS MIESNIEKS,standard,,,,3.52,,regular,https://cenudepo.lv/product/cala-fileja-rigas-miesnieks-fas
+chicken_fillet,crosscheck_csp,2026-10-06,Top!,22.09.2026,CĀĻA FILEJA RIGAS MIESNIEKS FAS.,RĪGAS MIESNIEKS,standard,,,,5.99,,regular,https://cenudepo.lv/product/cala-fileja-rigas-miesnieks-fas
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,21.09.2026,CĀĻA FILEJA RIGAS MIESNIEKS FAS.,RĪGAS MIESNIEKS,standard,,,,8.99,,regular,https://cenudepo.lv/product/cala-fileja-rigas-miesnieks-fas
+chicken_fillet,crosscheck_csp,2026-10-06,unknown (card price),,CĀĻA KRŪTIŅAS FILEJA XXL KG,,standard,1000.0,g,,5.45,6.79,loyalty,https://cenudepo.lv/product/cala-krutinas-fileja-xxl-kg
+chicken_fillet,crosscheck_csp,2026-10-06,Top!,22.09.2026,VISTAS FILEJA SVAIGA SVER TALLEGG,TALLEGG,standard,1000.0,g,,5.99,,regular,https://cenudepo.lv/product/vistas-fileja-svaiga-sver-tallegg
+chicken_fillet,crosscheck_csp,2026-10-06,Top!,06.10.2026,CĀĻA KRŪTIŅAS MAZĀ FILEJA RM 400G,RĪGAS MIESNIEKS,standard,400.0,g,,2.49,,regular,https://cenudepo.lv/product/cala-krutinas-maza-fileja-rm-400g
+chicken_fillet,crosscheck_csp,2026-10-06,Velto,06.10.2026,CĀĻA KRŪTIŅAS MAZĀ FILEJA RM 400G,RĪGAS MIESNIEKS,standard,400.0,g,,2.77,,regular,https://cenudepo.lv/product/cala-krutinas-maza-fileja-rm-400g
+chicken_fillet,crosscheck_csp,2026-10-06,Citro,06.10.2026,CĀĻA KRŪTIŅAS MAZĀ FILEJA RM 400G,RĪGAS MIESNIEKS,standard,400.0,g,,2.79,3.65,discount_all,https://cenudepo.lv/product/cala-krutinas-maza-fileja-rm-400g
+chicken_fillet,crosscheck_csp,2026-10-06,Rimi,,"CĀĻA KRŪTIŅAS FILEJAS GABALIŅI RIMI, BEZ ĀDAS KG",RIMI,store_brand,1000.0,g,,6.49,8.29,discount_all,https://cenudepo.lv/product/cala-krutinas-filejas-gabalini-rimi-bez-adas-kg
+chicken_fillet,crosscheck_csp,2026-10-06,Rimi,05.10.2026,CĀĻU KRŪTIŅAS FILEJAS RIMI KG,RIMI,store_brand,1000.0,g,,6.99,,regular,https://cenudepo.lv/product/calu-krutinas-filejas-rimi-kg
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA FILEJA BEZ ANTIBIOTIKĀM KG,ĶEKAVA,standard,1000.0,g,,6.99,,regular,https://cenudepo.lv/product/cala-fileja-bez-antibiotikam-kg
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA KRŪTIŅAS FILEJA WELL DONE 500 G,WELL DONE,standard,500.0,g,,3.63,,regular,https://cenudepo.lv/product/cala-krutinas-fileja-well-done-500-g
+chicken_fillet,crosscheck_csp,2026-10-06,Rimi,06.10.2026,CĀĻU KRŪTIŅAS FILEJAS RIMI 500G,RIMI,store_brand,500.0,g,,3.69,,regular,https://cenudepo.lv/product/calu-krutinas-filejas-rimi-500g
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA KRŪTIŅAS FILEJA GABALIŅOS XXL BAUSKA FAS.,BAUSKA,standard,,,,7.39,,regular,https://cenudepo.lv/product/cala-krutinas-fileja-gabalinos-xxl-bauska-fas
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,,CĀĻA KRŪTIŅAS FILEJAS GABALIŅI  WELL DONE 400G,WELL DONE,standard,400.0,g,,3.15,3.87,discount_all,https://cenudepo.lv/product/cala-krutinas-filejas-gabalini-well-done-400g
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA KRŪTIŅAS MAZĀS FILEJAS WD 400 G,,standard,400.0,g,,3.19,,regular,https://cenudepo.lv/product/cala-krutinas-mazas-filejas-wd-400-g
+chicken_fillet,crosscheck_csp,2026-10-06,Rimi,06.10.2026,CĀĻU MAZĀS FILEJAS RIMI 400G,RIMI,store_brand,400.0,g,,3.19,,regular,https://cenudepo.lv/product/calu-mazas-filejas-rimi-400g
+chicken_fillet,crosscheck_csp,2026-10-06,Rimi,10.09.2026,CĀĻU KRŪTIŅAS FILEJA ĶEKAVA A ŠĶIRA KG,ĶEKAVA,standard,1000.0,g,,8.29,,regular,https://cenudepo.lv/product/calu-krutinas-fileja-kekava-a-skira-kg
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA KRŪTIŅAS FILEJA BEZ ANTIBIOTIKĀM WELL DONE 500G,WELL DONE,standard,500.0,g,,4.15,,regular,https://cenudepo.lv/product/cala-krutinas-fileja-bez-antibiotikam-well-done-500g
+chicken_fillet,crosscheck_csp,2026-10-06,Citro,06.10.2026,CĀĻA FILEJA ĶEKAVA  500G,ĶEKAVA,standard,500.0,g,,4.29,4.59,discount_all,https://cenudepo.lv/product/cala-fileja-kekava-500g
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,24.09.2026,CĀĻA FILEJA ĶEKAVA  500G,ĶEKAVA,standard,500.0,g,,4.61,,regular,https://cenudepo.lv/product/cala-fileja-kekava-500g
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA KRŪTIŅAS MAZĀS FILEJAS BEZ ANTIBIOTIKĀM WELL DONE 400G,WELL DONE,standard,400.0,g,,3.5,,regular,https://cenudepo.lv/product/cala-krutinas-mazas-filejas-bez-antibiotikam-well-done-400g
+chicken_fillet,crosscheck_csp,2026-10-06,Maxima,06.10.2026,CĀĻA KRŪTIŅAS FILEJA XXL FAS.,ĶEKAVA,standard,,,,9.24,,regular,https://cenudepo.lv/product/cala-krutinas-fileja-xxl-fas
+chicken_fillet,crosscheck_csp,2026-10-06,Top!,08.09.2026,FILEJAS GABALIŅI BAUSKA CĀĻU KRŪTIŅAS BEZ ĀDAS ATK.APT.600G,BAUSKA,standard,600.0,g,,6.39,,regular,https://cenudepo.lv/product/filejas-gabalini-bauska-calu-krutinas-bez-adas-atk-apt-600g
+chicken_fillet,crosscheck_csp,2026-10-06,Rimi,06.10.2026,CĀĻA KRŪTIŅAS FILEJA RIMI ECO 260G,ECO,organic,260.0,g,,5.99,,regular,https://cenudepo.lv/product/cala-krutinas-fileja-rimi-eco-260g
+curd,crosscheck_csp,2026-10-06,Top!,06.10.2026,BIEZPIENS BALTAIS KULINĀRIJAS 1KG,BALTAIS,standard,1000.0,g,,2.99,,regular,https://cenudepo.lv/product/biezpiens-baltais-kulinarijas-1kg
+curd,crosscheck_csp,2026-10-06,Velto,06.10.2026,BIEZPIENS BALTAIS KULINĀRIJAS 1KG,BALTAIS,standard,1000.0,g,,3.22,,regular,https://cenudepo.lv/product/biezpiens-baltais-kulinarijas-1kg
+curd,crosscheck_csp,2026-10-06,Maxima,,BIEZPIENS BALTAIS KULINĀRIJAS 1KG,BALTAIS,standard,1000.0,g,,3.29,3.99,discount_all,https://cenudepo.lv/product/biezpiens-baltais-kulinarijas-1kg
+curd,crosscheck_csp,2026-10-06,Rimi,,BIEZPIENS BALTAIS KULINĀRIJAS 1KG,BALTAIS,standard,1000.0,g,,3.59,3.99,discount_all,https://cenudepo.lv/product/biezpiens-baltais-kulinarijas-1kg
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENS FARM MILK 0.5% 180G,FARM MILK,standard,180.0,g,,0.69,,regular,https://cenudepo.lv/product/biezpiens-farm-milk-0-5-180g
+curd,crosscheck_csp,2026-10-06,Top!,,BIEZPIENS VĀJPIENA FIT! BEZ LAKTOZES 0.5% 400G,TERE,standard,400.0,g,,1.59,1.99,discount_all,https://cenudepo.lv/product/biezpiens-vajpiena-fit-bez-laktozes-0-5-400g
+curd,crosscheck_csp,2026-10-06,Lats,,BIEZPIENS VĀJPIENA FIT! BEZ LAKTOZES 0.5% 400G,TERE,standard,400.0,g,,1.69,1.99,discount_all,https://cenudepo.lv/product/biezpiens-vajpiena-fit-bez-laktozes-0-5-400g
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENS VĀJPIENA FIT! BEZ LAKTOZES 0.5% 400G,TERE,standard,400.0,g,,1.69,,regular,https://cenudepo.lv/product/biezpiens-vajpiena-fit-bez-laktozes-0-5-400g
+curd,crosscheck_csp,2026-10-06,unknown (card price),06.10.2026,BIEZPIENS OPĀ VĀJPIENA 0.5% 170G,OPĀ,standard,170.0,g,,0.68,,loyalty,https://cenudepo.lv/product/biezpiens-opa-vajpiena-0-5-170g
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENS FARM MILK 9% 180G,FARM MILK,standard,180.0,g,,0.75,,regular,https://cenudepo.lv/product/biezpiens-farm-milk-9-180g
+curd,crosscheck_csp,2026-10-06,unknown (card price),06.10.2026,BIEZPIENS OPĀ 9% 170G,OPĀ,standard,170.0,g,,0.74,,loyalty,https://cenudepo.lv/product/biezpiens-opa-9-170g
+curd,crosscheck_csp,2026-10-06,unknown (card price),06.10.2026,BIEZPIENA.KRĒMS PROTEIN BALTAIS 300G,BALTAIS,standard,300.0,g,,1.39,1.99,loyalty,https://cenudepo.lv/product/biezpiena-krems-protein-baltais-300g
+curd,crosscheck_csp,2026-10-06,Promo,05.10.2026,"BIEZPIENS, 9%, 1KG",CITI,standard,1000.0,g,,4.79,,regular,https://cenudepo.lv/product/biezpiens-9-1kg
+curd,crosscheck_csp,2026-10-06,Velto,06.10.2026,"PILNPIENA BIEZPIENS JAUNPILS 9%, 1KG",JAUNPILS,standard,1000.0,g,,4.91,,regular,https://cenudepo.lv/product/pilnpiena-biezpiens-jaunpils-9-1kg
+curd,crosscheck_csp,2026-10-06,Promo,06.10.2026,"PILNPIENA BIEZPIENS JAUNPILS 9%, 1KG",JAUNPILS,standard,1000.0,g,,5.23,,regular,https://cenudepo.lv/product/pilnpiena-biezpiens-jaunpils-9-1kg
+curd,crosscheck_csp,2026-10-06,Velto,06.10.2026,BIEZPIENS 5% JAUNPILS 600G,JAUNPILS,standard,600.0,g,,3.09,,regular,https://cenudepo.lv/product/biezpiens-5-jaunpils-600g
+curd,crosscheck_csp,2026-10-06,Top!,,BIEZPIENS LIMBAŽU PIENS VĀJPIENA 0.5% 170G,LIMBAŽU PIENS,standard,170.0,g,,0.89,1.19,discount_all,https://cenudepo.lv/product/biezpiens-limbazu-piens-vajpiena-0-5-170g
+curd,crosscheck_csp,2026-10-06,Citro,06.10.2026,BIEZPIENS LIMBAŽU PIENS VĀJPIENA 0.5% 170G,LIMBAŽU PIENS,standard,170.0,g,,1.19,,regular,https://cenudepo.lv/product/biezpiens-limbazu-piens-vajpiena-0-5-170g
+curd,crosscheck_csp,2026-10-06,Promo,06.10.2026,BIEZPIENS LIMBAŽU PIENS VĀJPIENA 0.5% 170G,LIMBAŽU PIENS,standard,170.0,g,,1.35,,regular,https://cenudepo.lv/product/biezpiens-limbazu-piens-vajpiena-0-5-170g
+curd,crosscheck_csp,2026-10-06,Mego,,BIEZPIENS 9% BALTAIS 180G,BALTAIS,standard,180.0,g,,0.99,1.29,discount_all,https://cenudepo.lv/product/biezpiens-9-baltais-180g
+curd,crosscheck_csp,2026-10-06,Maxima,21.09.2026,BIEZPIENS 9% BALTAIS 180G,BALTAIS,standard,180.0,g,,1.29,,regular,https://cenudepo.lv/product/biezpiens-9-baltais-180g
+curd,crosscheck_csp,2026-10-06,Citro,06.10.2026,BIEZPIENS 9% BALTAIS 180G,BALTAIS,standard,180.0,g,,1.35,,regular,https://cenudepo.lv/product/biezpiens-9-baltais-180g
+curd,crosscheck_csp,2026-10-06,Velto,06.10.2026,VĀJPIENA BIEZPIENS JAUNPILS BEZ LAKTOZES 0.5% 275G,JAUNPILS,standard,275.0,g,,1.54,,regular,https://cenudepo.lv/product/vajpiena-biezpiens-jaunpils-bez-laktozes-0-5-275g
+curd,crosscheck_csp,2026-10-06,Maxima,,VĀJPIENA BIEZPIENS JAUNPILS BEZ LAKTOZES 0.5% 275G,JAUNPILS,standard,275.0,g,,1.99,2.95,discount_all,https://cenudepo.lv/product/vajpiena-biezpiens-jaunpils-bez-laktozes-0-5-275g
+curd,crosscheck_csp,2026-10-06,Rimi,,VĀJPIENA BIEZPIENS JAUNPILS BEZ LAKTOZES 0.5% 275G,JAUNPILS,standard,275.0,g,,2.29,2.95,discount_all,https://cenudepo.lv/product/vajpiena-biezpiens-jaunpils-bez-laktozes-0-5-275g
+curd,crosscheck_csp,2026-10-06,Promo,06.10.2026,VĀJPIENA BIEZPIENS JAUNPILS BEZ LAKTOZES 0.5% 275G,JAUNPILS,standard,275.0,g,,2.95,,regular,https://cenudepo.lv/product/vajpiena-biezpiens-jaunpils-bez-laktozes-0-5-275g
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENS LATGALE 0.5% 400G,LATGALE,standard,400.0,g,,2.49,,regular,https://cenudepo.lv/product/biezpiens-latgale-0-5-400g
+curd,crosscheck_csp,2026-10-06,Top!,,BIEZPIENS LATGALE 0.5% 400G,LATGALE,standard,400.0,g,,2.49,2.79,discount_all,https://cenudepo.lv/product/biezpiens-latgale-0-5-400g
+curd,crosscheck_csp,2026-10-06,Citro,06.10.2026,"BIEZPIENS TALSU 9%, 200 G",,standard,200.0,g,,1.29,,regular,https://cenudepo.lv/product/biezpiens-talsu-9-200-g
+curd,crosscheck_csp,2026-10-06,Maxima,,BIEZPIENS VALMIERA 9% 180G,VALMIERA,standard,180.0,g,,1.19,1.59,discount_all,https://cenudepo.lv/product/biezpiens-valmiera-9-180g
+curd,crosscheck_csp,2026-10-06,Rimi,06.10.2026,BIEZPIENS VALMIERA 9% 180G,VALMIERA,standard,180.0,g,,1.59,,regular,https://cenudepo.lv/product/biezpiens-valmiera-9-180g
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENA KRĒMS PROTEIN BALTAIS AVEŅU 300G,BALTAIS,standard,300.0,g,,1.99,,regular,https://cenudepo.lv/product/biezpiena-krems-protein-baltais-avenu-300g
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENS LATGALES 9% 400G,LATGALES PIENS,standard,400.0,g,,2.69,,regular,https://cenudepo.lv/product/biezpiens-latgales-9-400g
+curd,crosscheck_csp,2026-10-06,Rimi,06.10.2026,BIEZPIENS VĀJPIENA 0.5% VALMIERA 180G,VALMIERA,standard,180.0,g,,1.49,,regular,https://cenudepo.lv/product/biezpiens-vajpiena-0-5-valmiera-180g
+curd,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BIEZPIENS STRAUPE 9% 400G,STRAUPE,standard,400.0,g,,3.65,,regular,https://cenudepo.lv/product/biezpiens-straupe-9-400g
+pasta_wheat,crosscheck_csp,2026-10-06,Citro,06.10.2026,MAKARONI TRUBIŅAS 1KG,,standard,1000.0,g,,1.15,,regular,https://cenudepo.lv/product/makaroni-trubinas-1kg
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,,MAKARONI CORNETTI RIGATI NR.150 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,0.69,1.29,discount_all,https://cenudepo.lv/product/makaroni-cornetti-rigati-nr-150-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Top!,08.09.2026,MAKARONI CORNETTI RIGATI NR.150 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,0.75,,regular,https://cenudepo.lv/product/makaroni-cornetti-rigati-nr-150-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Promo,06.10.2026,MAKARONI CORNETTI RIGATI NR.150 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.24,,regular,https://cenudepo.lv/product/makaroni-cornetti-rigati-nr-150-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Rimi,06.10.2026,MAKARONI CORNETTI RIGATI NR.150 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.29,,regular,https://cenudepo.lv/product/makaroni-cornetti-rigati-nr-150-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Lidl,07.09.2026,MAKARONI CORNETTI RIGATI NR.150 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.29,,regular,https://cenudepo.lv/product/makaroni-cornetti-rigati-nr-150-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Citro,06.10.2026,MAKARONI CORNETTI RIGATI NR.150 500G,DOBELES DZIRNAVNIEKS,standard,500.0,g,,1.35,,regular,https://cenudepo.lv/product/makaroni-cornetti-rigati-nr-150-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI WELL DONE FILLINI PICCOLI 500G,WELL DONE,standard,500.0,g,,0.89,,regular,https://cenudepo.lv/product/makaroni-well-done-fillini-piccoli-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Promo,06.10.2026,"MAKARONI PASTA RICCO, SPIRALI, 400G",Pasta Ricco,standard,400.0,g,,0.89,,regular,https://cenudepo.lv/product/makaroni-pasta-ricco-spirali-400g
+pasta_wheat,crosscheck_csp,2026-10-06,Rimi,,MAKARONI ITALPASTA NR.134 FUSILLI 500G,ITALPASTA,standard,500.0,g,,1.29,1.75,discount_all,https://cenudepo.lv/product/makaroni-italpasta-nr-134-fusilli-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI ITALPASTA NR.134 FUSILLI 500G,ITALPASTA,standard,500.0,g,,1.59,,regular,https://cenudepo.lv/product/makaroni-italpasta-nr-134-fusilli-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI ANELLINI DIVELLA 500G,DIVELLA,standard,500.0,g,,1.29,,regular,https://cenudepo.lv/product/makaroni-anellini-divella-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI DIVELLA FUSILLI 3-KRĀSU 500G,DIVELLA,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/makaroni-divella-fusilli-3-krasu-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI FETTUCCINE DIVELLA 500G,DIVELLA,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/makaroni-fettuccine-divella-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Velto,06.10.2026,MAKARONI PASTA ZARA NR.31 BANTĪTES 500 GR,PASTA ZARA,standard,,,,1.63,,regular,https://cenudepo.lv/product/makaroni-pasta-zara-nr-31-bantites-500-gr
+pasta_wheat,crosscheck_csp,2026-10-06,Top!,06.10.2026,MAKARONI PANZANI FARFALLE 500G,PANZANI,standard,500.0,g,,1.8,,regular,https://cenudepo.lv/product/makaroni-panzani-farfalle-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Promo,06.10.2026,"MAKARONI LIGUORI, SPIRALES NR. 140, 500G",Liguori,standard,500.0,g,,2.19,,regular,https://cenudepo.lv/product/makaroni-liguori-spirales-nr-140-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Promo,06.10.2026,"MAKARONI PENNE RIGATE ARRIGHI NR.31,BIO, 500G",1881,organic,500.0,g,,2.48,,regular,https://cenudepo.lv/product/makaroni-penne-rigate-arrighi-nr-31-bio-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI BARILLA FETTUCCINE NR.166 500G,BARILLA,standard,500.0,g,,2.69,,regular,https://cenudepo.lv/product/makaroni-barilla-fettuccine-nr-166-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Rimi,06.10.2026,MAKARONI BARILLA FETTUCCINE NR.166 500G,BARILLA,standard,500.0,g,,2.89,,regular,https://cenudepo.lv/product/makaroni-barilla-fettuccine-nr-166-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,MAKARONI DI BARI RICCIA CASERECCIA 500G,DI BARI,standard,500.0,g,,3.59,,regular,https://cenudepo.lv/product/makaroni-di-bari-riccia-casereccia-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Promo,06.10.2026,"MAKARONI NONNO MARIO TAGLIOLINI, TRĪSKRĀSU, 500G",NONNO MARIO,standard,500.0,g,,4.95,,regular,https://cenudepo.lv/product/makaroni-nonno-mario-tagliolini-triskrasu-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,BAMBUSA ŠĶIEDRAS MAKARONI PASTA NATURA PN 250G,PASTA NATURA,standard,250.0,g,,2.99,,regular,https://cenudepo.lv/product/bambusa-skiedras-makaroni-pasta-natura-pn-250g
+pasta_wheat,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PASTA PRESTO SPAGHETTI NR.7 400G,PRESTO,standard,400.0,g,,0.79,,regular,https://cenudepo.lv/product/pasta-presto-spaghetti-nr-7-400g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,06.10.2026,PILNGR.MAK.LA MOLISANA SPAGHETTI 500G,,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/pilngr-mak-la-molisana-spaghetti-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Maxima,05.10.2026,PASTA DE CECCO SPAGHETTI NR.12 500G,DE CECCO,standard,500.0,g,,2.19,,regular,https://cenudepo.lv/product/pasta-de-cecco-spaghetti-nr-12-500g
+pasta_wheat,crosscheck_csp,2026-10-06,Rimi,06.10.2026,PASTA BARILLA SPAGHETTI BEZ LIPEKĻA 400G,BARILLA,standard,400.0,g,,4.99,,regular,https://cenudepo.lv/product/pasta-barilla-spaghetti-bez-lipekla-400g
+rice_white,crosscheck_csp,2026-10-06,Rimi,06.10.2026,RĪSI RIMI SMART GARGRAUDU 800G,RIMI SMART,store_brand,800.0,g,,1.19,,regular,https://cenudepo.lv/product/risi-rimi-smart-gargraudu-800g
+rice_white,crosscheck_csp,2026-10-06,Maxima,28.09.2026,RISI EXTRA LINE TVAICĒTI 800G,EXTRA LINE,standard,800.0,g,,1.29,,regular,https://cenudepo.lv/product/risi-extra-line-tvaiceti-800g
+rice_white,crosscheck_csp,2026-10-06,Rimi,06.10.2026,RĪSI RIMI SMART GARGRAUDU 4X100G,RIMI SMART,store_brand,400.0,g,,0.66,,regular,https://cenudepo.lv/product/risi-rimi-smart-gargraudu-4x100g
+rice_white,crosscheck_csp,2026-10-06,unknown (card price),,GARGRAUDU RĪSI RIMI 4X100G,RIMI,store_brand,400.0,g,,0.79,0.99,loyalty,https://cenudepo.lv/product/gargraudu-risi-rimi-4x100g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,TVAICĒTI RĪSI WELL DONE 800G,WELL DONE,standard,800.0,g,,1.69,,regular,https://cenudepo.lv/product/tvaiceti-risi-well-done-800g
+rice_white,crosscheck_csp,2026-10-06,Promo,06.10.2026,"RĪSI GARGRAUDU DOBELE, 1KG",Dobele,standard,1000.0,g,,2.22,,regular,https://cenudepo.lv/product/risi-gargraudu-dobele-1kg
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI VALDO KLASISKIE 1KG,VALDO,standard,1000.0,g,,2.29,,regular,https://cenudepo.lv/product/risi-valdo-klasiskie-1kg
+rice_white,crosscheck_csp,2026-10-06,Rimi,06.10.2026,RĪSI VALDO KLASISKIE 1KG,VALDO,standard,1000.0,g,,2.39,,regular,https://cenudepo.lv/product/risi-valdo-klasiskie-1kg
+rice_white,crosscheck_csp,2026-10-06,Citro,06.10.2026,RĪSI VALDO KLASISKIE 1KG,VALDO,standard,1000.0,g,,2.39,,regular,https://cenudepo.lv/product/risi-valdo-klasiskie-1kg
+rice_white,crosscheck_csp,2026-10-06,Rimi,,RĪSI VALDO EKSTRA 8X125G,VALDO,standard,1000.0,g,,2.39,3.89,discount_all,https://cenudepo.lv/product/risi-valdo-ekstra-8x125g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI VALDO EKSTRA 8X125G,VALDO,standard,1000.0,g,,3.59,,regular,https://cenudepo.lv/product/risi-valdo-ekstra-8x125g
+rice_white,crosscheck_csp,2026-10-06,Citro,06.10.2026,RĪSI VALDO EKSTRA 8X125G,VALDO,standard,1000.0,g,,3.89,,regular,https://cenudepo.lv/product/risi-valdo-ekstra-8x125g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,TVAICĒTI RIĪSI WELL DONE 4X100G,,standard,400.0,g,,0.99,,regular,https://cenudepo.lv/product/tvaiceti-riisi-well-done-4x100g
+rice_white,crosscheck_csp,2026-10-06,Rimi,06.10.2026,GARGRAUDU RĪSI RIMI 8X100G,RIMI,store_brand,800.0,g,,1.99,,regular,https://cenudepo.lv/product/gargraudu-risi-rimi-8x100g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI VALDO KLASISKIE 500G,VALDO,standard,500.0,g,,1.29,,regular,https://cenudepo.lv/product/risi-valdo-klasiskie-500g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI DOBELE GARGRAUDU 8X125G,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,2.89,,regular,https://cenudepo.lv/product/risi-dobele-gargraudu-8x125g
+rice_white,crosscheck_csp,2026-10-06,Citro,06.10.2026,RĪSI DOBELE GARGRAUDU 8X125G,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,2.99,,regular,https://cenudepo.lv/product/risi-dobele-gargraudu-8x125g
+rice_white,crosscheck_csp,2026-10-06,Promo,06.10.2026,RĪSI DOBELE GARGRAUDU 8X125G,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,3.32,,regular,https://cenudepo.lv/product/risi-dobele-gargraudu-8x125g
+rice_white,crosscheck_csp,2026-10-06,Rimi,06.10.2026,RĪSI DOBELE GARGRAUDU 8X125G,DOBELES DZIRNAVNIEKS,standard,1000.0,g,,3.49,,regular,https://cenudepo.lv/product/risi-dobele-gargraudu-8x125g
+rice_white,crosscheck_csp,2026-10-06,Top!,06.10.2026,RĪSI JASMINE VALDO 0.5KG 4X125G,VALDO,standard,500.0,g,,1.49,,regular,https://cenudepo.lv/product/risi-jasmine-valdo-0-5kg-4x125g
+rice_white,crosscheck_csp,2026-10-06,Elvi,,RĪSI JASMINE VALDO 0.5KG 4X125G,VALDO,standard,500.0,g,,1.59,2.19,discount_all,https://cenudepo.lv/product/risi-jasmine-valdo-0-5kg-4x125g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI JASMINE VALDO 0.5KG 4X125G,VALDO,standard,500.0,g,,1.89,,regular,https://cenudepo.lv/product/risi-jasmine-valdo-0-5kg-4x125g
+rice_white,crosscheck_csp,2026-10-06,Rimi,06.10.2026,RĪSI JASMINE VALDO 0.5KG 4X125G,VALDO,standard,500.0,g,,2.09,,regular,https://cenudepo.lv/product/risi-jasmine-valdo-0-5kg-4x125g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI VALDO EKSTRA 1KG,VALDO,standard,1000.0,g,,3.19,,regular,https://cenudepo.lv/product/risi-valdo-ekstra-1kg
+rice_white,crosscheck_csp,2026-10-06,Maxima,28.09.2026,RĪSI BOSTO GARGRAUDU 4X125G,BOSTO,standard,500.0,g,,1.79,,regular,https://cenudepo.lv/product/risi-bosto-gargraudu-4x125g
+rice_white,crosscheck_csp,2026-10-06,Promo,06.10.2026,"RĪSI APALIE SCOTTI, 1KG",,standard,1000.0,g,,3.95,,regular,https://cenudepo.lv/product/risi-apalie-scotti-1kg
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,RĪSI MUGHAL ROYAL DIAMOND TVAICĒTI GARGRAUDU 1KG,MUGHAL,standard,1000.0,g,,4.99,,regular,https://cenudepo.lv/product/risi-mughal-royal-diamond-tvaiceti-gargraudu-1kg
+rice_white,crosscheck_csp,2026-10-06,Promo,12.09.2026,"TRĪS GRAUDU RĪSI BUON GUSTO,350G",Buon Gusto,standard,350.0,g,,2.19,,regular,https://cenudepo.lv/product/tris-graudu-risi-buon-gusto-350g
+rice_white,crosscheck_csp,2026-10-06,Maxima,06.10.2026,POKE BĻODAS RĪSI BOSTO 500G,BOSTO,standard,500.0,g,,3.49,,regular,https://cenudepo.lv/product/poke-blodas-risi-bosto-500g
+rice_white,crosscheck_csp,2026-10-06,Spirits &amp; Wine,06.10.2026,RICOSSA GAVI,,standard,,,,11.49,,regular,https://cenudepo.lv/product/ricossa-gavi
+crispbread,own,2026-10-06,Maxima,06.10.2026,RUDZU SĒKLU MAIZES ŠĶĒLES HM 450G,HANZAS MAIZNĪCA,standard,450.0,g,,1.28,,regular,https://cenudepo.lv/product/rudzu-seklu-maizes-skeles-hm-450g
+crispbread,own,2026-10-06,Maxima,06.10.2026,RUDZU MAIZĪTES WELL DONE 220G,WELL DONE,standard,220.0,g,,1.19,,regular,https://cenudepo.lv/product/rudzu-maizites-well-done-220g

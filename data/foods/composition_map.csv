@@ -24,12 +24,12 @@ fries_frozen,frida,1847,170523,170118,,,A,
 beans_dried,frida,1801,175202,175203,,,A,white beans
 lentils_red,frida,1799,172420,172421,,,A,
 lentils_green,frida,1800,172420,172421,,,A,
-peas_split,frida,592,172428,172429,,,A,
+peas_split,frida,592,172428,172429,usda_sr,172428,A,"Frida split peas Cys 6.7 mg/g, SAA 14 (peas ~20–24); AA profile from USDA split peas"
 peas_grey,frida,1861,172428,172429,,,B,Danish beige-brown 'Lolland' peas as proxy for Latvian grey peas
 chickpeas_dried,frida,1803,173756,173757,,,A,
 beans_canned,frida,1810,,,,,A,drained
 chickpeas_canned,frida,1812,,,,,A,drained
-peas_canned,frida,1314,,,,,A,
+peas_canned,frida,1314,,,usda_sr,170104,A,Frida canned peas Cys 3.4 mg/g implausible; AA profile from USDA canned peas
 tofu,frida,272,,,,,A,
 soy_chunks,usda_sr,174275,,,,,B,defatted soy flour as proxy for textured soy protein; rehydration yield set in yields.csv
 soy_drink,frida,1178,,,,,A,
@@ -37,7 +37,7 @@ chicken_fillet,usda_sr,171077,171077,171477,,,A,Frida has no skinless breast
 chicken_legs,frida,882,172378,173617,,,A,
 chicken_whole,frida,959,171447,171450,,,A,
 chicken_thigh_fillet,usda_sr,173627,173627,172388,,,A,
-turkey_fillet,usda_sr,171098,171098,171496,,,A,
+turkey_fillet,usda_sr,171098,171098,171496,frida,732,A,USDA turkey breast ILE/VAL implausibly low (28.7/32.0 mg/g vs ~46/56); AA profile from Frida turkey
 chicken_liver,frida,712,171060,171061,,,A,
 pork_boneless,frida,988,168255,168257,,,B,generic pork ~10 % fat
 pork_bone,frida,985,167843,167844,,,A,
@@ -48,7 +48,7 @@ beef_bone,frida,1019,169491,168667,,,A,
 beef_steak,frida,805,171757,169471,,,A,
 sausage_boiled,frida,1128,,,,,B,saveloy as proxy for doktordesa
 sausages_small,frida,1143,,,,,A,
-sausage_smoked,usda_sr,174584,,,,,B,
+sausage_smoked,usda_sr,174584,,,frida,1136,B,"USDA smoked sausage AA inconsistent with protein (LYS 146 mg/g, DIAAS 213); AA profile from Frida mettwurst"
 canned_stewed_meat,frida,666,,,,,C,canned ham as proxy; Latvian sautēta gaļa is fattier → replace with label values
 smoked_chicken,frida,1091,,,,,B,grilled chicken as proxy
 pelmeni,frida,1406,,,frida,1076,C,no AA for dumplings; AA profile borrowed from pork mince

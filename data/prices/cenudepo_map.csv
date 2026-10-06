@@ -4,7 +4,7 @@ millet,prosa-393,,PĀRSL,own
 bulgur,bulgurs-173,,MAISĪJUM|AR ,own
 couscous,kuskuss-354,,AR |GARŠ|MAISĪJUM,own
 muesli,musli-156,,ŠOKOL,own
-crispbread,maizes-aizvietotaji-un-citi-miltu-izstradajumi-648;maize-646,GALET|SAUSMAIZ|KRAUKŠĶ|KNĀKEB,,own
+crispbread,maizes-aizvietotaji-un-citi-miltu-izstradajumi-648;maize-646,RUDZU|RUDZ |KNĀKEB|KRAUKŠĶ|SAUSMAIZ,ZEMEŅ|ŠOKOL|AR |SALDS|KVIEŠ|KVIEŽ|RĪSU|KUKURŪZ,own
 sweet_potato,kartupeli-616;darzeni-577,BATĀT,ČIPS|FRĪ,own
 lentils_red,lecas-353;paksaugi-645,SARKAN.*LĒC|LĒC.*SARKAN,KONSERV|ZUPA|PASTA|MAKARON,own
 lentils_green,lecas-353;paksaugi-645,LĒC,SARKAN|KONSERV|ZUPA|PASTA|MAKARON,own
@@ -16,12 +16,12 @@ chickpeas_canned,konserveti-turku-zirni-265,,AR |MĒRC|ZUP,own
 tofu,tofu-siers-614,,DESERT|SALD,own
 soy_chunks,augu-izcelsmes-gala-250;vegetars-578,SOJ,BURGER|DESA|NAGET|KOTLET|PELMEŅ|DESERT|JOGURT|DZĒRIEN|TOFU,own
 soy_drink,piens-638,SOJ,ŠOKOL|VANIĻ|KAFIJ,own
-chicken_thigh_fillet,cala-skinki-604;vistas-gala-710,ŠĶIŅĶ.*FILEJ|FILEJ.*ŠĶIŅĶ|AUGŠSTILB.*FILEJ,MARIN|PANĒT|GRIL,own
+chicken_thigh_fillet,cala-skinki-604;vistas-gala-710,ŠĶIŅĶ.*(FILEJ|ATKAULOT|BEZ KAUL)|FILEJ.*ŠĶIŅĶ,MARIN|PANĒT|GRIL|AR MUGUR,own
 turkey_fillet,svaiga-putnu-gala-707,TĪTAR.*FILEJ|FILEJ.*TĪTAR,MARIN|PANĒT|MALT|KŪPIN|GRIL,own
 chicken_liver,svaiga-putnu-gala-707;vistas-gala-710,AKN,PASTĒT,own
 beef_steak,liellopa-steiks-1108,,MARIN|GRIL,own
 tuna_canned,konservets-tuncis-258,SAVĀ SULĀ|ŪDENĪ|SĀLSŪDEN|SĀLĪJUM,EĻĻ|SALĀT|MĒRC|AR ,own
-skyr,grieku-jogurts-204;jogurts-205,SKYR|PROTEĪN|AUGSTA PROTEĪNA,ZEMEN|VANIĻ|MELLEN|ŠOKOL|PERSIK|AVEŅ|MANGO|KARAMEL|BANĀN|ĶIRŠ|AUGĻ|OG|DZER|AR ,own
+skyr,grieku-jogurts-204;jogurts-205,SKYR|PROTEĪN|AUGSTA PROTEĪNA,ZEMEN|VANIĻ|MELLEN|ŠOKOL|PERSIK|AVEŅ|MANGO|KARAMEL|BANĀN|ĶIRŠ|AUGĻ|OGĀM|OGU |DZER|AR ,own
 cottage_cheese,graudainais-biezpiens-210,,AR |ZEMEN|ĶIPLOK|DILL|GARŠAUG,own
 peanut_butter,riekstu-krems-154,ZEMESRIEKST,ŠOKOL|KAKAO|MEDU|AR ,own
 sunflower_seeds,rieksti-798;paksaugi-645;citi-rieksti-139,SAULESPUĶU,EĻĻ|HALVA|SĀLĪT|GARŠ|ČIPS,own
@@ -35,10 +35,10 @@ pea_protein,proteina-pulveris-816,ZIRŅU|PEA|VEGAN,WHEY|SŪKALU,own
 mass_gainer,proteina-pulveris-816;uztura-bagatinataji-996,GAINER|MASS,,own
 maltodextrin,uztura-bagatinataji-996;proteina-pulveris-816,MALTODEKS|CARBO|DEKSTROZ|OGĻHIDRĀT,,own
 oats_flaked,auzas-310,PĀRSL,AR |ŠOKOL|ĀTR|BEZGLUT|BIO|SĪRUP,crosscheck_csp
-rice_white,risi-171,,BRŪN|SAVVAĻ|MELN|SARKAN|SUŠI|VĀRĪŠANAS MAISIŅ|MAISĪJ|AR ,crosscheck_csp
+rice_white,risi-171,,BRŪN|SAVVAĻ|MELN|SARKAN|SUŠI|VĀRĪŠANAS MAISIŅ|MAISĪJ|AR |BASMATI|ARBORIO|RISOTTO|KARIJ|JASMĪN|APAĻ|PLOV|GOURMET,crosscheck_csp
 chicken_fillet,vistas-fileja-178,FILEJ,MARIN|PANĒT|GRIL|ŠĶIŅĶ|KŪPIN|SALĀT|AR ,crosscheck_csp
-eggs,olas-551,,PASKAL|PERĒJUM|PAPRIK|ŠOKOL,crosscheck_csp
+eggs,olas-551,,PASKAL|PERĒJUM|PAPRIK|ŠOKOL|PAIPAL|BALTUM|DZELTENUM|PĪĻU|ZOSU,crosscheck_csp
 curd,biezpiens-209,,AR |ZEMEN|VANIĻ|ŠOKOL|ROZĪN|GRAUDAIN|DESERT|MASA|SALD,crosscheck_csp
 pasta_wheat,makaroni-un-nudeles-143;spageti-170,,NŪDEL|BEZGLUT|PILNGRAUD|AR |ĀTR|OLU,crosscheck_csp
 pork_minced,cukgala-1109;jaukta-malta-gala-184,MALT,LIELLOP|JAUKT|VIST|TĪTAR|KOTLET,crosscheck_csp
-milk,piens-638,PIENS,SOJ|AUZ|MANDEĻ|RĪS|KOKOS|BEZLAKT|ŠOKOL|KAKAO|KONDENS|SAUSAIS|KAFIJ|KOKTEIĻ|BANĀN|ZEMEN,crosscheck_csp
+milk,piens-638,PIENS,SOJ|AUZ|MANDEĻ|RĪS|KOKOS|BEZLAKT|ŠOKOL|KAKAO|KONDENS|SAUSAIS|KAFIJ|KOKTEIĻ|BANĀN|ZEMEN|KAZAS|AITU,crosscheck_csp

@@ -53,13 +53,13 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [x] 2.10 List all reachable retailers (Rimi, Maxima/Barbora, Lidl, Top!, Mego, Elvi, …); choose the collection method per retailer; check the terms of use → CSP PCC010m official averages found (71 foods); comparison sites not reusable without permission; own collection for 35 foods
 - [x] 2.11 Fix the price normalization method (PROJECT.md §12.1): aggregation order, product spec and tier rules
 - [x] 2.12 Build the price-collection template/tool (product spec, brand, pack size, price, €/kg, retailer, date, regular or discount)
-- [ ] 2.13 Collect the first price snapshot (guide: `data/prices/COLLECTION_GUIDE.md`; collection method to be chosen by owner) across as many retailers as feasible
-- [ ] 2.14 Compute the central price (median) and IQR per food
+- [x] 2.13 Collect the first price snapshot: Cenu Depo 2026-10-06, ~570 shop-level observations, 17 shops (`src/prices/cenudepo.py`); 7 foods not listed there (soy drink, chicken liver, 3 seeds, gainer, maltodextrin) remain unpriced across as many retailers as feasible
+- [x] 2.14 Compute the central price and band per food (`src/prices/summary.py` → `data/processed/prices_summary.csv`); cross-check: Cenu Depo median ≈ 10 % below CSP (rice +12 %, chicken −10 %, curd −11 %, pasta −14 %, oats −32 %)
 - [ ] 2.15 Optional: repeat collection over several weeks to measure price variability
 ### 2d. Quality control
-- [ ] 2.16 Validation script: unit checks, Atwater energy check (4P+4C+9F+2Fibre ≈ kcal), outliers, missing fields, **amino-acid plausibility** (the preview found implausible USDA SR Legacy profiles: ground beef 80/20 Trp 5.1 mg/g, plain whole-milk yogurt Trp 5.8 mg/g, firm tofu Cys 3.3 mg/g; and no amino-acid data for pollock, kefir, white bread)
-- [ ] 2.17 Assign an uncertainty grade (A/B/C) to every value
-- [ ] **GATE 2:** dataset v1.0 frozen and tagged in git
+- [x] 2.16 Validation script: unit checks, Atwater energy check (4P+4C+9F+2Fibre ≈ kcal), outliers, missing fields, **amino-acid plausibility** (the preview found implausible USDA SR Legacy profiles: ground beef 80/20 Trp 5.1 mg/g, plain whole-milk yogurt Trp 5.8 mg/g, firm tofu Cys 3.3 mg/g; and no amino-acid data for pollock, kefir, white bread)
+- [x] 2.17 Assign an uncertainty grade (A/B/C) to every value: composition, digestibility and price grades in `foods_master.csv`; reviewed QC flags in `data/foods/qc_reviewed.csv`
+- [ ] **GATE 2:** owner reviews `data/processed/foods_master.csv`; then dataset v1.0 is frozen and tagged in git
 
 ---
 
@@ -152,3 +152,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 1.3, 1.5, 1.8, 1.13–1.15, GATE 1 | University PDFs read (Thomas 2016 confirms all CHO bands, fat 20–35 %, EA 45/30); OpenAlex originality search found prior athlete LP work → novelty narrowed to the combination; D1–D12 approved, presets frozen |
 | 2026-10-06 | 2.1, 2.3, 2.10–2.12 (2.2 draft) | SCHEMA.md; 106-food list (71 CSP-priced, 35 own); CSP PCC010m 24 months downloaded; price normalization fixed; collection template + guide |
 | 2026-10-06 | 2.4–2.9 (2.13 running) | Owner: Cenu Depo OK for personal use → polite collector `src/prices/cenudepo.py`; Frida 5.5 + SR28 downloaded; composition, yields, edible portions, digestibility maps for all 106 foods; unit conversions; price summary script |
+| 2026-10-06 | 2.13–2.17 | Prices for 99/106 foods (CSP + Cenu Depo); parser handles single-shop pages, sold-by-weight items, loyalty rows; AA overrides for turkey, split peas, canned peas, smoked sausage; `src/build_master.py` → `foods_master.csv`; 14 tests pass. Finding: split peas ≈ €0.94/kg |
