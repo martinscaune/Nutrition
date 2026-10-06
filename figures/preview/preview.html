@@ -1,0 +1,617 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Food Value Preview</title>
+<script src="https://cdn.jsdelivr.net/npm/plotly.js-dist-min@2.35.2/plotly.min.js"></script>
+<style>
+:root{--surface:#fcfcfb;--ink:#0b0b0b;--ink2:#52514e;--muted:#8a8984;--grid:#e6e5e1;--warn-bg:#fff6e0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#8f8e88;--grid:#33332f;--warn-bg:#3a3020}}
+:root[data-theme="dark"]{--surface:#1a1a19;--ink:#fff;--ink2:#c3c2b7;--muted:#8f8e88;--grid:#33332f;--warn-bg:#3a3020}
+body{margin:0;background:var(--surface);color:var(--ink);font:15px/1.5 system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:26px;margin:0 0 4px}h2{font-size:19px;margin:40px 0 4px}
+p{color:var(--ink2);margin:4px 0 12px}.warn{background:var(--warn-bg);padding:10px 14px;border-radius:8px;color:var(--ink)}
+details{margin-top:32px}table{border-collapse:collapse;font-size:13px;width:100%}
+th,td{padding:4px 8px;border-bottom:1px solid var(--grid);text-align:right}th:first-child,td:first-child{text-align:left}
+.scroll{overflow-x:auto}
+</style></head><body><main>
+<h1>Food value preview</h1>
+<p>A side exploration of about 40 foods. Hover any point for its details. Not project results.</p>
+<p class="warn"><b>Caveats:</b> prices are <b>placeholder estimates</b> of Latvian prices, not observations.
+Some protein digestibility values are proxies. "Useful protein" = protein × min(DIAAS,100)/100 for the food eaten
+<i>alone</i>; in a mixed diet, complementary proteins do better. Calories and grams per 100 g are for the food
+<b>as eaten</b> (cooked rice, not dry). Per-euro values don't depend on cooking, since water adds neither calories nor cost.</p>
+<h2>Calories vs useful protein, per 100 g eaten</h2><p>Upper right = dense in both. Useful protein = protein adjusted for quality (DIAAS, capped at 100).</p><div style="height:600px; width:100%;">                            <div id="20367b52-b70a-4b0f-8f7e-fe63aa26e668" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("20367b52-b70a-4b0f-8f7e-fe63aa26e668")) {                    Plotly.newPlot(                        "20367b52-b70a-4b0f-8f7e-fe63aa26e668",                        [{"customdata":[["Chicken breast","Meat & fish",165.0,31.02,160.0,30.0,109.61981164980816,"LEU",7.5,"Chicken cooked (human)"],["Chicken thigh fillet","Meat & fish",179.0,24.76,186.15384615384616,30.246153846153845,108.92407108239095,"VAL",6.5,"Chicken cooked (human)"],["Pork shoulder (lean)","Meat & fish",228.0,26.68,218.1818181818182,36.83636363636364,126.6856121119768,"LEU",5.5,"Pork loin medium-well (pig)"],["Pork loin (lean)","Meat & fish",209.0,28.62,220.0,32.96923076923077,126.70326837818334,"LEU",6.5,"Pork loin medium-well (pig)"],["Minced pork","Meat & fish",297.0,25.69,438.3333333333333,28.13333333333333,127.30908882068034,"LEU",6.0,"Pork (pig)"],["Minced beef 80\u002f20","Meat & fish",272.0,27.0,282.22222222222223,19.07777777777778,129.98251377702414,"VAL",9.0,"Beef ground cooked (pig)"],["Beef top round steak","Meat & fish",207.0,36.12,86.42857142857143,16.85,119.17635658914728,"VAL",14.0,"Beef pan fried (pig)"],["Chicken liver","Meat & fish",167.0,24.46,340.0,48.34285714285715,127.0758548583837,"LEU",3.5,"PROXY chicken cooked (human)"],["Canned tuna (drained)","Meat & fish",86.0,19.44,74.78260869565217,16.90434782608696,110.99537037037037,"VAL",11.5,"PROXY fish Chinese (human predicted)"],["Salmon (farmed)","Meat & fish",206.0,22.1,104.0,10.21,115.96153846153845,"VAL",20.0,"PROXY fish Chinese (human predicted)"],["Pollock fillet","Meat & fish",86.6164,19.42,95.0,21.462500000000002,115.84783829309377,"VAL",8.0,"PROXY fish Chinese (human predicted)"],["Pickled herring","Meat & fish",262.0,14.19,374.2857142857143,20.271428571428572,115.90909090909092,"VAL",7.0,"PROXY fish Chinese (human predicted)"],["Mackerel","Meat & fish",262.0,23.85,292.85714285714283,26.571428571428573,115.84905660377358,"VAL",7.0,"PROXY fish Chinese (human predicted)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"circle"},"mode":"markers","name":"Meat & fish","x":{"dtype":"f8","bdata":"hetRuB4FP0DD9Shcj8I4QK5H4XoUrjpAH4XrUbiePEBxPQrXo7A5QAAAAAAAADtAj8L1KFwPQkD2KFyPwnU4QHE9CtejcDNAmpmZmZkZNkDsUbgehWszQOF6FK5HYSxAmpmZmZnZN0A="},"y":{"dtype":"f8","bdata":"AAAAAACgZEAAAAAAAGBmQAAAAAAAgGxAAAAAAAAgakAAAAAAAJByQAAAAAAAAHFAAAAAAADgaUAAAAAAAOBkQAAAAAAAgFVAAAAAAADAaUBIUPwYc6dVQAAAAAAAYHBAAAAAAABgcEA="},"type":"scatter"},{"customdata":[["Eggs","Eggs & dairy",155.0,12.58,255.35714285714286,22.42857142857143,122.7162553102765,"LEU",5.6,"Egg boiled (human)"],["Milk 2%","Eggs & dairy",50.0,3.3,467.2897196261682,30.8411214953271,132.43741765480897,"SAA",1.07,"Skim milk powder (human predicted)"],["Kefir","Eggs & dairy",43.0,3.79,330.7692307692308,29.153846153846153,132.43741765480897,"SAA",1.3,"PROXY skim milk powder"],["Cottage cheese \u002f quark","Eggs & dairy",81.0,10.45,180.0,23.22222222222222,128.49552735593926,"SAA",4.5,"PROXY casein (human)"],["Natural yogurt","Eggs & dairy",61.0,3.47,244.0,13.88,132.27053140096618,"SAA",2.5,"PROXY skim milk powder"],["Hard cheese (Gouda-type)","Eggs & dairy",356.0,24.94,374.7368421052632,26.25263157894737,141.10344827586206,"THR",9.5,"PROXY casein (human)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"square"},"mode":"markers","name":"Eggs & dairy","x":{"dtype":"f8","bdata":"KVyPwvUoKUBmZmZmZmYKQFK4HoXrUQ5AZmZmZmbmJEDD9Shcj8ILQHE9Ctej8DhA"},"y":{"dtype":"f8","bdata":"AAAAAABgY0AAAAAAAABJQAAAAAAAgEVAAAAAAABAVEAAAAAAAIBOQAAAAAAAQHZA"},"type":"scatter"},{"customdata":[["Lentils (dry)","Legumes & soy",116.0,6.983478260869566,1353.8461538461538,73.34260172489229,77.422153668177,"SAA",2.6,"Lentils (pig)"],["Split peas (dry)","Legumes & soy",118.0,5.960565217391304,2600.0,118.02695086167094,71.46960692315713,"SAA",1.4,"Yellow pea pressure cooked (human)"],["Kidney beans (dry)","Legumes & soy",127.0,6.545130434782609,1203.5714285714287,60.74385759418858,75.49170051652375,"SAA",2.8,"Kidney bean cooked (pig)"],["Chickpeas (dry)","Legumes & soy",164.0,7.0587,1350.0,58.24394912931313,79.66930022573364,"VAL",2.8,"Chickpea pressure cooked (human)"],["Tofu (firm)","Legumes & soy",144.0,17.27,192.0,23.026666666666664,121.19127336852264,"SAA",7.5,"Tofu (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"triangle-up"},"mode":"markers","name":"Legumes & soy","x":{"dtype":"f8","bdata":"Bgzb7BTvG0Cue4lontcXQEPINaw2LhpAzhlR2hs8HECF61G4HkUxQA=="},"y":{"dtype":"f8","bdata":"AAAAAAAAXUAAAAAAAIBdQAAAAAAAwF9AAAAAAACAZEAAAAAAAABiQA=="},"type":"scatter"},{"customdata":[["White rice","Grains & starches",130.0,1.8591666666666664,2027.7777777777778,27.37682431502134,69.11400247831475,"LYS",1.8,"Rice white polished (pig)"],["Rolled oats","Grains & starches",71.0,2.3259374999999998,2915.3846153846152,92.62894647183525,91.57234251968504,"LYS",1.3,"Quick oats (pig)"],["Pasta","Grains & starches",158.0,2.2106250000000003,2061.111111111111,27.611637931034487,38.11422413793104,"LYS",1.8,"Wheat durum (pig)"],["Buckwheat groats","Grains & starches",92.0,2.9634166666666664,1441.6666666666667,42.85118035009862,87.67504930966469,"LYS",2.4,"PROXY oats (no buckwheat data)"],["Pearl barley","Grains & starches",123.0,1.2950000000000002,2933.3333333333335,47.32098082595872,57.30088495575223,"LYS",1.2,"Barley dehulled (pig)"],["Rye bread","Grains & starches",259.0,3.495,740.0,9.985714285714286,41.11764705882353,"LYS",3.5,"PROXY rye grain (pig)"],["White bread","Grains & starches",266.0,3.743901258470474,1064.0,14.975605033881896,42.30396902226525,"LYS",2.5,"Bread (human predicted)"],["Potatoes","Grains & starches",86.0,1.485901639344262,862.5,18.247914869140054,86.89483271019076,"LEU",0.8,"Potato tuber dried (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"diamond"},"mode":"markers","name":"Grains & starches","x":{"dtype":"f8","bdata":"vljyiyW\u002f\u002fT\u002frUbgehZsCQJDC9ShcrwFAjgkezBO1B0C5HoXrUbj0P\u002fYoXI\u002fC9QtA46vEgILzDUD75iDMQMb3Pw=="},"y":{"dtype":"f8","bdata":"AAAAAABAYEAAAAAAAMBRQAAAAAAAwGNAAAAAAAAAV0AAAAAAAMBeQAAAAAAAMHBAAAAAAACgcEAAAAAAAIBVQA=="},"type":"scatter"},{"customdata":[["Peanuts (roasted)","Nuts & seeds",587.0,11.776041666666666,1067.2727272727273,21.410984848484848,48.36156741957563,"LYS",5.5,"PROXY peanut flour (pig)"],["Peanut butter","Nuts & seeds",598.0,9.4346875,854.2857142857143,13.478125000000002,42.479457451598385,"LYS",7.0,"PROXY peanut flour (pig)"],["Sunflower seeds","Nuts & seeds",582.0,12.421875000000002,1460.0,33.384190700982934,64.26215726849458,"LYS",4.0,"Sunflower seeds whole (pig)"],["Walnuts","Nuts & seeds",654.0,6.801666666666668,467.14285714285717,4.858333333333334,44.659662945940035,"LYS",14.0,"PROXY pistachio roasted (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"triangle-down"},"mode":"markers","name":"Nuts & seeds","x":{"dtype":"f8","bdata":"VVVVVVWNJ0DD9Shcj94iQAEAAAAA2ChAtoFOG+g0G0A="},"y":{"dtype":"f8","bdata":"AAAAAABYgkAAAAAAALCCQAAAAAAAMIJAAAAAAABwhEA="},"type":"scatter"},{"customdata":[["Wheat flour","Ingredients",364.0,4.132499999999999,4044.4444444444443,45.916666666666664,40.00484027105517,"LYS",0.9,"Wheat flour (human predicted)"],["Sunflower oil","Ingredients",884.0,0.0,3536.0,0.0,null,"",2.5,"no protein"],["Butter","Ingredients",717.0,0.85,717.0,0.85,145.28388746803068,"SAA",10.0,"PROXY casein (human)"],["Sugar","Ingredients",387.0,0.0,3870.0,0.0,null,"",1.0,"no protein"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#8a8984","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"x"},"mode":"markers","name":"Ingredients","x":{"dtype":"f8","bdata":"R+F6FK6HEEAAAAAAAAAAADMzMzMzM+s\u002fAAAAAAAAAAA="},"y":{"dtype":"f8","bdata":"AAAAAADAdkAAAAAAAKCLQAAAAAAAaIZAAAAAAAAweEA="},"type":"scatter"},{"hoverinfo":"skip","line":{"color":"#52514e","width":1},"mode":"lines+text","name":"Pareto front","text":["Walnuts","Peanut butter","Peanuts (roasted)","Sunflower seeds","Hard cheese (Gouda-type)","Minced pork","Minced beef 80\u002f20","Pork loin (lean)","Beef top round steak"],"textfont":{"size":11},"textposition":"top left","x":{"dtype":"f8","bdata":"toFOG+g0G0DD9Shcj94iQFVVVVVVjSdAAQAAAADYKEBxPQrXo\u002fA4QHE9CtejsDlAAAAAAAAAO0AfhetRuJ48QI\u002fC9ShcD0JA"},"y":{"dtype":"f8","bdata":"AAAAAABwhEAAAAAAALCCQAAAAAAAWIJAAAAAAAAwgkAAAAAAAEB2QAAAAAAAkHJAAAAAAAAAcUAAAAAAACBqQAAAAAAA4GlA"},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"margin":{"l":60,"r":20,"t":20,"b":60},"legend":{"orientation":"h","y":-0.15},"hoverlabel":{"bgcolor":"white"},"xaxis":{"title":{"text":"useful protein (g per 100 g eaten)"}},"yaxis":{"title":{"text":"kcal per 100 g eaten"}},"height":600},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>Calories per euro vs useful protein per euro</h2><p>Upper right = cheap calories and cheap quality protein. Independent of cooking.</p><div style="height:600px; width:100%;">                            <div id="c2868430-0fbe-4f2b-a1e8-3bd2a5b01e78" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("c2868430-0fbe-4f2b-a1e8-3bd2a5b01e78")) {                    Plotly.newPlot(                        "c2868430-0fbe-4f2b-a1e8-3bd2a5b01e78",                        [{"customdata":[["Chicken breast","Meat & fish",165.0,31.02,160.0,30.0,109.61981164980816,"LEU",7.5,"Chicken cooked (human)"],["Chicken thigh fillet","Meat & fish",179.0,24.76,186.15384615384616,30.246153846153845,108.92407108239095,"VAL",6.5,"Chicken cooked (human)"],["Pork shoulder (lean)","Meat & fish",228.0,26.68,218.1818181818182,36.83636363636364,126.6856121119768,"LEU",5.5,"Pork loin medium-well (pig)"],["Pork loin (lean)","Meat & fish",209.0,28.62,220.0,32.96923076923077,126.70326837818334,"LEU",6.5,"Pork loin medium-well (pig)"],["Minced pork","Meat & fish",297.0,25.69,438.3333333333333,28.13333333333333,127.30908882068034,"LEU",6.0,"Pork (pig)"],["Minced beef 80\u002f20","Meat & fish",272.0,27.0,282.22222222222223,19.07777777777778,129.98251377702414,"VAL",9.0,"Beef ground cooked (pig)"],["Beef top round steak","Meat & fish",207.0,36.12,86.42857142857143,16.85,119.17635658914728,"VAL",14.0,"Beef pan fried (pig)"],["Chicken liver","Meat & fish",167.0,24.46,340.0,48.34285714285715,127.0758548583837,"LEU",3.5,"PROXY chicken cooked (human)"],["Canned tuna (drained)","Meat & fish",86.0,19.44,74.78260869565217,16.90434782608696,110.99537037037037,"VAL",11.5,"PROXY fish Chinese (human predicted)"],["Salmon (farmed)","Meat & fish",206.0,22.1,104.0,10.21,115.96153846153845,"VAL",20.0,"PROXY fish Chinese (human predicted)"],["Pollock fillet","Meat & fish",86.6164,19.42,95.0,21.462500000000002,115.84783829309377,"VAL",8.0,"PROXY fish Chinese (human predicted)"],["Pickled herring","Meat & fish",262.0,14.19,374.2857142857143,20.271428571428572,115.90909090909092,"VAL",7.0,"PROXY fish Chinese (human predicted)"],["Mackerel","Meat & fish",262.0,23.85,292.85714285714283,26.571428571428573,115.84905660377358,"VAL",7.0,"PROXY fish Chinese (human predicted)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"circle"},"mode":"markers","name":"Meat & fish","x":{"dtype":"f8","bdata":"AAAAAAAAPkDwAz\u002fwAz8+QGzfsPYNa0JAwQ\u002f8wA98QEAhIiIiIiI8QD\u002fpkz7pEzNAmpmZmZnZMEC\u002f4iu+4itIQI9A0VaD5zBA7FG4HoVrJEBnZmZmZnY1QFh8xVd8RTRAJUmSJEmSOkA="},"y":{"dtype":"f8","bdata":"AAAAAAAAZEBP7MRO7ERnQEYXXXTRRWtAAAAAAACAa0BVVVVVVWV7QDmO4ziOo3FAt23btm2bVUAAAAAAAEB1QAtZyEIWslJAAAAAAAAAWkAAAAAAAMBXQEmSJEmSZHdA27Zt27ZNckA="},"type":"scatter"},{"customdata":[["Eggs","Eggs & dairy",155.0,12.58,255.35714285714286,22.42857142857143,122.7162553102765,"LEU",5.6,"Egg boiled (human)"],["Milk 2%","Eggs & dairy",50.0,3.3,467.2897196261682,30.8411214953271,132.43741765480897,"SAA",1.07,"Skim milk powder (human predicted)"],["Kefir","Eggs & dairy",43.0,3.79,330.7692307692308,29.153846153846153,132.43741765480897,"SAA",1.3,"PROXY skim milk powder"],["Cottage cheese \u002f quark","Eggs & dairy",81.0,10.45,180.0,23.22222222222222,128.49552735593926,"SAA",4.5,"PROXY casein (human)"],["Natural yogurt","Eggs & dairy",61.0,3.47,244.0,13.88,132.27053140096618,"SAA",2.5,"PROXY skim milk powder"],["Hard cheese (Gouda-type)","Eggs & dairy",356.0,24.94,374.7368421052632,26.25263157894737,141.10344827586206,"THR",9.5,"PROXY casein (human)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"square"},"mode":"markers","name":"Eggs & dairy","x":{"dtype":"f8","bdata":"3LZt27ZtNkB8ZAK9U9c+QHZiJ3ZiJz1AjuM4juM4N0DD9Shcj8IrQAuEkXasQDpA"},"y":{"dtype":"f8","bdata":"t23btm3rb0Bu9guxojR9QMVO7MROrHRAAAAAAACAZkAAAAAAAIBuQL2G8hrKa3dA"},"type":"scatter"},{"customdata":[["Lentils (dry)","Legumes & soy",116.0,6.983478260869566,1353.8461538461538,73.34260172489229,77.422153668177,"SAA",2.6,"Lentils (pig)"],["Split peas (dry)","Legumes & soy",118.0,5.960565217391304,2600.0,118.02695086167094,71.46960692315713,"SAA",1.4,"Yellow pea pressure cooked (human)"],["Kidney beans (dry)","Legumes & soy",127.0,6.545130434782609,1203.5714285714287,60.74385759418858,75.49170051652375,"SAA",2.8,"Kidney bean cooked (pig)"],["Chickpeas (dry)","Legumes & soy",164.0,7.0587,1350.0,58.24394912931313,79.66930022573364,"VAL",2.8,"Chickpea pressure cooked (human)"],["Tofu (firm)","Legumes & soy",144.0,17.27,192.0,23.026666666666664,121.19127336852264,"SAA",7.5,"Tofu (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"triangle-up"},"mode":"markers","name":"Legumes & soy","x":{"dtype":"f8","bdata":"zP3IL+1VUkByXhuQuYFdQOr1w7k2X05AzySeuTkfTUAGOm2g0wY3QA=="},"y":{"dtype":"f8","bdata":"dmIndmInlUAAAAAAAFCkQCVJkiRJzpJAAAAAAAAYlUAAAAAAAABoQA=="},"type":"scatter"},{"customdata":[["White rice","Grains & starches",130.0,1.8591666666666664,2027.7777777777778,27.37682431502134,69.11400247831475,"LYS",1.8,"Rice white polished (pig)"],["Rolled oats","Grains & starches",71.0,2.3259374999999998,2915.3846153846152,92.62894647183525,91.57234251968504,"LYS",1.3,"Quick oats (pig)"],["Pasta","Grains & starches",158.0,2.2106250000000003,2061.111111111111,27.611637931034487,38.11422413793104,"LYS",1.8,"Wheat durum (pig)"],["Buckwheat groats","Grains & starches",92.0,2.9634166666666664,1441.6666666666667,42.85118035009862,87.67504930966469,"LYS",2.4,"PROXY oats (no buckwheat data)"],["Pearl barley","Grains & starches",123.0,1.2950000000000002,2933.3333333333335,47.32098082595872,57.30088495575223,"LYS",1.2,"Barley dehulled (pig)"],["Rye bread","Grains & starches",259.0,3.495,740.0,9.985714285714286,41.11764705882353,"LYS",3.5,"PROXY rye grain (pig)"],["White bread","Grains & starches",266.0,3.743901258470474,1064.0,14.975605033881896,42.30396902226525,"LYS",2.5,"Bread (human predicted)"],["Potatoes","Grains & starches",86.0,1.485901639344262,862.5,18.247914869140054,86.89483271019076,"LEU",0.8,"Potato tuber dried (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"diamond"},"mode":"markers","name":"Grains & starches","x":{"dtype":"f8","bdata":"sVrtjndgO0Dj3bOoQChXQEbJrk2UnDtA8VVLevNsRUBhEVPmFalHQIuv+Iqv+CNA46vEgILzLUAOJk9Zdz8yQA=="},"y":{"dtype":"f8","bdata":"chzHcRyvn0DsxE7sxMamQOM4juM4GqBAq6qqqqqGlkCrqqqqquqmQAAAAAAAIIdAAAAAAACgkEAAAAAAAPSKQA=="},"type":"scatter"},{"customdata":[["Peanuts (roasted)","Nuts & seeds",587.0,11.776041666666666,1067.2727272727273,21.410984848484848,48.36156741957563,"LYS",5.5,"PROXY peanut flour (pig)"],["Peanut butter","Nuts & seeds",598.0,9.4346875,854.2857142857143,13.478125000000002,42.479457451598385,"LYS",7.0,"PROXY peanut flour (pig)"],["Sunflower seeds","Nuts & seeds",582.0,12.421875000000002,1460.0,33.384190700982934,64.26215726849458,"LYS",4.0,"Sunflower seeds whole (pig)"],["Walnuts","Nuts & seeds",654.0,6.801666666666668,467.14285714285717,4.858333333333334,44.659662945940035,"LYS",14.0,"PROXY pistachio roasted (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"triangle-down"},"mode":"markers","name":"Nuts & seeds","x":{"dtype":"f8","bdata":"2WSTTTZpNUDOzMzMzPQqQBMTMCktsUBA8O7u7u5uE0A="},"y":{"dtype":"f8","bdata":"XXTRRRetkEAlSZIkSbKKQAAAAAAA0JZAJUmSJEkyfUA="},"type":"scatter"},{"customdata":[["Wheat flour","Ingredients",364.0,4.132499999999999,4044.4444444444443,45.916666666666664,40.00484027105517,"LYS",0.9,"Wheat flour (human predicted)"],["Sunflower oil","Ingredients",884.0,0.0,3536.0,0.0,null,"",2.5,"no protein"],["Butter","Ingredients",717.0,0.85,717.0,0.85,145.28388746803068,"SAA",10.0,"PROXY casein (human)"],["Sugar","Ingredients",387.0,0.0,3870.0,0.0,null,"",1.0,"no protein"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#8a8984","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"x"},"mode":"markers","name":"Ingredients","x":{"dtype":"f8","bdata":"VVVVVVX1RkAAAAAAAAAAADMzMzMzM+s\u002fAAAAAAAAAAA="},"y":{"dtype":"f8","bdata":"juM4juOYr0AAAAAAAKCrQAAAAAAAaIZAAAAAAAA8rkA="},"type":"scatter"},{"hoverinfo":"skip","line":{"color":"#52514e","width":1},"mode":"lines+text","name":"Pareto front","text":["Pearl barley","Rolled oats","Split peas (dry)"],"textfont":{"size":11},"textposition":"top left","x":{"dtype":"f8","bdata":"YRFT5hWpR0Dj3bOoQChXQHJeG5C5gV1A"},"y":{"dtype":"f8","bdata":"q6qqqqrqpkDsxE7sxMamQAAAAAAAUKRA"},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"margin":{"l":60,"r":20,"t":20,"b":60},"legend":{"orientation":"h","y":-0.15},"hoverlabel":{"bgcolor":"white"},"xaxis":{"title":{"text":"useful protein per \u20ac (g)"}},"yaxis":{"title":{"text":"kcal per \u20ac (log scale)"},"type":"log"},"height":600},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>Density and price combined</h2><p>Each axis = √(per-100 g value × per-€ value): rewards foods that are both dense and cheap, equally weighted.</p><div style="height:600px; width:100%;">                            <div id="2eed4212-eba8-4620-856e-b3f5c169648e" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("2eed4212-eba8-4620-856e-b3f5c169648e")) {                    Plotly.newPlot(                        "2eed4212-eba8-4620-856e-b3f5c169648e",                        [{"customdata":[["Chicken breast","Meat & fish",165.0,31.02,160.0,30.0,109.61981164980816,"LEU",7.5,"Chicken cooked (human)"],["Chicken thigh fillet","Meat & fish",179.0,24.76,186.15384615384616,30.246153846153845,108.92407108239095,"VAL",6.5,"Chicken cooked (human)"],["Pork shoulder (lean)","Meat & fish",228.0,26.68,218.1818181818182,36.83636363636364,126.6856121119768,"LEU",5.5,"Pork loin medium-well (pig)"],["Pork loin (lean)","Meat & fish",209.0,28.62,220.0,32.96923076923077,126.70326837818334,"LEU",6.5,"Pork loin medium-well (pig)"],["Minced pork","Meat & fish",297.0,25.69,438.3333333333333,28.13333333333333,127.30908882068034,"LEU",6.0,"Pork (pig)"],["Minced beef 80\u002f20","Meat & fish",272.0,27.0,282.22222222222223,19.07777777777778,129.98251377702414,"VAL",9.0,"Beef ground cooked (pig)"],["Beef top round steak","Meat & fish",207.0,36.12,86.42857142857143,16.85,119.17635658914728,"VAL",14.0,"Beef pan fried (pig)"],["Chicken liver","Meat & fish",167.0,24.46,340.0,48.34285714285715,127.0758548583837,"LEU",3.5,"PROXY chicken cooked (human)"],["Canned tuna (drained)","Meat & fish",86.0,19.44,74.78260869565217,16.90434782608696,110.99537037037037,"VAL",11.5,"PROXY fish Chinese (human predicted)"],["Salmon (farmed)","Meat & fish",206.0,22.1,104.0,10.21,115.96153846153845,"VAL",20.0,"PROXY fish Chinese (human predicted)"],["Pollock fillet","Meat & fish",86.6164,19.42,95.0,21.462500000000002,115.84783829309377,"VAL",8.0,"PROXY fish Chinese (human predicted)"],["Pickled herring","Meat & fish",262.0,14.19,374.2857142857143,20.271428571428572,115.90909090909092,"VAL",7.0,"PROXY fish Chinese (human predicted)"],["Mackerel","Meat & fish",262.0,23.85,292.85714285714283,26.571428571428573,115.84905660377358,"VAL",7.0,"PROXY fish Chinese (human predicted)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"circle"},"mode":"markers","name":"Meat & fish","x":{"dtype":"f8","bdata":"R3Op\u002fXeBPkDmtjNcrl07QFRcMAB8WT9AKX2nob23PkAAKIzMSOI6QOQ+tecgsjZAogUghZarOEBUS1J2iTFBQGxvaKC9IDJAU\u002fR2lO4KLkCfrl7UbGo0QHZ4TNPV9TBAveKTC4ksOUA="},"y":{"dtype":"f8","bdata":"D2bEc2JPZEBeP6QXV9FmQGtPFjUu4WtAvm2VQ77NakBa1r1A\u002fIx2QFIfPwcGUXFA1ZlnlTK4YEBcqg8rI8ltQPc6qaeBDFRAvcfyFtJLYkB4K8mRh61WQGf7+fhlknNAJXvT1PxPcUA="},"type":"scatter"},{"customdata":[["Eggs","Eggs & dairy",155.0,12.58,255.35714285714286,22.42857142857143,122.7162553102765,"LEU",5.6,"Egg boiled (human)"],["Milk 2%","Eggs & dairy",50.0,3.3,467.2897196261682,30.8411214953271,132.43741765480897,"SAA",1.07,"Skim milk powder (human predicted)"],["Kefir","Eggs & dairy",43.0,3.79,330.7692307692308,29.153846153846153,132.43741765480897,"SAA",1.3,"PROXY skim milk powder"],["Cottage cheese \u002f quark","Eggs & dairy",81.0,10.45,180.0,23.22222222222222,128.49552735593926,"SAA",4.5,"PROXY casein (human)"],["Natural yogurt","Eggs & dairy",61.0,3.47,244.0,13.88,132.27053140096618,"SAA",2.5,"PROXY skim milk powder"],["Hard cheese (Gouda-type)","Eggs & dairy",356.0,24.94,374.7368421052632,26.25263157894737,141.10344827586206,"THR",9.5,"PROXY casein (human)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"square"},"mode":"markers","name":"Eggs & dairy","x":{"dtype":"f8","bdata":"A+SsByDMMEDMzNMGQi0kQEX0xlXsBSVA6JaXyOcnL0DD9Shcj8IbQE0g+56AljlA"},"y":{"dtype":"f8","bdata":"j2rwDVfeaEB7sMS8VxtjQKygJLms0F1A22yQ1tkvXkAAAAAAAIBeQOmQcAL503ZA"},"type":"scatter"},{"customdata":[["Lentils (dry)","Legumes & soy",116.0,6.983478260869566,1353.8461538461538,73.34260172489229,77.422153668177,"SAA",2.6,"Lentils (pig)"],["Split peas (dry)","Legumes & soy",118.0,5.960565217391304,2600.0,118.02695086167094,71.46960692315713,"SAA",1.4,"Yellow pea pressure cooked (human)"],["Kidney beans (dry)","Legumes & soy",127.0,6.545130434782609,1203.5714285714287,60.74385759418858,75.49170051652375,"SAA",2.8,"Kidney bean cooked (pig)"],["Chickpeas (dry)","Legumes & soy",164.0,7.0587,1350.0,58.24394912931313,79.66930022573364,"VAL",2.8,"Chickpea pressure cooked (human)"],["Tofu (firm)","Legumes & soy",144.0,17.27,192.0,23.026666666666664,121.19127336852264,"SAA",7.5,"Tofu (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"triangle-up"},"mode":"markers","name":"Legumes & soy","x":{"dtype":"f8","bdata":"GJLUZ6yhNkCl1OsJEoY6QBkj6EF38DNABPc0ubhGNEAMcjTUEfEzQA=="},"y":{"dtype":"f8","bdata":"V5Sr2qXEeEDBiHSRKU+BQFoCp1Nwb3hATyHvfYFofUCAOUIu3MhkQA=="},"type":"scatter"},{"customdata":[["White rice","Grains & starches",130.0,1.8591666666666664,2027.7777777777778,27.37682431502134,69.11400247831475,"LYS",1.8,"Rice white polished (pig)"],["Rolled oats","Grains & starches",71.0,2.3259374999999998,2915.3846153846152,92.62894647183525,91.57234251968504,"LYS",1.3,"Quick oats (pig)"],["Pasta","Grains & starches",158.0,2.2106250000000003,2061.111111111111,27.611637931034487,38.11422413793104,"LYS",1.8,"Wheat durum (pig)"],["Buckwheat groats","Grains & starches",92.0,2.9634166666666664,1441.6666666666667,42.85118035009862,87.67504930966469,"LYS",2.4,"PROXY oats (no buckwheat data)"],["Pearl barley","Grains & starches",123.0,1.2950000000000002,2933.3333333333335,47.32098082595872,57.30088495575223,"LYS",1.2,"Barley dehulled (pig)"],["Rye bread","Grains & starches",259.0,3.495,740.0,9.985714285714286,41.11764705882353,"LYS",3.5,"PROXY rye grain (pig)"],["White bread","Grains & starches",266.0,3.743901258470474,1064.0,14.975605033881896,42.30396902226525,"LYS",2.5,"Bread (human predicted)"],["Potatoes","Grains & starches",86.0,1.485901639344262,862.5,18.247914869140054,86.89483271019076,"LEU",0.8,"Potato tuber dried (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"diamond"},"mode":"markers","name":"Grains & starches","x":{"dtype":"f8","bdata":"5bSvDIOJHEDKYl8tO1stQOKtLBpAQB9AGAqsb6CJJkDmJ\u002frnElAfQKRkKExpoRdA46vEgILzHUCtn+8MJNQUQA=="},"y":{"dtype":"f8","bdata":"DfHVIHILgEBX+8bXbG98QEsAi49M1YFA0+IPfQTDdkCDOF6TVMWCQITYUnKjXHtAAAAAAACggED\u002fnc8wnQVxQA=="},"type":"scatter"},{"customdata":[["Peanuts (roasted)","Nuts & seeds",587.0,11.776041666666666,1067.2727272727273,21.410984848484848,48.36156741957563,"LYS",5.5,"PROXY peanut flour (pig)"],["Peanut butter","Nuts & seeds",598.0,9.4346875,854.2857142857143,13.478125000000002,42.479457451598385,"LYS",7.0,"PROXY peanut flour (pig)"],["Sunflower seeds","Nuts & seeds",582.0,12.421875000000002,1460.0,33.384190700982934,64.26215726849458,"LYS",4.0,"Sunflower seeds whole (pig)"],["Walnuts","Nuts & seeds",654.0,6.801666666666668,467.14285714285717,4.858333333333334,44.659662945940035,"LYS",14.0,"PROXY pistachio roasted (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"triangle-down"},"mode":"markers","name":"Nuts & seeds","x":{"dtype":"f8","bdata":"YiZ8j\u002fPBL0B2gmyen40mQMpaoOoxXTRAv60Xpmv+FkA="},"y":{"dtype":"f8","bdata":"25KnyRW8iECYgT5C+VWGQF9VD7BrzoxATf742NhFgUA="},"type":"scatter"},{"customdata":[["Wheat flour","Ingredients",364.0,4.132499999999999,4044.4444444444443,45.916666666666664,40.00484027105517,"LYS",0.9,"Wheat flour (human predicted)"],["Sunflower oil","Ingredients",884.0,0.0,3536.0,0.0,null,"",2.5,"no protein"],["Butter","Ingredients",717.0,0.85,717.0,0.85,145.28388746803068,"SAA",10.0,"PROXY casein (human)"],["Sugar","Ingredients",387.0,0.0,3870.0,0.0,null,"",1.0,"no protein"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#8a8984","line":{"color":"#fcfcfb","width":1.5},"size":11,"symbol":"x"},"mode":"markers","name":"Ingredients","x":{"dtype":"f8","bdata":"zMzMzMyMK0AAAAAAAAAAADMzMzMzM+s\u002fAAAAAAAAAAA="},"y":{"dtype":"f8","bdata":"VVVVVVX1kkAAAAAAAKCbQAAAAAAAaIZABwx8sDQfk0A="},"type":"scatter"},{"hoverinfo":"skip","line":{"color":"#52514e","width":1},"mode":"lines+text","name":"Pareto front","text":["Sunflower seeds","Split peas (dry)","Minced pork","Chicken liver"],"textfont":{"size":11},"textposition":"top left","x":{"dtype":"f8","bdata":"ylqg6jFdNECl1OsJEoY6QAAojMxI4jpAVEtSdokxQUA="},"y":{"dtype":"f8","bdata":"X1UPsGvOjEDBiHSRKU+BQFrWvUD8jHZAXKoPKyPJbUA="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"margin":{"l":60,"r":20,"t":20,"b":60},"legend":{"orientation":"h","y":-0.15},"hoverlabel":{"bgcolor":"white"},"xaxis":{"title":{"text":"useful protein: \u221a(g\u002f100 g \u00d7 g\u002f\u20ac)"}},"yaxis":{"title":{"text":"calories: \u221a(kcal\u002f100 g \u00d7 kcal\u002f\u20ac)"}},"height":600},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>Food mass vs cost for 1000 kcal</h2><p>Lower left = compact and cheap calories (good for bulking). Marker size = useful protein per 1000 kcal.</p><div style="height:600px; width:100%;">                            <div id="f8bd4b09-f03c-4a30-9d27-4ee3b7e1451f" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("f8bd4b09-f03c-4a30-9d27-4ee3b7e1451f")) {                    Plotly.newPlot(                        "f8bd4b09-f03c-4a30-9d27-4ee3b7e1451f",                        [{"customdata":[["Chicken breast","Meat & fish",165.0,31.02,160.0,30.0,109.61981164980816,"LEU",7.5,"Chicken cooked (human)"],["Chicken thigh fillet","Meat & fish",179.0,24.76,186.15384615384616,30.246153846153845,108.92407108239095,"VAL",6.5,"Chicken cooked (human)"],["Pork shoulder (lean)","Meat & fish",228.0,26.68,218.1818181818182,36.83636363636364,126.6856121119768,"LEU",5.5,"Pork loin medium-well (pig)"],["Pork loin (lean)","Meat & fish",209.0,28.62,220.0,32.96923076923077,126.70326837818334,"LEU",6.5,"Pork loin medium-well (pig)"],["Minced pork","Meat & fish",297.0,25.69,438.3333333333333,28.13333333333333,127.30908882068034,"LEU",6.0,"Pork (pig)"],["Minced beef 80\u002f20","Meat & fish",272.0,27.0,282.22222222222223,19.07777777777778,129.98251377702414,"VAL",9.0,"Beef ground cooked (pig)"],["Beef top round steak","Meat & fish",207.0,36.12,86.42857142857143,16.85,119.17635658914728,"VAL",14.0,"Beef pan fried (pig)"],["Chicken liver","Meat & fish",167.0,24.46,340.0,48.34285714285715,127.0758548583837,"LEU",3.5,"PROXY chicken cooked (human)"],["Canned tuna (drained)","Meat & fish",86.0,19.44,74.78260869565217,16.90434782608696,110.99537037037037,"VAL",11.5,"PROXY fish Chinese (human predicted)"],["Salmon (farmed)","Meat & fish",206.0,22.1,104.0,10.21,115.96153846153845,"VAL",20.0,"PROXY fish Chinese (human predicted)"],["Pollock fillet","Meat & fish",86.6164,19.42,95.0,21.462500000000002,115.84783829309377,"VAL",8.0,"PROXY fish Chinese (human predicted)"],["Pickled herring","Meat & fish",262.0,14.19,374.2857142857143,20.271428571428572,115.90909090909092,"VAL",7.0,"PROXY fish Chinese (human predicted)"],["Mackerel","Meat & fish",262.0,23.85,292.85714285714283,26.571428571428573,115.84905660377358,"VAL",7.0,"PROXY fish Chinese (human predicted)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","line":{"color":"#fcfcfb","width":1.5},"size":{"dtype":"f8","bdata":"AAAAAABoUkCyDEqFiTdQQN7d3d3dxVBAPdPW+Ls5TkCYxeO6wHY+QBqNRqPRqD9AYxmUChMPU0Di4eHh4eFMQBJ3xB1xx1VAYyd2YicuRUDKayivocRVQE8de2vD9DpA4nwMzsfgQ0A="},"symbol":"circle"},"mode":"markers","name":"Meat & fish","x":{"dtype":"f8","bdata":"8MEHH3zwgkB+uAUURnWBQJnOYjqLaXtAYeHInIDnfUAogkGUNAt1QFpaWlpa+nZALjUb9ncxfkDv\u002fC1Oa7aCQJqypqwpK5JAY2i6g\u002f1WfkD9vcsmEAqSQNEHVMfe2ndA0QdUx97ad0A="},"y":{"dtype":"f8","bdata":"AAAAAAAAGUDDxPuR03wVQFVVVVVVVRJALrrooosuEkBGiOxLPkACQBaLxWKxWAxADEqFifcjJ0CHh4eHh4cHQDDoC\u002fqCvipAshM7sRM7I0DXUF5DeQ0lQGzDNHfBXwVAUbsStStRC0A="},"type":"scatter"},{"customdata":[["Eggs","Eggs & dairy",155.0,12.58,255.35714285714286,22.42857142857143,122.7162553102765,"LEU",5.6,"Egg boiled (human)"],["Milk 2%","Eggs & dairy",50.0,3.3,467.2897196261682,30.8411214953271,132.43741765480897,"SAA",1.07,"Skim milk powder (human predicted)"],["Kefir","Eggs & dairy",43.0,3.79,330.7692307692308,29.153846153846153,132.43741765480897,"SAA",1.3,"PROXY skim milk powder"],["Cottage cheese \u002f quark","Eggs & dairy",81.0,10.45,180.0,23.22222222222222,128.49552735593926,"SAA",4.5,"PROXY casein (human)"],["Natural yogurt","Eggs & dairy",61.0,3.47,244.0,13.88,132.27053140096618,"SAA",2.5,"PROXY skim milk powder"],["Hard cheese (Gouda-type)","Eggs & dairy",356.0,24.94,374.7368421052632,26.25263157894737,141.10344827586206,"THR",9.5,"PROXY casein (human)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","line":{"color":"#fcfcfb","width":1.5},"size":{"dtype":"f8","bdata":"TMoBkeFeQ0CZmZmZmRk\u002fQGzKmrKmbENA54dFysCTSkBUXDIE6+g7QEIRilCEQkBA"},"symbol":"square"},"mode":"markers","name":"Eggs & dairy","x":{"dtype":"f8","bdata":"KaWUUkophEAAAAAAAECfQJqypqwpK6JAT7fmh0VKk0B9ikuGYJ2ZQDGHOcxhjnFA"},"y":{"dtype":"f8","bdata":"t8bfzSNUD0AfhetRuB4BQA36gr6gLwhAjuM4juM4FkAebd6nuGQQQJasZCUrWQVA"},"type":"scatter"},{"customdata":[["Lentils (dry)","Legumes & soy",116.0,6.983478260869566,1353.8461538461538,73.34260172489229,77.422153668177,"SAA",2.6,"Lentils (pig)"],["Split peas (dry)","Legumes & soy",118.0,5.960565217391304,2600.0,118.02695086167094,71.46960692315713,"SAA",1.4,"Yellow pea pressure cooked (human)"],["Kidney beans (dry)","Legumes & soy",127.0,6.545130434782609,1203.5714285714287,60.74385759418858,75.49170051652375,"SAA",2.8,"Kidney bean cooked (pig)"],["Chickpeas (dry)","Legumes & soy",164.0,7.0587,1350.0,58.24394912931313,79.66930022573364,"VAL",2.8,"Chickpea pressure cooked (human)"],["Tofu (firm)","Legumes & soy",144.0,17.27,192.0,23.026666666666664,121.19127336852264,"SAA",7.5,"Tofu (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","line":{"color":"#fcfcfb","width":1.5},"size":{"dtype":"f8","bdata":"Le8MXfL1OkDubSLrY+M3QAaPjDEVqjlAYntbJ6wZN0CO4ziO4\u002fxIQA=="},"symbol":"triangle-up"},"mode":"markers","name":"Legumes & soy","x":{"dtype":"f8","bdata":"1QjLPY3wikC3Img4qXuKQGez2Ww2m4hAzsfgfAwOg0A5juM4jrOFQA=="},"y":{"dtype":"f8","bdata":"o4suuuii5z\u002fZiZ3YiZ3YP6ZGs9Roluo\u002fQnsJ7SW05z9VVVVVVdUUQA=="},"type":"scatter"},{"customdata":[["White rice","Grains & starches",130.0,1.8591666666666664,2027.7777777777778,27.37682431502134,69.11400247831475,"LYS",1.8,"Rice white polished (pig)"],["Rolled oats","Grains & starches",71.0,2.3259374999999998,2915.3846153846152,92.62894647183525,91.57234251968504,"LYS",1.3,"Quick oats (pig)"],["Pasta","Grains & starches",158.0,2.2106250000000003,2061.111111111111,27.611637931034487,38.11422413793104,"LYS",1.8,"Wheat durum (pig)"],["Buckwheat groats","Grains & starches",92.0,2.9634166666666664,1441.6666666666667,42.85118035009862,87.67504930966469,"LYS",2.4,"PROXY oats (no buckwheat data)"],["Pearl barley","Grains & starches",123.0,1.2950000000000002,2933.3333333333335,47.32098082595872,57.30088495575223,"LYS",1.2,"Barley dehulled (pig)"],["Rye bread","Grains & starches",259.0,3.495,740.0,9.985714285714286,41.11764705882353,"LYS",3.5,"PROXY rye grain (pig)"],["White bread","Grains & starches",266.0,3.743901258470474,1064.0,14.975605033881896,42.30396902226525,"LYS",2.5,"Bread (human predicted)"],["Potatoes","Grains & starches",86.0,1.485901639344262,862.5,18.247914869140054,86.89483271019076,"LEU",0.8,"Potato tuber dried (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","line":{"color":"#fcfcfb","width":1.5},"size":{"dtype":"f8","bdata":"9APheFxzKUACdFwF0B4zQDBJr0qmYClAzyMglzZnMkCRX5C54UorQCKfdYMpcilA6HusCDXaKUAeT3+7Vc8uQA=="},"symbol":"diamond"},"mode":"markers","name":"Grains & starches","x":{"dtype":"f8","bdata":"ntiJndgJiEA6kGiFzQGWQI\u002fsGYhKx4NA6k1vetP7kEBpCoGmEGiJQBmidC6bIXhA8WfCnwl\u002fd0CasqasKSuSQA=="},"y":{"dtype":"f8","bdata":"\u002fPjx48eP3z\u002fdW+h41\u002fPVP4DdhUocDd8\u002f991S6E8y5j\u002fRRRdddNHVP\u002fJZN5gin\u002fU\u002fNOHPhD8T7j8p8TNK\u002fIzyPw=="},"type":"scatter"},{"customdata":[["Peanuts (roasted)","Nuts & seeds",587.0,11.776041666666666,1067.2727272727273,21.410984848484848,48.36156741957563,"LYS",5.5,"PROXY peanut flour (pig)"],["Peanut butter","Nuts & seeds",598.0,9.4346875,854.2857142857143,13.478125000000002,42.479457451598385,"LYS",7.0,"PROXY peanut flour (pig)"],["Sunflower seeds","Nuts & seeds",582.0,12.421875000000002,1460.0,33.384190700982934,64.26215726849458,"LYS",4.0,"Sunflower seeds whole (pig)"],["Walnuts","Nuts & seeds",654.0,6.801666666666668,467.14285714285717,4.858333333333334,44.659662945940035,"LYS",14.0,"PROXY pistachio roasted (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","line":{"color":"#fcfcfb","width":1.5},"size":{"dtype":"f8","bdata":"13oTugALLkDIxcs2QAsrQP67dYDIADBAe4ihwbJHJ0A="},"symbol":"triangle-down"},"mode":"markers","name":"Nuts & seeds","x":{"dtype":"f8","bdata":"CrjOsnJLZUD4mmGqK+dkQIdiMCNIemVA0NFsY\u002fccY0A="},"y":{"dtype":"f8","bdata":"2PYei6P77T+1hK8ZprryP69evXr16uU\u002fAhJPDRkgAUA="},"type":"scatter"},{"customdata":[["Wheat flour","Ingredients",364.0,4.132499999999999,4044.4444444444443,45.916666666666664,40.00484027105517,"LYS",0.9,"Wheat flour (human predicted)"],["Sunflower oil","Ingredients",884.0,0.0,3536.0,0.0,null,"",2.5,"no protein"],["Butter","Ingredients",717.0,0.85,717.0,0.85,145.28388746803068,"SAA",10.0,"PROXY casein (human)"],["Sugar","Ingredients",387.0,0.0,3870.0,0.0,null,"",1.0,"no protein"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#8a8984","line":{"color":"#fcfcfb","width":1.5},"size":{"dtype":"f8","bdata":"J3ZiJ3byJ0AAAAAAAAAgQNCdXtNw1CBAAAAAAAAAIEA="},"symbol":"x"},"mode":"markers","name":"Ingredients","x":{"dtype":"f8","bdata":"upqruZorcUCq0Ueq0UdcQB5hsFoKb2FAihDN7l0mcEA="},"y":{"dtype":"f8","bdata":"YPqlX\u002fqlzz\u002fzexnyexnSP20B7BexUPY\u002fIkSze5eJ0D8="},"type":"scatter"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"margin":{"l":60,"r":20,"t":20,"b":60},"legend":{"orientation":"h","y":-0.15},"hoverlabel":{"bgcolor":"white"},"xaxis":{"title":{"text":"grams eaten per 1000 kcal (log)"},"type":"log"},"yaxis":{"title":{"text":"\u20ac per 1000 kcal (log)"},"type":"log"},"height":600},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>How much would you eat to get 3,400 kcal from one food?</h2><p>Mass as eaten · hover for cost and useful protein.</p><div style="height:1000px; width:100%;">                            <div id="637229e4-a8a2-46d9-93a4-da1470e2338f" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("637229e4-a8a2-46d9-93a4-da1470e2338f")) {                    Plotly.newPlot(                        "637229e4-a8a2-46d9-93a4-da1470e2338f",                        [{"customdata":{"dtype":"f8","bdata":"Je6IO+KOJECnrClryrpyQLTIdr6fGh1AzczMzMwMbEBNhmAdbd4rQItLhmAdLWhAr+crjd2o8j+8GQUNsAFbQDiO4ziO4zJAULfmh0Vqe0CPuCPuiLtGQHJH3BF3BIhA+RklfkaJD0A3KT+Iw\u002ftRQFBeQ3kN5UFAUV5DeQ0BiECsPBMf990CQIp7KbjNQ1lAGF100UUXBEAlkEYDFAZnQMZO7MRO7PQ\u002fDqpgVPlKY0CLLrrooovyPzwxg3m2bEtAp5XLtHKZBkCsrSq8GXNlQDytjU7Q0\u002fo\u002fdsC0bpfzRkBVVVVVVbUxQOM4juM4fHlAtTX+bh6hKkBc4+\u002fmEapyQK1ii3K+ZPo\u002fmGgXIybGRkBeQnsJ7SUEQEHxpeYHVmJAAAAAAABANUAAAAAAAOyDQAAAAAAAACRAb9u2bds2fkBzmq\u002fVs0MyQNjq2SFwQ4FAi53YiZ1YQECKndiJndx0QPF+5DRfq0NAr9WzQ+C2hEDnoosuuuguQMuSckBk2H9AqqqqqqoqL0BFRERERPCBQA2myGfdYBJAC6cd9q3wRkAcprkL\u002fioiQAV\u002fFSekBGdAOB+D8zE4J0DJ4HwMzkdzQAYZF2RckAlAyOOiOVztR0AGg8FgMBgoQFer1Wq1umxAqufeTdAGH0Dxb8uZDkdrQLOSlaxkJSJAD3OYwxzGbUBsruZqrubqP83VXM3VTENABicXHxsd7D8AAAAAAAAAABQqVKhQoQJAaX9Cyp1vU0AEhQ0DS3wJQJjwqU9cDVFAmmGqK+fWD0BU4O47LtJKQNDRbGP3HB1A4iY\u002f1h+uQUADzru6yfcSQIPVUnhrHxBAUOzETuzE7j8AAAAAAAAAAA==","shape":"40, 2"},"hovertemplate":"\u003cb\u003e%{y}\u003c\u002fb\u003e\u003cbr\u003e%{x:.2f} kg eaten\u003cbr\u003e\u20ac%{customdata[0]:.2f}\u003cbr\u003e%{customdata[1]:.0f} g useful protein\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["#eb6834","#eb6834","#eb6834","#eda100","#eb6834","#2a78d6","#eda100","#2a78d6","#eda100","#1baf7a","#1baf7a","#eda100","#1baf7a","#eda100","#1baf7a","#eb6834","#eda100","#1baf7a","#2a78d6","#2a78d6","#2a78d6","#2a78d6","#2a78d6","#2a78d6","#2a78d6","#eda100","#2a78d6","#2a78d6","#eda100","#2a78d6","#2a78d6","#eb6834","#8a8984","#8a8984","#e87ba4","#e87ba4","#e87ba4","#e87ba4","#8a8984","#8a8984"]},"orientation":"h","x":{"dtype":"f8","bdata":"6Av6gr6gH0AzMzMzMzMbQNbR5n2KSxZA9WT8dqknE0BPt+aHRcoQQOgL+oK+oA9A6Av6gr6gD0AdMJLNH2cPQFrIQhaykA1AIyz3NMJyB0Del8dWBA0HQB020mEjHQZAWq1Wq9VqBUDFTuzETuwEQDmO4ziO4wJAjDHGGGOMAUBuwvyuFjcBQJaoXYnalQBAfPDBBx98AEARA9KxlEkAQBVGdZocZP4\u002feLDfamNo+j9OQHS+ukf6PzCJkGpZB\u002fo\u002fwX0E9xHc9z8QUOUI\u002fQD1Px9QHXtrw\u002fQ\u002fH1Ade2vD9D84R98cfXP0PwAAAAAAAPQ\u002fbpmeCAZR8j\u002fqRz\u002f60Y\u002fuPz7e4z3e4+0\u002fCCcXHxsd7D9S9vhXtLHiP2DsZrzwiOI\u002fD8o8q6gx4j8uCvWB1qLgPwawX8RCWd4\u002f2Ymd2Imd2D8="},"y":["Kefir","Milk 2%","Natural yogurt","Rolled oats","Cottage cheese \u002f quark","Canned tuna (drained)","Potatoes","Pollock fillet","Buckwheat groats","Lentils (dry)","Split peas (dry)","Pearl barley","Kidney beans (dry)","White rice","Tofu (firm)","Eggs","Pasta","Chickpeas (dry)","Chicken breast","Chicken liver","Chicken thigh fillet","Salmon (farmed)","Beef top round steak","Pork loin (lean)","Pork shoulder (lean)","Rye bread","Pickled herring","Mackerel","White bread","Minced beef 80\u002f20","Minced pork","Hard cheese (Gouda-type)","Wheat flour","Sugar","Sunflower seeds","Peanuts (roasted)","Peanut butter","Walnuts","Butter","Sunflower oil"],"type":"bar"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"margin":{"l":180,"r":20,"t":10,"b":50},"height":1000,"xaxis":{"title":{"text":"kg of food eaten"}}},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<h2>3D explorer</h2><p>Drag to rotate. Useful protein × calories per 100 g eaten × € per 1000 kcal.</p><div style="height:650px; width:100%;">                            <div id="3e6570af-273c-43a5-9479-149019b24473" class="plotly-graph-div" style="height:100%; width:100%;"></div>            <script>                window.PLOTLYENV=window.PLOTLYENV || {};                                if (document.getElementById("3e6570af-273c-43a5-9479-149019b24473")) {                    Plotly.newPlot(                        "3e6570af-273c-43a5-9479-149019b24473",                        [{"customdata":[["Chicken breast","Meat & fish",165.0,31.02,160.0,30.0,109.61981164980816,"LEU",7.5,"Chicken cooked (human)"],["Chicken thigh fillet","Meat & fish",179.0,24.76,186.15384615384616,30.246153846153845,108.92407108239095,"VAL",6.5,"Chicken cooked (human)"],["Pork shoulder (lean)","Meat & fish",228.0,26.68,218.1818181818182,36.83636363636364,126.6856121119768,"LEU",5.5,"Pork loin medium-well (pig)"],["Pork loin (lean)","Meat & fish",209.0,28.62,220.0,32.96923076923077,126.70326837818334,"LEU",6.5,"Pork loin medium-well (pig)"],["Minced pork","Meat & fish",297.0,25.69,438.3333333333333,28.13333333333333,127.30908882068034,"LEU",6.0,"Pork (pig)"],["Minced beef 80\u002f20","Meat & fish",272.0,27.0,282.22222222222223,19.07777777777778,129.98251377702414,"VAL",9.0,"Beef ground cooked (pig)"],["Beef top round steak","Meat & fish",207.0,36.12,86.42857142857143,16.85,119.17635658914728,"VAL",14.0,"Beef pan fried (pig)"],["Chicken liver","Meat & fish",167.0,24.46,340.0,48.34285714285715,127.0758548583837,"LEU",3.5,"PROXY chicken cooked (human)"],["Canned tuna (drained)","Meat & fish",86.0,19.44,74.78260869565217,16.90434782608696,110.99537037037037,"VAL",11.5,"PROXY fish Chinese (human predicted)"],["Salmon (farmed)","Meat & fish",206.0,22.1,104.0,10.21,115.96153846153845,"VAL",20.0,"PROXY fish Chinese (human predicted)"],["Pollock fillet","Meat & fish",86.6164,19.42,95.0,21.462500000000002,115.84783829309377,"VAL",8.0,"PROXY fish Chinese (human predicted)"],["Pickled herring","Meat & fish",262.0,14.19,374.2857142857143,20.271428571428572,115.90909090909092,"VAL",7.0,"PROXY fish Chinese (human predicted)"],["Mackerel","Meat & fish",262.0,23.85,292.85714285714283,26.571428571428573,115.84905660377358,"VAL",7.0,"PROXY fish Chinese (human predicted)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#2a78d6","size":6,"symbol":"circle"},"mode":"markers","name":"Meat & fish","x":{"dtype":"f8","bdata":"hetRuB4FP0DD9Shcj8I4QK5H4XoUrjpAH4XrUbiePEBxPQrXo7A5QAAAAAAAADtAj8L1KFwPQkD2KFyPwnU4QHE9CtejcDNAmpmZmZkZNkDsUbgehWszQOF6FK5HYSxAmpmZmZnZN0A="},"y":{"dtype":"f8","bdata":"AAAAAACgZEAAAAAAAGBmQAAAAAAAgGxAAAAAAAAgakAAAAAAAJByQAAAAAAAAHFAAAAAAADgaUAAAAAAAOBkQAAAAAAAgFVAAAAAAADAaUBIUPwYc6dVQAAAAAAAYHBAAAAAAABgcEA="},"z":{"dtype":"f8","bdata":"AAAAAAAAGUDDxPuR03wVQFVVVVVVVRJALrrooosuEkBGiOxLPkACQBaLxWKxWAxADEqFifcjJ0CHh4eHh4cHQDDoC\u002fqCvipAshM7sRM7I0DXUF5DeQ0lQGzDNHfBXwVAUbsStStRC0A="},"type":"scatter3d"},{"customdata":[["Eggs","Eggs & dairy",155.0,12.58,255.35714285714286,22.42857142857143,122.7162553102765,"LEU",5.6,"Egg boiled (human)"],["Milk 2%","Eggs & dairy",50.0,3.3,467.2897196261682,30.8411214953271,132.43741765480897,"SAA",1.07,"Skim milk powder (human predicted)"],["Kefir","Eggs & dairy",43.0,3.79,330.7692307692308,29.153846153846153,132.43741765480897,"SAA",1.3,"PROXY skim milk powder"],["Cottage cheese \u002f quark","Eggs & dairy",81.0,10.45,180.0,23.22222222222222,128.49552735593926,"SAA",4.5,"PROXY casein (human)"],["Natural yogurt","Eggs & dairy",61.0,3.47,244.0,13.88,132.27053140096618,"SAA",2.5,"PROXY skim milk powder"],["Hard cheese (Gouda-type)","Eggs & dairy",356.0,24.94,374.7368421052632,26.25263157894737,141.10344827586206,"THR",9.5,"PROXY casein (human)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eb6834","size":6,"symbol":"circle"},"mode":"markers","name":"Eggs & dairy","x":{"dtype":"f8","bdata":"KVyPwvUoKUBmZmZmZmYKQFK4HoXrUQ5AZmZmZmbmJEDD9Shcj8ILQHE9Ctej8DhA"},"y":{"dtype":"f8","bdata":"AAAAAABgY0AAAAAAAABJQAAAAAAAgEVAAAAAAABAVEAAAAAAAIBOQAAAAAAAQHZA"},"z":{"dtype":"f8","bdata":"t8bfzSNUD0AfhetRuB4BQA36gr6gLwhAjuM4juM4FkAebd6nuGQQQJasZCUrWQVA"},"type":"scatter3d"},{"customdata":[["Lentils (dry)","Legumes & soy",116.0,6.983478260869566,1353.8461538461538,73.34260172489229,77.422153668177,"SAA",2.6,"Lentils (pig)"],["Split peas (dry)","Legumes & soy",118.0,5.960565217391304,2600.0,118.02695086167094,71.46960692315713,"SAA",1.4,"Yellow pea pressure cooked (human)"],["Kidney beans (dry)","Legumes & soy",127.0,6.545130434782609,1203.5714285714287,60.74385759418858,75.49170051652375,"SAA",2.8,"Kidney bean cooked (pig)"],["Chickpeas (dry)","Legumes & soy",164.0,7.0587,1350.0,58.24394912931313,79.66930022573364,"VAL",2.8,"Chickpea pressure cooked (human)"],["Tofu (firm)","Legumes & soy",144.0,17.27,192.0,23.026666666666664,121.19127336852264,"SAA",7.5,"Tofu (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#1baf7a","size":6,"symbol":"circle"},"mode":"markers","name":"Legumes & soy","x":{"dtype":"f8","bdata":"Bgzb7BTvG0Cue4lontcXQEPINaw2LhpAzhlR2hs8HECF61G4HkUxQA=="},"y":{"dtype":"f8","bdata":"AAAAAAAAXUAAAAAAAIBdQAAAAAAAwF9AAAAAAACAZEAAAAAAAABiQA=="},"z":{"dtype":"f8","bdata":"o4suuuii5z\u002fZiZ3YiZ3YP6ZGs9Roluo\u002fQnsJ7SW05z9VVVVVVdUUQA=="},"type":"scatter3d"},{"customdata":[["White rice","Grains & starches",130.0,1.8591666666666664,2027.7777777777778,27.37682431502134,69.11400247831475,"LYS",1.8,"Rice white polished (pig)"],["Rolled oats","Grains & starches",71.0,2.3259374999999998,2915.3846153846152,92.62894647183525,91.57234251968504,"LYS",1.3,"Quick oats (pig)"],["Pasta","Grains & starches",158.0,2.2106250000000003,2061.111111111111,27.611637931034487,38.11422413793104,"LYS",1.8,"Wheat durum (pig)"],["Buckwheat groats","Grains & starches",92.0,2.9634166666666664,1441.6666666666667,42.85118035009862,87.67504930966469,"LYS",2.4,"PROXY oats (no buckwheat data)"],["Pearl barley","Grains & starches",123.0,1.2950000000000002,2933.3333333333335,47.32098082595872,57.30088495575223,"LYS",1.2,"Barley dehulled (pig)"],["Rye bread","Grains & starches",259.0,3.495,740.0,9.985714285714286,41.11764705882353,"LYS",3.5,"PROXY rye grain (pig)"],["White bread","Grains & starches",266.0,3.743901258470474,1064.0,14.975605033881896,42.30396902226525,"LYS",2.5,"Bread (human predicted)"],["Potatoes","Grains & starches",86.0,1.485901639344262,862.5,18.247914869140054,86.89483271019076,"LEU",0.8,"Potato tuber dried (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#eda100","size":6,"symbol":"circle"},"mode":"markers","name":"Grains & starches","x":{"dtype":"f8","bdata":"vljyiyW\u002f\u002fT\u002frUbgehZsCQJDC9ShcrwFAjgkezBO1B0C5HoXrUbj0P\u002fYoXI\u002fC9QtA46vEgILzDUD75iDMQMb3Pw=="},"y":{"dtype":"f8","bdata":"AAAAAABAYEAAAAAAAMBRQAAAAAAAwGNAAAAAAAAAV0AAAAAAAMBeQAAAAAAAMHBAAAAAAACgcEAAAAAAAIBVQA=="},"z":{"dtype":"f8","bdata":"\u002fPjx48eP3z\u002fdW+h41\u002fPVP4DdhUocDd8\u002f991S6E8y5j\u002fRRRdddNHVP\u002fJZN5gin\u002fU\u002fNOHPhD8T7j8p8TNK\u002fIzyPw=="},"type":"scatter3d"},{"customdata":[["Peanuts (roasted)","Nuts & seeds",587.0,11.776041666666666,1067.2727272727273,21.410984848484848,48.36156741957563,"LYS",5.5,"PROXY peanut flour (pig)"],["Peanut butter","Nuts & seeds",598.0,9.4346875,854.2857142857143,13.478125000000002,42.479457451598385,"LYS",7.0,"PROXY peanut flour (pig)"],["Sunflower seeds","Nuts & seeds",582.0,12.421875000000002,1460.0,33.384190700982934,64.26215726849458,"LYS",4.0,"Sunflower seeds whole (pig)"],["Walnuts","Nuts & seeds",654.0,6.801666666666668,467.14285714285717,4.858333333333334,44.659662945940035,"LYS",14.0,"PROXY pistachio roasted (pig)"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#e87ba4","size":6,"symbol":"circle"},"mode":"markers","name":"Nuts & seeds","x":{"dtype":"f8","bdata":"VVVVVVWNJ0DD9Shcj94iQAEAAAAA2ChAtoFOG+g0G0A="},"y":{"dtype":"f8","bdata":"AAAAAABYgkAAAAAAALCCQAAAAAAAMIJAAAAAAABwhEA="},"z":{"dtype":"f8","bdata":"2PYei6P77T+1hK8ZprryP69evXr16uU\u002fAhJPDRkgAUA="},"type":"scatter3d"},{"customdata":[["Wheat flour","Ingredients",364.0,4.132499999999999,4044.4444444444443,45.916666666666664,40.00484027105517,"LYS",0.9,"Wheat flour (human predicted)"],["Sunflower oil","Ingredients",884.0,0.0,3536.0,0.0,null,"",2.5,"no protein"],["Butter","Ingredients",717.0,0.85,717.0,0.85,145.28388746803068,"SAA",10.0,"PROXY casein (human)"],["Sugar","Ingredients",387.0,0.0,3870.0,0.0,null,"",1.0,"no protein"]],"hovertemplate":"\u003cb\u003e%{customdata[0]}\u003c\u002fb\u003e\u003cbr\u003e%{customdata[1]}\u003cbr\u003ekcal\u002f100 g eaten: %{customdata[2]:.0f}\u003cbr\u003euseful protein\u002f100 g eaten: %{customdata[3]:.1f} g\u003cbr\u003ekcal per \u20ac: %{customdata[4]:,.0f}\u003cbr\u003euseful protein per \u20ac: %{customdata[5]:.0f} g\u003cbr\u003eDIAAS: %{customdata[6]:.0f} (limiting: %{customdata[7]})\u003cbr\u003eprice (placeholder): \u20ac%{customdata[8]:.2f}\u002fkg\u003cbr\u003edigestibility: %{customdata[9]}\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#8a8984","size":6,"symbol":"circle"},"mode":"markers","name":"Ingredients","x":{"dtype":"f8","bdata":"R+F6FK6HEEAAAAAAAAAAADMzMzMzM+s\u002fAAAAAAAAAAA="},"y":{"dtype":"f8","bdata":"AAAAAADAdkAAAAAAAKCLQAAAAAAAaIZAAAAAAAAweEA="},"z":{"dtype":"f8","bdata":"YPqlX\u002fqlzz\u002fzexnyexnSP20B7BexUPY\u002fIkSze5eJ0D8="},"type":"scatter3d"}],                        {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermap":[{"type":"scattermap","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05}}},"margin":{"l":0,"r":0,"t":10,"b":0},"legend":{"orientation":"h"},"scene":{"zaxis":{"title":{"text":"\u20ac per 1000 kcal"},"type":"log"},"xaxis":{"title":{"text":"useful protein g\u002f100 g eaten"}},"yaxis":{"title":{"text":"kcal\u002f100 g eaten"}}},"height":650},                        {"displaylogo": false, "responsive": true}                    )                };            </script>        </div>
+<details><summary>Data table</summary><div class="scroll"><table class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th>food</th>
+      <th>category</th>
+      <th>kcal_100g_eaten</th>
+      <th>useful_protein_100g_eaten</th>
+      <th>diaas</th>
+      <th>limiting_aa</th>
+      <th>kcal_per_eur</th>
+      <th>useful_protein_per_eur</th>
+      <th>g_eaten_per_1000kcal</th>
+      <th>eur_per_1000kcal</th>
+      <th>price_eur_kg_placeholder</th>
+      <th>digest_note</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Chicken breast</td>
+      <td>Meat &amp; fish</td>
+      <td>165.0</td>
+      <td>31.0</td>
+      <td>109.6</td>
+      <td>LEU</td>
+      <td>160.0</td>
+      <td>30.0</td>
+      <td>606.1</td>
+      <td>6.2</td>
+      <td>7.5</td>
+      <td>Chicken cooked (human)</td>
+    </tr>
+    <tr>
+      <td>Chicken thigh fillet</td>
+      <td>Meat &amp; fish</td>
+      <td>179.0</td>
+      <td>24.8</td>
+      <td>108.9</td>
+      <td>VAL</td>
+      <td>186.2</td>
+      <td>30.2</td>
+      <td>558.7</td>
+      <td>5.4</td>
+      <td>6.5</td>
+      <td>Chicken cooked (human)</td>
+    </tr>
+    <tr>
+      <td>Pork shoulder (lean)</td>
+      <td>Meat &amp; fish</td>
+      <td>228.0</td>
+      <td>26.7</td>
+      <td>126.7</td>
+      <td>LEU</td>
+      <td>218.2</td>
+      <td>36.8</td>
+      <td>438.6</td>
+      <td>4.6</td>
+      <td>5.5</td>
+      <td>Pork loin medium-well (pig)</td>
+    </tr>
+    <tr>
+      <td>Pork loin (lean)</td>
+      <td>Meat &amp; fish</td>
+      <td>209.0</td>
+      <td>28.6</td>
+      <td>126.7</td>
+      <td>LEU</td>
+      <td>220.0</td>
+      <td>33.0</td>
+      <td>478.5</td>
+      <td>4.5</td>
+      <td>6.5</td>
+      <td>Pork loin medium-well (pig)</td>
+    </tr>
+    <tr>
+      <td>Minced pork</td>
+      <td>Meat &amp; fish</td>
+      <td>297.0</td>
+      <td>25.7</td>
+      <td>127.3</td>
+      <td>LEU</td>
+      <td>438.3</td>
+      <td>28.1</td>
+      <td>336.7</td>
+      <td>2.3</td>
+      <td>6.0</td>
+      <td>Pork (pig)</td>
+    </tr>
+    <tr>
+      <td>Minced beef 80/20</td>
+      <td>Meat &amp; fish</td>
+      <td>272.0</td>
+      <td>27.0</td>
+      <td>130.0</td>
+      <td>VAL</td>
+      <td>282.2</td>
+      <td>19.1</td>
+      <td>367.6</td>
+      <td>3.5</td>
+      <td>9.0</td>
+      <td>Beef ground cooked (pig)</td>
+    </tr>
+    <tr>
+      <td>Beef top round steak</td>
+      <td>Meat &amp; fish</td>
+      <td>207.0</td>
+      <td>36.1</td>
+      <td>119.2</td>
+      <td>VAL</td>
+      <td>86.4</td>
+      <td>16.8</td>
+      <td>483.1</td>
+      <td>11.6</td>
+      <td>14.0</td>
+      <td>Beef pan fried (pig)</td>
+    </tr>
+    <tr>
+      <td>Chicken liver</td>
+      <td>Meat &amp; fish</td>
+      <td>167.0</td>
+      <td>24.5</td>
+      <td>127.1</td>
+      <td>LEU</td>
+      <td>340.0</td>
+      <td>48.3</td>
+      <td>598.8</td>
+      <td>2.9</td>
+      <td>3.5</td>
+      <td>PROXY chicken cooked (human)</td>
+    </tr>
+    <tr>
+      <td>Canned tuna (drained)</td>
+      <td>Meat &amp; fish</td>
+      <td>86.0</td>
+      <td>19.4</td>
+      <td>111.0</td>
+      <td>VAL</td>
+      <td>74.8</td>
+      <td>16.9</td>
+      <td>1162.8</td>
+      <td>13.4</td>
+      <td>11.5</td>
+      <td>PROXY fish Chinese (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Salmon (farmed)</td>
+      <td>Meat &amp; fish</td>
+      <td>206.0</td>
+      <td>22.1</td>
+      <td>116.0</td>
+      <td>VAL</td>
+      <td>104.0</td>
+      <td>10.2</td>
+      <td>485.4</td>
+      <td>9.6</td>
+      <td>20.0</td>
+      <td>PROXY fish Chinese (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Pollock fillet</td>
+      <td>Meat &amp; fish</td>
+      <td>86.6</td>
+      <td>19.4</td>
+      <td>115.8</td>
+      <td>VAL</td>
+      <td>95.0</td>
+      <td>21.5</td>
+      <td>1154.5</td>
+      <td>10.5</td>
+      <td>8.0</td>
+      <td>PROXY fish Chinese (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Pickled herring</td>
+      <td>Meat &amp; fish</td>
+      <td>262.0</td>
+      <td>14.2</td>
+      <td>115.9</td>
+      <td>VAL</td>
+      <td>374.3</td>
+      <td>20.3</td>
+      <td>381.7</td>
+      <td>2.7</td>
+      <td>7.0</td>
+      <td>PROXY fish Chinese (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Mackerel</td>
+      <td>Meat &amp; fish</td>
+      <td>262.0</td>
+      <td>23.8</td>
+      <td>115.8</td>
+      <td>VAL</td>
+      <td>292.9</td>
+      <td>26.6</td>
+      <td>381.7</td>
+      <td>3.4</td>
+      <td>7.0</td>
+      <td>PROXY fish Chinese (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Eggs</td>
+      <td>Eggs &amp; dairy</td>
+      <td>155.0</td>
+      <td>12.6</td>
+      <td>122.7</td>
+      <td>LEU</td>
+      <td>255.4</td>
+      <td>22.4</td>
+      <td>645.2</td>
+      <td>3.9</td>
+      <td>5.6</td>
+      <td>Egg boiled (human)</td>
+    </tr>
+    <tr>
+      <td>Milk 2%</td>
+      <td>Eggs &amp; dairy</td>
+      <td>50.0</td>
+      <td>3.3</td>
+      <td>132.4</td>
+      <td>SAA</td>
+      <td>467.3</td>
+      <td>30.8</td>
+      <td>2000.0</td>
+      <td>2.1</td>
+      <td>1.1</td>
+      <td>Skim milk powder (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Kefir</td>
+      <td>Eggs &amp; dairy</td>
+      <td>43.0</td>
+      <td>3.8</td>
+      <td>132.4</td>
+      <td>SAA</td>
+      <td>330.8</td>
+      <td>29.2</td>
+      <td>2325.6</td>
+      <td>3.0</td>
+      <td>1.3</td>
+      <td>PROXY skim milk powder</td>
+    </tr>
+    <tr>
+      <td>Cottage cheese / quark</td>
+      <td>Eggs &amp; dairy</td>
+      <td>81.0</td>
+      <td>10.4</td>
+      <td>128.5</td>
+      <td>SAA</td>
+      <td>180.0</td>
+      <td>23.2</td>
+      <td>1234.6</td>
+      <td>5.6</td>
+      <td>4.5</td>
+      <td>PROXY casein (human)</td>
+    </tr>
+    <tr>
+      <td>Natural yogurt</td>
+      <td>Eggs &amp; dairy</td>
+      <td>61.0</td>
+      <td>3.5</td>
+      <td>132.3</td>
+      <td>SAA</td>
+      <td>244.0</td>
+      <td>13.9</td>
+      <td>1639.3</td>
+      <td>4.1</td>
+      <td>2.5</td>
+      <td>PROXY skim milk powder</td>
+    </tr>
+    <tr>
+      <td>Hard cheese (Gouda-type)</td>
+      <td>Eggs &amp; dairy</td>
+      <td>356.0</td>
+      <td>24.9</td>
+      <td>141.1</td>
+      <td>THR</td>
+      <td>374.7</td>
+      <td>26.3</td>
+      <td>280.9</td>
+      <td>2.7</td>
+      <td>9.5</td>
+      <td>PROXY casein (human)</td>
+    </tr>
+    <tr>
+      <td>Lentils (dry)</td>
+      <td>Legumes &amp; soy</td>
+      <td>116.0</td>
+      <td>7.0</td>
+      <td>77.4</td>
+      <td>SAA</td>
+      <td>1353.8</td>
+      <td>73.3</td>
+      <td>862.1</td>
+      <td>0.7</td>
+      <td>2.6</td>
+      <td>Lentils (pig)</td>
+    </tr>
+    <tr>
+      <td>Split peas (dry)</td>
+      <td>Legumes &amp; soy</td>
+      <td>118.0</td>
+      <td>6.0</td>
+      <td>71.5</td>
+      <td>SAA</td>
+      <td>2600.0</td>
+      <td>118.0</td>
+      <td>847.5</td>
+      <td>0.4</td>
+      <td>1.4</td>
+      <td>Yellow pea pressure cooked (human)</td>
+    </tr>
+    <tr>
+      <td>Kidney beans (dry)</td>
+      <td>Legumes &amp; soy</td>
+      <td>127.0</td>
+      <td>6.5</td>
+      <td>75.5</td>
+      <td>SAA</td>
+      <td>1203.6</td>
+      <td>60.7</td>
+      <td>787.4</td>
+      <td>0.8</td>
+      <td>2.8</td>
+      <td>Kidney bean cooked (pig)</td>
+    </tr>
+    <tr>
+      <td>Chickpeas (dry)</td>
+      <td>Legumes &amp; soy</td>
+      <td>164.0</td>
+      <td>7.1</td>
+      <td>79.7</td>
+      <td>VAL</td>
+      <td>1350.0</td>
+      <td>58.2</td>
+      <td>609.8</td>
+      <td>0.7</td>
+      <td>2.8</td>
+      <td>Chickpea pressure cooked (human)</td>
+    </tr>
+    <tr>
+      <td>Tofu (firm)</td>
+      <td>Legumes &amp; soy</td>
+      <td>144.0</td>
+      <td>17.3</td>
+      <td>121.2</td>
+      <td>SAA</td>
+      <td>192.0</td>
+      <td>23.0</td>
+      <td>694.4</td>
+      <td>5.2</td>
+      <td>7.5</td>
+      <td>Tofu (pig)</td>
+    </tr>
+    <tr>
+      <td>White rice</td>
+      <td>Grains &amp; starches</td>
+      <td>130.0</td>
+      <td>1.9</td>
+      <td>69.1</td>
+      <td>LYS</td>
+      <td>2027.8</td>
+      <td>27.4</td>
+      <td>769.2</td>
+      <td>0.5</td>
+      <td>1.8</td>
+      <td>Rice white polished (pig)</td>
+    </tr>
+    <tr>
+      <td>Rolled oats</td>
+      <td>Grains &amp; starches</td>
+      <td>71.0</td>
+      <td>2.3</td>
+      <td>91.6</td>
+      <td>LYS</td>
+      <td>2915.4</td>
+      <td>92.6</td>
+      <td>1408.5</td>
+      <td>0.3</td>
+      <td>1.3</td>
+      <td>Quick oats (pig)</td>
+    </tr>
+    <tr>
+      <td>Pasta</td>
+      <td>Grains &amp; starches</td>
+      <td>158.0</td>
+      <td>2.2</td>
+      <td>38.1</td>
+      <td>LYS</td>
+      <td>2061.1</td>
+      <td>27.6</td>
+      <td>632.9</td>
+      <td>0.5</td>
+      <td>1.8</td>
+      <td>Wheat durum (pig)</td>
+    </tr>
+    <tr>
+      <td>Buckwheat groats</td>
+      <td>Grains &amp; starches</td>
+      <td>92.0</td>
+      <td>3.0</td>
+      <td>87.7</td>
+      <td>LYS</td>
+      <td>1441.7</td>
+      <td>42.9</td>
+      <td>1087.0</td>
+      <td>0.7</td>
+      <td>2.4</td>
+      <td>PROXY oats (no buckwheat data)</td>
+    </tr>
+    <tr>
+      <td>Pearl barley</td>
+      <td>Grains &amp; starches</td>
+      <td>123.0</td>
+      <td>1.3</td>
+      <td>57.3</td>
+      <td>LYS</td>
+      <td>2933.3</td>
+      <td>47.3</td>
+      <td>813.0</td>
+      <td>0.3</td>
+      <td>1.2</td>
+      <td>Barley dehulled (pig)</td>
+    </tr>
+    <tr>
+      <td>Rye bread</td>
+      <td>Grains &amp; starches</td>
+      <td>259.0</td>
+      <td>3.5</td>
+      <td>41.1</td>
+      <td>LYS</td>
+      <td>740.0</td>
+      <td>10.0</td>
+      <td>386.1</td>
+      <td>1.4</td>
+      <td>3.5</td>
+      <td>PROXY rye grain (pig)</td>
+    </tr>
+    <tr>
+      <td>White bread</td>
+      <td>Grains &amp; starches</td>
+      <td>266.0</td>
+      <td>3.7</td>
+      <td>42.3</td>
+      <td>LYS</td>
+      <td>1064.0</td>
+      <td>15.0</td>
+      <td>375.9</td>
+      <td>0.9</td>
+      <td>2.5</td>
+      <td>Bread (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Wheat flour</td>
+      <td>Ingredients</td>
+      <td>364.0</td>
+      <td>4.1</td>
+      <td>40.0</td>
+      <td>LYS</td>
+      <td>4044.4</td>
+      <td>45.9</td>
+      <td>274.7</td>
+      <td>0.2</td>
+      <td>0.9</td>
+      <td>Wheat flour (human predicted)</td>
+    </tr>
+    <tr>
+      <td>Potatoes</td>
+      <td>Grains &amp; starches</td>
+      <td>86.0</td>
+      <td>1.5</td>
+      <td>86.9</td>
+      <td>LEU</td>
+      <td>862.5</td>
+      <td>18.2</td>
+      <td>1162.8</td>
+      <td>1.2</td>
+      <td>0.8</td>
+      <td>Potato tuber dried (pig)</td>
+    </tr>
+    <tr>
+      <td>Peanuts (roasted)</td>
+      <td>Nuts &amp; seeds</td>
+      <td>587.0</td>
+      <td>11.8</td>
+      <td>48.4</td>
+      <td>LYS</td>
+      <td>1067.3</td>
+      <td>21.4</td>
+      <td>170.4</td>
+      <td>0.9</td>
+      <td>5.5</td>
+      <td>PROXY peanut flour (pig)</td>
+    </tr>
+    <tr>
+      <td>Peanut butter</td>
+      <td>Nuts &amp; seeds</td>
+      <td>598.0</td>
+      <td>9.4</td>
+      <td>42.5</td>
+      <td>LYS</td>
+      <td>854.3</td>
+      <td>13.5</td>
+      <td>167.2</td>
+      <td>1.2</td>
+      <td>7.0</td>
+      <td>PROXY peanut flour (pig)</td>
+    </tr>
+    <tr>
+      <td>Sunflower seeds</td>
+      <td>Nuts &amp; seeds</td>
+      <td>582.0</td>
+      <td>12.4</td>
+      <td>64.3</td>
+      <td>LYS</td>
+      <td>1460.0</td>
+      <td>33.4</td>
+      <td>171.8</td>
+      <td>0.7</td>
+      <td>4.0</td>
+      <td>Sunflower seeds whole (pig)</td>
+    </tr>
+    <tr>
+      <td>Walnuts</td>
+      <td>Nuts &amp; seeds</td>
+      <td>654.0</td>
+      <td>6.8</td>
+      <td>44.7</td>
+      <td>LYS</td>
+      <td>467.1</td>
+      <td>4.9</td>
+      <td>152.9</td>
+      <td>2.1</td>
+      <td>14.0</td>
+      <td>PROXY pistachio roasted (pig)</td>
+    </tr>
+    <tr>
+      <td>Sunflower oil</td>
+      <td>Ingredients</td>
+      <td>884.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td></td>
+      <td>3536.0</td>
+      <td>0.0</td>
+      <td>113.1</td>
+      <td>0.3</td>
+      <td>2.5</td>
+      <td>no protein</td>
+    </tr>
+    <tr>
+      <td>Butter</td>
+      <td>Ingredients</td>
+      <td>717.0</td>
+      <td>0.8</td>
+      <td>145.3</td>
+      <td>SAA</td>
+      <td>717.0</td>
+      <td>0.8</td>
+      <td>139.5</td>
+      <td>1.4</td>
+      <td>10.0</td>
+      <td>PROXY casein (human)</td>
+    </tr>
+    <tr>
+      <td>Sugar</td>
+      <td>Ingredients</td>
+      <td>387.0</td>
+      <td>0.0</td>
+      <td>NaN</td>
+      <td></td>
+      <td>3870.0</td>
+      <td>0.0</td>
+      <td>258.4</td>
+      <td>0.3</td>
+      <td>1.0</td>
+      <td>no protein</td>
+    </tr>
+  </tbody>
+</table></div></details>
+</main>
+<script>
+function themeAll(){const cs=getComputedStyle(document.documentElement);const ink=cs.getPropertyValue('--ink2').trim(),grid=cs.getPropertyValue('--grid').trim();
+document.querySelectorAll('.js-plotly-plot').forEach(g=>Plotly.relayout(g,{'paper_bgcolor':'rgba(0,0,0,0)','plot_bgcolor':'rgba(0,0,0,0)','font.color':ink,
+'xaxis.gridcolor':grid,'yaxis.gridcolor':grid,'xaxis.zerolinecolor':grid,'yaxis.zerolinecolor':grid,
+'scene.xaxis.gridcolor':grid,'scene.yaxis.gridcolor':grid,'scene.zaxis.gridcolor':grid}));}
+window.addEventListener('load',themeAll);
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change',themeAll);
+</script></body></html>

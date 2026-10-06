@@ -41,7 +41,7 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 ## Endurance / carbohydrate / fat / sugar
 | ID | Citation | DOI | Access |
 |---|---|---|---|
-| thomas2016 | Thomas DT, Erdman KA & Burke LM (2016). ACSM/AND/DC Joint Position Statement: Nutrition and athletic performance. *Med Sci Sports Exerc* 48:543–568 (also *J Acad Nutr Diet* 116:501–528) | 10.1249/MSS.0000000000000852 | **UNI** (high priority) |
+| thomas2016 | Thomas DT, Erdman KA & Burke LM (2016). ACSM/AND/DC Joint Position Statement: Nutrition and athletic performance. *Med Sci Sports Exerc* 48:543–568 (also *J Acad Nutr Diet* 116:501–528) | 10.1249/MSS.0000000000000852 (JAND version: 10.1016/j.jand.2015.12.006) | **UNI** (high priority) |
 | burke2011 | Burke LM, Hawley JA, Wong SH & Jeukendrup AE (2011). Carbohydrates for training and competition. *J Sports Sci* 29(S1):S17–27 | 10.1080/02640414.2011.585473 | OA (publisher blocks automated access; download manually) |
 | vitale2019 | Vitale K & Getzin A (2019). Nutrition and supplement update for the endurance athlete: review and recommendations. *Nutrients* 11:1289 | 10.3390/nu11061289 | PMC6628334 |
 | jeukendrup2014 | Jeukendrup A (2014). A step towards personalized sports nutrition: carbohydrate intake during exercise. *Sports Med* 44(S1):S25–33 | 10.1007/s40279-014-0148-z | PMC4008807 |

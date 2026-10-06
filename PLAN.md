@@ -43,7 +43,7 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] 2.2 Draft the food list (100–200 items) by category, with emphasis on foods actually sold in Latvia; include an "ingredients" category (oils, sugar, butter)
 - [ ] 2.3 Decide the protein-powder and sports-carbohydrate side analysis (kept separate from whole foods)
 ### 2b. Composition
-- [ ] 2.4 Download USDA FDC (Foundation + SR Legacy) into `data/raw/` unmodified, with the download date recorded
+- [~] 2.4 Download USDA FDC (Foundation + SR Legacy) into `data/raw/` unmodified, with the download date recorded (SR Legacy + muleya2021 done 2026-10-06, see `data/raw/MANIFEST.md`; Foundation pending)
 - [ ] 2.5 Map each food to its database entry (FDC id); record both raw and cooked entries where available
 - [ ] 2.6 Cross-check against Fineli/Frida for Nordic/Baltic-specific foods (kefir, biezpiens/quark, rye bread, …)
 - [ ] 2.7 Extract energy, protein, available carbohydrate, sugars (incl. added/free where available), fat and the full IAA profile (incl. leucine); also store the free v2.0 fields (fibre, sodium, micronutrients)
@@ -57,7 +57,7 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] 2.14 Compute the central price (median) and IQR per food
 - [ ] 2.15 Optional: repeat collection over several weeks to measure price variability
 ### 2d. Quality control
-- [ ] 2.16 Validation script: unit checks, Atwater energy check (4P+4C+9F+2Fibre ≈ kcal), outliers, missing fields
+- [ ] 2.16 Validation script: unit checks, Atwater energy check (4P+4C+9F+2Fibre ≈ kcal), outliers, missing fields, **amino-acid plausibility** (the preview found implausible USDA SR Legacy profiles: ground beef 80/20 Trp 5.1 mg/g, plain whole-milk yogurt Trp 5.8 mg/g, firm tofu Cys 3.3 mg/g; and no amino-acid data for pollock, kefir, white bread)
 - [ ] 2.17 Assign an uncertainty grade (A/B/C) to every value
 - [ ] **GATE 2:** dataset v1.0 frozen and tagged in git
 
@@ -148,3 +148,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 0.3–0.6 | Python/Streamlit, venv on host Python 3.14, folders, git; owner profile and price policy recorded; carbohydrates, safeguards and v2.0 scope added |
 | 2026-10-06 | 0.7, 0.8 | Generalized to a calculator for any profile (presets + overrides); plan reorganized around the roadmap v0.1 → v3.0 |
 | 2026-10-06 | 1.1–1.12 (first pass) | 63 sources verified (PubMed/Crossref/agency PDFs); REVIEW.md with numbers, evidence tags and decisions D1–D12; 2 handoff errors corrected; university list: thomas2016 (high), chungchunlam2020, burke2011 (manual download), garthe2011, mifflin1990, stigler1945 |
+| 2026-10-06 | side exploration | Preview graphs (`notebooks/preview_graphs.py` → `figures/preview/`): 40 foods, prototype pipeline USDA × muleya2021 → DIAAS → useful protein; placeholder prices; found USDA amino-acid errors (→ task 2.16). Owner profile: male, 22 y |

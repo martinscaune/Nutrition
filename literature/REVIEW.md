@@ -59,7 +59,7 @@ Section numbers match PLAN.md tasks. The decisions this review leads to are coll
 
 - Accuracy in recreational athletes, predictions within ±10 % (tenhaaf2014 [P]): Cunningham 85 % (men) / 78 % (women); ten Haaf weight-based 83 % / 76 %. **Mifflin, Harris-Benedict, WHO, Schofield and Owen were all below 50 %.**
 - Physical activity level (PAL) bands (fao2004 [P]): sedentary/light **1.40–1.69**, active **1.70–1.99**, vigorous **2.00–2.40**; PAL above 2.40 is hard to sustain.
-- **Example (owner, 76 kg, 186 cm, male; age not yet given):** ten Haaf REE ≈ 2017 kcal at age 25 (≈ 1936 kcal at 35). With PAL 1.70–1.99 ("active"), daily expenditure would be **≈ 3300–4000 kcal**. The self-reported 3000 kcal implies a PAL of about 1.5, which looks low for 6–9 h/week of triathlon training plus strength work. This is a flag, not a conclusion: the user's value is used if given, and weight tracking settles it in v3.0.
+- **Example (owner: male, 22 y, 76 kg, 186 cm):** ten Haaf REE = 11.936·76 + 587.728·1.86 − 8.129·22 + 191.027 + 29.279 ≈ **2042 kcal** (Mifflin: 1818 kcal). With PAL 1.70–1.99 ("active"), daily expenditure would be **≈ 3470–4060 kcal**. The self-reported 3000 kcal implies a PAL of about 1.47, which looks low for 6–9 h/week of triathlon training plus strength work. This is a flag, not a conclusion: the user's value is used if given, and weight tracking settles it in v3.0.
 - How to map training hours to PAL, or add exercise energy factorially (MET-based), is **[U]** and our modeling choice. See decision D5.
 
 ## 4. Carbohydrate (task 1.5)

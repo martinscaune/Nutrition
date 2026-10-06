@@ -9,3 +9,4 @@ streamlit        # interactive program
 pyyaml           # athlete profile / config files
 pytest           # formula and unit tests
 ipykernel        # notebooks
+openpyxl         # read xlsx datasets (muleya2021)

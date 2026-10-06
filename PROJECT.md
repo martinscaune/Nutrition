@@ -133,9 +133,10 @@ Every person-specific value is an input. The input has five layers:
 **Profile #1, the project owner (first development case):**
 | Parameter | Value | Derived (provisional) |
 |---|---|---|
+| Sex, age | male, 22 y | |
 | Body mass → target | 76 kg → **85 kg** | |
 | Height | 186 cm | BMI ≈ 22.0 → 24.6 at 85 kg |
-| Energy expenditure | ≈ 3000 kcal/day (self-reported) | may be an underestimate; v3.0 adaptive estimate from weight tracking |
+| Energy expenditure | ≈ 3000 kcal/day (self-reported) | probably an underestimate: ten Haaf resting energy ≈ 2040 kcal × PAL 1.70–1.99 ≈ **3470–4060 kcal**; 3000 kcal implies PAL ≈ 1.47 (REVIEW §3). v3.0 learns it from weight tracking |
 | Training | triathlon, **6–9 h/week** (≈ 0.9–1.3 h/day) + strength | carbohydrate band "moderate", 5–7 g/kg ≈ 380–530 g/day |
 | Goal | hybrid: muscle gain while preparing for triathlon; appearance comes before race performance | surplus ≈ +300–500 kcal → ≈ 3300–3500 kcal/day |
 | Protein | 1.6–2.2 g/kg | ≈ 122–167 g/day |
