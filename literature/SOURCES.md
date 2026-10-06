@@ -89,6 +89,11 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | maillot2010 | Maillot M et al. (2010). Individual diet modeling translates nutrient recommendations into realistic and individual-specific food choices. *Am J Clin Nutr* 91:421–430 | 10.3945/ajcn.2009.28426 | OA |
 | chungchunlam2021 | Chungchunlam SMS, Garrick DP & Moughan PJ (2021). Using linear programming to determine the role of plant- and animal-sourced foods in least-cost, nutritionally adequate diets for adults. *Curr Dev Nutr* 5:nzab132 | 10.1093/cdn/nzab132 | PMC8634088 |
 | chungchunlam2020 | Chungchunlam SMS, Moughan PJ, Garrick DP & Drewnowski A (2020). Animal-sourced foods are required for minimum-cost nutritionally adequate food patterns for the United States. *Nat Food* 1:376–381 | 10.1038/s43016-020-0096-8 | **UNI** (medium priority) |
+| magdic2013 | Magdić D, Gajdoš Kljusurić J, Matijević L & Frketić D (2013). Analysis of diet optimization models for enabling conditions for hypertrophic muscle enlargement in athletes. *Croatian Journal of Food Technology, Biotechnology and Nutrition* (Hrčak) | — | OA (Hrčak) |
+| mochabonilla2020 | Mocha Bonilla JA et al. (2020). Linear programming model applied to the optimization of nutritional diets for athletes. *Advances in Intelligent Systems and Computing* (Springer) | 10.1007/978-3-030-49932-7_79 | check |
+| ijbpas2023 | (2023). An optimum nutritional diet for athletes by using linear programming model. *Int J Biol Pharm Allied Sci* 12(6) | 10.31032/ijbpas/2023/12.6.1066 | OA (low-tier venue) |
+| dimina2022 | Dimina L, Rémond D, Huneau JF & Mariotti F (2022). Combining plant proteins to achieve amino acid profiles adapted to various nutritional objectives: an exploratory analysis using linear programming. *Front Nutr* 8:809685 | 10.3389/fnut.2021.809685 | OA |
+| moreno2026 | Moreno FJ (2026). Mixed integer goal programming for personalized meal optimization with user-defined serving granularity. *arXiv* | 10.48550/arxiv.2605.13849 | OA (preprint) |
 | vieux2022 | Vieux F, Rémond D, Peyraud JL & Darmon N (2022). Approximately half of total protein intake by adults must be animal-based to meet nonprotein, nutrient-based recommendations, with variations due to age and sex. *J Nutr* 152:2514–2525 | 10.1093/jn/nxac150 | check |
 | drewnowski2010 | Drewnowski A (2010). The cost of US foods as related to their nutritive value. *Am J Clin Nutr* 92:1181–1188 | 10.3945/ajcn.2010.29300 | PMC2954450 |
 | drewnowski2024 | Drewnowski A & Conrad Z (2024). Pulse crops: nutrient density, affordability, and environmental impact. *Front Nutr* 11:1438369 | 10.3389/fnut.2024.1438369 | PMC11377338 |
@@ -109,6 +114,8 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 ---
 
 ## Please obtain through university access (PDFs go into `literature/`, which git ignores)
+
+**Status 2026-10-06:** received and checked: thomas2016, chungchunlam2020, burke2011, garthe2011, mifflin1990, stigler1945. Still optional: mountjoy2023 (open access, but blocks automated download), holt1995 (v2.0).
 | Priority | ID | Why |
 |---|---|---|
 | **High** | thomas2016 | The main sports-nutrition position statement. Source of the carbohydrate bands by training load (the light 3–5 g/kg band is so far confirmed only by secondary sources) and of the fat minimum. The *J Acad Nutr Diet* version (116:501–528) is the same text. |

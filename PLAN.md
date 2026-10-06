@@ -22,20 +22,20 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 ## Phase 1: Literature review and accepted measures
 - [x] 1.1 Verify and collect all papers in PROJECT.md §13; mark the ones that need university access → `literature/SOURCES.md` (university list at the bottom)
 - [x] 1.2 Protein by goal: general adults, strength/hypertrophy, endurance, concurrent (hybrid) training, energy deficit; per-meal dose and leucine
-- [~] 1.3 Energy targets by goal: surplus size and rate of gain, deficit size and rate of loss; caveats for endurance athletes (RED-S)
+- [x] 1.3 Energy targets by goal: surplus size and rate of gain, deficit size and rate of loss; caveats for endurance athletes (RED-S)
 - [x] 1.4 Energy-expenditure estimation (Mifflin-St Jeor, PAL factors, training add-on), for users who don't know their expenditure
-- [~] 1.5 **Carbohydrate requirements** by training load (g/kg bands), glycogen restoration; mapping from hours/week + modality to the bands
+- [x] 1.5 **Carbohydrate requirements** by training load (g/kg bands), glycogen restoration; mapping from hours/week + modality to the bands
 - [x] 1.6 **Fat range** (% E minimum and maximum) and **free-sugar cap**: the evidence behind the safeguards (§9.1)
 - [x] 1.7 Protein quality: DIAAS vs PDCAAS, reference patterns, truncation rules, processing effects
-- [~] 1.8 Find sources of measured DIAAS / ileal digestibility per food; list coverage gaps
+- [x] 1.8 Find sources of measured DIAAS / ileal digestibility per food; list coverage gaps
 - [x] 1.9 Choose an IAA requirement pattern for diet-level amino-acid constraints (WHO/FAO/UNU 2007 or FAO 2013)
 - [x] 1.10 Diet-optimization literature: LP/MILP formulations, realism constraints, per-food caps, known pitfalls
 - [x] 1.11 Earlier work on food cost vs nutrient value (Drewnowski, the 2025 protein cost study, the pulse study)
 - [x] 1.12 Write `literature/REVIEW.md`: one summary per source with the numbers we will use and their uncertainty (first pass; proposed decisions D1–D12 in §10)
-- [ ] 1.13 Freeze the **goal presets, target rules and accepted measures** (Q, P_eff, bands, caps) in PROJECT.md §7.2
-- [ ] 1.14 Originality search in Scopus/Google Scholar (a preliminary PubMed search found no athlete diet-optimization or diet-level DIAAS-LP studies)
-- [ ] 1.15 Close the gaps in REVIEW.md §9: thomas2016 full text (owner, via university), REVIEW of mountjoy2023 energy-availability thresholds
-- [ ] **GATE 1:** owner approves decisions D1–D12 in REVIEW.md §10; measures and presets fixed before any scoring is done
+- [x] 1.13 Freeze the **goal presets, target rules and accepted measures** (Q, P_eff, bands, caps) in PROJECT.md §7.2
+- [x] 1.14 Originality search (PubMed + OpenAlex): athlete LP diets exist (magdic2013 etc.), but not with diet-level digestible IAA + sourced presets + mass + local prices; claim narrowed (REVIEW §7). Scopus optional
+- [x] 1.15 Close the gaps in REVIEW.md §9: thomas2016 read (all bands [P]); EA thresholds 45/30 kcal/kg FFM from thomas2016; mountjoy2023 qualification left as low-priority (warning only)
+- [x] **GATE 1:** owner approved decisions D1–D12 (2026-10-06); presets frozen in PROJECT.md §7.2
 
 ## Phase 2: Dataset
 ### 2a. Schema and food list
@@ -149,3 +149,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 0.7, 0.8 | Generalized to a calculator for any profile (presets + overrides); plan reorganized around the roadmap v0.1 → v3.0 |
 | 2026-10-06 | 1.1–1.12 (first pass) | 63 sources verified (PubMed/Crossref/agency PDFs); REVIEW.md with numbers, evidence tags and decisions D1–D12; 2 handoff errors corrected; university list: thomas2016 (high), chungchunlam2020, burke2011 (manual download), garthe2011, mifflin1990, stigler1945 |
 | 2026-10-06 | side exploration | Preview graphs (`notebooks/preview_graphs.py` → `figures/preview/`): 40 foods, prototype pipeline USDA × muleya2021 → DIAAS → useful protein; placeholder prices; found USDA amino-acid errors (→ task 2.16). Owner profile: male, 22 y |
+| 2026-10-06 | 1.3, 1.5, 1.8, 1.13–1.15, GATE 1 | University PDFs read (Thomas 2016 confirms all CHO bands, fat 20–35 %, EA 45/30); OpenAlex originality search found prior athlete LP work → novelty narrowed to the combination; D1–D12 approved, presets frozen |

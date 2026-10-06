@@ -108,14 +108,14 @@ Every person-specific value is an input. The input has five layers:
 - Each output target shows **where it came from** (rule + source, or "user override").
 - Protein and carbohydrate per kg use **current** body mass by default; target mass is an option.
 
-### 7.2 Goal presets (named combinations of the layers, not separate code paths). PROVISIONAL; values to be frozen at GATE 1 from [literature/REVIEW.md](literature/REVIEW.md) §10
+### 7.2 Goal presets (named combinations of the layers, not separate code paths). **FROZEN at GATE 1 (2026-10-06)**; evidence and decisions D1–D12 in [literature/REVIEW.md](literature/REVIEW.md) §10. Changes need a new decision-log entry.
 | Preset | Training | Energy | Protein g/kg | Carbohydrate | Fat | Cost weight |
 |---|---|---|---|---|---|---|
 | General adult ("normal life") | none/light | maintain | ≥ 0.83 (EFSA PRI) | 45–60 % E (EFSA) | 20–35 % E | default |
-| Muscle gain / bodybuilding off-season | strength | surplus, ~0.25–0.5 % BM/week (Iraki 2019) | 1.6–2.2 (Morton 2018) | by training band | 20–35 % E | default |
-| Fat loss (cut) | any | deficit, ~0.5–1 % BM/week (default 0.7 %, Garthe 2011) | 2.3–3.1 g/kg **lean** mass (Helms 2014) / 2.3–3.1 g/kg body mass (Jäger 2017); see REVIEW D3 | by training band | ≥ 15–20 % E | default |
-| Endurance (triathlon, Ironman) | endurance | maintain | 1.2–2.0 (ACSM 2016) | by training band | 20–35 % E | default |
-| Hybrid: muscle gain + endurance | hybrid | surplus | 1.6–2.2 | by training band | 20–35 % E | default |
+| Muscle gain / bodybuilding off-season | strength | surplus 0.25–0.5 % BM/week (≈ +10 %; +5 % if advanced) (Iraki 2019) | 1.6–2.2, default 1.8 (Morton 2018) | by training band, ≥ 3–5 g/kg | 20–35 % E | default |
+| Fat loss (cut) | any | deficit 0.5–1.0 % BM/week, default 0.7 % (Garthe 2011) | 2.3–3.1 g/kg **lean** mass if body fat known (Helms 2014), else 2.2–2.6 g/kg body mass (D3) | by training band | 15–35 % E | default |
+| Endurance (triathlon, Ironman) | endurance | maintain | 1.4–2.0, default 1.6 (Thomas 2016, Jäger 2017, Kato 2016) | by training band | 20–35 % E | default |
+| Hybrid: muscle gain + endurance | hybrid | surplus (as muscle gain) | 1.6–2.2, default 1.8 | by training band | 20–35 % E | default |
 | Professional athlete | any | prescribed | prescribed | prescribed | prescribed | 0 |
 
 **Carbohydrate bands by training load** (Thomas, Erdman & Burke 2016, ACSM/AND/DC; Burke et al. 2011):
@@ -314,6 +314,9 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-06 | Roadmap v0.1 → v0.2 → v1.0 → v2.0 → v3.0 (§2.1) | Start simple, add intelligence gradually |
 | 2026-10-06 | Target rules in config with sources, not hard-coded | Reviewable by a nutrition scientist |
 | 2026-10-06 | Owner: 6–9 h/week triathlon, goal 76 → 85 kg muscle gain, appearance before performance | Owner's input |
+| 2026-10-06 | **GATE 1 passed:** decisions D1–D12 approved; presets in §7.2 frozen | REVIEW.md §10 |
+| 2026-10-06 | Protein-quality constraint = per-IAA digestible supply ≥ FAO 2013 adult pattern × protein target (D9); DIAAS from USDA AA × muleya2021 digestibility (D11) | Complementarity, FAO/Moughan guidance |
+| 2026-10-06 | Novelty claim limited to the *combination* (sourced presets + diet-level digestible IAA + mass + local prices + robustness); prior athlete LP work must be cited | Originality search (REVIEW §7) |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).

@@ -22,7 +22,7 @@ Section numbers match PLAN.md tasks. The decisions this review leads to are coll
 | Resistance-trained, in an energy deficit | **2.3–3.1 g/kg** (body mass) | jager2017 | [A] |
 | Natural bodybuilders, contest preparation | **2.3–3.1 g/kg of lean body mass** | helms2014 | [P] |
 | Off-season bodybuilders | **1.6–2.2 g/kg**; 0.40–0.55 g/kg per meal | iraki2019 | [P] |
-| Athletes, general (ACSM/AND/DC) | **1.2–2.0 g/kg** | thomas2016 via vitale2019 | [S] |
+| Athletes, general (ACSM/AND/DC) | **1.2–2.0 g/kg**; 0.3 g/kg per meal | thomas2016 | [P] |
 | Endurance athletes (indicator amino acid oxidation method) | estimated average requirement **1.65**, recommended **1.83 g/kg** (n = 6 men, the day after a 20 km run) | kato2016 | [P] |
 
 **Per-meal distribution** (v3.0 meal planning): 0.4 g/kg/meal × ≥ 4 meals reaches 1.6 g/kg; the 2.2 g/kg upper limit means ≤ 0.55 g/kg/meal (schoenfeld2018 [P]). The 20–25 g/meal "maximum" applies to fast proteins taken alone (schoenfeld2018 [P]). trommelen2023 [A] shows the anabolic response to 100 g has no upper limit in magnitude or duration. A per-meal leucine threshold is plausible (churchward2014) but the exact number is **[U]**, so it is deferred to v3.0.
@@ -46,13 +46,13 @@ Section numbers match PLAN.md tasks. The decisions this review leads to are coll
 - Elite athletes at 0.7 %/week **gained** lean mass (+2.1 %), while those at 1.4 %/week did not (garthe2011 [A]).
 - **Takeaway:** default 0.7 %/week, with an allowed range of 0.5–1.0 %.
 
-**Low energy availability (RED-S / REDs)** (mountjoy2018, mountjoy2023 [A]): endurance athletes in a deficit risk health and performance problems. The tool should **warn** when a deficit is combined with high training volume. Exact energy-availability thresholds are **[U]**; the 2023 consensus treats them cautiously, so read before using any number.
+**Low energy availability (RED-S / REDs)** (mountjoy2018, mountjoy2023 [A]): endurance athletes in a deficit risk health and performance problems. Thomas 2016 [P]: energy availability (EA) of **45 kcal/kg FFM/day** is associated with energy balance, and chronic EA **below 30 kcal/kg FFM/day** with impaired health and performance. The tool should **warn** (not block) when the planned intake implies EA < 30. How the 2023 consensus qualifies these thresholds is not yet checked (the PDF blocks automated download; low priority because v0.2 only uses them for a warning).
 
 ## 3. Energy-expenditure estimation (task 1.4)
 
 | Equation | Formula (REE, kcal/day) | Use | Tag |
 |---|---|---|---|
-| Mifflin-St Jeor | 9.99·W + 625·H(m) − 4.92·A + 166·sex − 161 (sex: M = 1, F = 0) | general population | [P] (as reproduced in tenhaaf2014) |
+| Mifflin-St Jeor | 9.99·W + 6.25·H(cm) − 4.92·A + 166·sex − 161; simplified: men 10·W + 6.25·H − 5·A + 5, women … − 161 | general population | [P] (mifflin1990) |
 | ten Haaf weight-based | **11.936·W + 587.728·H(m) − 8.129·A + 191.027·sex + 29.279** | recreational athletes, 18–35 y | [P] (equation image) |
 | ten Haaf FFM-based | **22.771·FFM + 484.264** | athletes with known fat-free mass | [P] |
 | Cunningham | 22·FFM + 500 | athletes with known fat-free mass | [P] |
@@ -66,10 +66,10 @@ Section numbers match PLAN.md tasks. The decisions this review leads to are coll
 
 | Training load | g/kg/day | Source | Tag |
 |---|---|---|---|
-| Light / low intensity or skill-based | 3–5 | thomas2016 | **[U]** (from memory and secondary sources; needs the full text) |
-| Moderate exercise, ~1 h/day | **5–7** | thomas2016 via vitale2019 | [S] |
-| Moderate–high intensity, 1–3 h/day | **6–10** | thomas2016 via vitale2019 | [S] |
-| Extreme, 4–5 h/day moderate–high intensity | **8–12** | thomas2016 via vitale2019 | [S] |
+| Light / low intensity or skill-based | 3–5 | thomas2016 (Table 2) | [P] |
+| Moderate exercise, ~1 h/day | **5–7** | thomas2016 (Table 2) | [P] |
+| Moderate–high intensity, 1–3 h/day | **6–10** | thomas2016 (Table 2) | [P] |
+| Extreme, 4–5 h/day moderate–high intensity | **8–12** | thomas2016 (Table 2) | [P] |
 | Strength athletes, off-season | **≥ 3–5** | iraki2019 | [P] |
 | General adult | **45–60 % of energy** | efsa2010c | [S] |
 
@@ -78,7 +78,7 @@ Section numbers match PLAN.md tasks. The decisions this review leads to are coll
 
 ## 5. Fat and sugar: the safeguards (task 1.6)
 
-- Fat for adults: **20–35 % of energy** (efsa2010f [S]). Athletes "should not restrict to < 20 %" (thomas2016 via vitale2019 [S]). Off-season bodybuilders: 0.5–1.5 g/kg or 20–35 % (iraki2019 [P]). Contest preparation: 15–30 % (helms2014 [P]).
+- Fat for adults: **20–35 % of energy** (efsa2010f [S]). Athletes: fat "typically range[s] from 20%–35% of total energy intake"; chronic intakes below 20 % are discouraged (thomas2016 [P]). Off-season bodybuilders: 0.5–1.5 g/kg or 20–35 % (iraki2019 [P]). Contest preparation: 15–30 % (helms2014 [P]).
 - Free sugars: **< 10 % of energy** (strong recommendation); further reduction below 5 % is conditional (who2015 [S]). Free sugars = added mono- and disaccharides plus sugars in honey, syrups and fruit juices; **not** sugars in intact fruit or milk. The dataset needs a "free sugar" field, which USDA does not provide directly; see decision D8.
 - **Takeaway:** fat 20–35 % E and free sugars < 10 % E are both supported by EU/WHO guidance, so safeguards 1 and 2 (PROJECT.md §9.1) are evidence-based, not arbitrary. Per-food caps (safeguard 3) remain our judgment.
 
@@ -128,7 +128,14 @@ These are for **sedentary maintenance** at 0.66 g protein/kg. For an athlete eat
 - Least-cost diets of 883 foods with 29 nutrients for a New Zealand adult cost NZ$3.23/day. The first-limiting nutrients were micronutrients, not protein; the model is publicly available (chungchunlam2021 [A]). In the US, animal foods were needed for minimum cost (chungchunlam2020, title only).
 - In French adults, roughly 45–60 % of protein must be animal-based to meet all other nutrient recommendations at no extra cost (vieux2022 [A]). This matters for v2.0, when micronutrients enter.
 
-**Originality check (PubMed only, preliminary):** searches combining linear programming / diet optimization with athletes, sport or bodybuilding found no athlete diet-optimization study. LP combined with DIAAS appeared only in product formulation (muffins, therapeutic foods). **Athlete-specific targets + amino-acid digestibility constraints + food mass + local prices appears to be a gap.** This must be confirmed in Scopus/Google Scholar before any novelty claim (new task 1.14).
+**Originality check (task 1.14; PubMed + OpenAlex, 2026-10-06).** The first PubMed-only check was too narrow: **athlete diet LP papers exist**, mostly in operations-research and low-tier venues:
+- magdic2013: LP weekly menus for a recreational bodybuilder (cost, mass, energy, fixed 43:30:27 C:F:P ratio; LINDO vs Excel).
+- mochabonilla2020 (conference chapter) and ijbpas2023: least-cost LP diets for athletes with energy/macro constraints.
+- dimina2022: LP to combine plant proteins towards target amino-acid profiles (ingredient blends, no cost, no athletes).
+- moreno2026 (arXiv): mixed-integer goal programming for meals (integer servings, soft targets against infeasibility). It reports that none of 56 reviewed diet-optimization papers combined integer and goal programming.
+- chungchunlam2020/2021, maillot2008/2010, vieux2022: population least-cost / acceptability LP (no athletic targets).
+
+**What none of them combine** (our defensible contribution): (1) goal presets taken from sports-nutrition position stands, with every target sourced and overridable; (2) **diet-level digestible indispensable amino acid constraints** (DIAAS-consistent, complementarity-aware) instead of crude protein; (3) **food mass** as an objective/constraint next to cost; (4) **observed local (Latvian) prices with normalization and uncertainty**; (5) robustness analysis (Monte Carlo, safeguard sensitivity) and comparison against simple ratio baselines. We must cite the prior athlete LP work and claim only this combination. A Scopus search by the owner (university access) is optional extra assurance.
 
 ## 8. Food cost vs nutritional value (task 1.11)
 
@@ -137,15 +144,15 @@ These are for **sedentary maintenance** at 0.66 g protein/kg. For an athlete eat
 - Protein cost adjusted for PDCAAS: dairy is comparable to eggs and beans (drewnowski2025 [A]). This is a precedent for quality-adjusted protein cost, our P_eff/€.
 
 ## 9. Gaps that remain
-- thomas2016 full text (light carbohydrate band; fat wording). **University access, high priority.**
-- Energy-availability thresholds (mountjoy2023 full text, which is open access; to read).
+- ~~thomas2016 full text~~ → done 2026-10-06 (all bands [P]).
+- How mountjoy2023 qualifies the EA thresholds (PDF download blocked for automation; owner may download; low priority).
 - EFSA statement on safe upper protein intakes [U].
 - Inventory of what muleya2021 actually contains (Phase 2, task 2.9).
-- Thorough originality search (Scopus/Google Scholar).
+- ~~Thorough originality search~~ → done via OpenAlex (see §7); Scopus optional.
 
 ---
 
-## 10. Proposed decisions for GATE 1 (owner to approve, change or reject)
+## 10. Decisions for GATE 1. **APPROVED by owner 2026-10-06 (all D1–D12 as proposed)**
 
 | # | Decision | Proposal | Basis |
 |---|---|---|---|
