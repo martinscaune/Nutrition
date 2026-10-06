@@ -19,6 +19,8 @@ from src.data import composition as C  # noqa: E402
 
 # FAO 2013 Table 5, older child / adolescent / adult scoring pattern, mg per g protein (decision D10)
 PATTERN = {"HIS": 16, "ILE": 30, "LEU": 61, "LYS": 48, "SAA": 23, "AAA": 41, "THR": 25, "TRP": 6.6, "VAL": 40}
+# FAO 2013 Table 5, young child (0.5–3 y) pattern: FAO's "regulatory" pattern; used as a stricter sensitivity case
+PATTERN_CHILD = {"HIS": 20, "ILE": 32, "LEU": 66, "LYS": 57, "SAA": 27, "AAA": 52, "THR": 31, "TRP": 8.5, "VAL": 43}
 # Plausible range of each AA in food protein, mg/g (outside → flag). Wide on purpose: catches unit/entry errors
 # like the USDA ground-beef Trp (5 mg/g) or tofu Cys (3 mg/g) found in the preview.
 PLAUSIBLE = {"TRP": (6, 25), "THR": (20, 60), "ILE": (30, 70), "LEU": (50, 140), "LYS": (15, 110), "MET": (8, 40),
@@ -31,14 +33,15 @@ def digestibility():
     return d[C.AA].apply(pd.to_numeric, errors="coerce")
 
 
-def diaas(mg_per_g, dig):
+def diaas(mg_per_g, dig, pattern=None):
     """DIAAS (%) and limiting AA from an AA profile (mg/g protein) and per-AA digestibility (FAO 2013, untruncated)."""
     if mg_per_g.isna().any() or dig.isna().any():
         return np.nan, ""
     d = mg_per_g * dig
     digestible = {"HIS": d.HIS, "ILE": d.ILE, "LEU": d.LEU, "LYS": d.LYS, "SAA": d.MET + d.CYS,
                   "AAA": d.PHE + d.TYR, "THR": d.THR, "TRP": d.TRP, "VAL": d.VAL}
-    ratios = {k: v / PATTERN[k] for k, v in digestible.items()}
+    pattern = pattern or PATTERN
+    ratios = {k: v / pattern[k] for k, v in digestible.items()}
     lim = min(ratios, key=ratios.get)
     return ratios[lim] * 100, lim
 
@@ -88,7 +91,11 @@ def main():
                 flags.append(("reviewed-genuine " if len(rv) else "") + txt)
         # ---- DIAAS and useful protein
         if f.food_id in dmap.index and pd.notna(dmap.loc[f.food_id, "source_row"]):
-            score, lim = diaas(mg, dig.loc[int(dmap.loc[f.food_id, "source_row"])])
+            drow = dig.loc[int(dmap.loc[f.food_id, "source_row"])]
+            score, lim = diaas(mg, drow)
+            r["diaas_child"] = diaas(mg, drow, PATTERN_CHILD)[0]
+            # digestible leucine (mg per g protein): relevant to muscle protein synthesis
+            r["digestible_leu_mg_per_g"] = mg.LEU * drow.LEU if pd.notna(mg.LEU) else np.nan
             r["digest_grade"] = dmap.loc[f.food_id, "grade"]
             r["digest_note"] = dmap.loc[f.food_id, "notes"]
         else:

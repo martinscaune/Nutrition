@@ -64,17 +64,17 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 ---
 
 ## v0.1: Food explorer (simple tool: foods, metrics, graphs)
-- [ ] A.1 Implement the core metrics (E, P, CHO, C, E€, P€, CHO€, P/E, F%E, M1000) in `src/metrics.py`, with unit tests
-- [ ] A.2 Implement the protein-quality adjustment (P_eff), allowing several Q definitions side by side
-- [ ] A.3 Implement Pareto-front computation (2D and n-D, with dominance ranks)
-- [ ] A.4 Implement candidate composite indices (S_bulk etc.) as **hypotheses**, with configurable weights
-- [ ] A.5 Graphs: nutrition density, economic value (protein/€ vs kcal/€), carbohydrate economics (CHO/€ vs protein/€), training efficiency, mass (g/1000 kcal), macronutrient ternary plot, 3D exploratory
-- [ ] A.6 Descriptive statistics by category, correlation matrix, PCA and clustering
-- [ ] A.7 Rank foods under each metric; compare rankings (Spearman, top-k overlap) to check H1, H2, H4 and H5
-- [ ] A.8 Streamlit app: dataset table, category filters, price scenario (median / P25 / P75), weight sliders, live rankings + graphs + Pareto highlighting, as-purchased vs as-consumed toggle
-- [ ] A.9 Export the configuration and results (CSV/JSON)
-- [ ] A.10 Publication-style figure styling (readable labels, colorblind-safe palette)
-- [ ] **GATE v0.1:** the owner finds the explorer useful and understands the trade-offs it shows
+- [x] A.1 Implement the core metrics (E, P, CHO, C, E€, P€, CHO€, P/E, F%E, M1000) in `src/metrics.py`, with unit tests
+- [x] A.2 Implement the protein-quality adjustment (P_eff), allowing several Q definitions side by side
+- [x] A.3 Implement Pareto-front computation (2D and n-D, with dominance ranks)
+- [x] A.4 Implement candidate composite indices (S_bulk etc.) as **hypotheses**, with configurable weights
+- [x] A.5 Graphs: nutrition density, economic value (protein/€ vs kcal/€), carbohydrate economics (CHO/€ vs protein/€), training efficiency, mass (g/1000 kcal), macronutrient ternary plot, 3D exploratory
+- [x] A.6 Descriptive statistics by category, correlation matrix, PCA and clustering
+- [x] A.7 Rank foods under each metric; compare rankings (Spearman, top-k overlap) to check H1, H2, H4 and H5
+- [x] A.8 Streamlit app: dataset table, category filters, price scenario (median / P25 / P75), weight sliders, live rankings + graphs + Pareto highlighting, as-purchased vs as-consumed toggle
+- [x] A.9 Export the configuration and results (CSV/JSON)
+- [x] A.10 Publication-style figure styling (readable labels, colorblind-safe palette)
+- [ ] **GATE v0.1:** the owner finds the explorer useful and understands the trade-offs it shows (owner to try `app/app.py` and comment on graphs)
 
 ## v0.2: Target calculator (profile → targets)
 - [ ] B.1 Profile schema (body, training, energy goal, priorities, overrides) as YAML; validation
@@ -153,3 +153,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-06 | 2.1, 2.3, 2.10–2.12 (2.2 draft) | SCHEMA.md; 106-food list (71 CSP-priced, 35 own); CSP PCC010m 24 months downloaded; price normalization fixed; collection template + guide |
 | 2026-10-06 | 2.4–2.9 (2.13 running) | Owner: Cenu Depo OK for personal use → polite collector `src/prices/cenudepo.py`; Frida 5.5 + SR28 downloaded; composition, yields, edible portions, digestibility maps for all 106 foods; unit conversions; price summary script |
 | 2026-10-06 | 2.13–2.17 | Prices for 99/106 foods (CSP + Cenu Depo); parser handles single-shop pages, sold-by-weight items, loyalty rows; AA overrides for turkey, split peas, canned peas, smoked sausage; `src/build_master.py` → `foods_master.csv`; 14 tests pass. Finding: split peas ≈ €0.94/kg |
+| 2026-10-07 | A.1–A.10 (v0.1) | `src/metrics.py` (quality definitions, price scenarios, Pareto masks/ranks, composite index, rank comparison), `src/analysis/explore.py` → `reports/v0.1_exploration.md`, 7 figures in `figures/v0.1/`, Streamlit app `app/app.py` (rankings, explorer, one-food day, food details, CSV/JSON export); 26 tests pass |

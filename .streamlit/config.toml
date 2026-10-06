@@ -1,0 +1,7 @@
+# Personal-use app: only reachable from this computer; no usage statistics sent to Streamlit.
+[server]
+address = "localhost"
+headless = false
+
+[browser]
+gatherUsageStats = false
