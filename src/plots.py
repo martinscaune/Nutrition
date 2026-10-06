@@ -21,7 +21,7 @@ COLORS = {"Meat & fish": "#2a78d6", "Eggs & dairy": "#eb6834", "Legumes & soy": 
           "Ingredients & snacks": "#8a8984", "Supplements": "#b5b4ae"}
 MPL_MARK = dict(zip(M.GROUPS, ["o", "s", "^", "D", "v", "P", "X", "*"]))
 PLY_MARK = dict(zip(M.GROUPS, ["circle", "square", "triangle-up", "diamond", "triangle-down", "cross", "x", "star"]))
-INK, INK2, MUTED, GRID, SURFACE = "#0b0b0b", "#52514e", "#8a8984", "#e6e5e1", "#fcfcfb"
+INK, INK2, MUTED, GRID, SURFACE = "#000000", "#222222", "#666666", "#d9d9d9", "#ffffff"
 FOOTER = ("Data: Frida 5.5 / USDA SR Legacy composition; muleya2021 digestibility; prices CSP PCC010m 12-month mean\n"
           "+ Cenu Depo 2026-10-06. Useful protein = protein × min(DIAAS,100)/100.")
 
@@ -33,20 +33,25 @@ def label(col):
 
 # ---------------------------------------------------------------- matplotlib
 def _style(ax, title, subtitle, xlabel, ylabel):
+    """Scientific style: white background, full black frame, inward ticks on all four sides,
+    major + minor ticks, light grid on both axes, black text."""
     fig = ax.figure
-    ax.set_facecolor(SURFACE)
-    fig.set_facecolor(SURFACE)
-    for s in ("top", "right"):
-        ax.spines[s].set_visible(False)
-    for s in ("left", "bottom"):
-        ax.spines[s].set_color(GRID)
-    ax.grid(True, color=GRID, linewidth=0.8)
+    ax.set_facecolor("white")
+    fig.set_facecolor("white")
+    for s in ("top", "right", "left", "bottom"):
+        ax.spines[s].set_visible(True)
+        ax.spines[s].set_color("black")
+        ax.spines[s].set_linewidth(1.0)
+    ax.minorticks_on()
+    ax.tick_params(which="both", direction="in", top=True, right=True, colors="black", labelsize=10)
+    ax.tick_params(which="major", length=6, width=1.0)
+    ax.tick_params(which="minor", length=3, width=0.8)
+    ax.grid(True, which="major", axis="both", color=GRID, linewidth=0.7)
     ax.set_axisbelow(True)
-    ax.tick_params(colors=INK2, labelsize=9)
-    ax.set_xlabel(xlabel, color=INK2, fontsize=10)
-    ax.set_ylabel(ylabel, color=INK2, fontsize=10)
-    fig.text(0.06, 0.965, title, fontsize=14, color=INK, weight="bold", va="top")
-    fig.text(0.06, 0.925, subtitle, fontsize=9.5, color=INK2, va="top")
+    ax.set_xlabel(xlabel, color="black", fontsize=11)
+    ax.set_ylabel(ylabel, color="black", fontsize=11)
+    fig.text(0.06, 0.965, title, fontsize=14, color="black", weight="bold", va="top")
+    fig.text(0.06, 0.925, subtitle, fontsize=10, color="#333333", va="top")
     fig.text(0.06, 0.008, FOOTER, fontsize=7.5, color=MUTED, va="bottom", linespacing=1.3)
 
 
@@ -77,11 +82,11 @@ def scatter_png(df, x, y, path, title, subtitle, logx=False, logy=False, size=No
                 extra_labels=(), groups=None):
     groups = groups or [g for g in M.GROUPS if g in set(df.group)]
     fig, ax = plt.subplots(figsize=(11, 7.5))
-    fig.subplots_adjust(left=0.08, right=0.78, top=0.86, bottom=0.1)
+    fig.subplots_adjust(left=0.08, right=0.78, top=0.86, bottom=0.12)
     for g in groups:
         s = df[df.group == g]
         ms = 70 if size is None else 30 + s[size].fillna(0).clip(lower=0) * 1.6
-        ax.scatter(s[x], s[y], s=ms, c=COLORS[g], marker=MPL_MARK[g], edgecolors=SURFACE, linewidths=1.5,
+        ax.scatter(s[x], s[y], s=ms, c=COLORS[g], marker=MPL_MARK[g], edgecolors="black", linewidths=0.6,
                    label=g, zorder=3, alpha=0.95)
     labelled = set(extra_labels)
     if front:
@@ -89,10 +94,14 @@ def scatter_png(df, x, y, path, title, subtitle, logx=False, logy=False, size=No
         fr = M.front(eligible, [x, y]).sort_values(x)
         ax.plot(fr[x], fr[y], color=INK2, lw=1, zorder=2, alpha=0.6)
         labelled |= set(fr.food_id)
+    from matplotlib.ticker import FuncFormatter
+    plain = FuncFormatter(lambda v, _: f"{v:,.0f}" if v >= 1 else f"{v:g}")
     if logx:
         ax.set_xscale("log")
+        ax.xaxis.set_major_formatter(plain)
     if logy:
         ax.set_yscale("log")
+        ax.yaxis.set_major_formatter(plain)
     _style(ax, title, subtitle, label(x), label(y))
     to_axes = ax.transData + ax.transAxes.inverted()
     anns = []
@@ -101,12 +110,12 @@ def scatter_png(df, x, y, path, title, subtitle, logx=False, logy=False, size=No
         anns.append(ax.annotate(r.name_en, (r[x], r[y]), xytext=(-7 if right else 7, 4), textcoords="offset points",
                                 ha="right" if right else "left", fontsize=8.5, color=INK))
     _declutter(ax, anns)
-    leg = ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1), frameon=False, fontsize=9, labelcolor=INK2,
-                    title="Food group", title_fontsize=9)
-    leg.get_title().set_color(INK2)
+    leg = ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1), frameon=True, fontsize=9, labelcolor="black",
+                    title="Food group", title_fontsize=9, edgecolor="black", fancybox=False, framealpha=1)
+    leg.get_frame().set_linewidth(0.8)
     if front:
         fig.text(0.79, 0.42, "Line = Pareto front:\nfoods no other food\nbeats on both axes\n"
-                             "(ingredients, snacks,\nsupplements excluded)", fontsize=8.5, color=INK2, va="top")
+                             "(ingredients, snacks,\nsupplements excluded)", fontsize=8.5, color="black", va="top")
     fig.savefig(path, dpi=150)
     plt.close(fig)
 
@@ -123,8 +132,8 @@ def bars_png(df, value, path, title, subtitle, annot, xlabel):
     _style(ax, title, subtitle, xlabel, "")
     ax.grid(axis="y", visible=False)
     handles = [plt.Rectangle((0, 0), 1, 1, color=COLORS[g]) for g in M.GROUPS if g in set(s.group)]
-    ax.legend(handles, [g for g in M.GROUPS if g in set(s.group)], loc="lower right", frameon=False, fontsize=9,
-              labelcolor=INK2)
+    ax.legend(handles, [g for g in M.GROUPS if g in set(s.group)], loc="lower right", frameon=True, fontsize=9,
+              labelcolor="black", edgecolor="black", fancybox=False, framealpha=1)
     fig.savefig(path, dpi=150)
     plt.close(fig)
 
@@ -161,38 +170,66 @@ HOVER = ("<b>%{customdata[0]}</b> · %{customdata[1]}<br>"
          "grades: composition %{customdata[11]}, digestibility %{customdata[12]}<extra></extra>")
 
 
+AXIS = dict(showline=True, linecolor="black", linewidth=1, mirror="allticks", ticks="inside", ticklen=6,
+            tickwidth=1, tickcolor="black", showgrid=True, gridcolor=GRID, gridwidth=1, zeroline=False,
+            minor=dict(ticks="inside", ticklen=3, tickcolor="black", showgrid=False),
+            title_font=dict(size=14, color="black"), tickfont=dict(size=12, color="black"))
+
+
+def _scientific(fig, height):
+    """White background, full black frame with inward ticks on all sides, grid on both axes, black text,
+    framed legend. Self-contained, so charts stay readable in Streamlit's dark theme too."""
+    fig.update_layout(template="none", height=height, paper_bgcolor="white", plot_bgcolor="white",
+                      font=dict(family="Arial, Helvetica, sans-serif", size=13, color="black"),
+                      margin=dict(l=75, r=25, t=25, b=70),
+                      legend=dict(orientation="h", y=-0.18, bgcolor="white", bordercolor="black", borderwidth=1,
+                                  font=dict(color="black")),
+                      hoverlabel=dict(bgcolor="white", bordercolor="black", font=dict(color="black", size=12)))
+    fig.update_xaxes(**AXIS)
+    fig.update_yaxes(**AXIS)
+    return fig
+
+
 def scatter_fig(df, x, y, logx=False, logy=False, size=None, front=True, highlight=None, dark=False):
-    ink2, grid = ("#c3c2b7", "#33332f") if dark else (INK2, GRID)
     fig = go.Figure()
     for g in [g for g in M.GROUPS if g in set(df.group)]:
         s = df[df.group == g]
         ms = 11 if size is None else (7 + s[size].fillna(0).clip(lower=0) * 0.25)
         fig.add_trace(go.Scatter(
             x=s[x], y=s[y], mode="markers", name=g, customdata=s[HOVER_COLS].values, hovertemplate=HOVER,
-            marker=dict(color=COLORS[g], symbol=PLY_MARK[g], size=ms, line=dict(width=1.5, color=SURFACE),
-                        opacity=[1.0 if (highlight is None or f in highlight) else 0.25 for f in s.food_id])))
+            marker=dict(color=COLORS[g], symbol=PLY_MARK[g], size=ms, line=dict(width=1, color="black"),
+                        opacity=[1.0 if (highlight is None or f in highlight) else 0.2 for f in s.food_id])))
+    labelled = set()
+    eligible = df[~df.group.isin(["Ingredients & snacks", "Supplements"])]
     if front:
-        eligible = df[~df.group.isin(["Ingredients & snacks", "Supplements"])]
         fr = M.front(eligible, [x, y]).sort_values(x)
-        fig.add_trace(go.Scatter(x=fr[x], y=fr[y], mode="lines+text", text=fr.name_en, textposition="top left",
-                                 textfont=dict(size=11, color=ink2), line=dict(color=ink2, width=1),
+        fig.add_trace(go.Scatter(x=fr[x], y=fr[y], mode="lines", line=dict(color="black", width=1, dash="dot"),
                                  name="Pareto front", hoverinfo="skip"))
-    fig.update_layout(xaxis_title=label(x), yaxis_title=label(y), height=620, margin=dict(l=60, r=20, t=20, b=60),
-                      legend=dict(orientation="h", y=-0.16), paper_bgcolor="rgba(0,0,0,0)",
-                      plot_bgcolor="rgba(0,0,0,0)", font=dict(color=ink2))
-    fig.update_xaxes(type="log" if logx else "linear", gridcolor=grid, zerolinecolor=grid)
-    fig.update_yaxes(type="log" if logy else "linear", gridcolor=grid, zerolinecolor=grid)
+        labelled |= set(fr.food_id)
+    # name the extremes on each axis too, so the chart is readable without hovering
+    for col in (x, y):
+        hib = M.METRICS.get(col, (None, None, True))[2]
+        top = eligible.dropna(subset=[col])
+        labelled |= set((top.nlargest(4, col) if hib is not False else top.nsmallest(4, col)).food_id)
+    lab = df[df.food_id.isin(labelled) & df[x].notna() & df[y].notna()]
+    fig.add_trace(go.Scatter(x=lab[x], y=lab[y], mode="text", text=lab.name_en, textposition="top center",
+                             textfont=dict(size=11, color="black"), showlegend=False, hoverinfo="skip"))
+    _scientific(fig, 640)
+    fig.update_layout(xaxis_title=label(x), yaxis_title=label(y))
+    # log axes: label only powers of ten (minor ticks stay unlabeled) → no digit clutter
+    fig.update_xaxes(type="log", dtick=1, tickformat=",") if logx else fig.update_xaxes(type="linear")
+    fig.update_yaxes(type="log", dtick=1, tickformat=",") if logy else fig.update_yaxes(type="linear")
     return fig
 
 
 def ranking_bar_fig(df, score_col, n=25, dark=False):
-    ink2, grid = ("#c3c2b7", "#33332f") if dark else (INK2, GRID)
     s = df.nlargest(n, score_col).iloc[::-1]
     fig = go.Figure(go.Bar(x=s[score_col], y=s.name_en, orientation="h",
-                           marker_color=[COLORS[g] for g in s.group], customdata=s[HOVER_COLS].values,
-                           hovertemplate=HOVER))
-    fig.update_layout(height=max(400, 24 * len(s) + 80), margin=dict(l=200, r=20, t=10, b=40),
-                      xaxis_title="score (0–1, higher = better under your weights)", paper_bgcolor="rgba(0,0,0,0)",
-                      plot_bgcolor="rgba(0,0,0,0)", font=dict(color=ink2))
-    fig.update_xaxes(gridcolor=grid, range=[0, 1])
+                           marker=dict(color=[COLORS[g] for g in s.group], line=dict(color="black", width=0.6)),
+                           customdata=s[HOVER_COLS].values, hovertemplate=HOVER, showlegend=False))
+    _scientific(fig, max(420, 24 * len(s) + 90))
+    fig.update_layout(margin=dict(l=210, r=25, t=20, b=60),
+                      xaxis_title="Composite score (0–1, higher = better under your weights)")
+    fig.update_xaxes(range=[0, 1.02])
+    fig.update_yaxes(showgrid=False, minor=dict(ticks=""))
     return fig

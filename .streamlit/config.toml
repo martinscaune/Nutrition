@@ -5,3 +5,7 @@ headless = false
 
 [browser]
 gatherUsageStats = false
+
+# Light theme by default so the whole app matches the scientific (white) charts; can be switched in the ⋮ menu.
+[theme]
+base = "light"
