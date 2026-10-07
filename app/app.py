@@ -128,18 +128,22 @@ with tab_me:
         st.caption(n)
     st.subheader("Export for an AI recipe / meal-plan assistant")
     st.markdown("Ranks the foods for this person with the **sidebar settings** (weights, protein quality, price "
-                "scenario, food groups). Cooking ingredients are always included (unranked). Upload both files to "
-                "the AI and paste the prompt at the end of `brief.md`.")
+                "scenario, food groups) and adds the cheapest diet that meets all targets as a starting skeleton. Upload "
+                "the files to the AI and paste the prompt at the end of `brief.md`.")
     exp_roles = tuple(sorted(set(roles) | {"core", "ingredient"}))
-    ranked, brief, _ = X.build(prof, preset if preset in M.PRESETS else "Bulking: balanced", exp_roles, quality,
-                               price_scn, weights=(w or None) if preset == "(custom)" or w != M.PRESETS.get(preset)
-                               else None, groups=groups)
+    bundle = X.build_bundle(prof, preset if preset in M.PRESETS else None, exp_roles, quality, price_scn,
+                            weights=(w or None) if preset == "(custom)" or w != M.PRESETS.get(preset) else None,
+                            groups=groups)
+    ranked, brief, diet = bundle["foods"], bundle["brief"], bundle["diet"]
     csv_text = ranked.to_csv(index=False)
-    e1, e2, e3 = st.columns(3)
+    diet_csv = diet.to_csv(index=False) if diet is not None else None
+    e1, e2, e3, e4 = st.columns(4)
     stem = f"{base_key}_targets"
     e1.download_button("foods_ranked.csv", csv_text, f"{stem}_foods_ranked.csv", "text/csv")
-    e2.download_button("brief.md", brief, f"{stem}_brief.md", "text/markdown")
-    e3.download_button("Both (ZIP)", X.zip_bytes(csv_text, brief), f"{stem}_ai_export.zip", "application/zip")
+    if diet_csv:
+        e2.download_button("optimal_diet.csv", diet_csv, f"{stem}_optimal_diet.csv", "text/csv")
+    e3.download_button("brief.md", brief, f"{stem}_brief.md", "text/markdown")
+    e4.download_button("All (ZIP)", X.zip_bytes(csv_text, brief, diet_csv), f"{stem}_ai_export.zip", "application/zip")
     with st.expander("Preview brief.md"):
         st.markdown(brief)
 

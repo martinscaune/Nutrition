@@ -3,7 +3,8 @@
 Produces:
   foods_ranked.csv  one row per food: composite score and rank, per-metric ranks, nutrition (eaten + purchased),
                     protein quality, prices, how the food is bought/eaten, data grades
-  brief.md          profile, daily targets (with sources), safeguards, column dictionary, caveats, ready prompt
+  optimal_diet.csv  cheapest diet meeting all targets + amino acids (nutritional skeleton for the menu)
+  brief.md          profile, daily targets (with sources), safeguards, baseline diet, column dictionary, caveats, prompt
 
 CLI:
     .venv/bin/python -m src.export --profile config/profiles/owner.yaml --preset "Bulking: balanced"
@@ -142,12 +143,67 @@ def _brief(prof, res, w, preset, quality, price_scenario, out):
     return "".join(L)
 
 
-def zip_bytes(csv_text, brief_text):
+def zip_bytes(csv_text, brief_text, diet_csv=None):
     buf = io.BytesIO()
     with zipfile.ZipFile(buf, "w", zipfile.ZIP_DEFLATED) as z:
         z.writestr("foods_ranked.csv", csv_text)
         z.writestr("brief.md", brief_text)
+        if diet_csv:
+            z.writestr("optimal_diet.csv", diet_csv)
     return buf.getvalue()
+
+
+def optimal_diet(prof, quality="diaas", price_scenario="central", exclude=()):
+    """Cheapest (or, for price-insensitive profiles, lightest) diet meeting the person's targets (src/optimizer.py)."""
+    from src import optimizer as O
+    t = O.food_table(quality, price_scenario, exclude=exclude)
+    spec, _ = O.spec_from_profile(prof)
+    sol = O.solve(t, spec)
+    if sol.status != "optimal":
+        return None, sol, spec
+    d = sol.foods.reset_index().rename(columns={"name": "food", "cost_eur": "cost_eur_per_day", "kcal_total": "kcal",
+                                                "protein_total": "protein_g", "carb_total": "carb_g",
+                                                "fat_total": "fat_g", "free_sugars_total": "free_sugars_g",
+                                                "fibre_total": "fibre_g"})
+    d["g_bought"] = d.g_bought.round(0)
+    d["g_eaten"] = d.g_eaten.round(0)
+    return d, sol, spec
+
+
+def diet_section(d, sol, spec):
+    if d is None:
+        return ("\n## Optimal baseline diet\nNo diet meets all targets with the current food list; conflicting targets: "
+                + ", ".join(sol.conflicts.constraint) + "\n")
+    tot = sol.totals.set_index("nutrient").diet
+    rows = "".join(f"| {r.food} | {r.g_eaten:,.0f} | {r.g_bought:,.0f} | {r.cost_eur_per_day:.2f} | {r.kcal:,.0f} | "
+                   f"{r.protein_g:.0f} |\n" for r in d.itertuples())
+    binding = ", ".join(b for b in sol.binding.constraint if not b.startswith("energy share")) if len(sol.binding) else "–"
+    goal = "lowest cost" if spec.objective == "cost" else "least food mass"
+    return ("\n## Optimal baseline diet (attached as `optimal_diet.csv`)\n"
+            f"The {goal} combination of foods that meets every daily target, every essential amino acid and the "
+            "safeguards (computed by linear programming). **Use it as the nutritional skeleton, not as the menu**: it "
+            "is deliberately monotonous. Turn it into varied, tasty meals, swap foods for similar ones when needed "
+            "(e.g. one legume for another, one grain for another), and keep the daily totals close.\n\n"
+            "| food | g eaten | g bought | €/day | kcal | protein g |\n|---|---|---|---|---|---|\n" + rows +
+            f"\n**Totals:** {tot.kcal:,.0f} kcal, protein {tot.protein:.0f} g, carbohydrate {tot.carb:.0f} g, fat "
+            f"{tot.fat:.0f} g, fibre {tot.fibre:.0f} g; €{sol.cost_eur:.2f}/day; {sol.mass_g:,.0f} g of food eaten.\n"
+            f"Constraints that shape it most: {binding}. Plant proteins in it complement each other (grains supply the "
+            "sulfur amino acids legumes lack and legumes the lysine grains lack), so keep both in each day.\n")
+
+
+def build_bundle(prof, preset=None, roles=("core", "ingredient"), quality="diaas", price_scenario="central",
+                 weights=None, groups=None, exclude=()):
+    """Everything for the AI export: ranked foods, optimal baseline diet, brief (with the diet section)."""
+    if isinstance(prof, (str, Path)):
+        prof = load_profile(prof)
+    out, brief, res = build(prof, preset, roles, quality, price_scenario, weights, groups)
+    d, sol, spec = optimal_diet(prof, quality, price_scenario, exclude)
+    marker = "## How the ranking was made"
+    brief = brief.replace(marker, diet_section(d, sol, spec) + "\n" + marker)
+    brief = brief.replace("Using ONLY foods from the attached foods_ranked.csv",
+                          "Starting from the attached optimal_diet.csv (nutritional skeleton) and using ONLY foods from "
+                          "the attached foods_ranked.csv")
+    return {"foods": out, "brief": brief, "diet": d, "targets": res}
 
 
 def main():
@@ -157,15 +213,19 @@ def main():
     ap.add_argument("--quality", default="diaas", choices=list(M.QUALITY))
     ap.add_argument("--include", default="core,ingredient", help="roles to include, comma-separated")
     args = ap.parse_args()
-    out, brief, _ = build(args.profile, args.preset, tuple(args.include.split(",")), args.quality)
+    bundle = build_bundle(args.profile, args.preset, tuple(args.include.split(",")), args.quality)
+    out, brief, diet = bundle["foods"], bundle["brief"], bundle["diet"]
     slug = re.sub(r"[^a-z0-9]+", "_", Path(args.profile).stem.lower())
     d = ROOT / "exports" / f"{slug}_{dt.date.today().isoformat()}"
     d.mkdir(parents=True, exist_ok=True)
     csv_text = out.to_csv(index=False)
     (d / "foods_ranked.csv").write_text(csv_text)
     (d / "brief.md").write_text(brief)
-    (d / "export.zip").write_bytes(zip_bytes(csv_text, brief))
-    print(f"wrote {d}/ (foods_ranked.csv: {len(out)} foods, brief.md, export.zip)")
+    diet_csv = diet.to_csv(index=False) if diet is not None else None
+    if diet_csv:
+        (d / "optimal_diet.csv").write_text(diet_csv)
+    (d / "export.zip").write_bytes(zip_bytes(csv_text, brief, diet_csv))
+    print(f"wrote {d}/ (foods_ranked.csv: {len(out)} foods, optimal_diet.csv, brief.md, export.zip)")
 
 
 if __name__ == "__main__":

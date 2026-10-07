@@ -32,7 +32,7 @@ def test_app_switching_settings(app):
 def test_targets_tab_and_export(app):
     assert any("Daily targets" in m.value for m in app.markdown), "targets table not rendered"
     labels = [b.label for b in app.get("download_button")]
-    assert {"foods_ranked.csv", "brief.md", "Both (ZIP)"} <= set(labels), labels
+    assert {"foods_ranked.csv", "optimal_diet.csv", "brief.md", "All (ZIP)"} <= set(labels), labels
 
 
 def test_optimizer_tab(app):
