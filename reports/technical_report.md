@@ -1,6 +1,6 @@
 # Quantitative food value for training: data, methods and first results
 
-**Technical report, draft 1 (2026-10-07).** Personal research project; not peer reviewed. Source keys refer to
+**Technical report, draft 2 (2026-10-07; v2.0 addendum in §4b).** Personal research project; not peer reviewed. Source keys refer to
 [literature/SOURCES.md](../literature/SOURCES.md); detailed outputs are in the other files in `reports/`.
 
 ## Summary
@@ -77,9 +77,20 @@ bands); Frida vs USDA composition.
 €1.71–1.99. The largest cost drivers are the person's own targets (protein 2.2 vs 1.6 g/kg: +31 % / −12 %;
 mass ≤ 1.5 kg: +19 %), more than any safeguard (caps ×0.5: +20 %, ×2: −9 %).
 
+## 4b. v2.0 addendum: vitamins, minerals, fibre, sodium, saturated fat
+19 EFSA adult reference values (DRV summary tables 2017) and food-relevant upper limits (UL overview v11, 2025) are
+now enforced, with cooking losses from USDA raw↔cooked pairs; vitamin D and iodine are reported only (sunlight /
+supplements, iodised salt). The v1.0 minimum-cost diets turned out badly deficient (vitamin B12 0–7 %, vitamin A
+1–4 %, vitamin C 2–4 %, calcium 16–46 % of reference). Nutritionally complete minimum-cost diets cost **€2.22–3.10
+per day** (owner €2.68) and add milk, eggs, a little herring, cabbage and carrots to the legume–grain core; the
+binding nutrients are vitamin B12, selenium, vitamins C, E and A and calcium. Typical diets are short of vitamin E
+(27–58 % of AI) and, for the bodybuilding template, vitamin C (32 %). Details: `reports/v2.0_nutrients.md`.
+
 ## 5. Limitations
-- **Not a meal plan.** Fibre (≈ 60 g/day in the cheapest diet), sodium, saturated fat, micronutrients, taste and
-  acceptability are not yet constrained (v2.0). A legume-heavy 2.5 kg/day diet may be impractical for bulking.
+- **Not a meal plan.** Taste and meal structure are not modelled (the 'closest valid diet' mode keeps a usual diet
+  as unchanged as possible). A legume-heavy ≈ 2.8 kg/day diet at the fibre cap (60 g) may be impractical for bulking.
+- Micronutrient values are database means; bioavailability (e.g. non-haem iron, zinc with phytate) is only partly
+  reflected (zinc PRI by phytate level as sensitivity). Added salt is not modelled.
 - Protein quality uses pig/human ileal digestibility, partly by proxy (29 foods grade C); DIAAS is not a direct
   predictor of muscle gain. Plant-vs-omnivore training studies at ~1.6 g/kg show similar hypertrophy (hevia2021,
   monteyne2023), but the evidence is limited to a few weeks and young adults.
