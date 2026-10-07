@@ -15,6 +15,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES = yaml.safe_load(open(ROOT / "config/target_rules.yaml"))
+MICRO_RULES = yaml.safe_load(open(ROOT / "config/micronutrients.yaml"))
 KCAL = {"protein": 4.0, "carb": 4.0, "fat": 9.0}
 
 
@@ -60,12 +61,33 @@ class Target:
 
 
 @dataclass
+class Micro:
+    key: str
+    label: str
+    unit: str
+    min: float | None
+    max: float | None
+    enforce: bool
+    source: str
+    note: str = ""
+
+
+@dataclass
 class Result:
     profile: Profile
     targets: dict
     warnings: list
     conflicts: list
     notes: list
+    micros: dict = field(default_factory=dict)
+
+    def micro_markdown(self):
+        L = ["| Nutrient | Minimum | Maximum | Enforced | Source |\n|---|---|---|---|---|\n"]
+        for m in self.micros.values():
+            L.append(f"| {m.label} | {_f(m.min) + ' ' + m.unit if m.min is not None else '–'} | "
+                     f"{_f(m.max) + ' ' + m.unit if m.max is not None else '–'} | {'yes' if m.enforce else 'report only'} | "
+                     f"{m.source}{' (' + m.note + ')' if m.note else ''} |\n")
+        return "".join(L)
 
     def to_markdown(self):
         p = self.profile
@@ -257,7 +279,48 @@ def compute(p: Profile) -> Result:
     elif ea < sg["energy_availability_optimal_kcal_per_kg_ffm"]:
         N.append(f"Energy availability ≈ {ea:.0f} kcal/kg FFM/day (between 30 and 45; fine short-term, monitor).")
     N.append(f"Macro energy check: {P * 4 + Cg * 4 + Fg * 9:,.0f} kcal from protein/carb/fat vs target {E:,.0f} kcal.")
-    return Result(p, T, W, C, N)
+
+    # ---- training fuel: extra free sugars allowed for sugar taken during long sessions (burke2011; PLAN E.6)
+    tf = MICRO_RULES["training_fuel"]
+    if p.modality in tf["applies_to"] and p.hours_per_day > 0:
+        extra = tf["g_per_hour"] * p.hours_per_day
+        t = T["free sugars (max)"]
+        T["free sugars (max)"] = Target(t.value + extra, unit="g", source=f"who2015 + {tf['source']}",
+                                        rule=f"{t.rule} + {extra:.0f} g training fuel ({tf['g_per_hour']} g/h × "
+                                             f"{p.hours_per_day:.1f} h/day)")
+    return Result(p, T, W, C, N, micros=micro_targets(p, E))
+
+
+def micro_targets(p: Profile, energy_kcal: float) -> dict:
+    """Micronutrient, fibre, sodium and saturated-fat targets for an adult (config/micronutrients.yaml)."""
+    if p.age < 18:
+        raise ValueError("micronutrient targets are defined for adults (≥ 18 y) only")
+    sex = "male" if p.sex == "male" else "female"
+    mj = energy_kcal * 4.184 / 1000
+    out = {}
+    for k, r in MICRO_RULES["nutrients"].items():
+        if "per_mj" in r:
+            lo, note = r["per_mj"] * mj, f"{r['per_mj']} {r['unit']}/MJ × {mj:.1f} MJ"
+        elif "min" in r:
+            lo = r["min_18_24"] if (p.age <= 24 and "min_18_24" in r) else r["min"][sex]
+            note = r.get("note", "") if not (k == "iron_mg" and sex == "male") else ""
+        else:
+            lo, note = None, r.get("note", "")
+        out[k] = Micro(k, r["label"], r["unit"], lo, r.get("max"), r.get("enforce", True), r["source"], note)
+    lim = MICRO_RULES["limits"]
+    out["sodium_mg"] = Micro("sodium_mg", "Sodium", "mg", None, lim["sodium_mg"]["max"], True, lim["sodium_mg"]["source"],
+                             lim["sodium_mg"]["note"])
+    sf = lim["saturated_fat_pct_energy"]
+    out["sat_fat"] = Micro("sat_fat", "Saturated fat", "g", None, energy_kcal * sf["max"] / 100 / 9, True, sf["source"],
+                           f"< {sf['max']} % of energy")
+    if p.goal in ("muscle_gain", "hybrid_gain"):
+        fm = lim["fibre_max_g_bulking"]
+        out["fibre_g"].max = fm["max"]
+        out["fibre_g"].note = f"max {fm['max']} g while gaining: {fm['source']}"
+    for k, r in MICRO_RULES["contaminants"].items():
+        out[k] = Micro(k, r["label"], "µg", None, r["twi_ug_per_kg_week"] * p.mass_kg / 7, False, r["source"],
+                       "tolerable weekly intake ÷ 7; reported only (data coverage ≈ 50–60 %)")
+    return out
 
 
 if __name__ == "__main__":

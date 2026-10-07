@@ -37,3 +37,10 @@ def test_targets_tab_and_export(app):
 
 def test_optimizer_tab(app):
     assert any("Cost per day" in m.label for m in app.metric), [m.label for m in app.metric]
+
+
+def test_fix_my_diet_tab(app):
+    sel = [s for s in app.selectbox if s.label == "Start from"][0]
+    sel.set_value("latvian_typical").run()
+    assert not app.exception, app.exception
+    assert any(m.label == "Adjusted diet cost" for m in app.metric), [m.label for m in app.metric]

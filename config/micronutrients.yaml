@@ -1,0 +1,54 @@
+# Micronutrient, fibre, sodium and saturated-fat targets for adults ≥ 18 y (v2.0, PLAN E.1–E.3, E.7).
+# Minimums: EFSA PRI (bold in EFSA tables) or AI, from EFSA DRV summary tables v4 (Sept 2017)
+#   data/raw/efsa/efsa_drv_summary_tables_2017.pdf  (source key efsa2017)
+# Maximums: EFSA Tolerable Upper Intake Levels / safe levels, overview version 11 (Aug 2025)
+#   data/raw/efsa/efsa_ul_summary_report.pdf         (source key efsa_ul2025)
+# Only ULs that apply to nutrients naturally present in food are used (Mg, folate and niacin ULs concern supplements /
+# fortification only). `enforce: false` → reported, not optimized (non-food sources dominate, or data too sparse).
+# Units: per day.
+
+nutrients:
+  fibre_g:        {label: "Dietary fibre",  unit: g,  min: {male: 25, female: 25}, type: AI, source: efsa2010c}
+  calcium_mg:     {label: "Calcium",        unit: mg, min: {male: 950, female: 950}, min_18_24: 1000, type: PRI, max: 2500, source: efsa2017}
+  iron_mg:        {label: "Iron",           unit: mg, min: {male: 11, female: 16}, type: PRI, max: 40, max_type: "safe level", source: efsa2017,
+                   note: "female value = premenopausal; postmenopausal 11 mg"}
+  zinc_mg:        {label: "Zinc",           unit: mg, min: {male: 11.7, female: 9.3}, type: PRI, max: 25, source: efsa2017,
+                   note: "PRI at phytate intake 600 mg/d; at 1200 mg/d (legume-heavy diets): male 16.3, female 12.7"}
+  magnesium_mg:   {label: "Magnesium",      unit: mg, min: {male: 350, female: 300}, type: AI, source: efsa2017}
+  potassium_mg:   {label: "Potassium",      unit: mg, min: {male: 3500, female: 3500}, type: AI, source: efsa2017}
+  phosphorus_mg:  {label: "Phosphorus",     unit: mg, min: {male: 550, female: 550}, type: AI, source: efsa2017}
+  selenium_ug:    {label: "Selenium",       unit: µg, min: {male: 70, female: 70}, type: AI, max: 255, source: efsa2017}
+  copper_mg:      {label: "Copper",         unit: mg, min: {male: 1.6, female: 1.3}, type: AI, max: 5, source: efsa2017}
+  iodine_ug:      {label: "Iodine",         unit: µg, min: {male: 150, female: 150}, type: AI, max: 600, source: efsa2017,
+                   enforce: false, note: "mainly from iodised salt, which is not in the food list"}
+  vitamin_a_ug_re: {label: "Vitamin A (RE)", unit: µg, min: {male: 750, female: 650}, type: PRI, source: efsa2017,
+                    note: "RE = retinol + β-carotene/6"}
+  retinol_ug:     {label: "Preformed vitamin A (retinol)", unit: µg, max: 3000, source: efsa_ul2025,
+                   note: "UL applies to retinol only (e.g. liver), not β-carotene"}
+  vitamin_d_ug:   {label: "Vitamin D",      unit: µg, min: {male: 15, female: 15}, type: AI, max: 100, source: efsa2017,
+                   enforce: false, note: "AI assumes minimal skin synthesis; covered by sunlight or supplements, not food"}
+  vitamin_e_mg:   {label: "Vitamin E (α-tocopherol)", unit: mg, min: {male: 13, female: 11}, type: AI, max: 300, source: efsa2017}
+  thiamin_mg:     {label: "Thiamin (B1)",   unit: mg, per_mj: 0.1, type: PRI, source: efsa2017}
+  riboflavin_mg:  {label: "Riboflavin (B2)", unit: mg, min: {male: 1.6, female: 1.6}, type: PRI, source: efsa2017}
+  niacin_mg_ne:   {label: "Niacin (NE)",    unit: mg, per_mj: 1.6, type: PRI, source: efsa2017}
+  vitamin_b6_mg:  {label: "Vitamin B6",     unit: mg, min: {male: 1.7, female: 1.6}, type: PRI, max: 12, source: efsa2017}
+  folate_ug:      {label: "Folate (food)",  unit: µg, min: {male: 330, female: 330}, type: PRI, source: efsa2017}
+  vitamin_b12_ug: {label: "Vitamin B12",    unit: µg, min: {male: 4.0, female: 4.0}, type: AI, source: efsa2017}
+  vitamin_c_mg:   {label: "Vitamin C",      unit: mg, min: {male: 110, female: 95}, type: PRI, source: efsa2017}
+
+limits:
+  sodium_mg: {label: "Sodium", unit: mg, max: 2000, source: efsa2019na,
+              note: "EFSA 'safe and adequate' intake; athletes with large sweat losses may need more (adjustable)"}
+  saturated_fat_pct_energy: {label: "Saturated fat", max: 10, source: who2023sfa,
+                             note: "EFSA: as low as possible; WHO: < 10 % of energy"}
+  fibre_max_g_bulking: {label: "Fibre maximum while gaining", max: 60, source: "JUDGMENT CALL [U]",
+                        note: "very high fibre limits how much a person can eat; no official value; sensitivity reported"}
+
+contaminants:   # reported per day; Frida values only (coverage limited)
+  mercury_ug:  {label: "Mercury", twi_ug_per_kg_week: 1.3, source: efsa2012hg, note: "TWI for methylmercury"}
+  cadmium_ug:  {label: "Cadmium", twi_ug_per_kg_week: 2.5, source: efsa2011cd}
+
+training_fuel:   # free-sugar allowance during long sessions (PLAN E.6)
+  g_per_hour: 30          # lower end of 30–60 g/h for sessions of 1–2.5 h (burke2011)
+  source: burke2011
+  applies_to: [endurance, hybrid]

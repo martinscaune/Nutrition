@@ -61,3 +61,16 @@ def test_infeasible_reports_conflicts(setup):
 def test_mass_objective_lighter_than_cost_objective(setup):
     O, t, s = setup
     assert O.solve(t, replace(s, objective="mass")).mass_g < O.solve(t, s).mass_g
+
+
+def test_v2_micronutrient_limits_met(setup):
+    O, t, s = setup
+    sol = O.solve(t, s)
+    assert sol.status == "optimal"
+    for k, (label, lo, hi) in s.micros.items():
+        v = sol.micro_totals[O.MICRO_COL.get(k, k)]
+        if lo is not None:
+            assert v >= lo * (1 - 1e-3), (label, v, lo)
+        if hi is not None:
+            assert v <= hi * (1 + 1e-3), (label, v, hi)
+    assert sol.cost_eur >= O.solve(t, replace(s, use_micros=False)).cost_eur - 1e-9   # more constraints never cheaper

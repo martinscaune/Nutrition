@@ -78,7 +78,7 @@ def test_master_dataset_invariants():
     has = m.kcal_100g_purchased.notna()
     assert (m.loc[has, "kcal_100g_purchased"] <= 905).all()          # nothing denser than pure fat
     assert (m.loc[has, "protein_100g_purchased"] <= 100).all()
-    assert (m.yield_eaten_per_purchased.between(0.4, 6)).all()
+    assert (m.yield_eaten_per_purchased.between(0.4, 8)).all()   # porridges are watery (semolina ≈ 6.4)
     assert (m.edible_portion.between(0.3, 1.0)).all()
     assert (m.quality_factor.between(0, 1)).all()
     assert (m.useful_protein_100g_eaten.fillna(0) <= m.protein_100g_eaten.fillna(0) + 1e-9).all()

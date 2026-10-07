@@ -52,17 +52,18 @@ METRICS = {
 
 def load(path=MASTER):
     df = pd.read_csv(path)
-    df["group"] = [("Supplements" if r == "supplement" else "Ingredients & snacks" if r in ("ingredient", "snack")
-                    else GROUP_OF.get(c, "Ingredients & snacks")) for c, r in zip(df.category, df.role)]
-    df["fullness_g_per_1000kcal"] = df.g_eaten_per_1000kcal
-    return with_quality(df, "diaas")
+    extra = pd.DataFrame({
+        "group": [("Supplements" if r == "supplement" else "Ingredients & snacks" if r in ("ingredient", "snack")
+                   else GROUP_OF.get(c, "Ingredients & snacks")) for c, r in zip(df.category, df.role)],
+        "fullness_g_per_1000kcal": df.g_eaten_per_1000kcal}, index=df.index)
+    return with_quality(pd.concat([df, extra], axis=1), "diaas")
 
 
 def with_quality(df, quality="diaas"):
     """Recompute 'useful protein' metrics for a protein-quality definition (see QUALITY)."""
     if quality not in QUALITY:
         raise ValueError(f"unknown quality definition {quality!r}; choose from {list(QUALITY)}")
-    d = df.copy()
+    d = df.copy()  # (copy also de-fragments the wide frame)
     if quality == "crude":
         q = np.where(d.protein_100g_purchased.fillna(0) > 0, 1.0, 0.0)
     else:

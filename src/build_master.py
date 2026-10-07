@@ -28,6 +28,24 @@ PLAUSIBLE = {"TRP": (6, 25), "THR": (20, 60), "ILE": (30, 70), "LEU": (50, 140),
 MIN_PROTEIN_FOR_AA_CHECK = 3.5  # g/100 g; AA profiles of near-protein-free foods are noisy and irrelevant
 
 
+RETAINED = [k for k in C.MICRO if k not in ("sat_fat", "mercury_ug", "cadmium_ug")]
+
+
+def retention(m):
+    """Nutrient retention on cooking from the food's USDA raw↔cooked pair ('true retention', USDA method):
+    R = (nutrient per g cooked × cooked mass) / (nutrient per g raw × raw mass), with cooked/raw mass = the yield.
+    Only vitamins and minerals; capped to [0, 1] (gains are analytical noise for unsalted preparations)."""
+    if not (isinstance(m.yield_usda_raw, str) and isinstance(m.yield_usda_cooked, str)):
+        return {}
+    raw, ck = C.usda().loc[int(m.yield_usda_raw)], C.usda().loc[int(m.yield_usda_cooked)]
+    y = raw.protein / ck.protein
+    out = {}
+    for k in RETAINED:
+        if pd.notna(raw[k]) and pd.notna(ck[k]) and raw[k] > 0:
+            out[k] = float(min(max(ck[k] * y / raw[k], 0.0), 1.0))
+    return out
+
+
 def digestibility():
     d = pd.read_excel(C.MULEYA, "IAA digestibility", header=0)
     return d[C.AA].apply(pd.to_numeric, errors="coerce")
@@ -65,9 +83,11 @@ def main():
             flags.append("no composition")
         # ---- purchased state (per 100 g edible) and eaten state
         y = c.yield_eaten_per_purchased
-        for k in ["kcal", "protein", "fat", "carb", "sugars", "free_sugars", "fibre", "water", "sodium_mg"]:
+        ret = retention(cmap.loc[f.food_id])
+        for k in ["kcal", "protein", "fat", "carb", "sugars", "free_sugars", "fibre", "water", "sodium_mg"] + C.MICRO:
             r[f"{k}_100g_purchased"] = c.get(k)
-            r[f"{k}_100g_eaten"] = c.get(k) / y if pd.notna(c.get(k)) else np.nan
+            r[f"{k}_100g_eaten"] = c.get(k) / y * ret.get(k, 1.0) if pd.notna(c.get(k)) else np.nan
+        r["micronutrient_retention"] = "USDA raw↔cooked pair" if ret else "none (eaten as bought or no pair)"
         r["yield_eaten_per_purchased"] = y
         r["edible_portion"] = c.edible_portion
         # ---- amino-acid profile (mg/g protein), possibly borrowed

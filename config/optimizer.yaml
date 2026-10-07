@@ -25,7 +25,7 @@ max_g_eaten:
     wheat_flour: 150
     cream_35: 100
     sour_cream: 150
-    chicken_liver: 100        # vitamin A upper limit (EFSA UL 3000 µg RAE/day; liver ≈ 3300 µg/100 g); v2.0 replaces with a micronutrient UL
+    chicken_liver: 300        # (v2.0: the retinol UL constraint now limits liver properly; this is only a portion cap)
     cheese_hard: 150
     cheese_processed: 150
     cheese_cream: 100

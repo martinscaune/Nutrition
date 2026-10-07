@@ -50,13 +50,16 @@ def main():
                 a, b = C.usda().loc[int(m.yield_usda_raw)], C.usda().loc[int(m.yield_usda_cooked)]
                 y = a.protein / b.protein
                 r["yield_pair"] = f"{a.description[:40]} → {b.description[:40]}"
+                enr = lambda d: "enriched" in d.lower().replace("unenriched", "")  # noqa: E731
+                if enr(a.description) != enr(b.description) or ("with salt" in b.description.lower()) != ("with salt" in a.description.lower()):
+                    f.append("yield pair mixes enriched/unenriched or salted/unsalted entries (distorts nutrient retention)")
             except KeyError:
                 f.append("yield pair ID NOT FOUND")
         if m.food_id in ylds.index and not pd.isna(ylds.loc[m.food_id, "yield_override"]):
             y = float(ylds.loc[m.food_id, "yield_override"])
         r["yield_eaten_per_purchased"] = 1.0 if np.isnan(y) else round(y, 3)
         r["edible_portion"] = float(ylds.loc[m.food_id, "edible_portion"]) if m.food_id in ylds.index else 1.0
-        if not np.isnan(y) and not 0.4 < y < 6:
+        if not np.isnan(y) and not 0.4 < y < 8:  # porridges (oats ≈ 5.2, semolina ≈ 6.4) are watery
             f.append(f"implausible yield {y:.2f}")
         # Atwater check (4P + 4C + 9F + 2 fibre) vs stated kcal
         if "kcal" in r and not pd.isna(r.get("kcal")):

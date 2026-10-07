@@ -48,6 +48,11 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | impey2018 | Impey SG et al. (2018). Fuel for the work required: a theoretical framework for carbohydrate periodization and the glycogen threshold hypothesis. *Sports Med* 48:1031–1048 | 10.1007/s40279-018-0867-7 | PMC5889771 (v3.0) |
 | efsa2010c | EFSA NDA Panel (2010). Scientific Opinion on DRVs for carbohydrates and dietary fibre. *EFSA Journal* 8(3):1462 | 10.2903/j.efsa.2010.1462 | FREE |
 | efsa2010f | EFSA NDA Panel (2010). Scientific Opinion on DRVs for fats. *EFSA Journal* 8(3):1461 | 10.2903/j.efsa.2010.1461 | FREE |
+| efsa_ul2025 | EFSA (2025). Overview on Tolerable Upper Intake Levels as derived by the SCF and the EFSA NDA Panel, version 11 (Aug 2025) | — | FREE (data/raw/efsa) |
+| efsa2019na | EFSA NDA Panel (2019). Dietary reference values for sodium. *EFSA Journal* 17(9):5778 (safe and adequate intake 2.0 g/day) | 10.2903/j.efsa.2019.5778 | FREE (title verified via Crossref) |
+| who2023sfa | WHO (2023). Saturated fatty acid and trans-fatty acid intake for adults and children: WHO guideline (SFA < 10 % E, TFA < 1 % E). ISBN 9789240073630 (summary 9789240083592) | — | FREE (verified, who.int) |
+| efsa2012hg | EFSA CONTAM Panel (2012). Mercury and methylmercury in food (TWI methylmercury 1.3 µg/kg bw) | 10.2903/j.efsa.2012.2985 | FREE (title verified via Crossref) |
+| efsa2011cd | EFSA CONTAM Panel (2011). Statement on tolerable weekly intake for cadmium (TWI 2.5 µg/kg bw) | 10.2903/j.efsa.2011.1975 | FREE (title verified via Crossref) |
 | efsa2017 | EFSA (2017). Dietary Reference Values for nutrients: Summary report. *EFSA Supporting Publications* 14(12):e15121 | 10.2903/sp.efsa.2017.e15121 | FREE |
 | who2015 | WHO (2015). *Guideline: Sugars intake for adults and children.* ISBN 9789241549028 | — | FREE |
 

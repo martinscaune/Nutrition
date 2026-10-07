@@ -4,14 +4,15 @@
 set -e
 cd "$(dirname "$0")"
 PY=.venv/bin/python
-echo "1/9 composition";        $PY -W ignore src/data/resolve.py > /dev/null
-echo "2/9 prices";             $PY -W ignore src/prices/summary.py > /dev/null
-echo "3/9 master dataset";     $PY -W ignore src/build_master.py > /dev/null
-echo "4/9 food exploration";   $PY -W ignore src/analysis/explore.py > /dev/null
-echo "5/9 food figures";       $PY -W ignore src/analysis/figures.py > /dev/null
-echo "6/9 profile scenarios";  $PY -W ignore src/analysis/scenarios.py > /dev/null
-echo "7/9 optimizer report";   $PY -W ignore src/analysis/optimize_report.py > /dev/null
-echo "8/9 robustness";         $PY -W ignore src/analysis/robustness.py > /dev/null
-echo "9/9 comparison";         $PY -W ignore src/analysis/comparison.py > /dev/null
+echo "1/10 composition";        $PY -W ignore src/data/resolve.py > /dev/null
+echo "2/10 prices";             $PY -W ignore src/prices/summary.py > /dev/null
+echo "3/10 master dataset";     $PY -W ignore src/build_master.py > /dev/null
+echo "4/10 food exploration";   $PY -W ignore src/analysis/explore.py > /dev/null
+echo "5/10 food figures";       $PY -W ignore src/analysis/figures.py > /dev/null
+echo "6/10 profile scenarios";  $PY -W ignore src/analysis/scenarios.py > /dev/null
+echo "7/10 optimizer report";   $PY -W ignore src/analysis/optimize_report.py > /dev/null
+echo "8/10 robustness";         $PY -W ignore src/analysis/robustness.py > /dev/null
+echo "9/10 comparison";        $PY -W ignore src/analysis/comparison.py > /dev/null
+echo "10/10 v2.0 nutrients";    $PY -W ignore src/analysis/v2_report.py > /dev/null
 $PY -m pytest -q tests
 echo "done: data/processed, reports/, figures/"

@@ -58,8 +58,15 @@ def food_table(quality="diaas", price_scenario="central", roles=None, exclude=()
     t["g_bought_per_g_eaten"] = 1 / y / d.edible_portion  # gross purchase mass incl. bone/peel
     for a in AA:  # digestible amino acid, g per g eaten (missing data → 0: conservative)
         t[f"dAA_{a}"] = (d[f"{a}_mg_per_g_protein"] * d[f"dig_{a}"] * d.protein_100g_eaten / 100 / 1000).fillna(0)
+    from src.data.composition import MICRO
+    micro = pd.DataFrame({k: (d[f"{k}_100g_eaten"] / 100).fillna(0) for k in MICRO + ["sodium_mg"]
+                          if f"{k}_100g_eaten" in d})  # per g eaten; missing → 0 (never over-states supply)
+    t = pd.concat([t, micro], axis=1)
     t["cap"] = [cap_g(f, c) for f, c in zip(t.index, t.category)]
     return t
+
+
+MICRO_COL = {"fibre_g": "fibre"}  # config key → food-table column (others are identical)
 
 
 def cap_g(food_id, category):
@@ -89,14 +96,17 @@ class Spec:
     min_portion: float = CFG["min_portion_g_eaten"]
     fixed_cost_norm: float | None = None   # for "mix": normalizers (cost*, mass*) from single-objective runs
     fixed_mass_norm: float | None = None
+    micros: dict | None = None             # v2.0: {key: (label, min, max)} enforced micronutrient / fibre / sodium limits
+    use_micros: bool = True
 
 
 def spec_from_profile(profile, **kw):
     r = compute(profile)
     t = r.targets
+    micros = {k: (m.label, m.min, m.max) for k, m in r.micros.items() if m.enforce}
     return Spec(energy=t["energy"].value, protein=t["protein"].value, protein_max=t["protein"].high,
                 carb_lo=t["carbohydrate"].low, carb_hi=t["carbohydrate"].high, fat_lo=t["fat"].low,
-                fat_hi=t["fat"].high, free_sugars_max=t["free sugars (max)"].value,
+                fat_hi=t["fat"].high, free_sugars_max=t["free sugars (max)"].value, micros=micros,
                 **({"objective": "mass"} if (profile.priorities or {}).get("cost", 1) == 0 else {}), **kw), r
 
 
@@ -133,6 +143,15 @@ def _rows(t, s):
             le("fat (max)", t.fat, s.fat_hi)
         if s.free_sugars_max is not None:
             le("free sugars (max)", t.free_sugars, s.free_sugars_max)
+    if s.safeguards == "full" and s.use_micros and s.micros:   # v2.0 nutrient adequacy and limits
+        for k, (label, lo, hi) in s.micros.items():
+            col = MICRO_COL.get(k, k)
+            if col not in t:
+                continue
+            if lo is not None:
+                ge(f"{label} (min)", t[col], lo)
+            if hi is not None:
+                le(f"{label} (max)", t[col], hi)
     if s.safeguards == "full":
         for f in t.index:
             e = pd.Series(0.0, index=t.index)
@@ -165,6 +184,7 @@ class Solution:
     objective_value: float = np.nan
     cost_eur: float = np.nan
     mass_g: float = np.nan
+    micro_totals: pd.Series = field(default_factory=pd.Series)
 
 
 def solve(t, s: Spec) -> Solution:
@@ -209,6 +229,9 @@ def _report(sol, t, s, x, rows, res):
         ["name", "group", "role", "g_eaten", "g_bought", "cost_eur", "kcal_total", "protein_total", "carb_total",
          "fat_total", "free_sugars_total", "fibre_total", "energy_share"]].round(2)
     tot = {k: float((t[k].to_numpy() * x).sum()) for k in ["kcal", "protein", "carb", "fat", "free_sugars", "fibre"]}
+    from src.data.composition import MICRO
+    sol.micro_totals = pd.Series({k: float((t[k].to_numpy() * x).sum()) for k in MICRO + ["sodium_mg", "fibre"] if k in t})
+    sol.micro_totals["fibre_g"] = sol.micro_totals["fibre"]
     targets = {"kcal": s.energy, "protein": s.protein, "carb": (s.carb_lo, s.carb_hi), "fat": (s.fat_lo, s.fat_hi),
                "free_sugars": (None, s.free_sugars_max), "fibre": (None, None)}
     sol.totals = pd.DataFrame([{"nutrient": k, "diet": v, "target": targets[k]} for k, v in tot.items()])

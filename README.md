@@ -6,7 +6,7 @@ useful protein, calories and carbohydrate per euro and per gram eaten, for any t
 - **What and why:** [PROJECT.md](PROJECT.md) · **Tasks and progress:** [PLAN.md](PLAN.md)
 - **Evidence base:** [literature/REVIEW.md](literature/REVIEW.md) · **Data rules:** [data/SCHEMA.md](data/SCHEMA.md)
 - **Technical report:** [reports/technical_report.md](reports/technical_report.md)
-- **Latest results:** [reports/v1.0_optimizer.md](reports/v1.0_optimizer.md) (diets), [reports/scenarios_v0.2.md](reports/scenarios_v0.2.md) (profiles), [reports/v0.1_exploration.md](reports/v0.1_exploration.md) (foods)
+- **Latest results:** [reports/v2.0_nutrients.md](reports/v2.0_nutrients.md) (complete diets), [reports/v1.0_optimizer.md](reports/v1.0_optimizer.md) (diets), [reports/scenarios_v0.2.md](reports/scenarios_v0.2.md) (profiles), [reports/v0.1_exploration.md](reports/v0.1_exploration.md) (foods)
 
 ## Run the food explorer (v0.1)
 ```sh
@@ -27,6 +27,9 @@ Opens http://localhost:8501 (local only; see `.streamlit/config.toml`).
 .venv/bin/python src/analysis/figures.py      # → figures/v0.1/*.png
 .venv/bin/python src/analysis/scenarios.py    # → reports/scenarios_v0.2.md
 .venv/bin/python src/analysis/optimize_report.py  # → reports/v1.0_optimizer.md, figures/v1.0/
+.venv/bin/python src/analysis/robustness.py  # → reports/v1x_robustness.md
+.venv/bin/python src/analysis/comparison.py  # → reports/v1x_comparison.md
+.venv/bin/python src/analysis/v2_report.py   # → reports/v2.0_nutrients.md
 .venv/bin/python -m pytest -q                 # tests
 ```
 Export a person-specific ranking + AI brief (also in the app, tab "My targets & AI export"):
@@ -35,5 +38,5 @@ Export a person-specific ranking + AI brief (also in the app, tab "My targets & 
 Refresh prices from Cenu Depo (polite, ≥ 3 s between requests): `python3 -m src.prices.cenudepo`.
 
 ## Data licences
-Frida 5.5 (CC BY 4.0, DTU Food) · USDA FoodData Central (public domain) · muleya2021 DIAAS dataset (CC BY 4.0) ·
+Frida 5.5 (CC BY 4.0, DTU Food) · EFSA DRV and UL documents (reproduction authorised with acknowledgement) · USDA FoodData Central (public domain) · muleya2021 DIAAS dataset (CC BY 4.0) ·
 CSP Latvia PCC010m (open data) · **Cenu Depo prices: personal use only**, not for publication without permission.

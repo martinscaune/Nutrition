@@ -56,6 +56,26 @@ COLUMNS = {  # output column: (source column or None, description for the AI)
     "useful_protein_g_per_eur": ("useful_protein_per_eur", "Quality-adjusted protein per euro (g)"),
     "carb_g_per_eur": ("carb_per_eur", "Carbohydrate per euro (g)"),
     "g_eaten_per_1000kcal": ("g_eaten_per_1000kcal", "Grams of food (as eaten) needed for 1000 kcal: lower = more compact"),
+    "sat_fat_g_100g_eaten": ("sat_fat_100g_eaten", "Saturated fat per 100 g eaten (g)"),
+    "sodium_mg_100g_eaten": ("sodium_mg_100g_eaten", "Sodium per 100 g eaten (mg), before any added salt"),
+    "calcium_mg_100g_eaten": ("calcium_mg_100g_eaten", "Calcium per 100 g eaten (mg)"),
+    "iron_mg_100g_eaten": ("iron_mg_100g_eaten", "Iron per 100 g eaten (mg)"),
+    "zinc_mg_100g_eaten": ("zinc_mg_100g_eaten", "Zinc per 100 g eaten (mg)"),
+    "magnesium_mg_100g_eaten": ("magnesium_mg_100g_eaten", "Magnesium per 100 g eaten (mg)"),
+    "potassium_mg_100g_eaten": ("potassium_mg_100g_eaten", "Potassium per 100 g eaten (mg)"),
+    "selenium_ug_100g_eaten": ("selenium_ug_100g_eaten", "Selenium per 100 g eaten (µg)"),
+    "iodine_ug_100g_eaten": ("iodine_ug_100g_eaten", "Iodine per 100 g eaten (µg); blank = unknown"),
+    "vitamin_a_ug_re_100g_eaten": ("vitamin_a_ug_re_100g_eaten", "Vitamin A per 100 g eaten (µg retinol equivalents)"),
+    "retinol_ug_100g_eaten": ("retinol_ug_100g_eaten", "Preformed vitamin A (retinol) per 100 g eaten (µg); upper limit 3000 µg/day"),
+    "vitamin_d_ug_100g_eaten": ("vitamin_d_ug_100g_eaten", "Vitamin D per 100 g eaten (µg)"),
+    "vitamin_e_mg_100g_eaten": ("vitamin_e_mg_100g_eaten", "Vitamin E (α-tocopherol) per 100 g eaten (mg)"),
+    "thiamin_mg_100g_eaten": ("thiamin_mg_100g_eaten", "Thiamin (B1) per 100 g eaten (mg), after cooking losses"),
+    "riboflavin_mg_100g_eaten": ("riboflavin_mg_100g_eaten", "Riboflavin (B2) per 100 g eaten (mg)"),
+    "niacin_mg_ne_100g_eaten": ("niacin_mg_ne_100g_eaten", "Niacin per 100 g eaten (mg niacin equivalents)"),
+    "vitamin_b6_mg_100g_eaten": ("vitamin_b6_mg_100g_eaten", "Vitamin B6 per 100 g eaten (mg)"),
+    "folate_ug_100g_eaten": ("folate_ug_100g_eaten", "Folate per 100 g eaten (µg, natural food folate)"),
+    "vitamin_b12_ug_100g_eaten": ("vitamin_b12_ug_100g_eaten", "Vitamin B12 per 100 g eaten (µg)"),
+    "vitamin_c_mg_100g_eaten": ("vitamin_c_mg_100g_eaten", "Vitamin C per 100 g eaten (mg), after cooking losses"),
     "grade_composition": ("comp_grade", "Data quality A/B/C (C = proxy/estimate)"),
     "grade_protein_quality": ("digest_grade", "Data quality of DIAAS A/B/C"),
     "grade_price": ("price_grade", "Data quality of price A/B/C"),
@@ -104,6 +124,7 @@ def _brief(prof, res, w, preset, quality, price_scenario, out):
          f"- Training: {prof.modality}, about {prof.training.get('hours_per_week', 0):g} hours per week\n",
          f"- Goal: {RULES['presets'][prof.goal]['label']}\n\n",
          "## Daily targets (hit these on average over a day)\n\n", res.to_markdown().split("\n\n", 1)[1], "\n",
+         "### Vitamins, minerals, fibre, sodium (EFSA adult reference values)\n\n", res.micro_markdown(), "\n",
          "## Rules for the meal plan\n",
          f"1. Energy ≈ {t['energy'].value:,.0f} kcal/day; protein ≈ {t['protein'].value:.0f} g "
          f"(at least {t['protein'].low or t['protein'].value:.0f} g); carbohydrate ≈ {t['carbohydrate'].value:.0f} g; "
@@ -118,7 +139,10 @@ def _brief(prof, res, w, preset, quality, price_scenario, out):
          "6. Give quantities in grams **as eaten** and the matching grams **as bought** "
          "(as bought = as eaten ÷ `cooked_mass_per_bought_mass`; for bone-in/peeled foods also ÷ `edible_portion`). "
          "Estimate the daily cost with `price_eur_per_kg_edible`.\n",
-         "7. Show a daily total of kcal, protein, carbohydrate, fat and cost, and how far it is from the targets.\n\n",
+         "7. Show a daily total of kcal, protein, carbohydrate, fat and cost, and how far it is from the targets.\n",
+         "8. Meet the vitamin/mineral minimums marked 'yes' on average over the week (use the per-100 g columns); keep "
+         "under the maximums (e.g. retinol from liver, sodium, saturated fat). Vitamin D and iodine come mainly from "
+         "sunlight/supplements and iodised salt; note them but do not force them with food.\n\n",
          "## How the ranking was made\n",
          f"Weighting preset **{preset}**: " + ", ".join(f"{M.METRICS[k][0]} ×{v:g}" for k, v in w.items()) +
          f". Protein quality: {M.QUALITY[quality]}. Price scenario: {price_scenario}. "
@@ -132,8 +156,8 @@ def _brief(prof, res, w, preset, quality, price_scenario, out):
          "- Prices: Latvian retail, collected 2026-10-06 (official CSP 12-month means + Cenu Depo shop prices); "
          "personal use only.\n",
          "- Composition mostly from the Danish Frida 5.5 database and USDA; grade C values are proxies.\n",
-         "- Not medical advice. Fibre, sodium, vitamins and minerals are not yet optimized (planned v2.0): include "
-         "vegetables and fruit for micronutrients even if they rank low here.\n\n",
+         "- Not medical advice. Vitamins and minerals are checked against EFSA adult values; cooking losses are "
+         "applied where a USDA raw/cooked pair exists. Taste and meal structure are up to you, the planner.\n\n",
          "## Ready-to-paste prompt\n```\n",
          f"You are a meal planner. Using ONLY foods from the attached foods_ranked.csv (plus vegetables, herbs and "
          f"spices for flavour), create a 7-day meal plan with recipes for {prof.name.split('(')[0].strip()}. "
@@ -186,7 +210,8 @@ def diet_section(d, sol, spec):
             "(e.g. one legume for another, one grain for another), and keep the daily totals close.\n\n"
             "| food | g eaten | g bought | €/day | kcal | protein g |\n|---|---|---|---|---|---|\n" + rows +
             f"\n**Totals:** {tot.kcal:,.0f} kcal, protein {tot.protein:.0f} g, carbohydrate {tot.carb:.0f} g, fat "
-            f"{tot.fat:.0f} g, fibre {tot.fibre:.0f} g; €{sol.cost_eur:.2f}/day; {sol.mass_g:,.0f} g of food eaten.\n"
+            f"{tot.fat:.0f} g, fibre {tot.fibre:.0f} g; €{sol.cost_eur:.2f}/day; {sol.mass_g:,.0f} g of food eaten. "
+            "It also meets every enforced vitamin/mineral minimum and maximum (v2.0).\n"
             f"Constraints that shape it most: {binding}. Plant proteins in it complement each other (grains supply the "
             "sulfur amino acids legumes lack and legumes the lysine grains lack), so keep both in each day.\n")
 

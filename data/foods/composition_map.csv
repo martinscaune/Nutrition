@@ -1,10 +1,10 @@
 food_id,comp_db,comp_id,yield_usda_raw,yield_usda_cooked,aa_override_db,aa_override_id,grade,notes
-rice_white,frida,1252,168877,169757,,,A,
+rice_white,frida,1252,169756,169757,,,A,yield pair = unenriched raw → unenriched cooked (enriched/unenriched mismatch fixed)
 rice_brown,frida,156,169703,169704,,,A,
 oats_flaked,frida,480,173904,173905,,,A,porridge with water: yield depends on recipe (USDA pair ≈ 5×)
 buckwheat,usda_sr,170685,170685,170686,,,A,Frida 1240 protein 7.0 g/100 g implausible (USDA 11.7; groats ≈ 12–13): found by D.6 database comparison; USDA roasted groats used (LV griķi are roasted)
 barley_groats,frida,176,170284,170285,,,A,
-semolina,frida,1311,173916,173917,,,A,yield pair = farina dry → cooked with water
+semolina,frida,1311,171658,171659,,,A,yield pair = farina enriched dry → enriched cooked without salt (consistent pair; earlier pair mixed unenriched/enriched+salt)
 millet,usda_sr,169702,169702,168871,,,A,Frida millet lacks 2 AA
 bulgur,frida,283,170688,170287,,,A,
 couscous,usda_sr,169699,169699,169700,,,A,not in Frida

@@ -77,8 +77,8 @@ st.caption(f"{len(view)} foods shown · quality: {quality} · prices: {price_scn
            "prices dated 2026-10-06 (personal-use phase; Cenu Depo data is not for publication). "
            "**Scores are hypotheses under your weights, not recommendations.**")
 
-tab_me, tab_opt, tab_rank, tab_scatter, tab_day, tab_food = st.tabs(
-    ["My targets & AI export", "Diet optimizer", "Rankings", "Explorer", "One-food day", "Food details"])
+tab_me, tab_opt, tab_fix, tab_rank, tab_scatter, tab_day, tab_food = st.tabs(
+    ["My targets & AI export", "Diet optimizer", "Fix my usual diet", "Rankings", "Explorer", "One-food day", "Food details"])
 
 
 # ---------------------------------------------------------------- tab 0: profile → targets → AI export (v0.2)
@@ -126,6 +126,8 @@ with tab_me:
     st.markdown(res.to_markdown().split("**Conflicts**")[0].split("**Warnings**")[0].split("**Notes**")[0])
     for n in res.notes:
         st.caption(n)
+    with st.expander("Vitamins, minerals, fibre, sodium, saturated fat (EFSA adult values)"):
+        st.markdown(res.micro_markdown())
     st.subheader("Export for an AI recipe / meal-plan assistant")
     st.markdown("Ranks the foods for this person with the **sidebar settings** (weights, protein quality, price "
                 "scenario, food groups) and adds the cheapest diet that meets all targets as a starting skeleton. Upload "
@@ -165,6 +167,8 @@ with tab_opt:
                          format_func={"aa": "per amino acid (diet level)", "pq": "Σ protein × DIAAS (food level)",
                                       "crude": "crude protein only"}.get)
     use_milp = c4.checkbox("Require variety (MILP)", value=False)
+    use_micros = c4.checkbox("Vitamins & minerals (v2.0)", value=True,
+                             help="Enforce EFSA minimums/maximums for vitamins, minerals, fibre, sodium and saturated fat")
     nmin = c4.number_input("Minimum number of foods", 3, 20, 8, disabled=not use_milp)
     c1, c2, c3 = st.columns([2, 1, 1])
     tbl_all = O.food_table(quality, price_scn)
@@ -173,7 +177,7 @@ with tab_opt:
     with_snacks = c3.checkbox("Allow snacks", value=False)
     t_opt = O.food_table(quality, price_scn, roles=["core", "ingredient"] + (["snack"] if with_snacks else []), exclude=excl)
     spec, _ = O.spec_from_profile(prof, protein_mode=pmode, safeguards=sg, milp=use_milp, min_foods=int(nmin),
-                                  max_mass=maxmass or None)
+                                  max_mass=maxmass or None, use_micros=use_micros)
     spec.objective = objective
     spec.mix_weight_cost = mixw
     if objective == "mix":
@@ -200,6 +204,14 @@ with tab_opt:
         tot = sol.totals.copy()
         tot["target"] = tot.target.astype(str)
         st.dataframe(tot.round(1), hide_index=True)
+        with st.expander("Vitamins & minerals in this diet vs targets"):
+            mt = pd.DataFrame([{"nutrient": m.label, "diet": sol.micro_totals.get(O.MICRO_COL.get(k, k)),
+                                "minimum": m.min, "maximum": m.max, "unit": m.unit,
+                                "status": ("report only" if not m.enforce else
+                                           "below min" if m.min and sol.micro_totals.get(O.MICRO_COL.get(k, k), 0) < m.min * 0.99
+                                           else "above max" if m.max and sol.micro_totals.get(O.MICRO_COL.get(k, k), 0) > m.max * 1.01
+                                           else "ok")} for k, m in res.micros.items()])
+            st.dataframe(mt.round(1), hide_index=True)
         if len(sol.binding):
             st.markdown("**What drives the cost** (binding constraints; objective change per unit tighter):")
             st.dataframe(sol.binding[~sol.binding.constraint.str.startswith("energy share")].round(4), hide_index=True)
@@ -214,6 +226,43 @@ with tab_opt:
             fr = O.cost_mass_front(t_opt, _r(spec, milp=False), 8)
             if len(fr):
                 st.plotly_chart(P.front_fig(fr), width="stretch")
+
+
+# ---------------------------------------------------------------- tab: fix my usual diet (v2.0 acceptability, E.4)
+with tab_fix:
+    st.markdown("Enter what you usually eat in a day (grams **as eaten**, cooked where relevant). The tool finds the "
+                f"**smallest change** that makes it meet all of **{prof.name}**'s targets (energy, protein and amino acids, "
+                "carbohydrate, fat, vitamins and minerals). Changing a large item a little counts less than adding a new food "
+                "(individual diet modelling, Maillot 2010).")
+    tfix = O.food_table(quality, price_scn, roles=["core", "ingredient", "snack"])
+    tmpl_cfg = __import__("yaml").safe_load(open(ROOT / "config/diet_templates.yaml"))
+    start = st.selectbox("Start from", ["(empty)"] + list(tmpl_cfg), format_func=lambda k: tmpl_cfg[k]["label"] if k in tmpl_cfg else k)
+    init = tmpl_cfg[start]["foods"] if start in tmpl_cfg else {}
+    editor = pd.DataFrame({"food": [tfix.name[f] for f in init], "grams eaten": list(init.values())}) if init else \
+        pd.DataFrame({"food": pd.Series(dtype=str), "grams eaten": pd.Series(dtype=float)})
+    name_to_id = {v: k for k, v in tfix.name.items()}
+    edited = st.data_editor(editor, num_rows="dynamic", width="stretch", key=f"usual_{start}",
+                            column_config={"food": st.column_config.SelectboxColumn(options=sorted(name_to_id)),
+                                           "grams eaten": st.column_config.NumberColumn(min_value=0, step=10)})
+    usual = pd.Series({name_to_id[r.food]: float(r["grams eaten"]) for _, r in edited.iterrows()
+                       if isinstance(r.food, str) and r.food in name_to_id and pd.notna(r["grams eaten"])}, dtype=float)
+    keep_cost = st.checkbox("Not more expensive than my usual diet", value=False)
+    if len(usual):
+        fspec, _ = O.spec_from_profile(prof, use_micros=use_micros)
+        now_cost = float((tfix.eur.reindex(usual.index) * usual).sum())
+        fsol = O.closest_diet(tfix, fspec, usual, max_cost=now_cost if keep_cost else None)
+        a, b = st.columns(2)
+        a.metric("Usual diet cost", f"€{now_cost:.2f}/day")
+        if fsol.status != "optimal":
+            st.error("No adjustment meets every target. Conflicting targets:")
+            st.dataframe(fsol.conflicts.round(2))
+        else:
+            b.metric("Adjusted diet cost", f"€{fsol.cost_eur:.2f}/day", f"{fsol.cost_eur - now_cost:+.2f}")
+            ch = fsol.changes.rename(columns={"name": "food", "usual_g": "usual g", "new_g": "new g", "change_g": "change g"})
+            st.markdown("**Changes needed**" if len(ch) else "**Your usual diet already meets every target.**")
+            if len(ch):
+                st.dataframe(ch.round(0).reset_index(drop=True), hide_index=True)
+            st.download_button("Download adjusted diet (CSV)", fsol.foods.to_csv(), "adjusted_diet.csv", "text/csv")
 
 # ---------------------------------------------------------------- tab 1: rankings
 with tab_rank:

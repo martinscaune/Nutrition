@@ -27,3 +27,10 @@ CSP notes: prices are collected in about 2,000 outlets in Riga and 9 other towns
 - Cross-check against CSP 12-month means: Cenu Depo median is about 10 % lower (it includes discount and wholesale-type shops such as Promo, Gemoss, Velto). Kept as is; to be used as a scenario in sensitivity analysis (PLAN D.1).
 - Not found on Cenu Depo: soy drink, chicken liver, sunflower/pumpkin/flax seeds, mass gainer, maltodextrin.
 
+## Added 2026-10-07
+| Dataset | Local path | Source URL | Downloaded | SHA-256 | License | In git? |
+|---|---|---|---|---|---|---|
+| EFSA DRV summary report (2017) | `data/raw/efsa/efsa_drv_summary_report_2017.pdf` | https://www.efsa.europa.eu/sites/default/files/2017_09_DRVs_summary_report.pdf | 2026-10-07 | `0231c27d944b9d9ec209d9b6c8d42b9a969df6054f0e30ff7e945bb77d532c48` | © EFSA, reproduction authorised with acknowledgement | yes |
+| EFSA DRV summary tables v4 (Sept 2017) | `data/raw/efsa/efsa_drv_summary_tables_2017.pdf` | https://www.efsa.europa.eu/sites/default/files/assets/DRV_Summary_tables_jan_17.pdf | 2026-10-07 | `0786be9b090eb97eb87c9f1c4388d3cde4371da528246553b4631e9bee1a59bc` | same | yes |
+| EFSA overview of Tolerable Upper Intake Levels, version 11 (Aug 2025) | `data/raw/efsa/efsa_ul_summary_report.pdf` | https://www.efsa.europa.eu/sites/default/files/2024-05/ul-summary-report.pdf | 2026-10-07 | `3d723ca33ef1bb850ac29b159f7a2676ec61379d880bafebc412dde85e35224e` | same | yes |
+

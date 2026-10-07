@@ -123,14 +123,14 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] **GATE v1.x:** decide on publication
 
 ## v2.0: Nutrition-complete (with a nutrition-science collaborator)
-- [ ] E.1 Fibre: minimum and, for bulking, maximum constraints
-- [ ] E.2 Sodium and saturated-fat limits
-- [ ] E.3 Micronutrient minimums and upper limits (EFSA DRVs by sex and age)
-- [ ] E.4 Taste and acceptability (penalty for deviating from typical diets, or preference ratings)
-- [ ] E.5 True food volume (ml, bulk density) and satiety (Holt satiety index)
-- [ ] E.6 Glycemic index; in-session sports-carbohydrate allowance
-- [ ] E.7 Contaminants (mercury in fish, arsenic in rice)
-- [ ] E.8 Expert review of all target rules and presets
+- [x] E.1 Fibre: minimum and, for bulking, maximum constraints → fibre ≥ 25 g (EFSA AI); ≤ 60 g while gaining (judgment call, sensitivity: ±1–2 % cost)
+- [x] E.2 Sodium and saturated-fat limits → sodium ≤ 2,000 mg (EFSA safe & adequate), saturated fat < 10 % E (WHO)
+- [x] E.3 Micronutrient minimums and upper limits (EFSA DRVs by sex and age) → 19 EFSA minimums/ULs (`config/micronutrients.yaml`), cooking losses from USDA pairs; D and iodine report-only
+- [x] E.4 Taste and acceptability (penalty for deviating from typical diets, or preference ratings) → 'Fix my usual diet' tab + `closest_diet` (maillot2010), optional 'not more expensive'
+- [-] E.5 True food volume (ml, bulk density) and satiety (Holt satiety index) → dropped for now: no bulk-density or satiety-index data for these foods (holt1995 paywalled); food mass per kcal is the proxy
+- [x] E.6 Glycemic index; in-session sports-carbohydrate allowance → free-sugar allowance + 30 g/h training fuel for endurance/hybrid (burke2011); GI not modelled
+- [x] E.7 Contaminants (mercury in fish, arsenic in rice) → mercury and cadmium reported vs EFSA TWI (Frida data, ≈ 50–60 % coverage)
+- [ ] E.8 (owner) Expert review of all target rules and presets (questions in reports/technical_report.md §6)
 
 ## v3.0: Smart
 - [ ] F.1 Periodization: training-day vs rest-day targets; week-to-week load (e.g. 6 h vs 9 h weeks)
@@ -161,3 +161,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-07 | C.1–C.10 (v1.0) | `src/optimizer.py` (LP/MILP via HiGHS, per-AA digestible constraints, safeguards from `config/optimizer.yaml`, shadow prices, reduced costs, elastic conflict report, alternatives, cost–mass ε-front); `reports/v1.0_optimizer.md` for 6 profiles (H5, H9, H10, H11); app tab 'Diet optimizer'; 45 tests pass |
 | 2026-10-07 | export | AI export gains `optimal_diet.csv` + baseline-diet section in the brief |
 | 2026-10-07 | D.1–D.9, D.11, D.12 | `reports/v1x_robustness.md` (prices, pattern, weights, safeguards, Monte Carlo, Frida vs USDA → fixed Frida buckwheat protein), `reports/v1x_comparison.md` (H8 baselines, typical diets + closest-valid-diet mode), `reports/technical_report.md`, `run_all.sh`; 45 tests pass |
+| 2026-10-07 | E.1–E.4, E.6, E.7 (v2.0) | Micronutrients from Frida/USDA (harmonized: RE, NE, food folate), EFSA DRVs + ULs (v11 Aug 2025), cooking retention from USDA pairs (fixed enriched/unenriched pair mismatches for rice and semolina), optimizer micronutrient constraints, export columns + brief table, app micronutrient views + 'Fix my usual diet'; `reports/v2.0_nutrients.md`; 47 tests pass |

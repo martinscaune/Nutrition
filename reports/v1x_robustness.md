@@ -4,30 +4,30 @@
 
 | profile | prices | cost €/day | mass g | same foods (Jaccard) |
 |---|---|---|---|---|
-| Bodybuilder | central | 2.30 | 3087.54 | 1.00 |
-| Bodybuilder | low band | 2.07 | 3134.69 | 1.00 |
-| Bodybuilder | high band | 2.55 | 3082.29 | 0.90 |
-| Bodybuilder | Cenu Depo prices +10 % | 2.41 | 3098.44 | 0.73 |
-| Fat loss | central | 2.31 | 1905.16 | 1.00 |
-| Fat loss | low band | 2.10 | 1617.55 | 0.50 |
-| Fat loss | high band | 2.45 | 1944.77 | 0.71 |
-| Fat loss | Cenu Depo prices +10 % | 2.40 | 1950.67 | 0.83 |
-| General adult | central | 0.77 | 1175.99 | 1.00 |
-| General adult | low band | 0.69 | 1175.99 | 0.71 |
-| General adult | high band | 0.91 | 1229.96 | 0.71 |
-| General adult | Cenu Depo prices +10 % | 0.81 | 1175.99 | 1.00 |
-| Ironman athlete | central | 1.83 | 3140.85 | 1.00 |
-| Ironman athlete | low band | 1.63 | 3126.27 | 0.82 |
-| Ironman athlete | high band | 2.09 | 3140.85 | 1.00 |
-| Ironman athlete | Cenu Depo prices +10 % | 1.90 | 3142.44 | 0.82 |
-| Owner | central | 1.85 | 2473.70 | 1.00 |
-| Owner | low band | 1.65 | 2514.12 | 1.00 |
-| Owner | high band | 2.07 | 2698.07 | 0.89 |
-| Owner | Cenu Depo prices +10 % | 1.94 | 2497.42 | 0.73 |
-| Professional athlete | central | 9.66 | 1045.10 | 1.00 |
-| Professional athlete | low band | 8.31 | 1045.10 | 1.00 |
-| Professional athlete | high band | 10.64 | 1045.10 | 1.00 |
-| Professional athlete | Cenu Depo prices +10 % | 9.99 | 1045.10 | 1.00 |
+| Bodybuilder | central | 3.10 | 3145.17 | 1.00 |
+| Bodybuilder | low band | 2.76 | 3231.68 | 0.58 |
+| Bodybuilder | high band | 3.45 | 3119.56 | 0.81 |
+| Bodybuilder | Cenu Depo prices +10 % | 3.17 | 3145.17 | 1.00 |
+| Fat loss | central | 2.92 | 2074.00 | 1.00 |
+| Fat loss | low band | 2.58 | 2069.67 | 0.73 |
+| Fat loss | high band | 3.19 | 1934.34 | 0.73 |
+| Fat loss | Cenu Depo prices +10 % | 3.02 | 2072.14 | 0.82 |
+| General adult | central | 2.22 | 2159.23 | 1.00 |
+| General adult | low band | 1.89 | 1973.48 | 0.82 |
+| General adult | high band | 2.41 | 2079.17 | 0.91 |
+| General adult | Cenu Depo prices +10 % | 2.29 | 2097.31 | 0.83 |
+| Ironman athlete | central | 2.91 | 3641.90 | 1.00 |
+| Ironman athlete | low band | 2.59 | 3665.53 | 0.86 |
+| Ironman athlete | high band | 3.21 | 3641.90 | 1.00 |
+| Ironman athlete | Cenu Depo prices +10 % | 2.99 | 3693.32 | 0.86 |
+| Owner | central | 2.68 | 2828.40 | 1.00 |
+| Owner | low band | 2.36 | 2928.26 | 0.73 |
+| Owner | high band | 2.96 | 3114.00 | 0.62 |
+| Owner | Cenu Depo prices +10 % | 2.74 | 3114.00 | 0.62 |
+| Professional athlete | central | 10.12 | 1151.10 | 1.00 |
+| Professional athlete | low band | 9.15 | 1151.10 | 1.00 |
+| Professional athlete | high band | 10.87 | 1151.10 | 1.00 |
+| Professional athlete | Cenu Depo prices +10 % | 10.32 | 1151.10 | 1.00 |
 
 Band edges = CSP 12-month min/max or Cenu Depo P25/P75. '+10 %' corrects Cenu Depo prices toward the CSP level (cross-check showed Cenu Depo ≈ 10 % lower). Per-retailer scenarios need per-retailer CSP data (not public).
 
@@ -35,8 +35,8 @@ Band edges = CSP 12-month min/max or Cenu Depo P25/P75. '+10 %' corrects Cenu De
 
 | reference pattern | cost €/day | protein g | same foods (Jaccard) | foods |
 |---|---|---|---|---|
-| adult (3+ y), default | 1.85 | 139.23 | 1.00 | Grey peas, Split peas, Rolled oats, Wheat flour, Rapeseed oil, Red lentils |
-| young child 0.5–3 y (stricter) | 2.24 | 148.44 | 0.78 | Split peas, Grey peas, Rolled oats, Wheat flour, Minced pork, Rapeseed oil |
+| adult (3+ y), default | 2.68 | 136.80 | 1.00 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas, Rapeseed oil, Milk |
+| young child 0.5–3 y (stricter) | 2.93 | 152.36 | 0.67 | Split peas, Wheat flour, Grey peas, Rolled oats, Milk, Red lentils |
 
 ## D.3 Sensitivity of the composite ranking to each weight ('Hybrid: bulk + endurance fuel')
 
@@ -59,47 +59,47 @@ Band edges = CSP 12-month min/max or Cenu Depo P25/P75. '+10 %' corrects Cenu De
 
 | variant | status | cost €/day | Δ cost % | mass g | same foods (Jaccard) | main foods |
 |---|---|---|---|---|---|---|
-| baseline | optimal | 1.85 | 0.00 | 2473.70 | 1.00 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| protein 1.6 g/kg | optimal | 1.62 | -12.36 | 2329.47 | 0.89 | Grey peas, Split peas, Wheat flour, Rolled oats |
-| protein 2.2 g/kg | optimal | 2.42 | 30.85 | 2500.36 | 0.45 | Split peas, Grey peas, Rolled oats, Chickpeas (dry) |
-| carbohydrate band 6–10 g/kg (high training) | optimal | 1.85 | 0.00 | 2473.70 | 1.00 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| carbohydrate band 3–5 g/kg (light) | optimal | 2.09 | 13.07 | 2129.86 | 0.55 | Split peas, Dried beans, Wheat flour, Rolled oats |
-| fat min 15 % E | optimal | 1.79 | -3.53 | 2531.72 | 0.89 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| fat min 25 % E | optimal | 1.93 | 4.16 | 2310.11 | 0.80 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| free sugars ≤ 5 % E | optimal | 1.85 | 0.00 | 2473.70 | 1.00 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| max 20 % energy per food | optimal | 1.91 | 3.25 | 2441.03 | 1.00 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| max 50 % energy per food | optimal | 1.85 | 0.00 | 2473.70 | 1.00 | Grey peas, Split peas, Rolled oats, Wheat flour |
-| energy −10 % | optimal | 1.89 | 2.08 | 2045.82 | 0.60 | Split peas, Grey peas, Wheat flour, Rolled oats |
-| energy +10 % | optimal | 1.88 | 1.80 | 2657.08 | 0.89 | Grey peas, Split peas, Wheat flour, Rolled oats |
-| food mass ≤ 2,000 g | optimal | 1.94 | 4.60 | 2000.00 | 0.45 | Grey peas, Split peas, Wheat flour, Peanuts |
-| food mass ≤ 1,500 g | optimal | 2.20 | 18.77 | 1500.00 | 0.33 | Peanuts, Split peas, Wheat flour, Chickpeas (dry) |
-| MILP: ≥ 10 foods, ≥ 50 g each | optimal | 1.95 | 5.29 | 2087.00 | 0.46 | Grey peas, Split peas, Peanuts, Wheat flour |
-| all per-food caps ×0.5 | optimal | 2.22 | 20.19 | 2624.62 | 0.69 | Chickpeas (dry), Grey peas, Split peas, Red lentils |
-| all per-food caps ×2.0 | optimal | 1.69 | -8.76 | 1986.36 | 0.67 | Split peas, Wheat flour, Grey peas, Rapeseed oil |
+| baseline | optimal | 2.68 | 0.00 | 2828.40 | 1.00 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas |
+| protein 1.6 g/kg | optimal | 2.56 | -4.62 | 2719.19 | 0.80 | Split peas, Barley groats / pearl barley, Wheat flour, Rapeseed oil |
+| protein 2.2 g/kg | optimal | 3.15 | 17.46 | 2876.00 | 0.53 | Split peas, Grey peas, Wheat flour, Barley groats / pearl barley |
+| carbohydrate band 6–10 g/kg (high training) | optimal | 2.68 | 0.00 | 2828.40 | 1.00 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas |
+| carbohydrate band 3–5 g/kg (light) | optimal | 2.78 | 3.67 | 2435.41 | 0.67 | Split peas, Wheat flour, Barley groats / pearl barley, Peanuts |
+| fat min 15 % E | optimal | 2.65 | -0.96 | 2851.26 | 1.00 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas |
+| fat min 25 % E | optimal | 2.72 | 1.44 | 2719.94 | 0.73 | Split peas, Barley groats / pearl barley, Wheat flour, Rapeseed oil |
+| free sugars ≤ 5 % E | optimal | 2.68 | 0.00 | 2828.40 | 1.00 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas |
+| max 20 % energy per food | optimal | 2.73 | 1.98 | 2830.54 | 0.86 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas |
+| max 50 % energy per food | optimal | 2.68 | 0.00 | 2828.40 | 1.00 | Split peas, Barley groats / pearl barley, Wheat flour, Grey peas |
+| energy −10 % | optimal | 2.63 | -1.82 | 2483.38 | 0.73 | Split peas, Wheat flour, Barley groats / pearl barley, Peanuts |
+| energy +10 % | optimal | 2.78 | 3.59 | 2998.49 | 0.93 | Split peas, Barley groats / pearl barley, Wheat flour, Rapeseed oil |
+| food mass ≤ 2,000 g | optimal | 2.96 | 10.24 | 2000.00 | 0.65 | Split peas, Wheat flour, Peanuts, Rapeseed oil |
+| food mass ≤ 1,500 g | optimal | 3.73 | 39.12 | 1500.00 | 0.44 | Split peas, Peanuts, Wheat flour, Processed cheese |
+| MILP: ≥ 10 foods, ≥ 50 g each | optimal | 2.88 | 7.58 | 2388.75 | 0.60 | Peanuts, Split peas, Wheat flour, Milk |
+| all per-food caps ×0.5 | optimal | 3.02 | 12.80 | 2941.67 | 0.72 | Grey peas, Split peas, Red lentils, Barley groats / pearl barley |
+| all per-food caps ×2.0 | optimal | 2.52 | -6.00 | 2848.84 | 0.85 | Split peas, Barley groats / pearl barley, Wheat flour, Milk |
 
 ## D.5 Monte Carlo (300 runs; composition CV A/B/C = 5/10/20 %, digestibility CV 3/6/12 %, prices uniform within their bands; assumptions [U])
 
-Optimal cost: median €1.87/day (5–95 %: €1.71–1.99); baseline €1.85. Infeasible draws: 0.
+Optimal cost: median €2.68/day (5–95 %: €2.56–2.78); baseline €2.68. Infeasible draws: 0.
 
 **How often each food is in the optimal diet**
 
 | food | selected in % of runs | median g eaten when selected | in baseline |
 |---|---|---|---|
 | Split peas | 100.0 | 600.0 | True |
+| Barley groats / pearl barley | 100.0 | 791.8 | True |
 | Wheat flour | 100.0 | 150.0 | True |
-| Rolled oats | 99.0 | 800.0 | True |
-| Sunflower oil | 92.0 | 40.0 | True |
-| Red lentils | 87.7 | 174.5 | True |
-| Rapeseed oil | 86.3 | 12.6 | True |
-| Barley groats / pearl barley | 81.0 | 348.3 | True |
-| Grey peas | 67.0 | 600.0 | True |
-| Peanuts | 36.0 | 14.6 | False |
-| Minced pork | 33.7 | 15.1 | True |
-| Chickpeas (dry) | 16.7 | 141.4 | False |
-| Dried beans | 13.7 | 154.5 | False |
-| Minced mixed meat | 5.0 | 14.9 | False |
-| Pork (boneless) | 3.0 | 19.2 | False |
-| Chicken legs (bone-in) | 2.7 | 18.3 | False |
+| Milk | 100.0 | 580.7 | True |
+| Sunflower oil | 100.0 | 28.0 | True |
+| Cabbage | 100.0 | 229.4 | True |
+| Carrots | 100.0 | 17.1 | True |
+| Eggs | 91.3 | 79.7 | True |
+| Grey peas | 84.7 | 195.4 | True |
+| Green/brown lentils | 58.7 | 115.5 | True |
+| Rapeseed oil | 57.0 | 26.8 | True |
+| Sugar | 54.0 | 22.8 | True |
+| Red lentils | 51.3 | 151.8 | False |
+| Semolina | 40.3 | 384.6 | False |
+| Marinated herring rolls | 34.7 | 4.7 | True |
 
 **How often each food is in the composite top 10** (owner preset)
 
@@ -131,15 +131,15 @@ Optimal cost: median €1.87/day (5–95 %: €1.71–1.99); baseline €1.85. I
 |---|---|---|---|---|---|---|
 | beans_dried | 275.8 | 18.0 | 333.0 | 23.4 | 20.7 | 29.7 |
 | peas_grey | 352.9 | 18.0 | 364.0 | 23.1 | 3.1 | 28.4 |
+| semolina | 353.0 | 9.4 | 360.0 | 11.6 | 2.0 | 23.7 |
 | potatoes | 85.7 | 2.2 | 69.0 | 1.7 | -19.5 | -23.6 |
 | sweet_potato | 71.6 | 1.3 | 86.0 | 1.6 | 20.2 | 20.5 |
 | lentils_green | 309.8 | 20.5 | 352.0 | 24.6 | 13.6 | 20.3 |
 | rice_brown | 357.9 | 9.0 | 367.0 | 7.5 | 2.6 | -16.2 |
 | rice_white | 354.2 | 8.4 | 365.0 | 7.1 | 3.0 | -15.1 |
 | bulgur | 341.5 | 10.8 | 342.0 | 12.3 | 0.1 | 13.9 |
-| semolina | 353.0 | 9.4 | 369.0 | 10.6 | 4.5 | 13.0 |
 | chicken_liver | 115.8 | 19.1 | 119.0 | 16.9 | 2.8 | -11.4 |
 
-Owner minimum-cost diet: Frida-based €1.85/day vs USDA-based €1.60/day; same foods (Jaccard) 0.70.
+Owner minimum-cost diet: Frida-based €2.68/day vs USDA-based €2.59/day; same foods (Jaccard) 1.00.
 
 H7 (Latvian vs generic prices) cannot be tested yet: it needs a second, comparable price source (e.g. another country's official average prices).

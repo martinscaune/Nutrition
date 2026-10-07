@@ -1,0 +1,356 @@
+                                                                           Version 11 (August 2025)
+
+
+
+
+   Overview on Tolerable Upper Intake Levels as
+ derived by the Scientific Committee on Food (SCF)
+ and the EFSA Panel on Dietetic Products, Nutrition
+                and Allergies (NDA)
+
+
+
+The Tolerable Upper Intake Level (UL) is the maximum level of total chronic daily intake of a
+nutrient (from all dietary sources) which is not expected to pose a risk of adverse health
+effects to humans (EFSA NDA Panel, 2024a).
+
+Following a request from the European Commission, the Scientific Committee on Food (SCF),
+which was the predecessor of EFSA, started off in the year 2000 with giving scientific advice
+in relation to ULs for vitamins and minerals. The task was then taken over by EFSA when it
+became operational. As a result, EFSA and the SCF published a report of their first series of
+scientific opinions on ULs for vitamins and minerals in 2006 (EFSA, 2006). The report also
+covered trace elements such as boron, nickel, tin and vanadium.
+
+Updates of individual scientific opinions were then carried out by the EFSA NDA Panel for
+calcium (2012); vitamin D (2012, 2018 (infants) and 2023); selenium, vitamin B6, folate and
+manganese (2023); iron, vitamin A and β-carotene (2024). The EFSA Scientific Committee
+updated the scientific opinion on fluoride in 2025. For nutrients for which there are insufficient
+data on which to base the UL, the European Commission requested EFSA to provide “an
+indication […] on the highest level of intake for which there is reasonable confidence on the
+absence of adverse effects. This is called a safe level of intake. Safe levels of intake have
+more limited applications than ULs as intakes above the safe levels of intake do not necessarily
+mean that there is a risk of adverse effects and these values cannot be used to characterise
+the proportion of the population at risk of adverse effects.
+
+Other re-evaluations are on-going. This document will be updated accordingly.
+
+This document provides an overview about the outcome of the SCF’s and EFSA’s scientific
+deliberations. The detailed reasoning for establishing individual values can be found in the
+related opinions of the SCF and NDA Panel.
+
+© European Food Safety Authority, 2025
+
+Correspondence: nif@efsa.europa.eu
+
+
+Reproduction is authorised provided the source is acknowledged.
+          Summary of Tolerable Upper Intake Levels
+
+          Table 1: Tolerable Upper Intake Levels for minerals
+                    Unit      4-6 mo(a)     7-11 mo(b)          1-3 y         4-6 y      7-10 y      11-14 y       15-17 y       Adults      Pregnancy        Lactation         Ref
+Boron               mg/d                                          3             4          5            7             9            10            10              10          (EFSA NDA
+                                                                                                                                                                            panel, 2004b)
+Calcium             mg/d     No adequate data to derive a UL                                                                      2500          2500            2500         (EFSA NDA
+                                                                                                                                                                            Panel, 2012b)
+Chloride                     No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            panel, 2005b)
+Chromium(c)                  No adequate data to derive a UL                                                                                                                (SCF, 2003c)
+Copper(d)           mg/d                                     1                  2           3            4             4            5                    ND                  (SCF, 2003a)
+Iodine              µg/d                                   200                 250         300          450           500          600           600             600         (SCF, 2003b)
+Iron(e)                      No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2024b)
+Manganese(f)                 No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2023b)
+Magnesium(g)        mg/d                                    ND                 250        250           250           250          250           250             250        (SCF, 2001b)
+Molybdenum          mg/d                                    0.1                0.2        0.25          0.4           0.5          0.6           0.6             0.6         (SCF, 2000a)
+Nickel                       No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2005a)
+Phosphorus                   No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            panel, 2005d)
+Potassium                    No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            panel, 2005c)
+Selenium            µg/d          45             55              70             95         130          180           230          255           255             255         (EFSA NDA
+                                                                                                                                                                            Panel, 2023c)
+Silicon                      No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2004c)
+Sodium                       No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2005e)
+Tin                          No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2005f)
+Vanadium                     No adequate data to derive a UL                                                                                                                 (EFSA NDA
+                                                                                                                                                                            Panel, 2004d)
+Zinc                mg/d                                          7            10           13          18            22           25            25              25         (SCF, 2002c)
+
+                                        <1y                     1-3 y         4-8 y                    9-17 y                    Adults      Pregnancy        Lactation
+Fluoride(h)         mg/d                 1.0                     1.6           2.0                       ND                       ND            ND               ND           (EFSA SC,
+                                                                                                                                                                                2025)
+          d, day; mo: month; ND: not defined; y, year
+          (a):   i.e. from the 18th to the 26th week of life
+          (b):   i.e. the second half of the first year of life (from the 27th to the 52th week of life)
+          (c):   Trivalent chromium (Cr III)
+          (d):   In 2023, the EFSA Scientific Committee established an Acceptable Daily Intake (ADI) of 0.07 mg/kg body weight copper (EFSA Scientific Committee, 2023).
+          (e):   As there were insufficient data on which to base the UL for iron, safe levels of intakes were established (see Table 2).
+          (f):   As there were insufficient data on which to base the UL for manganese, safe levels of intakes were established (see Table 2).
+          (g):   Readily dissociable Mg salts (e.g. chloride, sulphate, aspartate, lactate) and compounds like MgO in food supplements, water or added to foods; does not include
+                 Mg naturally present in foods and beverages.
+          (h):   For children aged 9 years of age and adults, safe levels of intake are established (Table 2).
+
+
+
+                                                                                           2
+       Summary of Tolerable Upper Intake Levels
+
+
+       Table 2: Safe levels of intake for minerals
+
+        Safe levels of intake: For nutrients for which there are insufficient data on which to base the UL, the European Commission requested
+        EFSA to provide “an indication […] on the highest level of intake for which there is reasonable confidence on the absence of adverse
+        effects. This is called a safe level of intake. Safe levels of intake have more limited applications than ULs: intakes above the safe levels
+        of intake do not necessarily mean that there is a risk of adverse effects and these values cannot be used to characterise the proportion
+        of the population at risk of adverse effects.
+
+
+                 Unit      4-6 mo(a)     7-11 mo(b)          1-3 y         4-6 y      7-10 y      11-14 y       15-17 y       Adults      Pregnancy       Lactation          Ref
+Iron             mg/d         5(c)          5(c)              10            15          20          30            35            40            40             40           (EFSA NDA
+                                                                                                                                                                         Panel, 2024b)
+                                   4-12 mo                   1-2 y         3-6 y             7-13 y             14-17 y       Adults      Pregnancy       Lactation
+Manganese        mg/d                 2                        4             5                 6                   7            8             8               8           (EFSA NDA
+                                                                                                                                                                         Panel, 2023b)
+                                     <1y                     1-3 y         4-8 y                    9-17 y                    Adults      Pregnancy       Lactation
+Fluoride(d)      mg/d                 ND                      ND            ND                        3.3                      3.3           3.3             3.3           (EFSA SC,
+                                                                                                                                                                             2025)
+       d, day; mo: month; ND: not defined; y, year
+       (a):   i.e. from the 18th to the 26th week of life
+       (b):   i.e. the second half of the first year of life (from the 27th to the 52th week of life)
+       (c):   For children less than one year of age, safe levels of supplemental intake are given and apply to iron intakes from food supplements and fortified foods (infant
+              and follow-on formulas are excluded).
+       (d):   For infants, toddlers and children aged less than 9 years of age, tolerable upper intake levels are established (Table 1).
+
+
+
+
+                                                                                        3
+        Summary of Tolerable Upper Intake Levels
+
+        Table 3: Tolerable Upper Intake Levels for vitamins
+
+                    Unit       4-6 mo(a)    7-11 mo(b)      1-3 y           4-6 y     7-10 y      11-14 y       15-17 y        Adults       Pregnancy         Lactation            Ref
+Biotin                         No adequate data to derive a UL                                                                                                               (SCF, 2001a)
+β-Carotene(c)                  No adequate data to derive a UL                                                                                                                 EFSA NDA
+                                                                                                                                                                              Panel, 2024
+Folate(d)           µg/d           200              200           200        300        400          600           800          1000            1000             1000         (EFSA NDA
+                                                                                                                                                                             Panel, 2023a)
+Niacin                                                                                                                                                                       (SCF, 2002a)
+ Nicotinamide       mg/d                                     150             220        350          500           700           900             Inadequate data
+ Nicotinic acid     mg/d                                       2              3          4            6             8             10             Inadequate data
+Pantothenic acid               No adequate data to derive a UL                                                                                                               (SCF, 2002b)
+Vitamin A(e)        µg             600           600         800            1100       1500         2000          2600          3000            3000             3000         (EFSA NDA
+                                                                                                                                                                             Panel, 2024c)
+                    RE/d
+Vitamin B1                     No adequate data to derive a UL                                                                                                               (SCF, 2001c)
+Vitamin B12                    No defined adverse effects                                                                                                                    (SCF, 2000c)
+Vitamin B2                     No adequate data to derive a UL                                                                                                               (SCF, 2000b)
+Vitamin B6          mg/d           2.2           2.5         3.2             4.5        6.1          8.6           10.7           12             12               12          (EFSA NDA
+                                                                                                                                                                             Panel, 2023d)
+Vitamin C                      No adequate data to derive a UL                                                                                                                (EFSA NDA
+                                                                                                                                                                             Panel, 2004a)
+Vitamin E(f)        mg/d                                     100             120        160          220           260           300             300             300         (SCF, 2003d)
+Vitamin K                      No adequate data to derive a UL                                                                                                               (SCF, 2003e)
+
+                                0-6 mo      7-11 mo (b)     1-3 y           4-6 y     7-10 y      11-14 y       15-17 y        Adults       Pregnancy         Lactation
+Vitamin D           µg             25            35           50             50         50          100           100           100            100               100           (EFSA NDA
+                                                                                                                                                                              Panel, 2018,
+                    VDE(g)/                                                                                                                                                      2023e)
+                    d
+        d, day; mo, month; RE, retinol equivalents; VDE, vitamin D equivalent; y, year
+        (a):    i.e. from the 18th to the 26th week of life
+        (b):    i.e. the second half of the first year of life (from the 27th to the 52th week of life)
+        (c):    Smokers should avoid consuming food supplements containing β-carotene. The Panel also considers that the use of supplemental β-carotene (i.e., in fortified
+                foods and/or food supplements) by the general population should be limited to the purpose of meeting vitamin A requirements.
+        (d):    ULs apply to the combined intake of folic acid, (6S)-5-methyltetrahydrofolic acid glucosamine and l-5-methyltetrahydrofolic acid calcium salts added to foods or
+                used in food supplements, under their authorised conditions of use; do not include folate naturally present in foods and beverages.
+        (e):    ULs apply to preformed vitamin A, i.e. retinol and retinyl esters.
+        (f):    A review of the ULs for vitamin E is on-going.
+        (g):    1 μg VDE = 1 μg cholecalciferol (vitamin D3) = 1 μg ergocalciferol (vitamin D2) = 0.4 μg calcidiol monohydrate = 40 IU. This applies to calcidiol monohydrate
+                at doses up to 10 μg/day.
+
+
+
+
+                                                                                          4
+Summary of Tolerable Upper Intake Levels
+
+Table 4: Other nutrients
+
+                                                                                                      Ref
+ Total fat                       No adequate data to derive a UL for any age group          (EFSA NDA Panel, 2010)
+ Saturated fatty acids           No adequate data to derive a UL for any age group          (EFSA NDA Panel, 2010)
+ Proteins                        No adequate data to derive a UL for any age group          (EFSA NDA Panel, 2012a)
+ DHA, EPA, DPA                   No adequate data to derive a UL for any age group          (EFSA NDA Panel, 2012c)
+ Sugars                          No adequate data to derive a UL for any age group          (EFSA NDA Panel, 2022)
+
+d, day; DHA, docosahexaenoic acid, DPA, docosapentaenoic acid; EPA, eicosapentaenoic acid
+
+
+
+
+                                                                       5
+Summary of Tolerable Upper Intake Levels
+
+
+
+
+References
+EFSA. (2006). Tolerable Upper Intake Levels for Vitamins and Minerals. European Food Safety
+       Authority.
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+EFSA NDA Panel. (2004a). Opinion of the Scientific Panel on Dietetic Products, Nutrition and
+       Allergies (NDA) a request from the Commission related to the Tolerable Upper Intake
+       Level of Vitamin C (L-Ascorbic acid, its calcium, potassium and sodium salts and L-
+       ascorbyl-6-palmitate). EFSA Journal, 2(5). https://doi.org/10.2903/j.efsa.2004.59
+EFSA NDA panel. (2004b). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] related to the Tolerable Upper Intake Level of Boron (Sodium Borate and
+       Boric Acid). EFSA Journal, 2(8). https://doi.org/10.2903/j.efsa.2004.80
+EFSA NDA Panel. (2004c). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] related to the Tolerable Upper Intake Level of Silicon. EFSA Journal, 2(5).
+       https://doi.org/10.2903/j.efsa.2004.60
+EFSA NDA Panel. (2004d). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] related to the Tolerable Upper Intake Level of Vanadium. EFSA Journal,
+       2(3). https://doi.org/10.2903/j.efsa.2004.33
+EFSA NDA Panel. (2005a). Opinion of the Scientific Panel on Dietetic Products, Nutrition and
+       Allergies (NDA) on a request from the Commission related to the Tolerable Upper Intake
+       Level of Nickel. EFSA Journal, 3(2). https://doi.org/10.2903/j.efsa.2005.146
+EFSA NDA panel. (2005b). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] on a request from the Commission related to the Tolerable Upper Intake
+       Level of Chloride. EFSA Journal, 3(6). https://doi.org/10.2903/j.efsa.2005.210
+EFSA NDA panel. (2005c). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] on a request from the Commission related to the Tolerable Upper Intake
+       Level of Potassium. EFSA Journal, 3(3). https://doi.org/10.2903/j.efsa.2005.193
+EFSA NDA panel. (2005d). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] related to the tolerable upper intake level of phosphorus. EFSA Journal,
+       3(8). https://doi.org/10.2903/j.efsa.2005.233
+EFSA NDA Panel. (2005e). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] related to the Tolerable Upper Intake Level of Sodium. EFSA Journal,
+       3(6). https://doi.org/10.2903/j.efsa.2005.209
+EFSA NDA Panel. (2005f). Opinion of the Scientific Panel on Dietetic products, nutrition and
+       allergies [NDA] related to the tolerable upper intake level of tin. EFSA Journal, 3(8).
+       https://doi.org/10.2903/j.efsa.2005.254
+EFSA NDA Panel. (2010). Scientific Opinion on Dietary Reference Values for fats, including
+       saturated fatty acids, polyunsaturated fatty acids, monounsaturated fatty acids, trans
+       fatty        acids,       and        cholesterol.       EFSA          Journal,        8(3).
+       https://doi.org/10.2903/j.efsa.2010.1461
+EFSA NDA Panel. (2012a). Scientific Opinion on Dietary Reference Values for protein. EFSA
+       Journal, 10(2). https://doi.org/10.2903/j.efsa.2012.2557
+EFSA NDA Panel. (2012b). Scientific Opinion on the Tolerable Upper Intake Level of calcium.
+       EFSA Journal, 10(7). https://doi.org/10.2903/j.efsa.2012.2814
+EFSA NDA Panel. (2012c). Scientific Opinion on the Tolerable Upper Intake Level of
+       eicosapentaenoic acid (EPA), docosahexaenoic acid (DHA) and docosapentaenoic acid
+       (DPA). EFSA Journal, 10(7). https://doi.org/10.2903/j.efsa.2012.2815
+EFSA NDA Panel. (2018). Update of the tolerable upper intake level for vitamin D for infants.
+       EFSA Journal,16(8). https://doi.org/10.2903/j.efsa.2018.5365
+EFSA NDA Panel. (2022). Tolerable upper intake level for dietary sugars. EFSA Journal, 20(2).
+       https://doi.org/10.2903/j.efsa.2022.7074
+EFSA NDA Panel. (2023a). Scientific opinion on the tolerable upper intake level for folate. EFSA
+       Journal, 21(11). https://doi.org/10.2903/j.efsa.2023.8353
+
+
+
+
+                                                6
+Summary of Tolerable Upper Intake Levels
+
+
+EFSA NDA Panel. (2023b). Scientific opinion on the tolerable upper intake level for manganese.
+       EFSA Journal, 21(12). https://doi.org/10.2903/j.efsa.2023.8413
+EFSA NDA Panel. (2023c). Scientific opinion on the tolerable upper intake level for selenium.
+       EFSA Journal, 21(1). https://doi.org/10.2903/j.efsa.2023.7704
+EFSA NDA Panel. (2023d). Scientific opinion on the tolerable upper intake level for vitamin B6.
+       EFSA Journal, 21(5). https://doi.org/10.2903/j.efsa.2023.8006
+EFSA NDA Panel. (2023e). Scientific opinion on the tolerable upper intake level for vitamin D,
+       including the derivation of a conversion factor for calcidiol monohydrate. EFSA Journal,
+       21(8). https://doi.org/10.2903/j.efsa.2023.8145
+EFSA NDA Panel. (2024a). Guidance for establishing and applying tolerable upper intake levels
+       for      vitamins      and     essential      minerals.      EFSA      Journal,       22(9).
+       https://doi.org/10.2903/j.efsa.2024.9052
+EFSA NDA Panel. (2024b). Scientific opinion on the tolerable upper intake level for iron. EFSA
+       Journal, 22(6). https://doi.org/10.2903/j.efsa.2024.8819
+EFSA NDA Panel. (2024c). Scientific opinion on the tolerable upper intake level for preformed
+       vitamin         A        and        β-carotene.         EFSA         Journal,         22(6).
+       https://doi.org/10.2903/j.efsa.2024.8814
+EFSA Scientific Committee. (2023). Scientiﬁc Opinion on the re-evaluation of the existing health-
+       based guidance values for copper and exposure assessment from all sources. EFSA
+       Journal, 21(1). https://doi.org/10.2903/j.efsa.2023.7728
+EFSA Scientific Committee. (2025). Updated consumer risk assessment of fluoride in food and
+       drinking water including the contribution from other sources of oral exposure. EFSA
+       Journal, 23(7). https://doi.org/10.2903/j.efsa.2025.9478
+SCF. (2000a). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Molybdenum. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2000b). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Vitamin B2. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2000c). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Vitamin B12. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2001a). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Biotin. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2001b). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Magnesium. In: Tolerable Upper Intake Levels for Vitamins and Mineral.
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2001c). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Vitamin B1. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2002a). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Nicotinic Acid and Nicotinamide (Niacin). In: Tolerable Upper Intake Levels for Vitamins
+       and                                                                                 Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2002b). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Pantothenic Acid. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+
+
+
+                                                7
+Summary of Tolerable Upper Intake Levels
+
+
+SCF. (2002c). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Zinc. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2003a). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Copper. In: Tolerable Upper Intake Levels for Vitamins and Mineral.
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2003b). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Iodine. In: Tolerable Upper Intake Levels for Vitamins and Mineral.
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2003c). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Trivalent Chromium. In: Tolerable Upper Intake Levels for Vitamins and Mineral.
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2003d). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Vitamin E. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+SCF. (2003e). Opinion of the Scientific Committee on Food on the Tolerable Upper Intake Level
+       of Vitamin K. In: Tolerable Upper Intake Levels for Vitamins and Mineral
+       https://www.efsa.europa.eu/sites/default/files/efsa_rep/blobserver_assets/ndatolerable
+       uil.pdf
+
+
+
+
+                                             8
+

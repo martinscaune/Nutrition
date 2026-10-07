@@ -1,0 +1,660 @@
+                                       Summary of Dietary Reference Values – version 4 (September 2017)
+
+
+
+Overview on Dietary Reference Values for the EU population as derived by
+     the EFSA Panel on Dietetic Products, Nutrition and Allergies (NDA)
+
+The term Dietary Reference Value (DRV) is an umbrella term for the complete set of nutrient
+reference values which include, among others, concepts like the Population Reference Intakes, the
+Average Requirements, Adequate Intakes and Reference Intake ranges for macronutrients (EFSA
+NDA Panel, 2010), which indicate the amount of an individual nutrient that people need for good
+health depending on their age and gender.
+
+In its opinions, EFSA used four types of DRVs:
+
+    •   The Population Reference Intake (PRI), which is the level of (nutrient) intake that is
+        adequate for virtually all people in a population group. On the assumption that the individual
+        requirements for a nutrient are normally distributed within a population and the inter-
+        individual variation is known, the PRI is calculated on the basis of the AR plus twice its
+        standard deviation (SD). This will meet the requirements of 97.5% of the individuals in the
+        population.
+
+    •   The Average Requirement (AR), which is the level of (nutrient) intake estimated to satisfy
+        the physiological requirement or metabolic demand, as defined by the specified criterion for
+        adequacy for that nutrient, in half of the people in a population group, given a normal
+        distribution of requirement.
+
+    •   The Adequate Intake (AI), which is the value estimated when a PRI cannot be established
+        because an AR cannot be determined. An Adequate Intake is the average observed or
+        experimentally determined approximations or estimates of nutrient intake by a population
+        group (or groups) of apparently healthy people that is assumed to be adequate. The practical
+        implication of an AI is similar to that of a PRI, i.e. describe the level of intake that is
+        considered adequate for health reasons. The terminological distinction relates to the different
+        way in which these values are derived and to the resultant difference in the “firmness” of the
+        value.
+
+    •   The Reference Intake range (RI), which is the intake range for macronutrients, expressed as
+        % of the energy intake. These apply to ranges of intakes that are adequate for maintaining
+        health and associated with a low risk of selected chronic diseases.
+
+The work done by EFSA in this area was based on a request from the European Commission, which
+asked EFSA to update previous European advice (SCF, 1993), taking into account new scientific
+evidence and recent recommendations issued at national and international level.
+
+This document provides an overview about the outcome of EFSA’s scientific deliberations. The
+detailed reasoning for establishing individual values can be found in the related opinions of the NDA
+Panel. Links to the respective opinions are included in Table 7 of this document.
+
+
+
+
+                                                                                                     1
+                                                   Summary of Dietary Reference Values – version 4 (September 2017)
+
+Table 1:         Summary of Average Requirements (ARs) for energy
+
+                                         AR for Energy
+                                           (MJ(a)/d)
+      Age(b)                      at          at         at                      at
+                               PAL=1.4(c) PAL=1.6(c) PAL=1.8(c)               PAL=2.0(c)
+                M        F      M    F     M      F    M    F                 M     F
+   7 mo         2.7     2.4
+   8 mo         2.8     2.5
+   9 mo         2.9     2.6
+  10 mo         3.0     2.7
+  11 mo         3.1     2.8
+    1y                          3.3    3.0
+    2y                          4.3    4.0
+    3y                          4.9    4.6
+    4y                          5.3    4.9    6.0 5.6     6.8          6.3
+    5y                          5.6    5.2    6.4 5.9     7.2          6.7
+    6y                          5.9    5.5    6.7 6.3     7.6          7.1
+    7y                          6.3    5.8    7.2 6.7     8.1          7.5
+    8y                          6.7    6.2    7.6 7.1     8.6          7.9
+    9y                          7.0    6.6    8.1 7.5     9.1          8.4
+   10 y                                       8.1 7.6     9.1          8.6   10.1      9.5
+   11 y                                       8.5 8.0     9.6          9.0   10.7     10.0
+   12 y                                       9.1 8.4 10.2             9.4   11.4     10.5
+   13 y                                       9.8 8.8 11.0             9.9   12.2     11.0
+   14 y                                      10.5 9.1 11.8            10.2   13.1     11.4
+   15 y                                      11.3 9.3 12.7            10.5   14.1     11.7
+   16 y                                      11.9 9.5 13.4            10.6   14.9     11.8
+   17 y                                      12.3 9.5 13.8            10.7   15.4     11.9
+ 18-29 y                        9.8    7.9 11.2    9.0 12.6           10.1   14.0     11.2
+ 30-39 y                        9.5    7.6 10.8    8.7 12.2            9.8   13.5     10.8
+ 40-49 y                        9.3    7.5 10.7    8.6 12.0            9.7   13.4     10.7
+ 50-59 y                        9.2    7.5 10.5    8.5 11.9            9.6   13.2     10.7
+ 60-69 y                        8.4    6.8    9.6  7.8 10.9            8.8   12.1      9.7
+ 70-79 y                        8.3    6.8    9.5  7.7 10.7            8.7   11.9      9.6
+                                        Pregnancy
+1st trimester                                        + 0.29(d)
+2nd trimester                                        + 1.1(d)
+3rd trimester                                        + 2.1(d)
+                                         Lactation
+0-6 mo post partum                                   + 2.1(d)
+d, day; F, female; M, male; mo, months; PAL, physical activity level; y, years
+
+(a)
+       1 MJ = 238.83 kcal
+(b)
+       ARs for energy are calculated by multiplying estimates of resting energy expenditure (REE), derived from predictive
+       equations, with PAL values. For estimating REE in adults, anthropometric data from representative national surveys in
+       EU Member States were used. ARs for energy were not calculated for adults ≥ 80 years because of a lack of
+       anthropometric data from EU countries for this age group.
+(c)
+       PAL values of 1.4, 1.6, 1.8 and 2.0 reflect low active (sedentary), moderately active, active and very active lifestyles
+       (EFSA NDA Panel, 2013).
+(d)
+       in addition to the AR for energy of non-pregnant, non-lactating women
+
+
+
+
+                                                                                                                             2
+                                                 Summary of Dietary Reference Values – version 4 (September 2017)
+
+Table 2:        Summary of Average Requirements (ARs) and Population Reference Intakes (PRIs) for
+                protein
+
+                                     AR for Protein                      PRI for Protein
+                                   (g/kg bw(a) per day)                (g/kg bw(a) per day)
+            Age
+                                     M                 F                M                F
+           0.5 y                            1.12                               1.31
+             1y                             0.95                               1.14
+            1.5 y                           0.85                               1.03
+             2y                             0.79                               0.97
+             3y                             0.73                               0.90
+             4y                             0.69                               0.86
+             5y                             0.69                               0.85
+             6y                             0.72                               0.89
+             7y                             0.74                               0.91
+             8y                             0.75                               0.92
+             9y                             0.75                               0.92
+            10 y                            0.75                               0.91
+            11 y                    0.75             0.73              0.91             0.90
+            12 y                    0.74             0.72              0.90             0.89
+            13 y                    0.73             0.71              0.90             0.88
+            14 y                    0.72             0.70              0.89             0.87
+            15 y                    0.72             0.69              0.88             0.85
+            16 y                    0.71             0.68              0.87             0.84
+            17 y                    0.70             0.67              0.86             0.83
+          18-59 y                           0.66                               0.83
+           ≥ 60 y                           0.66                               0.83
+                                           Pregnancy
+1st trimester                                    +0.52 g/d(b)                         +1 g/d(c)
+2nd trimester                                    +7.2 g/d(b)                          +9 g/d(c)
+3rd trimester                                     +23 g/d(b)                          +28 g/d(c)
+                                           Lactation
+0-6 mo post partum                               + 15 g/d(b)                          +19 g/d(c)
+>6 mo post partum                                + 10 g/d(b)                          +13 g/d(c)
+   bw, body weight; F, female; M, male; y, years
+
+(a): to be multiplied by reference body weights to calculate values in g/day
+(b): in addition to the AR for protein of non-pregnant, non-lactating women
+(c): in addition to the PRI for protein of non-pregnant, non-lactating women
+
+
+
+
+                                                                                                               3
+                                                                                                                                                      Summary of Dietary Reference Values
+
+
+
+
+ Table 3:       Summary of Reference Intake Ranges (RI) for total fat and carbohydrates and Adequate Intakes (AIs) for fatty acids, dietary fibre and water
+
+   Age       Total fat    SFA        LA         ALA        EPA+DHA           DHA             TFA         Age     Total carbohydrates      Dietary fibre       Age       Water
+  group      (E%)(a)               (E%)(b)     (E%)(b)      (mg/d)(b)       (mg/d)(b)                   group           (E%)(a)              (g/d)(b)        group     (L/d)(b), (c)
+ (years)                                                                                               (years)                                              (years)     M      F
+7-11 mo(d)      40(b)    ALAP          4          0.5                          100          ALAP                                                           6-12 mo      0.8-1.0
+1              35-40     ALAP          4          0.5                          100          ALAP      1-3                45-60                   10        1            1.1-1.2
+2-3            35-40     ALAP          4          0.5           250                         ALAP                                                           2-3            1.3
+4-17           20-35     ALAP          4          0.5           250                                   4-6                45-60                   14        4-8            1.6
+                                                                                                      7-10               45-60                   16        9-13        2.1 1.9
+                                                                                                      11-14              45-60                   19        14-17       2.5 2.0
+                                                                                                      15-17              45-60                   21
+≥ 18           20-35     ALAP          4          0.5           250                    ALAP           ≥ 18               45-60                   25        ≥ 18         2.5    2.0
+                                                                                  Pregnancy
+               20-35     ALAP          4          0.5           250        +100-200(e) ALAP                                                                                    2.3
+                                                                                   Lactation
+               20-35     ALAP          4          0.5           250        +100-200(e) ALAP                                                                                    2.7
+ ALA; α-linolenic acid; ALAP, as low as possible; d, day; DHA, docosahexaenoic acid; E% percentage of energy intake; EPA, eicosapentaenoic acid; F, female; L, liter; LA, linoleic acid; M,
+ male;
+ mo, months, SFA, saturated fatty acids; TFA, trans-fatty acids
+ (a)
+       RI
+ (b)
+       AI
+ (c)
+     includes water from beverages of all kind, including drinking and mineral water, and from food moisture
+ (d)
+     i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+ (e)
+     in addition to combined intakes of EPA and DHA of 250 mg/day
+
+
+
+
+                                                                                                                                                                                              4
+                                                                                                                                                   Summary of Dietary Reference Values
+
+Table 4:                   Average Requirements (ARs) for minerals1 - MALES
+
+
+                                                                                                                Zinc
+
+
+
+
+       Age group (years)                         Age group (years)                     Age group (years)
+                                                                                                               (mg/d)
+
+
+
+                            Calcium (mg/d)
+                                                                     Iron (mg/d)
+                                                                                                            LPI
+                                                                                                           (mg/d)
+
+
+
+
+                                             7–11 mo(a)                8           7–11 mo(a)                (b)
+                                                                                                                     2.4
+                                                                                                             (b)
+ 1–3                        390              1–6                       5           1–3                               3.6
+                                                                                                             (b)
+ 4–10                       680                                                    4–6                               4.6
+                                                                                                             (b)
+                                             7–11                      8           7–10                              6.2
+                                                                                                             (b)
+ 11–17                      960                                                    11–14                             8.9
+                                                                                                             (b)
+                                             12–17                     8           15–17                            11.8
+ 18–24                      860              ≥ 18                      6           ≥ 18                     300      7.5
+ ≥ 25                       750                                                                             600      9.3
+                                                                                                            900     11.0
+                                                                                                           1,200    12.7
+d, day; LPI, level of phytate intake; mo, months
+(a)
+  i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+(b)
+  The fractional absorption of zinc considered in setting ARs for children was based on data from mixed diets expected to contain variable quantities of phytate; therefore, no adjustment for
+phytate intake has been made
+
+
+
+
+1
+    The evaluation for sodium and chloride is ongoing
+
+
+                                                                                                                                                                                            5
+                                                                                                                                                                                                                                                                                                         Summary of Dietary Reference Values
+
+      Table 5:                           Population Reference Intakes (PRIs) and Adequate Intakes (AIs) for minerals2,3 - MALES
+
+
+                                                                                                                                                                                                                                                                                                                                      Zinc
+
+
+
+
+       Age group (years)                       Age group (years)                                     Manganese (mg/d)   Molybdenum (μg/d)   Phosphorus (mg/d)    Potassium (mg/d)                        Age group (years)                        Age group (years)                   Magnesium (mg/d)       Age group (years)
+                                                                                                                                                                                                                                                                                                                                     (mg/d)
+
+
+
+                            Calcium (mg/d)                         Fluoride (mg/d)   Iodine (μg/d)                                                                                  Selenium (μg/d)                                                                   Copper (mg/d)
+                                                                                                                                                                                                                             Iron (mg/d)
+                                                                                                                                                                                                                                                                                                                                  LPI
+                                                                                                                                                                                                                                                                                                                                 (mg/d)
+
+
+
+
+ 7–11 mo(a)                280   7–11 mo(a)                        0.4                70 0.02–0.5(b)                    10                  160                  750                15                7–11 mo(a)             11            7–11 mo(a)                 0.4              80 7–11 mo(a)                               (c)
+                                                                                                                                                                                                                                                                                                                                           2.9
+                                                                                                                                                                                                                                                                                                                                   (c)
+ 1–3                       450   1–3                               0.6                90    0.5                         15                  250                  800                15                1–6                    7             1–2                        0.7             170 1–3                                              4.3
+                                                                                                                                                                                                                                                                                                                                   (c)
+ 4–10                      800   4–6                               1.0                90    1.0                         20                  440                 1,100               20                                                     3–9                        1.0             230 4–6                                              5.5
+                                                                                                                                                                                                                                                                                                                                   (c)
+                                 7–10                              1.5                90    1.5                         30                  440                 1,800               35                7–11                   11            10–17                      1.3             300 7–10                                             7.4
+                                                                                                                                                                                                                                                                                                                                   (c)
+ 11–17                     1,150 11–14                             2.2               120    2.0                         45                  640                 2,700               55                                                                                                    11–14                                           10.7
+                                                                                                                                                                                                                                                                                                                                   (c)
+                                 15–17                             3.2               130    3.0                         65                  640                 3,500               70                12–17                  11                                                           15–17                                           14.2
+ 18–24                     1,000 ≥ 18                              3.4               150    3.0                         65                  550                 3,500               70                ≥ 18                   11            ≥ 18                       1.6             350 ≥ 18                                    300      9.4
+ ≥ 25                      950                                                                                                                                                                                                                                                                                                    600     11.7
+                                                                                                                                                                                                                                                                                                                                  900     14.0
+                                                                                                                                                                                                                                                                                                                                 1,200    16.3
+d, day; LPI, level of phytate intake; mo, months
+
+PRIs are presented in bold type and AIs in ordinary type
+(a)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+(b)
+    In view of the wide range of manganese intakes that appear to be adequate, a range is set for the AI of this age group
+(c)
+    The fractional absorption of zinc considered in setting PRIs for children was based on data from mixed diets expected to contain variable quantities of phytate; therefore, no adjustment for
+phytate intake has been made
+
+
+
+
+2
+    For chromium, setting an AI or a PRI was considered not appropriate
+3
+    The evaluation for sodium and chloride is ongoing
+
+
+                                                                                                                                                                                                                                                                                                                                                 6
+                                                                                                                                                     Summary of Dietary Reference Values
+
+Table 6:                     Average Requirements (ARs) for minerals4 - FEMALES
+
+
+                                                                                                                               Zinc
+
+
+
+
+         Age group (years)     Calcium (mg/d)          Age group (years)                          Age group (years)
+                                                                                                                              (mg/d)
+
+
+                                                                                Iron (mg/d)
+                                                                                                                       LPI
+                                                                                                                      (mg/d)
+
+
+
+                                                7–11mo(a)                          8          7–11 mo(a)                (b)
+                                                                                                                                    2.4
+                                                                                                                        (b)
+      1–3                     390               1–6                                5          1–3                                   3.6
+                                                                                                                        (b)
+      4–10                    680                                                             4–6                                   4.6
+                                                                                                                        (b)
+                                                7–11                               8          7–10                                  6.2
+                                                                                                                        (b)
+      11–17                   960                                                             11–14                                 8.9
+                                                                                                                        (b)
+                                                12–17                              7          15–17                                 9.9
+      18–24                   860               ≥ 18                                          ≥ 18                     300          6.2
+      ≥ 25                    750               Premenopausal                      7                                   600          7.6
+                                                Postmenopausal                     6                                   900          8.9
+                                                                                                                      1,200        10.2
+                                                                           Pregnancy
+      18–24                   860                                                7                                                +1.3(c)
+      ≥ 25                    750
+                                                                           Lactation
+      18–24                   860                                                 7                                               +2.4(c)
+      ≥ 25                    750
+    d, day; LPI, level of phytate intake; mo, months
+(a)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+(b)
+    The fractional absorption of zinc considered in setting ARs for children was based on data from mixed diets expected to contain variable quantities of phytate; therefore, no adjustment for
+phytate intake has been made
+(c)
+    In addition to the ARs for non-pregnant, non-lactating women
+
+
+
+
+4
+    The evaluation for sodium and chloride is ongoing
+
+
+                                                                                                                                                                                              7
+                                                                                                                                                                                                                                                                                             Summary of Dietary Reference Values
+
+       Table 7:                          Population Reference Intakes (PRIs) and Adequate Intakes (AIs) for minerals5,6 - FEMALES
+
+
+                                                                                                                                                                                                                                                                                                                                               Zinc
+
+
+
+
+           Age group (years)                     Age group (years)                                         Manganese (mg/d)   Molybdenum (μg/d)   Phosphorus (mg/d)    Potassium (mg/d)                            Age group (years)                     Age group (years)                     Magnesium (mg/d)   Age group (years)
+                                Calcium (mg/d)                       Fluoride (mg/d)                                                                                                      Selenium (μg/d)                                                                    Copper (mg/d)
+                                                                                                                                                                                                                                                                                                                                              (mg/d)
+
+
+                                                                                       Iodine (μg/d)                                                                                                                                   Iron (mg/d)
+                                                                                                                                                                                                                                                                                                                                       LPI
+                                                                                                                                                                                                                                                                                                                                      (mg/d)
+
+
+
+      7–11 mo(a)               280   7–11 mo(a)                      0.4                70             0.02–0.5(b)            10                  160                  750                15                7–11mo(a)                   11           7–11 mo(a)              0.4               80 7–11 mo(a)                            (c)
+                                                                                                                                                                                                                                                                                                                                                    2.9
+                                                                                                                                                                                                                                                                                                                                        (c)
+      1–3                      450   1–3                             0.6                90                0.5                 15                  250                  800                15                1–6                          7           1–2                     0.7              170 1–3                                               4.3
+                                                                                                                                                                                                                                                                                                                                        (c)
+      4–10                     800   4–6                             0.9                90                1.0                 20                  440                 1,100               20                                                         3–9                     1.0              230 4–6                                               5.5
+                                                                                                                                                                                                                                                                                                                                        (c)
+                                     7–10                            1.4                90                1.5                 30                  440                 1,800               35                7–11                        11           10–17                   1.1              250 7–10                                              7.4
+                                                                                                                                                                                                                                                                                                                                        (c)
+      11–17                    1,150 11–14                           2.3               120                2.0                 45                  640                 2,700               55                                                                                                      11–14                                            10.7
+                                                                                                                                                                                                                                                                                                                                        (c)
+                                     15–17                           2.8               130                3.0                 65                  640                 3,500               70                12–17          13                                                                     15–17                                            11.9
+      18–24                    1,000 ≥ 18                            2.9               150                3.0                 65                  550                 3,500               70                ≥ 18                                     ≥ 18                    1.3              300 ≥ 18                                 300          7.5
+      ≥ 25                      950                                                                                                                                                                         Premenopausal 16(d)                                                                                                        600          9.3
+                                                                                                                                                                                                            Postmenopausal 11                                                                                                          900         11.0
+                                                                                                                                                                                                                                                                                                                                      1,200        12.7
+                                                                                                                                                                          Pregnancy
+      18–24                    1000                                  2.9               200                3.0                 65                  550                 3,500 70                                                         16(d)                                 1.5              300                                                 +1.6(e)
+      ≥ 25                      950
+                                                                                                                                                                          Lactation
+      18–24                    1000                                  2.9               200                3.0                 65                  550                 4,000 85                                                         16(d)                                 1.5              300                                                 +2.9(e)
+      ≥ 25                      950
+      d, day; LPI, level of phytate intake; mo, months
+
+PRIs are presented in bold type and AIs in ordinary type
+(a)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+(b)
+    In view of the wide range of manganese intakes that appear to be adequate, a range is set for the AI of this age group
+(c)
+    The fractional absorption of zinc considered in setting PRIs for children was based on data from mixed diets expected to contain variable quantities of phytate; therefore, no adjustment for
+phytate intake has been made
+
+5
+    For chromium, setting an AI or a PRI was considered not appropriate
+6
+    The evaluation for sodium and chloride is ongoing
+
+
+                                                                                                                                                                                                                                                                                                                                                            8
+                                                                                    Summary of Dietary Reference Values
+
+(d)
+      The PRI covers the requirement of approximately 95 % of premenopausal women
+(e)
+      In addition to the PRIs for non-pregnant, non-lactating women
+
+
+
+
+                                                                                                                     9
+                                                                                                                                                                                        Summary of Dietary Reference Values
+
+       Table 8:                 Average Requirements (ARs) for vitamins - MALES
+
+
+
+
+                                Folate (μg DFE/d) (a)   Niacin (mg NE/MJ) (b)                                          Vitamin A (μg RE/d) (c)
+            Age group (years)                                                   Riboflavin (mg/d)    Thiamin (mg/MJ)                             Vitamin B6 (mg/d)   Vitamin C (mg/d)
+
+
+
+      7–11 mo(d)                  -                      1.3                     -                  0.072              190                        -                   -
+      1–3                        90                      1.3                    0.5                 0.072              205                       0.5                 15
+      4–6                       110                      1.3                    0.6                 0.072              245                       0.6                 25
+      7–10                      160                      1.3                    0.8                 0.072              320                       0.9                 40
+      11–14                     210                      1.3                    1.1                 0.072              480                       1.2                 60
+      15–17                     250                      1.3                    1.4                 0.072              580                       1.5                 85
+      ≥ 18                      250                      1.3                    1.3                 0.072              570                       1.5                 90
+      d, day; mo, months
+(a)
+    DFE: dietary folate equivalents. For combined intakes of food folate and folic acid, DFEs can be computed as follows: µg DFE = µg food folate + (1.7 x µg folic acid)
+(b)
+    NE: niacin equivalent (1 mg niacin = 1 niacin equivalent = 60 mg dietary tryptophan)
+(c)
+    RE: retinol equivalent, 1 μg RE equals 1 μg of retinol, 6 μg of β-carotene and 12 μg of other provitamin A carotenoids
+(d)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+
+
+
+
+                                                                                                                                                                                                                        10
+                                                                                                                                                                                                                                                                                                                                                            Summary of Dietary Reference Values
+
+       Table 9:                        Population Reference Intakes (PRIs) and Adequate Intakes (AIs) for vitamins - MALES
+
+
+
+
+                               α-Tocopherol (mg/d)                                                                               Folate (μg DFE/d) (a)   Niacin (mg NE/MJ) (b)   Pantothenic acid (mg/d)                                         Vitamin A (μg RE/d) (c)
+                                                                                                                                                                                                                                                                                                                                     Vitamin K (μg/d) (f)
+           Age group (years)                             Age group (years)                   Choline (mg/d)   Cobalamin (μg/d)                                                                             Riboflavin (mg/d)   Thiamin (mg/MJ)                             Vitamin B6 (mg/d)   Vitamin C (mg/d)   Vitamin D (μg/d)
+                                                                             Biotin (μg/d)
+
+
+
+
+      7–11 mo(d)                    5                7–11 mo(d)              6               160              1.5                80                       1.6                          3                   0.4                 0.1               250                       0.3                  20                 10                  10
+      1–2                           6                1–3                     20              140              1.5                120                      1.6                          4                   0.6                 0.1               250                       0.6                  20                15(e)                12
+      3–9                           9                4–6                     25              170              1.5                140                      1.6                          4                   0.7                 0.1               300                       0.7                  30                15(e)                20
+                                                     7–10                    25              250              2.5                200                      1.6                          4                   1.0                 0.1               400                       1.0                  45                15(e)                30
+      10–17                     13                   11–14                   35              340              3.5                270                      1.6                          5                   1.4                 0.1               600                       1.4                  70                15(e)                45
+                                                     15–17                   35              400              4.0                330                      1.6                          5                   1.6                 0.1               750                       1.7                 100                15(e)                65
+      ≥ 18                      13                   ≥ 18                    40              400              4.0                330                      1.6                          5                   1.6                 0.1               750                       1.7                 110                15(e)                70
+      d, day; mo, months
+
+PRIs are presented in bold type and AIs in ordinary type
+(a)
+    DFE: dietary folate equivalents. For combined intakes of food folate and folic acid, DFEs can be computed as follows: µg DFE = µg food folate + (1.7 x µg folic acid)
+(b)
+    NE: niacin equivalent (1 mg niacin = 1 niacin equivalent = 60 mg dietary tryptophan)
+(c)
+    RE: retinol equivalent, 1 μg RE equals 1 μg of retinol, 6 μg of β-carotene and 12 μg of other provitamin A carotenoids
+(d)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+(e)
+    Under conditions of assumed minimal cutaneous vitamin D synthesis. In the presence of endogenous cutaneous vitamin D synthesis, the requirement for dietary vitamin D is lower or may be
+even zero
+(f)
+    based on phylloquinone only
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                            11
+                                                                                                                                                                                             Summary of Dietary Reference Values
+
+       Table 10:                      Average Requirements (ARs) for vitamins – FEMALES
+
+
+
+
+                                      Folate (μg DFE/d) (a)   Niacin (mg NE/MJ) (b)                                         Vitamin A (μg RE/d) (c)
+            Age group (years)                                                         Riboflavin (mg/d)   Thiamin (mg/MJ)                             Vitamin B6 (mg/d)   Vitamin C (mg/d)
+
+
+
+                                (d)
+      7–11 mo                           -                      1.3     -   0.072 190                                                                   -                   -
+      1–3                              90                      1.3    0.5 0.072 205                                                                   0.5                 15
+      4–6                             110                      1.3    0.6 0.072 245                                                                   0.6                 25
+      7–10                            160                      1.3    0.8 0.072 320                                                                   0.9                 40
+      11–14                           210                      1.3    1.1 0.072 480                                                                   1.2                 60
+      15–17                           250                      1.3    1.4 0.072 490                                                                   1.3                 75
+      ≥ 18                            250                      1.3    1.3 0.072 490                                                                   1.3                 80
+                                                                   Pregnancy
+                                              -                1.3    1.5 0.072 540                                                                   1.5                      -
+                                                                   Lactation
+                                      380                      1.3    1.7 0.072 1,020                                                                 1.4                 145
+      d, day; mo, months
+(a)
+    DFE: dietary folate equivalents. For combined intakes of food folate and folic acid, DFEs can be computed as follows: µg DFE = µg food folate + (1.7 x µg folic acid)
+(b)
+    NE: niacin equivalent (1 mg niacin = 1 niacin equivalent = 60 mg dietary tryptophan)
+(c)
+    RE: retinol equivalent, 1 μg RE equals 1 μg of retinol, 6 μg of β-carotene and 12 μg of other provitamin A carotenoids
+(d)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+
+
+
+
+                                                                                                                                                                                                                             12
+                                                                                                                                                                                                                                                                                                                                                                 Summary of Dietary Reference Values
+
+       Table 11:                      Population Reference Intakes (PRIs) and Adequate Intakes (AIs) for vitamins – FEMALES
+
+
+
+
+                               α-Tocopherol (mg/d)                                                                                    Folate (μg DFE/d) (a)   Niacin (mg NE/MJ) (b)   Pantothenic acid (mg/d)                                         Vitamin A (μg RE/d) (c)
+                                                                                                                                                                                                                                                                                                                                          Vitamin K (μg/d) (f)
+           Age group (years)                            Age group (years)                                          Cobalamin (μg/d)                                                                             Riboflavin (mg/d)   Thiamin (mg/MJ)                             Vitamin B6 (mg/d)   Vitamin C (mg/d)   Vitamin D (μg/d)
+                                                                                  Biotin (μg/d)   Choline (mg/d)
+
+
+
+
+      7–11 mo(d)                    5                7–11 mo
+                                                                            (d)
+                                                                                  6               160              1.5                 80     1.6                                          3                    0.4                 0.1               250                       0.3                 20                  10                  10
+      1–2                           6                1–3                          20              140              1.5                120     1.6                                          4                    0.6                 0.1               250                       0.6                 20                 15(e)                12
+      3–9                           9                4–6                          25              170              1.5                140     1.6                                          4                    0.7                 0.1               300                       0.7                 30                 15(e)                20
+                                                     7–10                         25              250              2.5                200     1.6                                          4                    1.0                 0.1               400                       1.0                 45                 15(e)                30
+      10–17                     11                   11–14                        35              340              3.5                270     1.6                                          5                    1.4                 0.1               600                       1.4                 70                 15(e)                45
+                                                     15–17                        35              400              4.0                330     1.6                                          5                    1.6                 0.1               650                       1.6                 90                 15(e)                65
+      ≥ 18                      11                   ≥ 18                         40              400              4.0                330     1.6                                          5                    1.6                 0.1               650                       1.6                 95                 15(e)                70
+                                                                                                                                        Pregnancy
+                                11                                                40              480              4.5                600     1.6                                          5                    1.9                 0.1               700                       1.8                 105                15(e)                70
+                                                                                                                                         Lactation
+                                11                                                45              520              5.0                500     1.6                                          7                    2.0                 0.1               1,300                     1.7                 155                15(e)                70
+      d, day; mo, months
+
+PRIs are presented in bold type and AIs in ordinary type
+(a)
+    DFE: dietary folate equivalents. For combined intakes of food folate and folic acid, DFEs can be computed as follows: µg DFE = µg food folate + (1.7 x µg folic acid)
+(b)
+    NE: niacin equivalent (1 mg niacin = 1 niacin equivalent = 60 mg dietary tryptophan)
+(c)
+    RE: retinol equivalent, 1 μg RE equals 1 μg of retinol, 6 μg of β-carotene and 12 μg of other provitamin A carotenoids
+(d)
+    i.e. the second half of the first year of life (from the beginning of the 7th month to the 1st birthday)
+(e)
+    Under conditions of assumed minimal cutaneous vitamin D synthesis. In the presence of endogenous cutaneous vitamin D synthesis, the requirement for dietary vitamin D is lower or may be
+even zero
+(f)
+    based on phylloquinone only
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                                                                                 13
+                                                                                                                    Summary of Dietary Reference Values
+
+Table 12: Links to Scientific Opinions on dietary reference values
+
+General principles                                                        Energy, macronutrients and water
+http://www.efsa.europa.eu/en/efsajournal/pub/1458                         Energy: http://www.efsa.europa.eu/en/efsajournal/pub/3005
+                                                                          Fats: http://www.efsa.europa.eu/en/efsajournal/pub/1461
+                                                                          Carbohydrates and dietary fibre:
+                                                                               http://www.efsa.europa.eu/en/efsajournal/pub/1462
+
+                                                                          Protein: http://www.efsa.europa.eu/en/efsajournal/pub/2557
+
+                                                                          Water: http://www.efsa.europa.eu/en/efsajournal/pub/1458
+
+Vitamins                                                                  Minerals
+Alpha-tocopherol: http://www.efsa.europa.eu/en/efsajournal/pub/4149.htm   Calcium: http://www.efsa.europa.eu/en/efsajournal/pub/4101.htm
+Choline: https://www.efsa.europa.eu/en/efsajournal/pub/4484.htm           Chromium: http://www.efsa.europa.eu/en/efsajournal/pub/3845.htm
+Cobalamin: http://www.efsa.europa.eu/en/efsajournal/pub/4150.htm          Copper: http://www.efsa.europa.eu/en/efsajournal/pub/4253
+Biotin: http://www.efsa.europa.eu/en/efsajournal/pub/3580.htm             Fluoride: http://www.efsa.europa.eu/en/efsajournal/pub/3332.htm
+Folate: http://www.efsa.europa.eu/en/efsajournal/pub/3893.htm             Iodine: http://www.efsa.europa.eu/en/efsajournal/pub/3660.htm
+Niacin: http://www.efsa.europa.eu/en/efsajournal/pub/3759.htm             Iron: http://www.efsa.europa.eu/it/efsajournal/pub/4254
+Pantothenic acid: http://www.efsa.europa.eu/en/efsajournal/pub/3581.htm   Magnesium: http://www.efsa.europa.eu/it/efsajournal/pub/4186.htm
+Thiamin: https://www.efsa.europa.eu/en/efsajournal/pub/4653.htm           Manganese: http://www.efsa.europa.eu/en/efsajournal/pub/3419.htm
+Riboflavin: https://www.efsa.europa.eu/en/efsajournal/pub/4919            Molybdenum: http://www.efsa.europa.eu/en/efsajournal/pub/3333.htm
+Vitamin A: http://www.efsa.europa.eu/en/efsajournal/pub/4028.htm          Phosphorus: http://www.efsa.europa.eu/en/efsajournal/pub/4185.htm
+Vitamin B6: https://www.efsa.europa.eu/en/efsajournal/pub/4485.htm        Potassium: https://www.efsa.europa.eu/en/efsajournal/pub/4592.htm
+Vitamin C: http://www.efsa.europa.eu/en/efsajournal/pub/3418.htm          Selenium: http://www.efsa.europa.eu/en/efsajournal/pub/3846.htm
+Vitamin D: http://www.efsa.europa.eu/en/efsajournal/pub/4547.htm          Zinc: http://www.efsa.europa.eu/en/efsajournal/pub/3844.htm
+Vitamin K: http://www.efsa.europa.eu/en/efsajournal/pub/4780.htm
+
+
+
+                                                                                                                                                    14
+                                                                                                                        Summary of Dietary Reference Values
+
+References
+
+EFSA Panel on Dietetic Products, Nutrition, and Allergies (NDA), 2010. Scientific Opinion on principles for deriving and applying Dietary Reference Values.
+EFSA Journal 2010; 8(3):1458, 30 pp. doi:10.2903/j.efsa.2010.1458
+
+EFSA NDA Panel (EFSA Panel on Dietetic Products Nutrition and Allergies), 2013. Scientific Opinion on Dietary Reference Values for energy. EFSA
+Journal 2013;11(1):3005, 112 pp. doi:10.2903/j.efsa.2013.3005
+
+SCF (Scientiﬁc Committee for Food), 1993. Nutrient and energy intakes for the European Community. Reports of the Scientiﬁc Committee for Food, 31st
+Series. Food - Science and Technique, European Commission, Luxembourg, 248 pp.
+
+
+
+
+                                                                                                                                                        15
+
