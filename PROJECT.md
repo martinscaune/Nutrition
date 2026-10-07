@@ -332,6 +332,8 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-07 | Normalization: percentile stays default; log-ratio and min-max selectable; sensitivity reported (top-10 overlap 0.4–1.0 between methods) → composite scores are a convenience view, not a primary result | Scenario D |
 | 2026-10-07 | Optimizer: x = g eaten/day; minimize cost, mass or normalized mix; energy ±2 %; protein ≥ target; per-IAA digestible supply ≥ FAO adult pattern × protein target (D9); carb band, fat band, free-sugar cap; per-food caps and ≤ 30 % energy per food (judgment calls in `config/optimizer.yaml`); infeasible → goal-programming slacks report the conflicting targets | PROJECT §9, §9.1; moreno2026 idea for infeasibility |
 | 2026-10-07 | First v1.0 results: minimum-cost diets €0.77–2.31/day, ≥ 88 % plant energy, amino acids (SAA, LYS) are the binding constraints; food-level Σ P×DIAAS costs +31 % vs diet-level AA (H9); cost vs mass: 2.47 kg @ €1.85 ↔ 0.82 kg @ €7.50 (H5) | `reports/v1.0_optimizer.md` |
+| 2026-10-07 | Buckwheat composition → USDA roasted groats (Frida protein 7.0 g/100 g implausible) | Found by Frida-vs-USDA comparison (D.6) |
+| 2026-10-07 | v1.x results: Monte Carlo cost €1.71–1.99 (5–95 %); simple protein/€ ranking is a good *food filter* (restricted LP same cost) but not a diet builder (H6/H8); conventional bodybuilding day meets targets at €7.66 (≈ 4× minimum); 'closest valid diet' mode added | `reports/v1x_*.md`, `reports/technical_report.md` |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).

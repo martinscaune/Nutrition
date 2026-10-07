@@ -103,21 +103,21 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 
 ## v1.x: Analysis, comparison and publication
 ### Robustness
-- [ ] D.1 Price sensitivity (median vs P25/P75 scenarios, discount prices, per-retailer prices)
-- [ ] D.2 Protein-quality uncertainty (alternative DIAAS values / Q definitions)
-- [ ] D.3 Weight sensitivity for the composite indices (tornado plots, rank stability)
-- [ ] D.4 Safeguard and preset sensitivity: how optimal diets change with the fat band, sugar cap, per-food caps, protein and carbohydrate bands
-- [ ] D.5 Monte Carlo perturbation of composition and prices: how stable are the rankings and optimal diets?
-- [ ] D.6 Composition-database comparison (USDA vs Nordic) and Latvian vs generic prices (H7)
+- [x] D.1 Price sensitivity (median vs P25/P75 scenarios, discount prices, per-retailer prices)
+- [x] D.2 Protein-quality uncertainty (alternative DIAAS values / Q definitions)
+- [x] D.3 Weight sensitivity for the composite indices (tornado plots, rank stability)
+- [x] D.4 Safeguard and preset sensitivity: how optimal diets change with the fat band, sugar cap, per-food caps, protein and carbohydrate bands
+- [x] D.5 Monte Carlo perturbation of composition and prices: how stable are the rankings and optimal diets?
+- [x] D.6 Composition-database comparison (USDA vs Nordic) and Latvian vs generic prices (H7) (H7 not testable yet: needs a second country's prices)
 ### Comparison
-- [ ] D.7 Simple baselines: diets built greedily from protein/€, kcal/€ and protein/kcal rankings (H8)
-- [ ] D.8 Cross-archetype comparison: how optimal food sets differ by goal (H3)
-- [ ] D.9 Typical real diets (bodybuilding templates, endurance-athlete diets, typical Latvian/European diet): cost, mass, macronutrient fit
-- [ ] D.10 Real-life test: the owner's optimized diet as an actual shopping basket (prices, practicality)
+- [x] D.7 Simple baselines: diets built greedily from protein/€, kcal/€ and protein/kcal rankings (H8)
+- [x] D.8 Cross-archetype comparison: how optimal food sets differ by goal (H3)
+- [x] D.9 Typical real diets (bodybuilding templates, endurance-athlete diets, typical Latvian/European diet): cost, mass, macronutrient fit
+- [ ] D.10 (owner) Real-life test: the owner's optimized diet as an actual shopping basket (prices, practicality)
 ### Publication
-- [ ] D.11 Technical report (methods, data provenance, assumptions, limitations)
-- [ ] D.12 Clean reproducible repository (README, how to rerun everything, environment)
-- [ ] D.13 Contact a nutrition scientist; send the report and incorporate the feedback
+- [x] D.11 Technical report (methods, data provenance, assumptions, limitations) → `reports/technical_report.md` (draft 1)
+- [x] D.12 Clean reproducible repository (README, how to rerun everything, environment) → `run_all.sh` (< 1 min), README
+- [ ] D.13 (owner, deferred: personal use for now) Contact a nutrition scientist; send the report and incorporate the feedback
 - [ ] D.14 Choose a venue (e.g. Nutrients, Frontiers in Nutrition, Public Health Nutrition, JISSN, PLOS ONE) or a preprint; optionally publish data and code with a DOI (Zenodo/OSF)
 - [ ] D.15 Write and submit the manuscript
 - [ ] **GATE v1.x:** decide on publication
@@ -159,3 +159,5 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-07 | B.1–B.9 (v0.2) | `config/target_rules.yaml` (sourced), 6 archetype profiles, `src/targets.py` (REE → TDEE, surplus/deficit, protein, carb bands, fat, free sugars, conflicts, energy availability), app tab with profile form, AI export (CSV + brief + ZIP, also CLI); 39 tests pass |
 | 2026-10-07 | v0.2 scenarios | 6 profiles × presets, robustness (quality × price) and normalization sensitivity → `reports/scenarios_v0.2.md`; found and fixed double-counting in 3 presets; goal-default ranking presets |
 | 2026-10-07 | C.1–C.10 (v1.0) | `src/optimizer.py` (LP/MILP via HiGHS, per-AA digestible constraints, safeguards from `config/optimizer.yaml`, shadow prices, reduced costs, elastic conflict report, alternatives, cost–mass ε-front); `reports/v1.0_optimizer.md` for 6 profiles (H5, H9, H10, H11); app tab 'Diet optimizer'; 45 tests pass |
+| 2026-10-07 | export | AI export gains `optimal_diet.csv` + baseline-diet section in the brief |
+| 2026-10-07 | D.1–D.9, D.11, D.12 | `reports/v1x_robustness.md` (prices, pattern, weights, safeguards, Monte Carlo, Frida vs USDA → fixed Frida buckwheat protein), `reports/v1x_comparison.md` (H8 baselines, typical diets + closest-valid-diet mode), `reports/technical_report.md`, `run_all.sh`; 45 tests pass |

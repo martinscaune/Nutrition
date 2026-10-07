@@ -287,3 +287,37 @@ def aa_adequacy(t, foods, protein_target):
         supplied = sum((t[f"dAA_{p}"] * g).sum() for p in parts)
         out[k] = supplied / (PATTERN[k] * protein_target / 1000)
     return pd.Series(out)
+
+
+def closest_diet(t, s: Spec, template: pd.Series, max_cost=None, base_g=50.0):
+    """Smallest change to a usual diet that meets every target (individual diet modelling, maillot2010).
+
+    template: grams eaten per day indexed by food_id. Minimizes Σ w_i |x_i − template_i| with
+    w_i = 1 / (template_i + base_g), so changing a large item by 50 g counts less than adding a new food.
+    Optionally caps the daily cost (e.g. 'no more expensive than now').
+    """
+    tmpl = template.reindex(t.index).fillna(0.0).to_numpy(float)
+    rows = _rows(t, s)
+    A = np.array([r[1] for r in rows])
+    b = np.array([r[2] for r in rows])
+    n = len(t)
+    caps = np.maximum(t.cap.to_numpy(float), tmpl) if s.safeguards == "full" else np.full(n, 5000.0)
+    w = 1.0 / (tmpl + base_g)
+    c = np.concatenate([np.zeros(n), w, w])                       # variables: x, over, under
+    A_ub = np.hstack([A, np.zeros((len(A), 2 * n))])
+    b_ub = b
+    if max_cost is not None:
+        A_ub = np.vstack([A_ub, np.concatenate([t.eur.to_numpy(float), np.zeros(2 * n)])])
+        b_ub = np.append(b_ub, max_cost)
+    A_eq = np.hstack([np.eye(n), -np.eye(n), np.eye(n)])          # x − over + under = template
+    res = linprog(c, A_ub=A_ub, b_ub=b_ub, A_eq=A_eq, b_eq=tmpl,
+                  bounds=list(zip(np.zeros(n), caps)) + [(0, None)] * (2 * n), method="highs")
+    if res.status != 0:
+        return Solution("infeasible", s, conflicts=elastic(t, s, rows, caps, t.eur.to_numpy(float)))
+    x = res.x[:n]
+    sol = Solution("optimal", s, objective_value=float(res.fun))
+    _report(sol, t, s, x, rows, None)
+    ch = pd.DataFrame({"name": t.name, "usual_g": tmpl, "new_g": np.where(x < 1e-6, 0, x)}, index=t.index)
+    ch["change_g"] = ch.new_g - ch.usual_g
+    sol.changes = ch[ch.change_g.abs() > 5].sort_values("change_g")
+    return sol

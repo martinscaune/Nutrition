@@ -1,0 +1,15 @@
+# Illustrative "usual" diets in grams EATEN per day (cooked where relevant). These are hand-made templates of
+# common practice, NOT survey data. Dry→cooked: oats ×5.2 (porridge), rice ×2.65, pasta ×2.25 (src/data/resolve.py).
+bodybuilder_classic:
+  label: "Classic bodybuilding bulk day (chicken, rice, oats, eggs, milk)"
+  foods: {oats_flaked: 415, milk: 500, eggs: 200, chicken_fillet: 220, rice_white: 660, peanut_butter: 40,
+          bananas: 240, veg_frozen: 230, olive_oil: 15, bread_wheat: 100, cheese_hard: 40}
+endurance_classic:
+  label: "Typical endurance-athlete day (oats, pasta, bread, fruit, dairy)"
+  foods: {oats_flaked: 415, milk: 300, bananas: 360, bread_wheat: 200, pasta_wheat: 450, chicken_fillet: 110,
+          yogurt_plain: 300, honey: 40, eggs: 100, apples: 360, rice_white: 265, cheese_hard: 30, butter: 15, jam: 30}
+latvian_typical:
+  label: "Typical Latvian day (rye bread, potatoes, pork, dairy, cabbage); illustrative"
+  foods: {bread_rye: 200, potatoes: 400, pork_boneless: 120, sausage_boiled: 80, curd: 100, kefir: 300, cheese_hard: 40,
+          butter: 20, sour_cream: 50, cabbage: 200, carrots: 100, apples: 200, sugar: 25, buckwheat: 200, eggs: 50,
+          milk: 200, cake: 60}
