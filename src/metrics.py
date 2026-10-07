@@ -49,6 +49,25 @@ METRICS = {
     "diaas": ("DIAAS", "%", True),
 }
 
+# How each metric is calculated (shown next to charts and rankings; owner request: 'formulas wherever they are used')
+FORMULAS = {
+    "kcal_100g_eaten": "kcal per 100 g as bought ÷ (eaten mass ÷ bought mass)",
+    "useful_protein_100g_eaten": "protein per 100 g eaten × min(DIAAS, 100) / 100",
+    "protein_100g_eaten": "protein per 100 g as bought ÷ (eaten mass ÷ bought mass)",
+    "carb_100g_eaten": "available carbohydrate per 100 g eaten",
+    "kcal_per_eur": "kcal per 100 g bought × 10 ÷ price (€/kg edible, bought)",
+    "useful_protein_per_eur": "protein per 100 g bought × min(DIAAS,100)/100 × 10 ÷ price",
+    "protein_per_eur": "protein per 100 g bought × 10 ÷ price",
+    "carb_per_eur": "carbohydrate per 100 g bought × 10 ÷ price",
+    "useful_protein_per_1000kcal": "useful protein ÷ kcal × 1000",
+    "g_eaten_per_1000kcal": "1000 ÷ kcal per g eaten",
+    "fullness_g_per_1000kcal": "1000 ÷ kcal per g eaten (higher = more filling)",
+    "eur_per_1000kcal": "1000 ÷ (kcal per €)",
+    "eur_per_kg_edible": "typical shop price per kg of the edible part, as bought",
+    "fat_energy_pct": "9 × fat ÷ kcal × 100",
+    "diaas": "min over essential amino acids of (digestible amino acid per g protein ÷ FAO 2013 reference) × 100",
+}
+
 
 def load(path=MASTER):
     df = pd.read_csv(path)

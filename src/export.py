@@ -32,8 +32,8 @@ RANK_METRICS = ["kcal_per_eur", "useful_protein_per_eur", "carb_per_eur", "usefu
                 "kcal_100g_eaten", "useful_protein_per_1000kcal", "g_eaten_per_1000kcal"]
 
 COLUMNS = {  # output column: (source column or None, description for the AI)
-    "rank": (None, "Rank of everyday (core) foods by composite score under the chosen weighting (1 = best fit); blank for ingredients/snacks/supplements"),
-    "score": ("score", "Composite score 0–1 (weighted geometric mean of percentile-normalized metrics)"),
+    "rank": (None, "Rank of everyday (core) foods by the person-specific score (1 = best fit); blank for ingredients/snacks/supplements"),
+    "score": ("score", "Person-specific score 0–1 (see 'How the ranking was made'; or the chosen composite weighting)"),
     "food_id": ("food_id", "Stable identifier"),
     "food": ("name_en", "Food name (English)"),
     "food_lv": ("name_lv", "Food name (Latvian)"),
@@ -97,7 +97,6 @@ def build(profile_path, preset=None, roles=("core", "ingredient"), quality="diaa
     from src.prices.countries import LV_ONLY
     prof = load_profile(profile_path) if isinstance(profile_path, (str, Path)) else profile_path
     res = compute(prof)
-    preset = preset or RULES["presets"][prof.goal].get("ranking_preset", "Bulking: balanced")
     df = M.with_price(M.with_quality(M.load(), quality), price_scenario, country)
     df = df[~df.food_id.isin(list(prof.dislikes or [])) & ~(df.food_id.isin(LV_ONLY) & (country != "LV"))]
     foods = pd.read_csv(ROOT / "data/foods/foods.csv")[["food_id", "purchase_state", "eaten_state"]]
@@ -105,11 +104,21 @@ def build(profile_path, preset=None, roles=("core", "ingredient"), quality="diaa
     df = df[df.role.isin(roles) & df.eur_per_kg_used.notna() & df.kcal_100g_purchased.notna()]
     if groups:
         df = df[df.group.isin(groups)]
-    w = weights or M.PRESETS[preset]
-    if (prof.priorities or {}).get("cost", 1) == 0:  # price-insensitive profile: drop all per-€ weights
-        w = {k: v for k, v in w.items() if "eur" not in k} or {"useful_protein_100g_eaten": 1, "kcal_100g_eaten": 1}
-    # ranks are given to everyday (core) foods only; ingredients/snacks/supplements follow, unranked
-    df = df.assign(score=M.composite(df, w), _core=df.role.eq("core"))
+    personal = preset is None and weights is None
+    if personal:   # default: person-specific score (src/personal.py) for core foods
+        from src import personal as PS
+        t = O.food_table(quality, price_scenario, roles=["core"], exclude=tuple(prof.dislikes or ()), country=country)
+        r, w, v_up = PS.rank(t, res, prof)
+        df = df.assign(score=df.food_id.map(r.score / 100), _core=df.role.eq("core") & df.food_id.isin(r.index))
+        preset = "personal"
+        w = {"_formula": PS.formula_text(w, v_up)}
+    else:
+        preset = preset or RULES["presets"][prof.goal].get("ranking_preset", "Bulking: balanced")
+        w = weights or M.PRESETS[preset]
+        if (prof.priorities or {}).get("cost", 1) == 0:  # price-insensitive profile: drop all per-€ weights
+            w = {k: v for k, v in w.items() if "eur" not in k} or {"useful_protein_100g_eaten": 1, "kcal_100g_eaten": 1}
+        # ranks are given to everyday (core) foods only; ingredients/snacks/supplements follow, unranked
+        df = df.assign(score=M.composite(df, w), _core=df.role.eq("core"))
     df = df.sort_values(["_core", "score"], ascending=[False, False]).reset_index(drop=True)
     out = pd.DataFrame({k: (df[src] if src else None) for k, (src, _) in COLUMNS.items()})
     n_core = int(df._core.sum())
@@ -190,7 +199,11 @@ def _brief(prof, res, w, preset, quality, price_scenario, out, country="LV"):
          "(they cost more per nutrient, which is the only reason the cost-optimal diet prefers milk).\n\n",
          _price_example(out, country),
          "## How the ranking was made\n",
-         f"Weighting preset **{preset}**: " + ", ".join(f"{M.METRICS[k][0]} ×{v:g}" for k, v in w.items()) +
+         (("Person-specific score: every food judged as a 100 kcal portion against this person's targets, weighted by "
+           f"goal and price priority: `{w['_formula']}` (pct = percentile rank among the foods; components: nutrient "
+           "score of 100 kcal, useful protein per 100 kcal, carbohydrate share, cost of 100 kcal, food mass per 100 kcal)")
+          if preset == "personal" else
+          f"Weighting preset **{preset}**: " + ", ".join(f"{M.METRICS[k][0]} ×{v:g}" for k, v in w.items())) +
          f". Protein quality: {M.QUALITY[quality]}. Price scenario: {price_scenario}. "
          "The score is a hypothesis-ranking for convenience, not a nutritional verdict.\n\n",
          "### Top 25 everyday foods under this weighting\n",

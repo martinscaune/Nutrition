@@ -211,6 +211,7 @@ class Solution:
     mass_g: float = np.nan
     micro_totals: pd.Series = field(default_factory=pd.Series)
     meal_split: pd.DataFrame | None = None
+    food_value: pd.Series = field(default_factory=pd.Series)   # nutrient value per g at the diet's shadow prices
 
 
 def solve(t, s: Spec) -> Solution:
@@ -280,6 +281,11 @@ def _report(sol, t, s, x, rows, res):
                  "slack": b_ - ax} for r, m, b_, ax in zip(rows, marg, b, Ax) if abs(m) > 1e-9]
         sol.binding = (pd.DataFrame(bind).sort_values("objective_per_unit_tighter", ascending=False)
                        if bind else pd.DataFrame())
+        # value of each food's nutrients at the shadow prices of the TARGET rows (per-food limits excluded):
+        # c_i = Σ_r m_r A_ri + λ_i, so v_i = Σ_target rows m_r A_ri; v_i / c_i = 1 for foods in the diet (unless capped),
+        # < 1 for foods not worth their objective coefficient (price or mass), > 1 for foods held back by a cap.
+        tgt = np.array([not r[0].startswith(INTERNAL_ROWS) for r in rows])
+        sol.food_value = pd.Series(marg[tgt] @ np.array([r[1] for r in rows])[tgt], index=t.index)
         rc = res.lower.marginals  # reduced cost at lower bound 0: how much cheaper a food must get to enter
         sol.reduced_costs = pd.DataFrame({"name": t.name, "reduced_cost_per_g": rc, "used": used},
                                          index=t.index).sort_values("reduced_cost_per_g")

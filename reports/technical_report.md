@@ -1,6 +1,6 @@
 # Quantitative food value for training: data, methods and first results
 
-**Technical report, draft 3 (2026-10-07; v2.0 addendum in §4b, v2.1 addendum in §4c).** Personal research project; not peer reviewed. Source keys refer to
+**Technical report, draft 4 (2026-10-07; v2.0 addendum in §4b, v2.1 in §4c, v2.2 in §4d).** Personal research project; not peer reviewed. Source keys refer to
 [literature/SOURCES.md](../literature/SOURCES.md); detailed outputs are in the other files in `reports/`.
 
 ## Summary
@@ -82,7 +82,7 @@ mass ≤ 1.5 kg: +19 %), more than any safeguard (caps ×0.5: +20 %, ×2: −9 %
 now enforced, with cooking losses from USDA raw↔cooked pairs; vitamin D and iodine are reported only (sunlight /
 supplements, iodised salt). The v1.0 minimum-cost diets turned out badly deficient (vitamin B12 0–7 %, vitamin A
 1–4 %, vitamin C 2–4 %, calcium 16–46 % of reference). Nutritionally complete minimum-cost diets cost **€2.22–3.10
-per day** (€2.22–3.12 since omega-3 is enforced in v2.1; owner €2.69) and add milk, eggs, a little herring, cabbage
+per day** (€2.22–3.12 with omega-3 in v2.1; **€2.32–3.28, owner €2.78, with the v2.2 fibre maximum of 45 g and trans-fat limit**) and add milk, eggs, a little herring, cabbage
 and carrots to the legume–grain core; the binding nutrients are vitamin B12, selenium, vitamins C, E and A, calcium
 and (v2.1) EPA + DHA. Typical diets are short of vitamin E
 (27–58 % of AI) and, for the bodybuilding template, vitamin C (32 %). Details: `reports/v2.0_nutrients.md`.
@@ -108,6 +108,17 @@ excellent ones.
 **Country prices.** Price(country) = Latvian price × PLI(country, food category) / PLI(LV, category), with Eurostat
 2024 food price level indices (eurostat_pli). Owner's complete day: LV €2.69, DK €3.00, NL €2.45. Approximation:
 captures between-category differences only.
+
+## 4d. v2.2 addendum: fibre, vitamin C, fat quality, personal rankings
+Details and sources: `reports/v2.2_feedback.md`. Cooking does not destroy fibre (median true retention 1.06 over
+20 USDA raw↔cooked pairs; per-100 g values fall only through water uptake). The fibre maximum is now 45 g/day for
+every goal (judgment call; no official UL), which raises the minimum cost by 2–5 %. An optional 200 mg vitamin C
+target (levine1996, carr1999) adds 3–8 %. Fat-quality data (SFA, MUFA, PUFA, trans, n-6, n-3) were added, with trans
+fat limited to < 1 % E. Food rankings are now person-specific: a weighted geometric mean of percentile ranks of the
+nutrient score per 100 kcal against the person's targets, useful protein, carbohydrate share, cost and food mass per
+100 kcal (direction by goal). They are paired with an LP-based "optimizer value" (the food's nutrient value at the
+person's shadow prices ÷ its price). With price ignored, top foods are lean animal and dairy foods for cutting and
+bulking; with price weighted, they are legumes.
 
 ## 5. Limitations
 - **Not a meal plan.** Taste and meal structure are not modelled (the 'closest valid diet' mode keeps a usual diet
@@ -135,5 +146,5 @@ captures between-category differences only.
 
 ## 7. Reproducibility
 Python 3.14, pinned in `requirements-lock.txt`. `sh run_all.sh` rebuilds every dataset, report and figure from
-`data/raw` + `data/foods` + `config` in ≈ 1–2 minutes and runs the test suite (59 tests). Raw-data provenance,
+`data/raw` + `data/foods` + `config` in ≈ 1–2 minutes and runs the test suite (85 tests). Raw-data provenance,
 checksums and licences: `data/raw/MANIFEST.md`. Decisions: PROJECT.md §17.

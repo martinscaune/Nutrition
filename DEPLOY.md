@@ -38,17 +38,21 @@ addresses. Each friend gets an invitation and signs in with that email, or a Goo
 address. Community Cloud's limits on private apps can change, so if it refuses, check the current plan limits in
 your workspace settings.
 
-## 4. Updating
+## 4. Who uses it (traffic)
+App page or workspace → ⋮ → **Analytics** shows the total number of viewers and the most recent viewers (for a
+private app these are invited accounts). Only invited people can open a private app; forwarding the link alone does
+not give access.
+
+## 5. Updating
 `git push` to `main`, and the app redeploys automatically within a minute or two. After changing data or config,
 rebuild first (`sh run_all.sh`) so the committed `foods_master.csv` is current.
 
-## 5. Message for friends (copy and adapt)
+## 6. Message for friends (copy and adapt)
 > Hi! Here's my nutrition calculator: <app link>.
 > 1. Pick your country (top right), Denmark or the Netherlands. Prices are Latvian shop prices scaled by
 >    official EU food price levels, so treat them as approximate.
-> 2. In **My targets & AI export**, enter your sex, age, weight, height, training and goal, then press *Calculate
->    targets*.
-> 3. Open **Rate & improve a meal**. Your meal (e.g. 4 eggs + 1 can of beans) gets a 0–100 score against your own
+> 2. In **My profile** (the start page), enter your sex, age, weight, height, training and goal, then press *Save & calculate targets*.
+> 3. Open **Improve what you eat → Rate & improve a meal**. Your meal (e.g. 4 eggs + 1 can of beans) gets a 0–100 score against your own
 >    needs, plus an improved meal with the same calories. Weigh food *as eaten* (1 egg ≈ 51 g, 1 can of beans
 >    ≈ 240 g drained).
 > It's a hobby project, not medical advice.

@@ -6,12 +6,13 @@ useful protein, calories and carbohydrate per euro and per gram eaten, for any t
 - **What and why:** [PROJECT.md](PROJECT.md) · **Tasks and progress:** [PLAN.md](PLAN.md)
 - **Evidence base:** [literature/REVIEW.md](literature/REVIEW.md) · **Data rules:** [data/SCHEMA.md](data/SCHEMA.md)
 - **Technical report:** [reports/technical_report.md](reports/technical_report.md)
-- **Latest results:** [reports/v2.0_nutrients.md](reports/v2.0_nutrients.md) (complete diets), [reports/v1.0_optimizer.md](reports/v1.0_optimizer.md) (diets), [reports/scenarios_v0.2.md](reports/scenarios_v0.2.md) (profiles), [reports/v0.1_exploration.md](reports/v0.1_exploration.md) (foods)
+- **Latest results:** [reports/v2.2_feedback.md](reports/v2.2_feedback.md) (fibre, vitamin C, oils, data sources), [reports/v2.0_nutrients.md](reports/v2.0_nutrients.md) (complete diets), [reports/v1.0_optimizer.md](reports/v1.0_optimizer.md) (diets), [reports/scenarios_v0.2.md](reports/scenarios_v0.2.md) (profiles), [reports/v0.1_exploration.md](reports/v0.1_exploration.md) (foods)
 
 ## Run the app
-Tabs: targets & AI export · **rate & improve a meal** · diet optimizer (minimum or realistic, split into meals) · fix
-my usual day · rankings · explorer · food details. The country for prices is chosen in the upper right (Latvia observed;
-other EU countries ≈ via Eurostat price levels). Share it privately with friends: [DEPLOY.md](DEPLOY.md).
+Pages (top bar): **Start** → My profile · **Improve what you eat** → Rate & improve a meal, Plan my day, Fix my usual
+day · **Explore the data** → Explorer (formula charts), Rankings (personal), Food details, AI export, How it works.
+The country for prices is chosen in the upper right (Latvia observed; other EU countries ≈ via Eurostat price levels).
+Data settings are in the (collapsed) sidebar. Share it privately with friends: [DEPLOY.md](DEPLOY.md).
 ```sh
 # inside the VS Code (Flatpak) terminal:
 host-spawn .venv/bin/streamlit run app/app.py --server.address localhost

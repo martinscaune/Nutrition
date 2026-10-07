@@ -1,2 +1,6 @@
 food_id,nutrients,db,id,note
 tuna_canned,epa_g;dha_g,usda_sr,171986,"Frida 825 has no fatty-acid profile; USDA light tuna canned in water, drained"
+sunflower_oil,trans_g,usda_sr,171025,"Frida has no trans value for oils; USDA sunflower oil, linoleic (approx. 65 %)"
+rapeseed_oil,trans_g,usda_sr,172336,"Frida has no trans value for oils; USDA canola oil"
+olive_oil,trans_g,usda_sr,171413,"Frida has no trans value for oils; USDA olive oil"
+oats_flaked,sat_fat;mufa_g;pufa_g;n6_g;n3_g,usda_sr,173904,"Frida rolled oats lacks fatty-acid sums; USDA oats, regular, dry"

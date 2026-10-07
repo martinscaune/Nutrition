@@ -180,7 +180,7 @@ def _scientific(fig, height):
     """White background, full black frame with inward ticks on all sides, grid on both axes, black text,
     framed legend. Self-contained, so charts stay readable in Streamlit's dark theme too."""
     fig.update_layout(template="none", height=height, paper_bgcolor="white", plot_bgcolor="white",
-                      font=dict(family="Arial, Helvetica, sans-serif", size=13, color="black"),
+                      font=dict(family="Roboto, Arial, Helvetica, sans-serif", size=13, color="black"),
                       margin=dict(l=75, r=25, t=25, b=70),
                       legend=dict(orientation="h", y=-0.18, bgcolor="white", bordercolor="black", borderwidth=1,
                                   font=dict(color="black")),
@@ -270,4 +270,73 @@ def meal_score_fig(b0, b1, names=("Your meal", "Improved meal")):
                       xaxis_title="Score per item (1 = meets this meal's share; negative = over a limit)")
     fig.update_xaxes(range=[-1.05, 1.05])
     fig.update_yaxes(autorange="reversed", showgrid=False, minor=dict(ticks=""))
+    return fig
+
+
+def custom_scatter_fig(df, xs, ys, xlabel, ylabel, logx=False, logy=False, color=None, color_label="",
+                       size=None, size_label="", front=None, n_labels=6):
+    """Scatter of two formula results (Series aligned to df). color: None → food group (fixed hue order + marker
+    shapes); a numeric Series → one sequential hue (light → dark) with a colour bar. front: (x_higher_better,
+    y_higher_better) draws the Pareto front and labels it; extremes of both axes are labelled too."""
+    d = df.assign(__x=xs, __y=ys, __c=color if color is not None else np.nan,
+                  __s=size if size is not None else np.nan)
+    d = d[d.__x.notna() & d.__y.notna()]
+    if logx:
+        d = d[d.__x > 0]
+    if logy:
+        d = d[d.__y > 0]
+    fig = go.Figure()
+    if size is not None and d.__s.notna().any():
+        s = d.__s.clip(lower=0)
+        ms = 7 + 18 * (s / s.max() if s.max() > 0 else s).fillna(0)
+    else:
+        ms = pd.Series(11, index=d.index)
+    hover = ("<b>%{customdata[0]}</b> · %{customdata[1]}<br>" + xlabel + ": %{x:.4g}<br>" + ylabel + ": %{y:.4g}"
+             + (f"<br>{color_label}: %{{customdata[2]:.4g}}" if color is not None else "")
+             + (f"<br>{size_label}: %{{customdata[3]:.4g}}" if size is not None else "") + "<extra></extra>")
+    cd = lambda s: np.stack([s.name_en, s.group, s.__c, s.__s], axis=1)  # noqa: E731
+    if color is None:
+        for g in [g for g in M.GROUPS if g in set(d.group)]:
+            s = d[d.group == g]
+            fig.add_trace(go.Scatter(x=s.__x, y=s.__y, mode="markers", name=g, customdata=cd(s), hovertemplate=hover,
+                                     marker=dict(color=COLORS[g], symbol=PLY_MARK[g], size=ms[s.index],
+                                                 line=dict(width=1, color="black"))))
+    else:
+        fig.add_trace(go.Scatter(x=d.__x, y=d.__y, mode="markers", name="foods", customdata=cd(d), hovertemplate=hover,
+                                 showlegend=False,
+                                 marker=dict(color=d.__c, colorscale="Blues", showscale=True, size=ms,
+                                             symbol=[PLY_MARK[g] for g in d.group], line=dict(width=1, color="black"),
+                                             colorbar=dict(title=dict(text=color_label, side="right"), outlinecolor="black",
+                                                           outlinewidth=1, tickfont=dict(color="black")))))
+    labelled = set()
+    if front is not None and len(d) > 1:
+        m = M.pareto_mask(d[["__x", "__y"]].to_numpy(), list(front))
+        fr = d[m].sort_values("__x")
+        fig.add_trace(go.Scatter(x=fr.__x, y=fr.__y, mode="lines", line=dict(color="black", width=1, dash="dot"),
+                                 name="Pareto front", hoverinfo="skip"))
+        labelled |= set(fr.index)
+    for col in ("__x", "__y"):
+        labelled |= set(d[col].nlargest(n_labels // 2).index) | set(d[col].nsmallest(n_labels // 2).index)
+    lab = d.loc[sorted(labelled)]
+    fig.add_trace(go.Scatter(x=lab.__x, y=lab.__y, mode="text", text=lab.name_en, textposition="top center",
+                             textfont=dict(size=11, color="black"), showlegend=False, hoverinfo="skip"))
+    _scientific(fig, 640)
+    fig.update_layout(xaxis_title=xlabel, yaxis_title=ylabel)
+    fig.update_xaxes(type="log", dtick=1, tickformat=",") if logx else fig.update_xaxes(type="linear")
+    fig.update_yaxes(type="log", dtick=1, tickformat=",") if logy else fig.update_yaxes(type="linear")
+    return fig, len(df) - len(d)
+
+
+def custom_bar_fig(df, values, label, n=25, ascending=False):
+    """Ranking bar of one formula result: top (or bottom) n foods, coloured by food group."""
+    d = df.assign(__v=values).dropna(subset=["__v"])
+    s = (d.nsmallest(n, "__v") if ascending else d.nlargest(n, "__v")).iloc[::-1]
+    fig = go.Figure(go.Bar(x=s.__v, y=s.name_en, orientation="h",
+                           marker=dict(color=[COLORS[g] for g in s.group], line=dict(color="black", width=0.6)),
+                           customdata=np.stack([s.group], axis=1),
+                           hovertemplate="<b>%{y}</b> · %{customdata[0]}<br>" + label + ": %{x:.4g}<extra></extra>",
+                           showlegend=False))
+    _scientific(fig, max(420, 24 * len(s) + 90))
+    fig.update_layout(margin=dict(l=210, r=25, t=20, b=60), xaxis_title=label)
+    fig.update_yaxes(showgrid=False, minor=dict(ticks=""))
     return fig

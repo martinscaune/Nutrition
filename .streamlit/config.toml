@@ -4,6 +4,24 @@
 [browser]
 gatherUsageStats = false
 
-# Light theme by default so the whole app matches the scientific (white) charts; can be switched in the ⋮ menu.
+# Palette (owner, 2026-10-07): 403621 dark brown, 9A6619 ochre, 9B7636 bronze, FCD592 light gold, CED2DE grey-blue,
+# E7E8EB light grey. Charts keep their own scientific style (white, black frame).
 [theme]
 base = "light"
+primaryColor = "#9A6619"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#E7E8EB"
+textColor = "#403621"
+linkColor = "#9B7636"
+borderColor = "#CED2DE"
+showWidgetBorder = true
+baseRadius = "0.5rem"
+font = "Roboto:https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap, sans-serif"
+headingFont = "Roboto:https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap, sans-serif"
+codeFont = "Roboto Mono:https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500&display=swap, monospace"
+headingFontWeights = [700, 600, 600, 500, 500, 500]
+dataframeHeaderBackgroundColor = "#E7E8EB"
+
+[theme.sidebar]
+backgroundColor = "#E7E8EB"
+secondaryBackgroundColor = "#FFFFFF"

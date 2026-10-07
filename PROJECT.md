@@ -343,6 +343,12 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 | 2026-10-07 | Omega-3 enforced: ALA ≥ 0.5 % E, EPA + DHA ≥ 250 mg/day (efsa2010f), EPA/DHA = 0 for plant foods, canned tuna gap filled from USDA (`data/foods/nutrient_fill.csv`) | AI-export feedback; costs ≤ €0.03/day |
 | 2026-10-07 | Race-week preset: carbohydrate 10–12 g/kg (thomas2016), energy raised to fit, fat 10–25 % E, free sugars ≤ 25 % E, fibre ≤ 25 g, micronutrient minimums report-only (judgment calls) | AI-export feedback (presets bulking/cutting/endurance base/race week) |
 | 2026-10-07 | Sharing: private Streamlit Community Cloud app from a private GitHub repo; owner pushes and deploys; Cenu Depo-derived prices stay private (invite-only) | Owner choice; personal-use terms of the price data |
+| 2026-10-07 | Fibre: minimum 25 g kept (EFSA, WHO 2023); maximum 45 g for all goals (was 60 g when gaining), adjustable per profile; soluble/insoluble tracked where analysed (15 foods); cooking does not destroy fibre (median retention 1.06 over 20 USDA pairs) | Friend feedback; reynolds2019, wanders2011, veena1995, njoumi2019; reports/v2.2_feedback.md |
+| 2026-10-07 | GI not a target (reynolds2019: low/very low certainty); starch and sugars shown separately | Friend feedback ('fast vs slow carbs') |
+| 2026-10-07 | Vitamin C: EFSA PRI default; optional 200 mg per profile (levine1996, carr1999); profiles may override any micronutrient min/max (`overrides: {<key>_min/_max}`) | Friend feedback |
+| 2026-10-07 | Fat quality data (SFA, MUFA, PUFA, trans, n-6, n-3) added; trans fat < 1 % E enforced (who2023sfa) | Owner question on oils; schwingshackl2018, hooper2020 |
+| 2026-10-07 | Rankings: person-specific score (src/personal.py; goal weights in target_rules.yaml, judgment calls) + optimizer value (food's nutrient value at the person's shadow prices ÷ price); AI export ranks by it | Owner: rankings did not change with the person |
+| 2026-10-07 | App: multipage (st.navigation, top bar, 3 sections), cached computations, One-food day removed, formula language in Explorer (ast-whitelisted, safe on the shared app), formulas shown next to results, owner palette + Roboto | Owner comments (speed, navigation, design, transparency) |
 
 ## 18. Open questions
 - Exact price aggregation order (task 2.11) and how often to collect (one snapshot vs repeated).
@@ -351,3 +357,5 @@ Papers that cannot be accessed openly: the user can try to get them through univ
 - Final values of the goal presets (§7.2): verify in Phase 1.
 - How to map "hours/week + modality" onto the carbohydrate bands, which are defined in h/day and intensity.
 - Owner's sex and age (optional): needed only if v0.2 is to *estimate* energy expenditure rather than use the self-reported 3000 kcal, and for the v2.0 DRVs.
+- Real DK/NL prices: match foods to Open Prices (≥ 3 observations) with Eurostat-level fallback? Public use needs openly licensed Latvian prices too.
+- Extend composition to ≈ 200 foods (Frida + Fineli fibre fractions); add GI from atkinson2021 (university access)?

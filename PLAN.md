@@ -145,6 +145,16 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [ ] G.10 (owner) Push to a private GitHub repo, deploy, invite friends (DEPLOY.md)
 - [ ] G.11 (owner, optional) Real Danish/Dutch shop prices for the 10–20 most used foods, to check the PLI approximation
 
+## v2.2: Feedback round 2 (friend + owner comments, 2026-10-07)
+- [x] H.1 Fibre research (cooking retention from our USDA pairs, targets, fractions) → max 45 g adjustable; soluble/insoluble/starch data; reports/v2.2_feedback.md
+- [x] H.2 Vitamin C evidence → optional 200 mg target; generic per-profile micronutrient overrides
+- [x] H.3 Fat quality (SFA/MUFA/PUFA/trans/n-6/n-3) + trans-fat limit; oils question answered with sources
+- [x] H.4 Explorer: safe formula language (src/formula.py), user variables, amino acids (total + digestible), filters, colour/size, ranking bars, save/load
+- [x] H.5 Person-specific rankings (src/personal.py) + optimizer value from shadow prices; export uses them
+- [x] H.6 App: pages in 3 sections, caching (≈ 6–14× faster reruns), One-food day removed, formulas next to results, "How it works", palette + Roboto, sidebar collapsed
+- [ ] H.7 Real DK/NL prices from Open Prices (match foods, ≥ 3 observations, grade per price)
+- [ ] H.8 (owner, optional) More foods (≈ 200) with Fineli fibre fractions; GI from atkinson2021 via university access
+
 ## v3.0: Smart
 - [ ] F.1 Periodization: training-day vs rest-day targets; week-to-week load (e.g. 6 h vs 9 h weeks)
 - [ ] F.2 Adaptive energy expenditure: update the estimate from body-weight and intake tracking (e.g. Hall 2011 model)
@@ -176,3 +186,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-07 | D.1–D.9, D.11, D.12 | `reports/v1x_robustness.md` (prices, pattern, weights, safeguards, Monte Carlo, Frida vs USDA → fixed Frida buckwheat protein), `reports/v1x_comparison.md` (H8 baselines, typical diets + closest-valid-diet mode), `reports/technical_report.md`, `run_all.sh`; 45 tests pass |
 | 2026-10-07 | E.1–E.4, E.6, E.7 (v2.0) | Micronutrients from Frida/USDA (harmonized: RE, NE, food folate), EFSA DRVs + ULs (v11 Aug 2025), cooking retention from USDA pairs (fixed enriched/unenriched pair mismatches for rice and semolina), optimizer micronutrient constraints, export columns + brief table, app micronutrient views + 'Fix my usual diet'; `reports/v2.0_nutrients.md`; 47 tests pass |
 | 2026-10-07 | G.1–G.9 (v2.1) | Meal tool (score 0–100, tweak/best MILP, hints), country prices (Eurostat PLIs; owner day LV €2.69 / DK €3.00 / NL €2.45), realistic variant (+16 %) + meal split, omega-3, dislikes/appetite, race-week preset, shortfall hints, brief fixes, cloud deployment files; 59 tests |
+| 2026-10-07 | H.1–H.6 (v2.2) | Fibre/vitamin C/fat-quality research and data, formula Explorer, personal rankings + optimizer value, multipage redesign with caching; 85 tests |

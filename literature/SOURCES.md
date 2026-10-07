@@ -109,6 +109,26 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | drewnowski2024 | Drewnowski A & Conrad Z (2024). Pulse crops: nutrient density, affordability, and environmental impact. *Front Nutr* 11:1438369 | 10.3389/fnut.2024.1438369 | PMC11377338 |
 | drewnowski2025 | Drewnowski A (2025). Perspective: Milk and dairy provide affordable high-quality protein and merit inclusion in the protein foods group. *Curr Dev Nutr* 9:104539 | 10.1016/j.cdnut.2024.104539 | PMC11787005 |
 
+## v2.2 (user feedback: fibre, carbohydrate quality, vitamin C, fats; verified via PubMed/Crossref 2026-10-07)
+| ID | Citation | DOI | Access |
+|---|---|---|---|
+| reynolds2019 | Reynolds A, Mann J, Cummings J, Winter N, Mete E & Te Morenga L (2019). Carbohydrate quality and human health: a series of systematic reviews and meta-analyses. *Lancet* 393:434–445 (fibre 25–29 g/day; GI evidence low/very low) | 10.1016/S0140-6736(18)31809-9 | **UNI** |
+| who2023carb | WHO (2023). Carbohydrate intake for adults and children: WHO guideline (≥ 25 g/day naturally occurring dietary fibre for adults). PMID 37490573 (NCBI Bookshelf) | — | FREE |
+| wanders2011 | Wanders AJ et al. (2011). Effects of dietary fibre on subjective appetite, energy intake and body weight: a systematic review of randomized controlled trials. *Obes Rev* 12:724–739 | 10.1111/j.1467-789X.2011.00895.x | **UNI** |
+| veena1995 | Veena A, Urooj A & Puttaraj S (1995). Effect of processing on the composition of dietary fibre and starch in some legumes. *Nahrung* 39:132–138 | 10.1002/food.19950390206 | **UNI** |
+| njoumi2019 | Njoumi S et al. (2019). Soaking and cooking modify the alpha-galacto-oligosaccharide and dietary fibre content in five Mediterranean legumes. *Int J Food Sci Nutr* 70:551–561 | 10.1080/09637486.2018.1544229 | **UNI** |
+| atkinson2021 | Atkinson FS, Brand-Miller JC, Foster-Powell K, Buyken AE & Goletzke J (2021). International tables of glycemic index and glycemic load values 2021: a systematic review. *Am J Clin Nutr* 114:1625–1632 | 10.1093/ajcn/nqab233 | **UNI** (supplementary tables) |
+| efsa2013vitc | EFSA NDA Panel (2013). Scientific Opinion on Dietary Reference Values for vitamin C. *EFSA Journal* 11(11):3418 | 10.2903/j.efsa.2013.3418 | FREE |
+| levine1996 | Levine M et al. (1996). Vitamin C pharmacokinetics in healthy volunteers: evidence for a recommended dietary allowance. *PNAS* 93:3704–3709 | 10.1073/pnas.93.8.3704 | PMC39676 |
+| carr1999 | Carr AC & Frei B (1999). Toward a new recommended dietary allowance for vitamin C based on antioxidant and health effects in humans. *Am J Clin Nutr* 69:1086–1107 | 10.1093/ajcn/69.6.1086 | check |
+| paulsen2014 | Paulsen G et al. (2014). Vitamin C and E supplementation hampers cellular adaptation to endurance training in humans: a double-blind, randomised, controlled trial. *J Physiol* 592:1887–1901 | 10.1113/jphysiol.2013.267419 | PMC4001759 |
+| gomezcabrera2008 | Gomez-Cabrera MC et al. (2008). Oral administration of vitamin C decreases muscle mitochondrial biogenesis and hampers training-induced adaptations in endurance performance. *Am J Clin Nutr* 87:142–149 | 10.1093/ajcn/87.1.142 | check |
+| schwingshackl2018 | Schwingshackl L et al. (2018). Effects of oils and solid fats on blood lipids: a systematic review and network meta-analysis. *J Lipid Res* 59:1771–1782 | 10.1194/jlr.P085522 | PMC6121943 |
+| hooper2020 | Hooper L et al. (2020). Reduction in saturated fat intake for cardiovascular disease. *Cochrane Database Syst Rev* CD011737.pub3 | 10.1002/14651858.CD011737.pub3 | PMC8092457 |
+| ghobadi2019 | Ghobadi S et al. (2019). Comparison of blood lipid-lowering effects of olive oil and other plant oils: a systematic review and meta-analysis of 27 randomized placebo-controlled clinical trials. *Crit Rev Food Sci Nutr* 59:2110–2124 | 10.1080/10408398.2018.1438349 | **UNI** |
+| estruch2018 | Estruch R et al. (2018). Primary prevention of cardiovascular disease with a Mediterranean diet supplemented with extra-virgin olive oil or nuts. *N Engl J Med* 378:e34 | 10.1056/NEJMoa1800389 | check |
+| tian2023 | Tian X et al. (2023). Ergothioneine: an underrecognised dietary micronutrient required for healthy ageing? *Br J Nutr* 129:104–114 | 10.1017/S0007114522003592 | PMC9816654 |
+
 ## v2.0 (later)
 | ID | Citation | DOI | Access |
 |---|---|---|---|
@@ -120,6 +140,7 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | usda_fdc | USDA FoodData Central (Foundation, SR Legacy) | https://fdc.nal.usda.gov/download-datasets/ |
 | fineli | Fineli, Finnish Food Composition Database (THL) | https://fineli.fi |
 | frida | Frida, Danish Food Composition Database (DTU) | https://frida.fooddata.dk |
+| open_prices | Open Prices (Open Food Facts): crowd-sourced shop prices, ODbL; ≈ 2,000 prices in DKK on 2026-10-07 (candidate source for real DK/NL prices) | https://prices.openfoodfacts.org |
 | eurostat_pli | Eurostat prc_ppp_ind: price level indices by analytical category (food groups), EU27_2020 = 100, year 2024 (country prices, 2026-10-07) | https://ec.europa.eu/eurostat/databrowser/view/prc_ppp_ind/default/table |
 
 ---

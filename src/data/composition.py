@@ -17,7 +17,9 @@ AA = ["TRP", "THR", "ILE", "LEU", "LYS", "MET", "CYS", "PHE", "TYR", "VAL", "HIS
 MICRO = ["sat_fat", "calcium_mg", "iron_mg", "zinc_mg", "magnesium_mg", "potassium_mg", "phosphorus_mg", "selenium_ug",
          "copper_mg", "iodine_ug", "vitamin_a_ug_re", "retinol_ug", "vitamin_d_ug", "vitamin_e_mg", "vitamin_k_ug",
          "thiamin_mg", "riboflavin_mg", "niacin_mg_ne", "vitamin_b6_mg", "folate_ug", "vitamin_b12_ug", "vitamin_c_mg",
-         "mercury_ug", "cadmium_ug", "ala_g", "epa_g", "dha_g"]
+         "mercury_ug", "cadmium_ug", "ala_g", "epa_g", "dha_g",
+         # v2.2 (owner/friend feedback): fibre fractions, starch and fat quality
+         "fibre_sol_g", "fibre_insol_g", "starch_g", "mufa_g", "pufa_g", "trans_g", "n6_g", "n3_g"]
 COLS = ["kcal", "protein", "fat", "carb", "sugars", "free_sugars", "fibre", "water", "sodium_mg"] + AA + MICRO
 
 # USDA "carb" is carbohydrate BY DIFFERENCE (includes fibre); "free_sugars" ≈ USDA added sugars (1235), which
@@ -30,7 +32,9 @@ USDA_IDS = {1008: "kcal", 1003: "protein", 1004: "fat", 1005: "carb", 2000: "sug
             1105: "retinol_ug", 1107: "_beta_carotene", 1114: "vitamin_d_ug", 1109: "vitamin_e_mg",
             1185: "vitamin_k_ug", 1165: "thiamin_mg", 1166: "riboflavin_mg", 1167: "_niacin", 1175: "vitamin_b6_mg",
             1187: "_folate_food", 1177: "_folate_total", 1178: "vitamin_b12_ug", 1162: "vitamin_c_mg",
-            1404: "ala_g", 1270: "_ala_undiff", 1278: "epa_g", 1272: "dha_g"}
+            1404: "ala_g", 1270: "_ala_undiff", 1278: "epa_g", 1272: "dha_g",
+            1082: "fibre_sol_g", 1084: "fibre_insol_g", 1009: "starch_g", 1292: "mufa_g", 1293: "pufa_g", 1257: "trans_g",
+            1269: "n6_g"}   # USDA n-6 ≈ 18:2 undifferentiated (linoleic acid, > 90 % of dietary n-6)
 # Frida English parameter names → common names. Carbohydrate = "Available carbohydrates" (USDA has only "by difference").
 FRIDA_NAMES = {"Energy (kcal)": "kcal", "Protein": "protein", "Fat": "fat", "Available carbohydrates": "carb",
                "Sum sugars": "sugars", "Free Sugars": "free_sugars", "Dietary fibre": "fibre", "Water": "water", "Sodium": "sodium_mg",
@@ -43,7 +47,11 @@ FRIDA_NAMES = {"Energy (kcal)": "kcal", "Protein": "protein", "Fat": "fat", "Ava
                "Vitamin K": "vitamin_k_ug", "Thiamin (Vitamin B1)": "thiamin_mg", "Riboflavin (Vitamin B2)": "riboflavin_mg",
                "Niacin equivalent": "niacin_mg_ne", "Vitamin B6": "vitamin_b6_mg", "Folate": "folate_ug",
                "Vitamin B12": "vitamin_b12_ug", "Vitamin C": "vitamin_c_mg", "Mercury": "mercury_ug", "Cadmium": "cadmium_ug",
-               "C18:3,n-3": "ala_g", "C20:5,n-3": "epa_g", "C22:6,n-3": "dha_g"}  # omega-3 fatty acids, g/100 g
+               "C18:3,n-3": "ala_g", "C20:5,n-3": "epa_g", "C22:6,n-3": "dha_g",  # omega-3 fatty acids, g/100 g
+               "Insoluble dietary fibers": "fibre_insol_g", "High molecular weight soluble dietary fibre ": "_sdf_hmw",
+               "Low molecular weight soluble dietary fibre ": "_sdf_lmw", "Starch/Glycogen": "starch_g",
+               "Sum monounsaturated fatty acids": "mufa_g", "Sum polyunsaturated fatty acids": "pufa_g",
+               "Sum trans fatty acids": "trans_g", "Sum n-6 fatty acids": "n6_g", "Sum n-3 fatty acids": "n3_g"}
 FRIDA_KEEP_UNIT = {"sodium_mg", "calcium_mg", "iron_mg", "zinc_mg", "magnesium_mg", "potassium_mg", "phosphorus_mg",
                    "selenium_ug", "copper_mg", "iodine_ug", "vitamin_a_ug_re", "retinol_ug", "vitamin_d_ug", "vitamin_e_mg",
                    "vitamin_k_ug", "thiamin_mg", "riboflavin_mg", "niacin_mg_ne", "vitamin_b6_mg", "folate_ug",
@@ -60,6 +68,8 @@ def usda():
     t["vitamin_a_ug_re"] = t.retinol_ug.fillna(0) + t._beta_carotene.fillna(0) / 6          # RE = retinol + β-car/6
     t.loc[t.retinol_ug.isna() & t._beta_carotene.isna(), "vitamin_a_ug_re"] = float("nan")
     t["niacin_mg_ne"] = t._niacin + t.TRP.fillna(0) * 1000 / 60                            # NE = niacin + Trp/60
+    t["n3_g"] = t.ala_g.fillna(t._ala_undiff).fillna(0) + t.epa_g.fillna(0) + t.dha_g.fillna(0)  # main n-3s (no DPA)
+    t.loc[t.ala_g.isna() & t._ala_undiff.isna(), "n3_g"] = float("nan")
     t["ala_g"] = t.ala_g.where(t.ala_g.notna(), t._ala_undiff)                             # 18:3 n-3 often only 'undifferentiated'
     t["folate_ug"] = t._folate_food.where(t._folate_food.notna(), t._folate_total)          # natural folate (no US fortification)
     t = t.reindex(columns=COLS)
@@ -83,6 +93,8 @@ def frida():
             elif unit.startswith("mg/"):
                 v = v / 1000  # Frida amino acids are mg/100 g → g/100 g
             out[FRIDA_NAMES[n]] = v
+    # soluble fibre = high- + low-molecular-weight soluble fibre (LMW often not analysed → counts as 0 if HMW known)
+    out["fibre_sol_g"] = out._sdf_hmw + out._sdf_lmw.where(out._sdf_lmw.notna(), 0).where(out._sdf_hmw.notna())
     return out.reindex(columns=["description"] + COLS)
 
 

@@ -340,10 +340,18 @@ def micro_targets(p: Profile, energy_kcal: float) -> dict:
         for m in out.values():
             if m.min is not None and m.key != "fibre_g":
                 m.enforce, m.note = False, (m.note + "; " if m.note else "") + "reported only for this short phase"
-    if p.goal in ("muscle_gain", "hybrid_gain"):
-        fm = lim["fibre_max_g_bulking"]
-        out["fibre_g"].max = fm["max"]
-        out["fibre_g"].note = f"max {fm['max']} g while gaining: {fm['source']}"
+    fm = lim["fibre_max_g"]
+    out["fibre_g"].max = out["fibre_g"].max if out["fibre_g"].max is not None else fm["max"]
+    tf = lim["trans_fat_pct_energy"]
+    out["trans_g"] = Micro("trans_g", "Trans fat", "g", None, energy_kcal * tf["max"] / 100 / 9, True, tf["source"],
+                           f"< {tf['max']} % of energy")
+    # per-person overrides from the profile: overrides: {vitamin_c_mg_min: 200, fibre_g_max: 60, ...}
+    for key, v in (p.overrides or {}).items():
+        for suffix in ("_min", "_max"):
+            if key.endswith(suffix) and key[:-len(suffix)] in out:
+                m = out[key[:-len(suffix)]]
+                setattr(m, suffix[1:], float(v) if v is not None else None)
+                m.note = (m.note + "; " if m.note else "") + f"{suffix[1:]} set by the user ({v})"
     for k, r in MICRO_RULES["contaminants"].items():
         out[k] = Micro(k, r["label"], "µg", None, r["twi_ug_per_kg_week"] * p.mass_kg / 7, False, r["source"],
                        "tolerable weekly intake ÷ 7; reported only (data coverage ≈ 50–60 %)")
