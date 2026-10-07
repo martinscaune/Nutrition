@@ -132,12 +132,25 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 - [x] E.7 Contaminants (mercury in fish, arsenic in rice) → mercury and cadmium reported vs EFSA TWI (Frida data, ≈ 50–60 % coverage)
 - [ ] E.8 (owner) Expert review of all target rules and presets (questions in reports/technical_report.md §6)
 
+## v2.1: Meals, realistic diets, other countries (owner request + AI-export feedback, 2026-10-07)
+- [x] G.1 Rate & improve a meal: Meal Nutrient Score (personal NRF-style, `src/meals.py`), same-energy improved meal by MILP ('small tweak' / 'best possible'; tie-break similar or cheapest; not-more-expensive; exclusions), hints (shortfall sources per portion, limit contributors, canned-bean sodium), example meals `config/meal_templates.yaml`
+- [x] G.2 Country prices: Eurostat 2024 food PLIs by category (`src/prices/countries.py`), selector in the app's upper right, country in optimizer/meal tool/AI export; LV-only foods dropped elsewhere
+- [x] G.3 Realistic diet variant (≤ 400 g per food, legumes + soy ≤ 500 g, ≤ 20 % E per food, ≥ 2 sources per nutrient, appetite ceiling) and split into ≥ 4 meals (≥ 0.4 g/kg protein, 20–35 % E each)
+- [x] G.4 Omega-3: ALA, EPA, DHA from Frida/USDA; EFSA ALA 0.5 % E and EPA + DHA 250 mg enforced (weekly average; not in the per-meal score)
+- [x] G.5 Profile: dislikes and appetite ceiling (optimizer, meal tool, AI export)
+- [x] G.6 Presets: race week (carbohydrate loading 10–12 g/kg, fibre ≤ 25 g, minimums report-only); 'endurance' relabelled as base/build phase
+- [x] G.7 Shortfall hints for any diet ('Fix my usual day', optimizer, brief source table); weekly mercury/cadmium vs TWI
+- [x] G.8 Brief: worked price example (as bought vs as eaten), cooking assumption, complementary pairs, fermented dairy, variety (≤ 5 days/week for non-staples), realistic_diet.csv, split energy warning
+- [x] G.9 Streamlit Community Cloud preparation (`app/requirements.txt`, cloud-safe config, `DEPLOY.md`)
+- [ ] G.10 (owner) Push to a private GitHub repo, deploy, invite friends (DEPLOY.md)
+- [ ] G.11 (owner, optional) Real Danish/Dutch shop prices for the 10–20 most used foods, to check the PLI approximation
+
 ## v3.0: Smart
 - [ ] F.1 Periodization: training-day vs rest-day targets; week-to-week load (e.g. 6 h vs 9 h weeks)
 - [ ] F.2 Adaptive energy expenditure: update the estimate from body-weight and intake tracking (e.g. Hall 2011 model)
 - [ ] F.3 Recovery and nutrient timing (pre/during/post training)
-- [ ] F.4 Meal plans: per-meal protein/leucine distribution, meal count
-- [ ] F.5 Exclusions and preferences (vegetarian, vegan, lactose-free, allergies, disliked foods)
+- [~] F.4 Meal plans: per-meal protein/leucine distribution, meal count → meal split and per-meal protein done in v2.1 (G.3); leucine and pairing open
+- [~] F.5 Exclusions and preferences (vegetarian, vegan, lactose-free, allergies, disliked foods) → dislikes done in v2.1 (G.5); diet-pattern presets open
 - [ ] F.6 Shopping list with real pack sizes and a weekly budget; recipes
 
 ---
@@ -162,3 +175,4 @@ Context, definitions and decisions: [PROJECT.md](PROJECT.md). Version roadmap: P
 | 2026-10-07 | export | AI export gains `optimal_diet.csv` + baseline-diet section in the brief |
 | 2026-10-07 | D.1–D.9, D.11, D.12 | `reports/v1x_robustness.md` (prices, pattern, weights, safeguards, Monte Carlo, Frida vs USDA → fixed Frida buckwheat protein), `reports/v1x_comparison.md` (H8 baselines, typical diets + closest-valid-diet mode), `reports/technical_report.md`, `run_all.sh`; 45 tests pass |
 | 2026-10-07 | E.1–E.4, E.6, E.7 (v2.0) | Micronutrients from Frida/USDA (harmonized: RE, NE, food folate), EFSA DRVs + ULs (v11 Aug 2025), cooking retention from USDA pairs (fixed enriched/unenriched pair mismatches for rice and semolina), optimizer micronutrient constraints, export columns + brief table, app micronutrient views + 'Fix my usual diet'; `reports/v2.0_nutrients.md`; 47 tests pass |
+| 2026-10-07 | G.1–G.9 (v2.1) | Meal tool (score 0–100, tweak/best MILP, hints), country prices (Eurostat PLIs; owner day LV €2.69 / DK €3.00 / NL €2.45), realistic variant (+16 %) + meal split, omega-3, dislikes/appetite, race-week preset, shortfall hints, brief fixes, cloud deployment files; 59 tests |

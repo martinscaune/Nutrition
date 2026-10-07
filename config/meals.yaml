@@ -1,0 +1,25 @@
+# Meal-level settings (src/meals.py). Portion limits per MEAL in grams eaten (judgment calls for realistic meals).
+energy_tolerance_pct: 3
+max_foods_best: 6          # "best possible" meal: at most this many foods
+max_new_foods_tweak: 2     # "small tweak": keep the user's foods, add at most this many
+min_portion_g: 15
+min_portion_category: {eggs: 50, meat: 50, fish: 30}   # one egg; no token slivers of meat/fish
+max_g_per_meal:
+  food: {sunflower_oil: 15, rapeseed_oil: 15, olive_oil: 15, butter: 15, margarine: 15, mayonnaise: 15, sugar: 15,
+         honey: 20, jam: 25, wheat_flour: 60, cream_35: 50, sour_cream: 60, chicken_liver: 120}
+  category: {nuts_seeds: 50, dairy: 400, eggs: 250, meat: 250, processed_meat: 120, fish: 250, legumes: 300, soy: 250,
+             cereals: 450, bread: 150, potatoes: 450, fruit: 250, vegetables: 300, ingredients: 30}
+  default: 250
+tweak_range: [0.5, 1.5]    # "small tweak": each original food stays within 50–150 % of its amount
+score_slack: 0.5           # stage 2 picks among meals within this many points of the best score
+# foods the optimizer may SUGGEST (any food can be in the user's own meal)
+suggest_roles: [core, ingredient]
+never_suggest: [wheat_flour, sugar, cream_35, mayonnaise, margarine]   # not eaten as such / no nutritional reason
+# splitting a day's diet into meals (owner feedback 2026-10-07)
+split:
+  n_meals: 4
+  protein_g_per_kg_per_meal: 0.4      # schoenfeld2018: ≥ 0.4 g/kg per meal over ≥ 4 meals
+  min_energy_share: 0.20              # every meal ≥ 20 % of the day's energy
+  max_energy_share: 0.35              # … and ≤ 35 %
+  max_mass_share: 0.35                # … and ≤ 35 % of the day's food mass
+  min_piece_g: 10                     # a food that appears in a meal is at least this much (unless the day total is less)

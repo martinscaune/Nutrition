@@ -35,6 +35,11 @@ nutrients:
   folate_ug:      {label: "Folate (food)",  unit: µg, min: {male: 330, female: 330}, type: PRI, source: efsa2017}
   vitamin_b12_ug: {label: "Vitamin B12",    unit: µg, min: {male: 4.0, female: 4.0}, type: AI, source: efsa2017}
   vitamin_c_mg:   {label: "Vitamin C",      unit: mg, min: {male: 110, female: 95}, type: PRI, source: efsa2017}
+  # omega-3 fatty acids (owner feedback 2026-10-07): EFSA DRVs for fats
+  ala_g:          {label: "ALA (plant omega-3)", unit: g, pct_energy: 0.5, type: AI, source: efsa2010f,
+                   note: "0.5 % of energy; flaxseed, walnuts, rapeseed oil"}
+  epa_dha_g:      {label: "EPA + DHA (fish omega-3)", unit: g, min: {male: 0.25, female: 0.25}, type: AI, source: efsa2010f,
+                   note: "250 mg/day as a weekly average ≈ 1–2 fatty-fish meals per week; vegans: algal-oil supplement"}
 
 limits:
   sodium_mg: {label: "Sodium", unit: mg, max: 2000, source: efsa2019na,

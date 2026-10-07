@@ -16,11 +16,15 @@ ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT))
 from src.data import composition as C  # noqa: E402
 
+PLANT = {"cereals", "bread", "potatoes", "legumes", "soy", "nuts_seeds", "fruit", "vegetables"}
+
 
 def main():
     foods = pd.read_csv(ROOT / "data/foods/foods.csv")
     cmap = pd.read_csv(ROOT / "data/foods/composition_map.csv", dtype=str)
     ylds = pd.read_csv(ROOT / "data/foods/yields.csv").set_index("food_id")
+    fill = pd.read_csv(ROOT / "data/foods/nutrient_fill.csv", dtype=str)
+    cat = foods.set_index("food_id").category
     missing = set(foods.food_id) - set(cmap.food_id)
     extra = set(cmap.food_id) - set(foods.food_id)
     rows, flags = [], []
@@ -37,6 +41,16 @@ def main():
                 r["description"] = x.description
                 for c in C.COLS:
                     r[c] = x[c]
+                for fr in fill[fill.food_id == m.food_id].itertuples():   # documented gap fills (nutrient_fill.csv)
+                    y_ = C.lookup(fr.db, fr.id)
+                    for k in fr.nutrients.split(";"):
+                        if pd.isna(r[k]):
+                            r[k] = y_[k]
+                            f.append(f"{k} from {fr.db}:{fr.id}")
+                if cat.get(m.food_id) in PLANT:   # EPA/DHA do not occur in plant foods: unknown → 0
+                    for k in ("epa_g", "dha_g"):
+                        if pd.isna(r[k]):
+                            r[k] = 0.0
                 if pd.isna(x[C.AA]).any() and pd.isna(m.aa_override_id):
                     f.append("no AA profile")
                 if pd.isna(x.kcal) or pd.isna(x.protein):

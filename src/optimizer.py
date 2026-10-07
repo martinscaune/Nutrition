@@ -35,9 +35,12 @@ PATTERN_SPLIT = {"HIS": ["HIS"], "ILE": ["ILE"], "LEU": ["LEU"], "LYS": ["LYS"],
 
 
 # ---------------------------------------------------------------- inputs
-def food_table(quality="diaas", price_scenario="central", roles=None, exclude=(), include_only=None):
+def food_table(quality="diaas", price_scenario="central", roles=None, exclude=(), include_only=None, country="LV"):
     """Per-gram-eaten coefficients for every eligible food."""
-    df = M.with_price(M.with_quality(M.load(), quality), price_scenario)
+    df = M.with_price(M.with_quality(M.load(), quality), price_scenario, country)
+    if country != "LV":
+        from src.prices.countries import LV_ONLY
+        df = df[~df.food_id.isin(LV_ONLY)]
     roles = roles or CFG["include_roles"]
     df = df[df.role.isin(roles) & df.eur_per_kg_used.notna() & df.kcal_100g_eaten.notna()]
     df = df[~df.food_id.isin(exclude)]
@@ -62,6 +65,7 @@ def food_table(quality="diaas", price_scenario="central", roles=None, exclude=()
     micro = pd.DataFrame({k: (d[f"{k}_100g_eaten"] / 100).fillna(0) for k in MICRO + ["sodium_mg"]
                           if f"{k}_100g_eaten" in d})  # per g eaten; missing → 0 (never over-states supply)
     t = pd.concat([t, micro], axis=1)
+    t["epa_dha_g"] = t.epa_g + t.dha_g
     t["cap"] = [cap_g(f, c) for f, c in zip(t.index, t.category)]
     return t
 
@@ -98,16 +102,24 @@ class Spec:
     fixed_mass_norm: float | None = None
     micros: dict | None = None             # v2.0: {key: (label, min, max)} enforced micronutrient / fibre / sodium limits
     use_micros: bool = True
+    realistic: bool = False                # config/optimizer.yaml `realistic`: portion, legume, share, ≥2-source limits
 
 
 def spec_from_profile(profile, **kw):
     r = compute(profile)
     t = r.targets
     micros = {k: (m.label, m.min, m.max) for k, m in r.micros.items() if m.enforce}
+    base = {"objective": "mass"} if (profile.priorities or {}).get("cost", 1) == 0 else {}
+    if profile.appetite_max_g:
+        base["max_mass"] = float(profile.appetite_max_g)
     return Spec(energy=t["energy"].value, protein=t["protein"].value, protein_max=t["protein"].high,
                 carb_lo=t["carbohydrate"].low, carb_hi=t["carbohydrate"].high, fat_lo=t["fat"].low,
                 fat_hi=t["fat"].high, free_sugars_max=t["free sugars (max)"].value, micros=micros,
-                **({"objective": "mass"} if (profile.priorities or {}).get("cost", 1) == 0 else {}), **kw), r
+                **{**base, **kw}), r
+
+
+REAL = CFG["realistic"]
+INTERNAL_ROWS = ("energy share", "source share")   # per-food safeguard rows (not targets): hidden in reports
 
 
 # ---------------------------------------------------------------- model building
@@ -153,10 +165,23 @@ def _rows(t, s):
             if hi is not None:
                 le(f"{label} (max)", t[col], hi)
     if s.safeguards == "full":
+        share = min(s.max_share, REAL["max_energy_share_per_food"]) if s.realistic else s.max_share
         for f in t.index:
             e = pd.Series(0.0, index=t.index)
             e[f] = t.kcal[f]
-            le(f"energy share {f}", e, s.max_share * s.energy)
+            le(f"energy share {f}", e, share * s.energy)
+    if s.safeguards == "full" and s.realistic:
+        for g, cats in REAL["groups"].items():
+            le(f"{g} (max g/day)", t.category.isin(cats).astype(float), REAL["group_max_g"][g])
+        if s.use_micros and s.micros:      # ≥ 2 sources: a_f x_f − share · Σ a x ≤ 0 for every food with a_f > 0
+            for k, (label, lo, _) in s.micros.items():
+                col = MICRO_COL.get(k, k)
+                if lo is None or col not in t:
+                    continue
+                for f in t.index[t[col] > 0]:
+                    e = -REAL["max_nutrient_share_per_food"] * t[col]
+                    e[f] += t[col][f]
+                    R.append((f"source share {label} {f}", e.to_numpy(float), 0.0, "≤", 0.0))
     if s.max_mass:
         le("total food mass (max)", pd.Series(1.0, index=t.index), s.max_mass)
     return R
@@ -185,13 +210,14 @@ class Solution:
     cost_eur: float = np.nan
     mass_g: float = np.nan
     micro_totals: pd.Series = field(default_factory=pd.Series)
+    meal_split: pd.DataFrame | None = None
 
 
 def solve(t, s: Spec) -> Solution:
     rows = _rows(t, s)
     A = np.array([r[1] for r in rows])
     b = np.array([r[2] for r in rows])
-    caps = t.cap.to_numpy(float) if s.safeguards == "full" else np.full(len(t), 5000.0)
+    caps = _caps(t, s)
     c = _objective(t, s)
     n = len(t)
     if not s.milp:
@@ -215,6 +241,13 @@ def solve(t, s: Spec) -> Solution:
     return sol
 
 
+def _caps(t, s):
+    if s.safeguards != "full":
+        return np.full(len(t), 5000.0)
+    caps = t.cap.to_numpy(float)
+    return np.minimum(caps, REAL["max_g_per_food"]) if s.realistic else caps
+
+
 def _report(sol, t, s, x, rows, res):
     x = np.where(x < 1e-6, 0.0, x)
     used = x > 0.5
@@ -230,7 +263,7 @@ def _report(sol, t, s, x, rows, res):
          "fat_total", "free_sugars_total", "fibre_total", "energy_share"]].round(2)
     tot = {k: float((t[k].to_numpy() * x).sum()) for k in ["kcal", "protein", "carb", "fat", "free_sugars", "fibre"]}
     from src.data.composition import MICRO
-    sol.micro_totals = pd.Series({k: float((t[k].to_numpy() * x).sum()) for k in MICRO + ["sodium_mg", "fibre"] if k in t})
+    sol.micro_totals = pd.Series({k: float((t[k].to_numpy() * x).sum()) for k in MICRO + ["sodium_mg", "fibre", "epa_dha_g"] if k in t})
     sol.micro_totals["fibre_g"] = sol.micro_totals["fibre"]
     targets = {"kcal": s.energy, "protein": s.protein, "carb": (s.carb_lo, s.carb_hi), "fat": (s.fat_lo, s.fat_hi),
                "free_sugars": (None, s.free_sugars_max), "fibre": (None, None)}
@@ -254,7 +287,7 @@ def _report(sol, t, s, x, rows, res):
 
 def elastic(t, s, rows, caps, c):
     """Goal-programming relaxation: every target row gets a penalized slack; report which ones must give."""
-    target_rows = [i for i, r in enumerate(rows) if not r[0].startswith("energy share")]
+    target_rows = [i for i, r in enumerate(rows) if not r[0].startswith(INTERNAL_ROWS)]
     n, k = len(t), len(target_rows)
     A = np.array([r[1] for r in rows])
     b = np.array([r[2] for r in rows])
@@ -344,3 +377,45 @@ def closest_diet(t, s: Spec, template: pd.Series, max_cost=None, base_g=50.0):
     ch["change_g"] = ch.new_g - ch.usual_g
     sol.changes = ch[ch.change_g.abs() > 5].sort_values("change_g")
     return sol
+
+
+def nutrient_status(t, grams, res, n_sources=3, exclude=()):
+    """Vitamins/minerals/fibre/omega-3/sodium/sat. fat of a day (grams eaten per food_id) vs the person's targets, with a
+    hint for every shortfall: the priced core foods giving the most of that nutrient in one realistic portion
+    (min(per-meal cap, 200 g, 300 kcal), config/meals.yaml) (owner feedback 2026-10-07).
+    Contaminants are reported per WEEK against the tolerable weekly intake (daily intake × 7)."""
+    from src.meals import meal_cap
+    g = grams.reindex(t.index).fillna(0).to_numpy(float)
+    core = t[(t.role == "core") & ~t.index.isin(list(exclude))]
+    portion = pd.Series([min(meal_cap(f, c), 200.0, 300 / k if k > 0 else 200.0)   # ≤ 200 g and ≤ 300 kcal
+                         for f, c, k in zip(core.index, core.category, core.kcal)], index=core.index).round(-1).clip(lower=10)
+    rows = []
+    for k, m in res.micros.items():
+        col = MICRO_COL.get(k, k)
+        if col not in t:
+            continue
+        v = float(t[col].to_numpy() @ g)
+        weekly = k in ("mercury_ug", "cadmium_ug")
+        if weekly:
+            have, mx = v * 7, m.max * 7
+            st = "above weekly limit" if have > mx else "ok"
+            rows.append({"nutrient": f"{m.label} (per week)", "diet": have, "minimum": None, "maximum": mx,
+                         "unit": m.unit, "% of min": None, "status": st + " (data incomplete)", "add for more": ""})
+            continue
+        low = m.min is not None and v < m.min * 0.99
+        high = m.max is not None and v > m.max * 1.01
+        st = ("below min" if low else "above max" if high else "ok") + ("" if m.enforce else " (report only)")
+        hint = ""
+        if low:
+            per = (core[col] * portion).sort_values(ascending=False)
+            fmt = (lambda x: f"{x:.2g}") if per.iloc[0] < 10 else (lambda x: f"{x:.0f}")
+            hint = ", ".join(f"{core.name[f]} {portion[f]:.0f} g → {fmt(per[f])} {m.unit}" for f in per.index[:n_sources])
+        rows.append({"nutrient": m.label, "diet": v, "minimum": m.min, "maximum": m.max, "unit": m.unit,
+                     "% of min": v / m.min * 100 if m.min else None, "status": st, "add for more": hint})
+    return pd.DataFrame(rows)
+
+
+def shortfall_text(status):
+    """One line per enforced shortfall: 'you'd miss selenium (62 % of minimum) — add: …'."""
+    s = status[status.status.eq("below min")]
+    return [f"{r.nutrient}: {r['% of min']:.0f} % of the minimum; good sources: {r['add for more']}" for _, r in s.iterrows()]

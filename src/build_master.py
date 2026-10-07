@@ -28,7 +28,7 @@ PLAUSIBLE = {"TRP": (6, 25), "THR": (20, 60), "ILE": (30, 70), "LEU": (50, 140),
 MIN_PROTEIN_FOR_AA_CHECK = 3.5  # g/100 g; AA profiles of near-protein-free foods are noisy and irrelevant
 
 
-RETAINED = [k for k in C.MICRO if k not in ("sat_fat", "mercury_ug", "cadmium_ug")]
+RETAINED = [k for k in C.MICRO if k not in ("sat_fat", "mercury_ug", "cadmium_ug", "ala_g", "epa_g", "dha_g")]  # fats: mass-based only
 
 
 def retention(m):

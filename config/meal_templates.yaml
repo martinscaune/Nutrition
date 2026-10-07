@@ -1,0 +1,13 @@
+# Example meals in grams EATEN. Helpers: 1 egg (size M) ≈ 51 g edible; 1 can of beans/chickpeas (400 g) ≈ 240 g drained.
+friend_eggs_beans:
+  label: "4 eggs + 1 can of beans (friend's staple)"
+  foods: {eggs: 204, beans_canned: 240}
+porridge_breakfast:
+  label: "Oat porridge with milk, banana and peanut butter"
+  foods: {oats_flaked: 400, milk: 200, bananas: 120, peanut_butter: 20}
+chicken_rice:
+  label: "Chicken breast with rice and frozen vegetables"
+  foods: {chicken_fillet: 150, rice_white: 300, veg_frozen: 150, olive_oil: 10}
+latvian_lunch:
+  label: "Pork, boiled potatoes, cabbage salad, rye bread"
+  foods: {pork_boneless: 150, potatoes: 300, cabbage: 100, sour_cream: 30, bread_rye: 60}

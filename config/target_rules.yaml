@@ -30,6 +30,7 @@ carbohydrate_bands:   # g/kg/day by average training hours per day (thomas2016 T
 safeguards:           # PROJECT.md §9.1
   fat_pct_energy: [20, 35]        # efsa2010f, thomas2016 (D8)
   fat_pct_energy_fat_loss: [15, 35]  # helms2014 (D8)
+  fat_pct_energy_race_week: [10, 25] # JUDGMENT CALL [U]: carbohydrate loading displaces fat for 1–2 days
   free_sugars_max_pct_energy: 10  # who2015 (D8)
   energy_availability_warn_kcal_per_kg_ffm: 30   # thomas2016: chronic EA < 30 impairs health/performance
   energy_availability_optimal_kcal_per_kg_ffm: 45  # thomas2016
@@ -56,7 +57,7 @@ presets:
     carbohydrate: {mode: band, source: thomas2016, decision: D7}
     fat_pct_key: fat_pct_energy_fat_loss
   endurance:
-    label: "Endurance (triathlon, Ironman)"
+    label: "Endurance base / build phase (triathlon, Ironman)"
     ranking_preset: "Endurance carbs on a budget"
     energy: {mode: maintain}
     protein_g_per_kg: {min: 1.4, default: 1.6, max: 2.0, source: thomas2016, decision: D2}
@@ -67,6 +68,17 @@ presets:
     energy: {mode: surplus, pct_of_tdee: 10, pct_of_tdee_advanced: 5, rate_pct_bm_week: [0.25, 0.5], source: iraki2019, decision: D6}
     protein_g_per_kg: {min: 1.6, default: 1.8, max: 2.2, source: morton2018, decision: D1}
     carbohydrate: {mode: band, source: thomas2016, decision: D7}
+  race_week:
+    label: "Race week: carbohydrate loading (36–48 h before a race > 90 min)"
+    ranking_preset: "Endurance carbs on a budget"
+    energy: {mode: fit_macros, source: thomas2016, decision: D6}   # ≥ maintenance; raised if 10–12 g/kg carbs need it
+    protein_g_per_kg: {min: 1.2, default: 1.4, max: 2.0, source: thomas2016, decision: D2}
+    carbohydrate: {mode: g_per_kg, g_per_kg: [10, 12], source: thomas2016, decision: D7}   # Table 2: carbohydrate loading
+    fat_pct_key: fat_pct_energy_race_week
+    free_sugars_max_pct_energy: 25    # JUDGMENT CALL [U]: sugary low-residue carbohydrate is normal when loading
+    micro_overrides: {fibre_g: {min: null, max: 25}}   # JUDGMENT CALL [U]: low fibre/residue to limit gut discomfort (burke2011)
+    micro_minimums: report   # EFSA minimums are long-term averages; over 1–2 days they are reported, not enforced
+    note: "For the last 1–2 days only. Vitamin/mineral minimums still apply but matter little over 2 days."
   professional:
     label: "Professional athlete (prescribed targets)"
     ranking_preset: "Price doesn't matter"

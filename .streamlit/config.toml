@@ -1,8 +1,6 @@
-# Personal-use app: only reachable from this computer; no usage statistics sent to Streamlit.
-[server]
-address = "localhost"
-headless = false
-
+# Shared by local runs and Streamlit Community Cloud. No usage statistics are sent to Streamlit.
+# Local runs bind to this computer only via the command line: streamlit run app/app.py --server.address localhost
+# (README.md); the cloud sets its own server address, so it is not fixed here.
 [browser]
 gatherUsageStats = false
 

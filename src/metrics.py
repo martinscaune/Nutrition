@@ -80,11 +80,14 @@ PRICE_SCENARIOS = {"central": "eur_per_kg_edible", "low (band lower edge)": "pri
                    "high (band upper edge)": "price_band_hi"}
 
 
-def with_price(df, scenario="central"):
-    """Recompute every per-€ metric for a price scenario (central price or the lower/upper band edge)."""
+def with_price(df, scenario="central", country="LV"):
+    """Recompute every per-€ metric for a price scenario (central price or the lower/upper band edge) and a country
+    (Latvian prices × Eurostat category price levels; src/prices/countries.py)."""
+    from src.prices.countries import factors
     col = PRICE_SCENARIOS[scenario]
     d = df.copy()
-    price = d[col].where(d[col].notna(), d.eur_per_kg_edible)
+    price = d[col].where(d[col].notna(), d.eur_per_kg_edible) * factors(d, country)
+    d["price_country"] = country
     d["eur_per_kg_used"] = price
     d["kcal_per_eur"] = d.kcal_100g_purchased * 10 / price
     d["protein_per_eur"] = d.protein_100g_purchased * 10 / price

@@ -65,7 +65,7 @@ def main():
         aa = O.aa_adequacy(t, sol.foods, s.protein)
         L.append(f"Amino-acid adequacy (supplied ÷ required): lowest {aa.idxmin()} {aa.min():.2f}\n\n")
         if len(sol.binding):
-            b = sol.binding[~sol.binding.constraint.str.startswith("energy share")].head(5)
+            b = sol.binding[~sol.binding.constraint.str.startswith(O.INTERNAL_ROWS)].head(5)
             L.append("Binding constraints (objective change per unit tighter): " +
                      "; ".join(f"{r.constraint} {r.objective_per_unit_tighter:.4f}" for r in b.itertuples()) + "\n\n")
         summary.append({"profile": prof.name, "kcal target": s.energy, "protein target g": s.protein,

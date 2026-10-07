@@ -246,3 +246,28 @@ def front_fig(fr):
     fig.update_layout(xaxis_title="Food eaten per day (g)", yaxis_title="Cost per day (€)")
     fig.update_yaxes(rangemode="tozero")
     return fig
+
+
+def meal_score_fig(b0, b1, names=("Your meal", "Improved meal")):
+    """Item-by-item Meal Nutrient Score: adequacy (0–1, encourage items) and −excess (limits) for two meals.
+    Items that are full (1.0) in both meals, or limits not exceeded in either, are left out; None if nothing is left."""
+    lim = (b0.kind == "limit").to_numpy()
+    s0, s1 = b0.score.to_numpy(), b1.score.to_numpy()
+    keep = np.where(lim, (s0 < -1e-3) | (s1 < -1e-3), (s0 < 0.999) | (s1 < 0.999))
+    if not keep.any():
+        return None
+    b0, b1 = b0[keep], b1[keep]
+    items = list(b0["item"].str.replace(r" \(limiting: .*\)", "", regex=True))
+    fig = go.Figure()
+    for b, nm, col in ((b0, names[0], "#8a8984"), (b1, names[1], "#2a78d6")):
+        fig.add_trace(go.Bar(y=items, x=b.score, name=nm, orientation="h",
+                             marker=dict(color=col, line=dict(color="black", width=0.6)),
+                             customdata=np.stack([b["meal"], b["meal target"], b["unit"]], axis=1),
+                             hovertemplate="%{y}: %{x:.2f}<br>meal %{customdata[0]:.3g} / target "
+                                           "%{customdata[1]:.3g} %{customdata[2]}<extra>" + nm + "</extra>"))
+    _scientific(fig, max(420, 22 * len(items) + 120))
+    fig.update_layout(barmode="group", bargap=0.25, margin=dict(l=190, r=25, t=20, b=80),
+                      xaxis_title="Score per item (1 = meets this meal's share; negative = over a limit)")
+    fig.update_xaxes(range=[-1.05, 1.05])
+    fig.update_yaxes(autorange="reversed", showgrid=False, minor=dict(ticks=""))
+    return fig

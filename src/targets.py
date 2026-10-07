@@ -34,6 +34,8 @@ class Profile:
     tdee_kcal: float | None = None            # measured / known energy expenditure (overrides the estimate)
     overrides: dict = field(default_factory=dict)  # energy_kcal, protein_g, carb_g, fat_g
     priorities: dict = field(default_factory=dict)
+    appetite_max_g: float | None = None       # most food (g eaten/day) the person can comfortably eat; None = no limit
+    dislikes: list = field(default_factory=list)  # food_ids never to use (optimizer, meal tool, AI export)
 
     @property
     def hours_per_day(self):
@@ -160,7 +162,9 @@ def compute(p: Profile) -> Result:
         diff = tdee / est - 1
         if abs(diff) > 0.15:
             W.append(f"Your energy expenditure ({tdee:,.0f} kcal) differs {diff:+.0%} from the estimate "
-                     f"({est:,.0f} kcal: {how}). If weight does not change as planned, adjust it (v3.0 will learn it).")
+                     f"({est:,.0f} kcal: {how}).")
+            W.append("If your body mass does not change as planned within 2–3 weeks, adjust the expenditure value "
+                     "(v3.0 will learn it from a weight log).")
     else:
         tdee, src = est, "estimate"
     pal = tdee / ree(p)[0]
@@ -173,7 +177,7 @@ def compute(p: Profile) -> Result:
     en = pre["energy"]
     if "energy_kcal" in o:
         E, rule, source = float(o["energy_kcal"]), "user override", "user override"
-    elif en["mode"] == "maintain":
+    elif en["mode"] in ("maintain", "fit_macros"):
         E, rule, source = tdee, "maintenance = energy expenditure", "–"
     elif en["mode"] == "surplus":
         pct = en["pct_of_tdee_advanced"] if p.experience == "advanced" else en["pct_of_tdee"]
@@ -219,6 +223,17 @@ def compute(p: Profile) -> Result:
     if cb["mode"] == "pct_energy":
         c_lo, c_hi = E * cb["pct"][0] / 100 / 4, E * cb["pct"][1] / 100 / 4
         c_rule, c_src = f"{cb['pct'][0]}–{cb['pct'][1]} % of energy", cb["source"]
+    elif cb["mode"] == "g_per_kg":
+        c_lo, c_hi = cb["g_per_kg"][0] * p.mass_kg, cb["g_per_kg"][1] * p.mass_kg
+        c_rule, c_src = f"{cb['g_per_kg'][0]}–{cb['g_per_kg'][1]} g/kg", cb["source"]
+        if en["mode"] == "fit_macros" and "energy_kcal" not in o:   # carbohydrate loading needs room: raise energy
+            need = (P * 4 + c_lo * 4) / (1 - fat_pct[0] / 100)
+            if need > E:
+                E = need
+                T["energy"] = Target(E, unit="kcal", source=en["source"],
+                                     rule=f"raised above expenditure ({tdee:,.0f}) to fit {cb['g_per_kg'][0]} g/kg "
+                                          f"carbohydrate + protein + fat ≥ {fat_pct[0]} % E")
+                fat_lo, fat_hi = E * fat_pct[0] / 100 / 9, E * fat_pct[1] / 100 / 9
     elif p.modality in ("endurance", "hybrid"):
         hpd = p.hours_per_day
         band = next(b for b in RULES["carbohydrate_bands"] if hpd <= b["max_h_per_day"])
@@ -252,10 +267,13 @@ def compute(p: Profile) -> Result:
             Cg = c_hi
             Fg = (E - P * 4 - Cg * 4) / 9 if "fat_g" not in o else Fg
     T["carbohydrate"] = Target(Cg, c_lo, c_hi, "g", c_src, c_rule)
-    T["fat"] = Target(Fg, fat_lo, fat_hi, "g", "efsa2010f / thomas2016" if fat_pct[0] == 20 else "helms2014",
+    fat_src = {"fat_pct_energy": "efsa2010f / thomas2016", "fat_pct_energy_fat_loss": "helms2014"}.get(
+        pre.get("fat_pct_key", "fat_pct_energy"), "JUDGMENT CALL")
+    T["fat"] = Target(Fg, fat_lo, fat_hi, "g", fat_src,
                       f"{fat_pct[0]}–{fat_pct[1]} % of energy (default {mid_pct:g} % unless the carbohydrate band needs room)")
-    T["free sugars (max)"] = Target(E * sg["free_sugars_max_pct_energy"] / 100 / 4, unit="g", source="who2015",
-                                    rule=f"< {sg['free_sugars_max_pct_energy']} % of energy")
+    fs = pre.get("free_sugars_max_pct_energy", sg["free_sugars_max_pct_energy"])
+    T["free sugars (max)"] = Target(E * fs / 100 / 4, unit="g", source="who2015" if fs == sg["free_sugars_max_pct_energy"]
+                                    else "JUDGMENT CALL (race week)", rule=f"< {fs} % of energy")
 
     # ---- feasibility (B.5)
     if Cg < 0:
@@ -301,6 +319,8 @@ def micro_targets(p: Profile, energy_kcal: float) -> dict:
     for k, r in MICRO_RULES["nutrients"].items():
         if "per_mj" in r:
             lo, note = r["per_mj"] * mj, f"{r['per_mj']} {r['unit']}/MJ × {mj:.1f} MJ"
+        elif "pct_energy" in r:   # fatty acid as % of energy (9 kcal/g)
+            lo, note = r["pct_energy"] / 100 * energy_kcal / 9, f"{r['pct_energy']} % of energy; {r.get('note', '')}"
         elif "min" in r:
             lo = r["min_18_24"] if (p.age <= 24 and "min_18_24" in r) else r["min"][sex]
             note = r.get("note", "") if not (k == "iron_mg" and sex == "male") else ""
@@ -313,6 +333,13 @@ def micro_targets(p: Profile, energy_kcal: float) -> dict:
     sf = lim["saturated_fat_pct_energy"]
     out["sat_fat"] = Micro("sat_fat", "Saturated fat", "g", None, energy_kcal * sf["max"] / 100 / 9, True, sf["source"],
                            f"< {sf['max']} % of energy")
+    for k, ov in RULES["presets"][p.goal].get("micro_overrides", {}).items():
+        out[k].min, out[k].max = ov.get("min", out[k].min), ov.get("max", out[k].max)
+        out[k].note = "race-week override (JUDGMENT CALL)"
+    if RULES["presets"][p.goal].get("micro_minimums") == "report":
+        for m in out.values():
+            if m.min is not None and m.key != "fibre_g":
+                m.enforce, m.note = False, (m.note + "; " if m.note else "") + "reported only for this short phase"
     if p.goal in ("muscle_gain", "hybrid_gain"):
         fm = lim["fibre_max_g_bulking"]
         out["fibre_g"].max = fm["max"]

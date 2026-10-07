@@ -1,0 +1,9 @@
+# Runtime dependencies of the Streamlit app only (Streamlit Community Cloud reads this file next to app/app.py).
+# Versions = requirements-lock.txt (tested on Python 3.14). The analysis pipeline uses ../requirements.txt.
+numpy==2.5.3
+pandas==3.0.6
+scipy==1.18.1
+plotly==7.1.0
+matplotlib==3.11.2
+pyyaml==6.0.3
+streamlit==1.65.0

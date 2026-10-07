@@ -8,14 +8,17 @@ useful protein, calories and carbohydrate per euro and per gram eaten, for any t
 - **Technical report:** [reports/technical_report.md](reports/technical_report.md)
 - **Latest results:** [reports/v2.0_nutrients.md](reports/v2.0_nutrients.md) (complete diets), [reports/v1.0_optimizer.md](reports/v1.0_optimizer.md) (diets), [reports/scenarios_v0.2.md](reports/scenarios_v0.2.md) (profiles), [reports/v0.1_exploration.md](reports/v0.1_exploration.md) (foods)
 
-## Run the food explorer (v0.1)
+## Run the app
+Tabs: targets & AI export · **rate & improve a meal** · diet optimizer (minimum or realistic, split into meals) · fix
+my usual day · rankings · explorer · food details. The country for prices is chosen in the upper right (Latvia observed;
+other EU countries ≈ via Eurostat price levels). Share it privately with friends: [DEPLOY.md](DEPLOY.md).
 ```sh
 # inside the VS Code (Flatpak) terminal:
-host-spawn .venv/bin/streamlit run app/app.py
+host-spawn .venv/bin/streamlit run app/app.py --server.address localhost
 # in a normal terminal:
-.venv/bin/streamlit run app/app.py
+.venv/bin/streamlit run app/app.py --server.address localhost
 ```
-Opens http://localhost:8501 (local only; see `.streamlit/config.toml`).
+Opens http://localhost:8501 (bound to this computer by `--server.address localhost`).
 
 ## Rebuild everything from raw data
 `sh run_all.sh` (inside the Flatpak terminal: `host-spawn sh run_all.sh`) runs all steps below in < 1 minute.
@@ -33,10 +36,12 @@ Opens http://localhost:8501 (local only; see `.streamlit/config.toml`).
 .venv/bin/python -m pytest -q                 # tests
 ```
 Export a person-specific ranking + AI brief (also in the app, tab "My targets & AI export"):
-`.venv/bin/python -m src.export --profile config/profiles/owner.yaml --preset "Bulking: balanced"` → `exports/…/`
+`.venv/bin/python -m src.export --profile config/profiles/owner.yaml --country DK` → `exports/…/` (foods_ranked.csv,
+optimal_diet.csv, realistic_diet.csv with a meal split, brief.md)
 
 Refresh prices from Cenu Depo (polite, ≥ 3 s between requests): `python3 -m src.prices.cenudepo`.
 
 ## Data licences
 Frida 5.5 (CC BY 4.0, DTU Food) · EFSA DRV and UL documents (reproduction authorised with acknowledgement) · USDA FoodData Central (public domain) · muleya2021 DIAAS dataset (CC BY 4.0) ·
-CSP Latvia PCC010m (open data) · **Cenu Depo prices: personal use only**, not for publication without permission.
+CSP Latvia PCC010m (open data) · Eurostat price level indices (free re-use with acknowledgement) ·
+**Cenu Depo prices: personal use only**, not for publication without permission (keep shared apps private).

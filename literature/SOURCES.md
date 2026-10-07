@@ -104,6 +104,8 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | moreno2026 | Moreno FJ (2026). Mixed integer goal programming for personalized meal optimization with user-defined serving granularity. *arXiv* | 10.48550/arxiv.2605.13849 | OA (preprint) |
 | vieux2022 | Vieux F, Rémond D, Peyraud JL & Darmon N (2022). Approximately half of total protein intake by adults must be animal-based to meet nonprotein, nutrient-based recommendations, with variations due to age and sex. *J Nutr* 152:2514–2525 | 10.1093/jn/nxac150 | check |
 | drewnowski2010 | Drewnowski A (2010). The cost of US foods as related to their nutritive value. *Am J Clin Nutr* 92:1181–1188 | 10.3945/ajcn.2010.29300 | PMC2954450 |
+| drewnowski2010nrf | Drewnowski A (2010). The Nutrient Rich Foods Index helps to identify healthy, affordable foods. *Am J Clin Nutr* 91(4):1095S–1101S (basis of the Meal Nutrient Score: encourage-nutrient adequacy minus limit-nutrient excess) | 10.3945/ajcn.2010.28450D | check (verified via Crossref 2026-10-07) |
+| duyff2011 | Duyff RL, Mount JR & Jones JB (2011). Sodium reduction in canned beans after draining, rinsing. *J Culin Sci Technol* 9(2):106–112 (meal-tool hint; no figures quoted until the full text is read) | 10.1080/15428052.2011.582405 | **UNI** (verified via Crossref 2026-10-07) |
 | drewnowski2024 | Drewnowski A & Conrad Z (2024). Pulse crops: nutrient density, affordability, and environmental impact. *Front Nutr* 11:1438369 | 10.3389/fnut.2024.1438369 | PMC11377338 |
 | drewnowski2025 | Drewnowski A (2025). Perspective: Milk and dairy provide affordable high-quality protein and merit inclusion in the protein foods group. *Curr Dev Nutr* 9:104539 | 10.1016/j.cdnut.2024.104539 | PMC11787005 |
 
@@ -118,6 +120,7 @@ The **ID** column is the key used in [REVIEW.md](REVIEW.md) and later in code/co
 | usda_fdc | USDA FoodData Central (Foundation, SR Legacy) | https://fdc.nal.usda.gov/download-datasets/ |
 | fineli | Fineli, Finnish Food Composition Database (THL) | https://fineli.fi |
 | frida | Frida, Danish Food Composition Database (DTU) | https://frida.fooddata.dk |
+| eurostat_pli | Eurostat prc_ppp_ind: price level indices by analytical category (food groups), EU27_2020 = 100, year 2024 (country prices, 2026-10-07) | https://ec.europa.eu/eurostat/databrowser/view/prc_ppp_ind/default/table |
 
 ---
 

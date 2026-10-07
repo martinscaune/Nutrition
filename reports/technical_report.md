@@ -1,6 +1,6 @@
 # Quantitative food value for training: data, methods and first results
 
-**Technical report, draft 2 (2026-10-07; v2.0 addendum in §4b).** Personal research project; not peer reviewed. Source keys refer to
+**Technical report, draft 3 (2026-10-07; v2.0 addendum in §4b, v2.1 addendum in §4c).** Personal research project; not peer reviewed. Source keys refer to
 [literature/SOURCES.md](../literature/SOURCES.md); detailed outputs are in the other files in `reports/`.
 
 ## Summary
@@ -66,7 +66,7 @@ bands); Frida vs USDA composition.
 | H4 | Legumes/staples dominate cost metrics; animal foods a different region | Grains hold 7/10 of the calorie-per-€ top 10, legumes 5/10 of useful-protein-per-€; meat/fish 10/10 of protein density | v0.1 |
 | H5 | Food mass is an independent constraint | Mass and cost almost uncorrelated (ρ = 0.06); diet front: 2.47 kg @ €1.85 ↔ 0.82 kg @ €7.50 | v0.1, v1.0 |
 | H6 | Optimization is more informative than single ratios | Greedy diets from any single ratio miss fat, protein or lysine targets; the optimizer meets all | v1.x comparison |
-| H7 | Latvian prices change rankings vs generic data | Not testable yet (needs a second country's comparable prices) | – |
+| H7 | Latvian prices change rankings vs generic data | Not testable yet: v2.1 country prices are *derived* from Latvian prices (Eurostat category price levels), so they cannot test it. Under them, rankings barely move (ρ ≥ 0.95, top-10 overlap 8–10/10 for DK and NL) | v2.1 |
 | H8 | Simple metrics nearly as good | **Partly.** As a *food filter* yes: the optimizer limited to the top 10 by protein per € reaches the same minimum cost; 100 % of LP-chosen foods are top-quartile on protein per €. As a *diet builder* no (H6) | v1.x comparison |
 | H9 | Diet-level amino acids ≠ food-level P × DIAAS | Food-level constraint costs +31 % and buys 22 % more protein than needed; crude protein leaves lysine at 86 % of requirement | v1.0 |
 | H10 | Staples dominate cost-optimal energy once fat/sugar are capped | Yes: ≥ 88 % plant energy in every minimum-cost diet; legumes + oats/barley/flour | v1.0 |
@@ -82,9 +82,32 @@ mass ≤ 1.5 kg: +19 %), more than any safeguard (caps ×0.5: +20 %, ×2: −9 %
 now enforced, with cooking losses from USDA raw↔cooked pairs; vitamin D and iodine are reported only (sunlight /
 supplements, iodised salt). The v1.0 minimum-cost diets turned out badly deficient (vitamin B12 0–7 %, vitamin A
 1–4 %, vitamin C 2–4 %, calcium 16–46 % of reference). Nutritionally complete minimum-cost diets cost **€2.22–3.10
-per day** (owner €2.68) and add milk, eggs, a little herring, cabbage and carrots to the legume–grain core; the
-binding nutrients are vitamin B12, selenium, vitamins C, E and A and calcium. Typical diets are short of vitamin E
+per day** (€2.22–3.12 since omega-3 is enforced in v2.1; owner €2.69) and add milk, eggs, a little herring, cabbage
+and carrots to the legume–grain core; the binding nutrients are vitamin B12, selenium, vitamins C, E and A, calcium
+and (v2.1) EPA + DHA. Typical diets are short of vitamin E
 (27–58 % of AI) and, for the bodybuilding template, vitamin C (32 %). Details: `reports/v2.0_nutrients.md`.
+
+## 4c. v2.1 addendum: meals, realistic diets, omega-3, other countries
+**Omega-3.** ALA (≥ 0.5 % E) and EPA + DHA (≥ 250 mg/day) from efsa2010f are now enforced, using Frida/USDA fatty-acid
+data (EPA/DHA = 0 for plant foods). This adds ≈ 3–11 g/day of herring (≈ 1 portion a week) at ≤ €0.03/day.
+
+**Realistic variant** (`config/optimizer.yaml`, judgment calls): ≤ 400 g eaten of any food, legumes + soy ≤ 500 g,
+≤ 20 % of energy per food, every enforced nutrient from ≥ 2 foods (no food > 60 % of it), optional appetite ceiling.
+For the owner it costs **+16 %** in Latvia, Denmark and the Netherlands alike (€2.69 → €3.13 LV), with 17–18 foods
+instead of 13–14, and kefir enters as a second calcium/B12 source. A MILP then splits the day into ≥ 4 meals (each
+≥ 0.4 g protein/kg, schoenfeld2018, and 20–35 % of energy, as few food pieces as possible).
+
+**Meal Nutrient Score** (`src/meals.py`): 100 × (mean adequacy of 20 encourage items scaled to the meal's share of
+daily energy − mean excess over 3 limits), after the Nutrient Rich Foods logic (drewnowski2010nrf) but against personal
+targets. The improved meal keeps energy (±3 %) and maximizes this score in a MILP, then breaks ties by similarity or
+cost. Examples for the owner (score → small tweak → best possible): 4 eggs + 1 can of beans 62 → 95 → 100 (limited by
+sodium from canned beans); oat porridge 93 → 99 → 100; chicken, rice and vegetables 77 → 99 → 99; pork, potatoes and
+cabbage 75 → 98 → 99. The score saturates at 100 easily, so it separates poor from good meals better than good from
+excellent ones.
+
+**Country prices.** Price(country) = Latvian price × PLI(country, food category) / PLI(LV, category), with Eurostat
+2024 food price level indices (eurostat_pli). Owner's complete day: LV €2.69, DK €3.00, NL €2.45. Approximation:
+captures between-category differences only.
 
 ## 5. Limitations
 - **Not a meal plan.** Taste and meal structure are not modelled (the 'closest valid diet' mode keeps a usual diet
@@ -112,5 +135,5 @@ binding nutrients are vitamin B12, selenium, vitamins C, E and A and calcium. Ty
 
 ## 7. Reproducibility
 Python 3.14, pinned in `requirements-lock.txt`. `sh run_all.sh` rebuilds every dataset, report and figure from
-`data/raw` + `data/foods` + `config` in < 1 minute and runs the test suite (45 tests). Raw-data provenance,
+`data/raw` + `data/foods` + `config` in ≈ 1–2 minutes and runs the test suite (59 tests). Raw-data provenance,
 checksums and licences: `data/raw/MANIFEST.md`. Decisions: PROJECT.md §17.

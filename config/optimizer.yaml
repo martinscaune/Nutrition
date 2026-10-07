@@ -45,3 +45,11 @@ max_g_eaten:
     vegetables: 800
     ingredients: 100
   default: 500
+
+# "Realistic" variant (owner feedback 2026-10-07): closer to what people actually eat; JUDGMENT CALLS [U]
+realistic:
+  max_g_per_food: 400               # no food above 400 g eaten per day
+  group_max_g: {legumes_soy: 500}   # legumes + soy together ≤ 500 g eaten per day
+  groups: {legumes_soy: [legumes, soy]}
+  max_energy_share_per_food: 0.20
+  max_nutrient_share_per_food: 0.60 # every enforced nutrient comes from ≥ 2 foods (no food supplies > 60 % of it)
